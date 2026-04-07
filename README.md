@@ -379,6 +379,9 @@ Creemos que aumentaremos la eficiencia operativa en un 35% si los gerentes de op
 Creemos que alcanzaremos un 12% de adopción en el mercado objetivo dentro de 12 meses si las empresas pueden seleccionar fácilmente el plan que mejor se adapte a sus necesidades gracias a un modelo de suscripción flexible por niveles. Lo confirmaremos cuando tengamos al menos 120 empresas activas, una tasa de conversión de piloto a cliente de pago superior al 35% y una tasa de cancelación mensual igual o menor al 4%.
 
 #### 1.2.2.4. Lean UX Canvas
+
+<img src="img/LeanUXCanvas.png.png"/>
+
 ## 1.3. Segmentos objetivo
 # Capítulo II: Requirements Elicitation & Analysis
 ## 2.1. Competidores
