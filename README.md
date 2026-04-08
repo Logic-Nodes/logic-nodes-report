@@ -383,6 +383,33 @@ Creemos que alcanzaremos un 12% de adopción en el mercado objetivo dentro de 12
 <img src="img/LeanUXCanvas.png.png"/>
 
 ## 1.3. Segmentos objetivo
+
+### Segmento 1: Empresas Clientes
+
+Estas organizaciones se dedican principalmente a la logística, distribución y producción de bienes sensibles que requieren condiciones especiales durante su traslado. Su principal necesidad es contar con un control preciso y continuo sobre sus cargas para proteger la calidad de los productos, minimizar pérdidas económicas y optimizar sus procesos internos.
+
+Buscan una solución que les permita tener una visión completa y en tiempo real de toda su operación, integrando toda la información relevante en una sola plataforma. De esta forma pueden mejorar la eficiencia operativa, cumplir más fácilmente con las regulaciones del sector y transmitir mayor confianza a sus propios clientes.
+Características principales:
+
+Rol: Gerentes de logística, jefes de operaciones, responsables de control de calidad o directores de distribución.
+
+Ubicación: Empresas con sede en zonas de alta actividad logística y con disposición para adoptar herramientas digitales.
+
+Sector de la industria: Alimentos perecederos, productos farmacéuticos, químicos, flores de exportación y otros bienes que exigen un manejo controlado de temperatura, humedad y condiciones ambientales.
+
+### Segmento 2: Clientes Finales
+
+Los clientes finales son las personas o empresas que reciben los productos transportados. Su principal preocupación es la transparencia y la seguridad del proceso de entrega. Necesitan la tranquilidad de saber que la mercancía ha sido manejada correctamente desde su origen hasta su destino final.
+
+Valoran especialmente la posibilidad de verificar por sí mismos el estado de su pedido en cualquier momento, a través de una herramienta sencilla, clara y confiable que les brinde información actualizada sobre las condiciones de transporte.
+Características principales:
+
+Edad: Mayores de 18 años.
+
+Ubicación: Principalmente en Lima, Perú.
+
+Nivel Socioeconómico: Medio y medio-alto, con interés en productos de calidad y servicios transparentes.
+
 # Capítulo II: Requirements Elicitation & Analysis
 ## 2.1. Competidores
 ### 2.1.1. Análisis competitivo
