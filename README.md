@@ -249,6 +249,55 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
 ### 2.1.2. Estrategias y tácticas frente a competidores
 ## 2.2. Entrevistas
 ### 2.2.1. Diseño de entrevistas
+
+### 1. Preguntas generales
+
+¿Cuál es tu nombre y cuál es tu cargo actual?
+
+¿Qué edad tienes?
+
+¿En qué sector o industria trabajas? (alimentos, farmacéutica, logística, entre otros)
+
+### 2. Preguntas — Segmento: Empresa (Gestores de transporte)
+
+¿Cómo controlas actualmente la temperatura de tus productos durante el transporte?
+
+¿Qué dispositivos o sistemas utilizas para el monitoreo de la cadena de frío? ¿Por qué los elegiste?
+
+¿Cómo organizas y registras los viajes de transporte? ¿Qué información consideras más importante registrar?
+
+¿Qué dificultades enfrentas cuando se rompe la cadena de frío? ¿Cómo afecta esto a tus costos y tiempos de operación?
+
+¿Cómo te das cuenta cuando ocurre un problema de temperatura? ¿Qué tan rápido puedes reaccionar ante este tipo de situaciones?
+
+¿Qué tipo de reportes necesitas preparar para tus clientes o para las autoridades regulatorias?
+
+¿Cuál ha sido tu experiencia al gestionar el mantenimiento y configuración de sensores o dispositivos de monitoreo? ¿Qué dificultades has encontrado?
+
+Si pudieras diseñar la plataforma ideal para tu trabajo, ¿qué funciones serían absolutamente necesarias para ti?
+
+¿Qué modelo de pago preferirías para este tipo de servicio? ¿Qué factores influyen en esa decisión?
+
+### 3. Preguntas — Segmento: Clientes Finales (Consumidores finales)
+
+¿Cómo verificas actualmente que los productos que recibes llegaron en las condiciones de temperatura adecuadas?
+
+¿Qué nivel de confianza tienes en los reportes de temperatura que te entregan tus proveedores? ¿Qué elementos aumentarían o reducirían esa confianza?
+
+¿Qué tipo de información te resulta más útil conocer sobre el transporte de tus productos? ¿Cómo te ayudaría esa información en tu día a día?
+
+¿Puedes compartir alguna experiencia en la que hayas tenido que rechazar productos por problemas relacionados con la cadena de frío? ¿Cómo detectaste el problema y qué impacto tuvo?
+
+¿Cómo prefieres recibir y consultar la información sobre tus pedidos? ¿Qué canales o métodos de comunicación te resultan más prácticos?
+
+¿Qué tipo de notificaciones durante el transporte de tus productos serían más útiles para ti y en qué momentos te gustaría recibirlas?
+
+¿Qué tan importante es para ti que la información técnica se presente de forma clara y fácil de entender? ¿Qué características valoras en las interfaces que utilizas?
+
+¿Qué funcionalidades crees que aportarían mayor valor a tu proceso de recepción y validación de productos?
+
+¿Qué beneficios esperas obtener de un sistema de monitoreo basado en IoT para tus compras de productos sensibles a la temperatura? ¿Qué preocupaciones o dudas tienes al respecto?
+
 ### 2.2.2. Registro de entrevistas
 ### 2.2.3. Análisis de entrevistas
 ## 2.3. Needfinding
