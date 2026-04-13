@@ -374,6 +374,23 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
 </table>
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
+
+Para posicionar a OmniTruck de manera efectiva en el mercado y diferenciarse de competidores establecidos como Tive, Roambee y Samsara, Logic Nodes ha definido una serie de estrategias y tácticas claras enfocadas en las necesidades específicas del segmento de medianas empresas de transporte en Latinoamérica.
+
+### 1. Estrategia de Diferenciación por Accesibilidad y Precio
+A diferencia de Tive y Samsara, que tienen precios premium orientados principalmente a grandes corporaciones, OmniTruck adopta un modelo de suscripción mensual accesible y flexible. Esta estrategia permite que las medianas empresas de transporte puedan implementar la solución sin realizar grandes inversiones iniciales, reduciendo la barrera de entrada que presentan los competidores globales.
+### 2. Estrategia de Enfoque Regional (LATAM-First)
+Mientras que la mayoría de competidores tienen un enfoque global o se centran en mercados maduros de Estados Unidos y Europa, OmniTruck se desarrolla pensando en las particularidades del mercado latinoamericano (infraestructura logística variable, tamaño de flotas medianas y sensibilidad al precio). Se priorizará la localización del idioma, soporte en español y alianzas con cámaras de transporte y asociaciones logísticas locales.
+### 3. Estrategia de Simplicidad y Facilidad de Uso
+OmniTruck busca destacar por su interfaz intuitiva y onboarding sencillo, reduciendo la curva de aprendizaje. A diferencia de plataformas más complejas como Roambee o Samsara, el enfoque está en que gerentes y conductores puedan usar la plataforma de forma efectiva desde el primer día, sin necesidad de capacitaciones extensas.
+### 4. Estrategia de Funcionalidades Específicas para Carga Sensible
+Se priorizará el monitoreo multiparámetro (temperatura, humedad, vibración y detección de volcado) con alertas inteligentes y reportes automáticos de trazabilidad. Esta combinación responde directamente a los dolores más comunes de las empresas que transportan alimentos perecederos y productos farmacéuticos, ofreciendo un equilibrio entre profundidad técnica y practicidad que no siempre encuentran en soluciones más generales.
+### 5. Estrategia de Alianzas y Ecosistema Local
+Se buscará establecer alianzas estratégicas con distribuidores de sensores, empresas de logística y cámaras de comercio en Perú y otros países de LATAM. Esta táctica permitirá acelerar la adopción y generar confianza en el mercado local, algo que los competidores globales suelen tener más dificultad para lograr rápidamente.
+### 6. Estrategia de Marketing y Posicionamiento
+Se implementará un marketing digital enfocado en casos de éxito locales, demostraciones prácticas y contenido educativo sobre la importancia del monitoreo de cadena de frío. El mensaje principal será: “Monitoreo profesional accesible para empresas medianas que quieren competir con los grandes”
+
+
 ## 2.2. Entrevistas
 ### 2.2.1. Diseño de entrevistas
 
