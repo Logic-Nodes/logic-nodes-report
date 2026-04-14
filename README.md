@@ -523,6 +523,49 @@ A continuación se presentan los Empathy Maps de ambos segmentos objetivo. Cada 
 
 ## 2.4. Big Picture EventStorming
 ## 2.5. Ubiquitous Language
+
+## 1. Términos del Dominio Central
+ 
+| Término | Definición |
+|---------|-----------|
+| **Cadena de Frío** | Proceso logístico que mantiene los productos perecederos dentro de rangos específicos de temperatura desde el origen hasta el destino final, preservando su calidad e integridad. |
+| **Envío** | Conjunto de productos o carga que se transporta desde un punto de origen hacia un destino bajo una misma guía o registro. |
+| **Transportista** | Persona o empresa responsable de trasladar los productos y garantizar que se cumplan las condiciones de transporte acordadas. |
+| **Plan de Ruta** | Itinerario detallado que define el recorrido, tiempos estimados, puntos de parada y condiciones necesarias para completar la entrega. |
+| **Rango de Temperatura** | Intervalo de grados aceptable dentro del cual debe mantenerse el producto durante todo el transporte. |
+| **Desviación de Temperatura** | Diferencia entre la temperatura real de la carga y el rango permitido, que puede comprometer la calidad del producto. |
+ 
+---
+ 
+## 2. Términos de Actores
+ 
+| Término | Definición |
+|---------|-----------|
+| **Gestor de Flota** | Usuario responsable de configurar dispositivos, establecer parámetros de viaje, monitorear múltiples transportes y generar reportes para clientes. |
+| **Conductor** | Usuario operativo que recibe alertas durante el trayecto y ejecuta acciones correctivas cuando se detectan problemas en las condiciones de la carga. |
+| **Cliente Final** | Receptor de la mercancía que requiere visibilidad del estado del transporte y documentación de cumplimiento térmico para aceptar o rechazar los productos. |
+ 
+---
+ 
+## 3. Términos de Procesos de Negocio
+ 
+| Término | Definición |
+|---------|-----------|
+| **Configuración de Viaje** | Proceso de definir parámetros específicos antes del inicio del transporte: rangos de temperatura, duración estimada, tipo de carga y responsables. |
+| **Acción Correctiva** | Medidas tomadas por el conductor o el operador para resolver violaciones de temperatura, como ajustar refrigeración, cambiar ruta o notificar supervisores. |
+| **Calibración de Sensores** | Proceso periódico de verificación y ajuste de los sensores para garantizar precisión en las mediciones según estándares de calidad. |
+| **Cumplimiento de Cadena de Frío** | Estado que certifica que un viaje se completó dentro de todos los parámetros térmicos requeridos, cumpliendo con regulaciones y estándares de calidad. |
+ 
+---
+ 
+## 4. Contexto de Métricas y KPIs
+ 
+| Término | Definición |
+|---------|-----------|
+| **Excursión de Temperatura** | Período durante el cual la temperatura de la carga estuvo fuera del rango permitido, medido en minutos u horas según la criticidad del producto. |
+| **Tasa de Cumplimiento** | Porcentaje de viajes que se completaron sin violaciones de temperatura en un período determinado. Es uno de los KPIs principales del servicio. |
+| **Tiempo de Respuesta a Alertas** | Métrica que mide el tiempo transcurrido entre la generación de una alerta y la ejecución de acciones correctivas por parte del equipo operativo. |
+
 # Capítulo III: Requirements Specification
 ## 3.1. User Stories
 ## 3.2. Impact Mapping
