@@ -471,6 +471,17 @@ Este journey representa el proceso diario de Jorge Ramírez, Gerente de Operacio
 Este journey representa el proceso de Ana Patricia Torres, propietaria de una cadena de tiendas de productos naturales. Muestra cómo actualmente solicita, sigue y recibe sus pedidos de insumos sensibles. Actualmente depende de promesas verbales y verificaciones subjetivas, lo que genera incertidumbre, riesgo de recibir productos en mal estado y dificultad para reclamar. OmniTruck le permitiría tener visibilidad transparente y evidencia objetiva, aumentando su confianza en los proveedores.
 
 ### 2.3.4. Empathy Mapping
+
+A continuación se presentan los Empathy Maps de ambos segmentos objetivo. Cada mapa resume lo que el usuario dice, piensa, hace y siente en su interacción diaria con el proceso de transporte de carga sensible.
+
+### Empathy Map 1 - Segmento: Empresas Clientes
+
+<img src="img/empathy-map-1.png">
+
+### Empathy Map 2 - Segmento: Clientes Finales
+
+<img src="img/empathy-map-2.png">
+
 ## 2.4. Big Picture EventStorming
 ## 2.5. Ubiquitous Language
 # Capítulo III: Requirements Specification
