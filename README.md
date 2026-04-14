@@ -461,6 +461,15 @@ Es una persona detallista y consciente de la importancia de la transparencia en 
 
 ### 2.3.2. User Task Matrix
 ### 2.3.3. User Journey Mapping
+
+<img src="img/journey-mapping-1.png">
+
+Este journey representa el proceso diario de Jorge Ramírez, Gerente de Operaciones de una empresa mediana de transporte refrigerado. Muestra cómo actualmente planifica, monitorea y documenta sus viajes de carga sensible. Se evidencia una fuerte dependencia de métodos manuales y comunicación verbal, lo que genera falta de visibilidad en tiempo real, respuestas reactivas ante incidentes y dificultad para analizar patrones de riesgo. OmniTruck busca transformar este flujo en un proceso digital, proactivo y centralizado.
+
+<img src="img/journey-mapping-2.png">
+
+Este journey representa el proceso de Ana Patricia Torres, propietaria de una cadena de tiendas de productos naturales. Muestra cómo actualmente solicita, sigue y recibe sus pedidos de insumos sensibles. Actualmente depende de promesas verbales y verificaciones subjetivas, lo que genera incertidumbre, riesgo de recibir productos en mal estado y dificultad para reclamar. OmniTruck le permitiría tener visibilidad transparente y evidencia objetiva, aumentando su confianza en los proveedores.
+
 ### 2.3.4. Empathy Mapping
 ## 2.4. Big Picture EventStorming
 ## 2.5. Ubiquitous Language
