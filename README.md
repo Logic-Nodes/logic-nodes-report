@@ -460,6 +460,45 @@ Es una persona detallista y consciente de la importancia de la transparencia en 
 
 
 ### 2.3.2. User Task Matrix
+
+### Segmento: Empresas Clientes
+
+| Tarea | Frecuencia | Importancia |
+|-------|-----------|-------------|
+| Llamar a conductores para verificar condiciones de carga manualmente | Alta | Alta |
+| Revisar múltiples parámetros (temperatura, humedad, vibración) al final del viaje | Alta | Alta |
+| Completar bitácoras en papel con datos de condiciones del cargamento | Alta | Media |
+| Buscar información de viajes en múltiples sistemas desintegrados | Alta | Media |
+| Coordinar por teléfono cuando hay incidencias en las condiciones de transporte | Media | Alta |
+| Recopilar firmas y documentos físicos de entregas | Alta | Media |
+| Armar reportes manuales combinando datos de diferentes fuentes | Media | Alta |
+| Enviar unidades de emergencia cuando se detecta falla en el transporte | Baja | Alta |
+| Atender consultas de clientes por falta de visibilidad en tiempo real | Media | Alta |
+| Revisar rutas en GPS básico sin integración con sensores de carga | Alta | Media |
+| Capacitar conductores en procedimientos de verificación de carga | Baja | Media |
+| Verificar manualmente el funcionamiento de sistemas de conservación | Alta | Alta |
+| Consolidar información de múltiples dispositivos y plataformas | Alta | Alta |
+
+
+### Segmento: Clientes Finales
+
+| Tarea | Frecuencia | Importancia |
+|-------|-----------|-------------|
+| Verificar productos visualmente al recibirlos | Alta | Alta |
+| Inspeccionar condiciones físicas de productos sensibles | Alta | Alta |
+| Llamar al proveedor para preguntar estado del envío | Media | Media |
+| Examinar empaques buscando señales de deterioro o daños | Alta | Alta |
+| Rechazar productos que muestran signos de mal manejo | Media | Alta |
+| Solicitar reportes de trazabilidad que suelen ser genéricos o incompletos | Media | Alta |
+| Esperar sin información sobre el estado real de sus pedidos | Media | Alta |
+| Revisar fechas de vencimiento y condiciones de almacenamiento | Alta | Alta |
+| Registrar incidencias de productos que llegan en mal estado | Baja | Alta |
+| Aceptar productos sin evidencia objetiva de las condiciones de transporte | Alta | Media |
+| Realizar reclamos por productos deteriorados o fuera de especificación | Baja | Alta |
+| Archivar documentación física de entregas | Media | Baja |
+| Validar cumplimiento de condiciones especiales sin datos verificables | Alta | Alta |
+
+
 ### 2.3.3. User Journey Mapping
 
 <img src="img/journey-mapping-1.png">
