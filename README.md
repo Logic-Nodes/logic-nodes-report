@@ -446,6 +446,19 @@ Si pudieras diseñar la plataforma ideal para tu trabajo, ¿qué funciones serí
 ### 2.2.3. Análisis de entrevistas
 ## 2.3. Needfinding
 ### 2.3.1. User Personas
+
+<img src="img/user-persona-1.png" alt="User Persona 1">
+
+Jorge Ramírez es un Gerente de Operaciones experimentado de 44 años que trabaja en una empresa mediana de transporte refrigerado con sede en Lima. Con más de 12 años en el sector logístico, es responsable de gestionar una flota de 35 vehículos dedicados principalmente al traslado de alimentos perecederos y productos farmacéuticos.
+Es un profesional práctico y orientado a resultados, que valora el control total de sus operaciones. Su principal preocupación es evitar cualquier tipo de pérdida económica causada por fallos en la cadena de frío. Jorge necesita herramientas simples pero potentes que le permitan monitorear toda su flota en tiempo real, recibir alertas inmediatas y tomar decisiones rápidas sin complicaciones. Aunque está abierto a la tecnología, prefiere soluciones fáciles de implementar que no requieran largas capacitaciones ni procesos complejos.
+
+
+<img src="img/user-persona-2.png" alt="User Persona 1">
+
+Ana Patricia Torres, de 39 años, es propietaria y gerente de una cadena de tiendas de productos naturales y orgánicos en Lima. Con un enfoque muy cuidadoso en la calidad, depende completamente de proveedores confiables para mantener la frescura de sus frutas, verduras, lácteos y suplementos.
+Es una persona detallista y consciente de la importancia de la transparencia en toda la cadena de suministro. Ana Patricia busca tranquilidad al saber que sus productos viajan en condiciones óptimas, ya que cualquier incidente con la temperatura o el manejo de la carga afecta directamente la satisfacción de sus clientes y la rentabilidad de su negocio. Valora enormemente la posibilidad de verificar el estado de sus pedidos de forma sencilla y en tiempo real, ya que esto le permite generar mayor confianza con sus compradores finales y reducir riesgos innecesarios.
+
+
 ### 2.3.2. User Task Matrix
 ### 2.3.3. User Journey Mapping
 ### 2.3.4. Empathy Mapping
