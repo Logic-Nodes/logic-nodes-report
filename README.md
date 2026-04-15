@@ -547,13 +547,13 @@ Reconocer los actores principales y los sistemas externos involucrados.
 
 Los participantes propusieron libremente todos los eventos que consideraron relevantes, anotándolos en tarjetas sin preocuparse por el orden en ese momento.
 
-<img src="big-event-storm-1.png">
+<img src="img/big-event-storm-1.png">
 
 #### 5. Ordenamiento de Eventos de Dominio
 
 Se organizaron los eventos siguiendo una secuencia lógica de tiempo, desde el inicio del proceso (solicitud de envío) hasta su finalización (cierre de la operación). Esta organización permitió visualizar el flujo completo y detectar posibles puntos de fricción o actividades redundantes.
 
-<img src="big-event-storm-2.png">
+<img src="img/big-event-storm-2.png">
 
 #### 6. Incorporación de Actores y Sistemas Externos
 
@@ -572,7 +572,7 @@ Sistemas Externos:
 
 Sistema de Planificación de Rutas: Encargado de calcular las rutas más eficientes considerando distancia, tiempo estimado, ventanas de entrega, capacidad del vehículo y costos.
 
-<img src="big-event-storm-3.png">
+<img src="img/big-event-storm-3.png">
 
 #### 7. Narrativa (Storytelling)
 
