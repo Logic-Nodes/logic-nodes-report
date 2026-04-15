@@ -257,7 +257,7 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
   <tr>
     <td rowspan="2" colspan="1" valign="top"><b>¿Por qué llevar a cabo este análisis?</b></td>
     <td colspan="5" valign="top">
-      Realizar este análisis competitivo nos permite identificar las fortalezas, debilidades y estrategias de las soluciones existentes en el mercado de monitoreo IoT para carga sensible. De esta forma, podemos entender mejor las expectativas de los clientes, detectar oportunidades de diferenciación y definir con claridad la ventaja competitiva que OmniTruck debe ofrecer para destacar frente a otras alternativas, especialmente en el contexto latinoamericano donde predominan las medianas empresas de transporte.
+      Realizar este análisis competitivo nos permite identificar las fortalezas, debilidades y estrategias de las soluciones existentes en el mercado de monitoreo IoT para carga sensible. De esta forma, podemos entender mejor las expectativas de los clientes, detectar oportunidades de diferenciación y definir con claridad la ventaja competitiva que OmniTrack debe ofrecer para destacar frente a otras alternativas, especialmente en el contexto latinoamericano donde predominan las medianas empresas de transporte.
     </td>
   </tr>
   <tr></tr>
@@ -267,7 +267,7 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
     <td colspan="2" valign="top"></td>
     <td align="center" valign="top">
       <img src="img/product.png" width="120"/><br/>
-      <b>Logic Nodes / Omnitruck</b>
+      <b>Logic Nodes / Omnitrack</b>
     </td>
     <td align="center" valign="top">
       <img src="img/tive-logo.png" width="120"/><br/>
@@ -375,14 +375,14 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
 
 ### 2.1.2. Estrategias y tácticas frente a competidores
 
-Para posicionar a OmniTruck de manera efectiva en el mercado y diferenciarse de competidores establecidos como Tive, Roambee y Samsara, Logic Nodes ha definido una serie de estrategias y tácticas claras enfocadas en las necesidades específicas del segmento de medianas empresas de transporte en Latinoamérica.
+Para posicionar a OmniTrack de manera efectiva en el mercado y diferenciarse de competidores establecidos como Tive, Roambee y Samsara, Logic Nodes ha definido una serie de estrategias y tácticas claras enfocadas en las necesidades específicas del segmento de medianas empresas de transporte en Latinoamérica.
 
 ### 1. Estrategia de Diferenciación por Accesibilidad y Precio
-A diferencia de Tive y Samsara, que tienen precios premium orientados principalmente a grandes corporaciones, OmniTruck adopta un modelo de suscripción mensual accesible y flexible. Esta estrategia permite que las medianas empresas de transporte puedan implementar la solución sin realizar grandes inversiones iniciales, reduciendo la barrera de entrada que presentan los competidores globales.
+A diferencia de Tive y Samsara, que tienen precios premium orientados principalmente a grandes corporaciones, OmniTrack adopta un modelo de suscripción mensual accesible y flexible. Esta estrategia permite que las medianas empresas de transporte puedan implementar la solución sin realizar grandes inversiones iniciales, reduciendo la barrera de entrada que presentan los competidores globales.
 ### 2. Estrategia de Enfoque Regional (LATAM-First)
-Mientras que la mayoría de competidores tienen un enfoque global o se centran en mercados maduros de Estados Unidos y Europa, OmniTruck se desarrolla pensando en las particularidades del mercado latinoamericano (infraestructura logística variable, tamaño de flotas medianas y sensibilidad al precio). Se priorizará la localización del idioma, soporte en español y alianzas con cámaras de transporte y asociaciones logísticas locales.
+Mientras que la mayoría de competidores tienen un enfoque global o se centran en mercados maduros de Estados Unidos y Europa, OmniTrack se desarrolla pensando en las particularidades del mercado latinoamericano (infraestructura logística variable, tamaño de flotas medianas y sensibilidad al precio). Se priorizará la localización del idioma, soporte en español y alianzas con cámaras de transporte y asociaciones logísticas locales.
 ### 3. Estrategia de Simplicidad y Facilidad de Uso
-OmniTruck busca destacar por su interfaz intuitiva y onboarding sencillo, reduciendo la curva de aprendizaje. A diferencia de plataformas más complejas como Roambee o Samsara, el enfoque está en que gerentes y conductores puedan usar la plataforma de forma efectiva desde el primer día, sin necesidad de capacitaciones extensas.
+OmniTrack busca destacar por su interfaz intuitiva y onboarding sencillo, reduciendo la curva de aprendizaje. A diferencia de plataformas más complejas como Roambee o Samsara, el enfoque está en que gerentes y conductores puedan usar la plataforma de forma efectiva desde el primer día, sin necesidad de capacitaciones extensas.
 ### 4. Estrategia de Funcionalidades Específicas para Carga Sensible
 Se priorizará el monitoreo multiparámetro (temperatura, humedad, vibración y detección de volcado) con alertas inteligentes y reportes automáticos de trazabilidad. Esta combinación responde directamente a los dolores más comunes de las empresas que transportan alimentos perecederos y productos farmacéuticos, ofreciendo un equilibrio entre profundidad técnica y practicidad que no siempre encuentran en soluciones más generales.
 ### 5. Estrategia de Alianzas y Ecosistema Local
@@ -503,11 +503,11 @@ Es una persona detallista y consciente de la importancia de la transparencia en 
 
 <img src="img/journey-mapping-1.png">
 
-Este journey representa el proceso diario de Jorge Ramírez, Gerente de Operaciones de una empresa mediana de transporte refrigerado. Muestra cómo actualmente planifica, monitorea y documenta sus viajes de carga sensible. Se evidencia una fuerte dependencia de métodos manuales y comunicación verbal, lo que genera falta de visibilidad en tiempo real, respuestas reactivas ante incidentes y dificultad para analizar patrones de riesgo. OmniTruck busca transformar este flujo en un proceso digital, proactivo y centralizado.
+Este journey representa el proceso diario de Jorge Ramírez, Gerente de Operaciones de una empresa mediana de transporte refrigerado. Muestra cómo actualmente planifica, monitorea y documenta sus viajes de carga sensible. Se evidencia una fuerte dependencia de métodos manuales y comunicación verbal, lo que genera falta de visibilidad en tiempo real, respuestas reactivas ante incidentes y dificultad para analizar patrones de riesgo. OmniTrack busca transformar este flujo en un proceso digital, proactivo y centralizado.
 
 <img src="img/journey-mapping-2.png">
 
-Este journey representa el proceso de Ana Patricia Torres, propietaria de una cadena de tiendas de productos naturales. Muestra cómo actualmente solicita, sigue y recibe sus pedidos de insumos sensibles. Actualmente depende de promesas verbales y verificaciones subjetivas, lo que genera incertidumbre, riesgo de recibir productos en mal estado y dificultad para reclamar. OmniTruck le permitiría tener visibilidad transparente y evidencia objetiva, aumentando su confianza en los proveedores.
+Este journey representa el proceso de Ana Patricia Torres, propietaria de una cadena de tiendas de productos naturales. Muestra cómo actualmente solicita, sigue y recibe sus pedidos de insumos sensibles. Actualmente depende de promesas verbales y verificaciones subjetivas, lo que genera incertidumbre, riesgo de recibir productos en mal estado y dificultad para reclamar. OmniTrack le permitiría tener visibilidad transparente y evidencia objetiva, aumentando su confianza en los proveedores.
 
 ### 2.3.4. Empathy Mapping
 
@@ -523,7 +523,7 @@ A continuación se presentan los Empathy Maps de ambos segmentos objetivo. Cada 
 
 ## 2.4. Big Picture EventStorming
 
-El Big Picture Event Storming es una técnica de taller colaborativo que ayudó al equipo a entender de forma visual y conjunta el dominio completo del negocio de monitoreo de transporte de carga sensible. Esta actividad permitió mapear los procesos principales, identificar los eventos más importantes, analizar cómo interactúan los diferentes actores y sistemas, y descubrir oportunidades clave de mejora que servirán de base para el diseño de OmniTruck.
+El Big Picture Event Storming es una técnica de taller colaborativo que ayudó al equipo a entender de forma visual y conjunta el dominio completo del negocio de monitoreo de transporte de carga sensible. Esta actividad permitió mapear los procesos principales, identificar los eventos más importantes, analizar cómo interactúan los diferentes actores y sistemas, y descubrir oportunidades clave de mejora que servirán de base para el diseño de OmniTrack.
 
 Link del Big Picture Event Storming: https://miro.com/app/board/uXjVGhhI3ec=/?share_link_id=985657624736
 
