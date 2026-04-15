@@ -522,6 +522,90 @@ A continuación se presentan los Empathy Maps de ambos segmentos objetivo. Cada 
 <img src="img/empathy-map-2.png">
 
 ## 2.4. Big Picture EventStorming
+
+El Big Picture Event Storming es una técnica de taller colaborativo que ayudó al equipo a entender de forma visual y conjunta el dominio completo del negocio de monitoreo de transporte de carga sensible. Esta actividad permitió mapear los procesos principales, identificar los eventos más importantes, analizar cómo interactúan los diferentes actores y sistemas, y descubrir oportunidades clave de mejora que servirán de base para el diseño de OmniTruck.
+
+Link del Big Picture Event Storming: https://miro.com/app/board/uXjVGhhI3ec=/?share_link_id=985657624736
+
+#### 1. Preparación del Espacio
+
+Siguiendo el material entregado en el blackboard, el equipo comenzó la sesión organizando un tablero compartido en Miro. Se definió claramente el objetivo de la actividad: analizar todo el ciclo de vida del servicio de transporte de carga sensible, desde la solicitud inicial hasta la entrega y evaluación posterior.
+
+#### 2. Motivación de los Participantes
+
+Para generar mayor compromiso, se realizaron dinámicas de integración y se mostraron ejemplos prácticos de eventos de negocio, con el fin de que todos entendieran cómo esta técnica ayuda a construir una visión compartida del sistema.
+
+#### 3. Explicación de la Agenda
+
+Se presentó el alcance de la sesión:
+
+Explorar la interacción entre gestores de flota, conductores, personal de muelle y clientes finales.
+Identificar los eventos clave desde que se solicita un servicio hasta la entrega y cierre de la operación.
+Reconocer los actores principales y los sistemas externos involucrados.
+
+#### 4. Generación de Eventos de Dominio
+
+Los participantes propusieron libremente todos los eventos que consideraron relevantes, anotándolos en tarjetas sin preocuparse por el orden en ese momento.
+
+<img src="big-event-storm-1.png">
+
+#### 5. Ordenamiento de Eventos de Dominio
+
+Se organizaron los eventos siguiendo una secuencia lógica de tiempo, desde el inicio del proceso (solicitud de envío) hasta su finalización (cierre de la operación). Esta organización permitió visualizar el flujo completo y detectar posibles puntos de fricción o actividades redundantes.
+
+<img src="big-event-storm-2.png">
+
+#### 6. Incorporación de Actores y Sistemas Externos
+
+Se identificaron los actores clave que participan en los eventos y los sistemas externos que intervienen:
+Actores:
+
+Gestor de Flota: Responsable de gestionar operaciones, rutas, costos y acuerdos de nivel de servicio (SLA).
+
+Personal del Muelle: Encargado de la carga, descarga y verificación física de la mercancía.
+
+Conductor: Responsable de ejecutar el viaje y responder a las alertas durante el trayecto.
+
+Personal Logístico: Coordina el flujo de mercancías, gestiona inventario, almacenamiento y documentación.
+
+Sistemas Externos:
+
+Sistema de Planificación de Rutas: Encargado de calcular las rutas más eficientes considerando distancia, tiempo estimado, ventanas de entrega, capacidad del vehículo y costos.
+
+<img src="big-event-storm-3.png">
+
+#### 7. Narrativa (Storytelling)
+
+El equipo contó la historia del proceso desde dos puntos de vista principales:
+
+#### Desde la perspectiva del Gestor de Flota:
+
+Recibe una solicitud, genera una cotización, acuerda un SLA y planifica la ruta. Asigna vehículo y conductor, prepara documentación y reserva espacios en muelles. Durante el viaje, depende principalmente de llamadas del conductor para conocer el estado de la carga. Si surge un problema, suele enterarse cuando ya ha ocurrido.
+
+#### Desde la perspectiva del Cliente Final:
+
+No recibe información actualizada del envío. Al momento de la entrega, solo puede inspeccionar visualmente la mercancía. La falta de datos objetivos hace que la verificación sea subjetiva y que cualquier reclamo sea lento y complicado.
+
+#### 8. Narrativa Inversa (Reverse Storytelling)
+
+Se recorrió el proceso en sentido contrario, comenzando desde el cierre de la operación (recepción de la mercancía) hasta la solicitud inicial. Esta técnica ayudó a validar que no se omitiera ningún evento importante y a confirmar que los principales problemas (falta de visibilidad en tiempo real y dependencia del papeleo) eran consistentes.
+
+#### 9. Cierre de la Sesión
+
+Se resumieron los aprendizajes más relevantes y las principales oportunidades de mejora:
+
+La fuerte dependencia de comunicación manual y papeleo genera puntos ciegos importantes durante el transporte.
+
+Es necesario contar con visibilidad en tiempo real de parámetros críticos para poder actuar de forma proactiva.
+
+La trazabilidad actual es insuficiente, ya que la inspección visual al final del trayecto no garantiza el cumplimiento de condiciones durante todo el viaje.
+
+Se requieren políticas claras sobre umbrales de temperatura, tiempos de respuesta y manejo de desviaciones para evitar disputas.
+
+El cliente final tiene una experiencia limitada debido a la falta de transparencia, lo que afecta la confianza en el servicio.
+
+La resolución de incidencias y el cumplimiento normativo se ven perjudicados por la ausencia de reportes automáticos y datos históricos confiables.
+
 ## 2.5. Ubiquitous Language
 
 ## 1. Términos del Dominio Central
