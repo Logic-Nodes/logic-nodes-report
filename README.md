@@ -254,7 +254,7 @@ El producto permite monitorear variables críticas como la ubicación exacta, el
 
 | Foto | Información General |
 | :---: | :--- |
-| <img src="pending..." width="250" alt="Foto de Perfil"> | **Nombre y Apellidos:** <br> [pending...] <br><br> **Código:** <br> [pending...] <br><br> **Carrera:** <br> Ingeniería de Software <br><br> **Información:** <br> [pending...] |
+| <img src="img/AdrianValProfile.jpg" width="250" alt="Foto de Perfil"> | **Nombre y Apellidos:** <br> Adrian Emanuel Valerio Garca <br><br> **Código:** <br> u202210334 <br><br> **Carrera:** <br> Ingeniería de Software <br><br> **Información:** <br> Mi nombre es Adrian Valerio Garcia y tengo 21 años. Soy estudiante de la carrera de Ingeniería de Software en la Universidad Peruana de Ciencias Aplicadas (UPC). Me interesa el aprendizaje continuo y suelo enfocarme en resolver problemas de manera rápida y eficiente. Disfruto los videojuegos y aprender nuevas tecnologías, además de trabajar en equipo para lograr objetivos en conjunto. Tengo conocimientos en lenguajes de programación y procuro mejorar constantemente mis métodos de estudio para ampliar mis habilidades. |
 
 | Foto | Información General |
 | :---: | :--- |
