@@ -519,6 +519,56 @@ And devuelve mensaje indicando conflicto de viaje activo. | E4 |
 
 ## 3.2. Impact Mapping
 ## 3.3. Product Backlog
+
+| # Orden | User Story ID | Título | Descripción | Story Points |
+| ------- | ------------- | ------ | ----------- | ------------ |
+| 1 | US028 | Monitoreo de temperatura en tiempo real | Como empresa, quiero visualizar lecturas de temperatura en tiempo real por dispositivo y por viaje, para supervisar la cadena de frío y reaccionar de inmediato ante cualquier desviación. | 8 |
+| 2 | US029 | Alertas por incumplimiento de temperatura | Como cliente final, quiero recibir alertas automáticas cuando la temperatura exceda el rango permitido, para ejecutar acciones correctivas antes de afectar la mercadería. | 5 |
+| 3 | US024 | Creación de viajes | Como administrador logístico, quiero crear viajes asociando vehículo, ruta y ventana horaria, para planificar operaciones de transporte con trazabilidad desde el inicio. | 5 |
+| 4 | US025 | Actualización de estados de viaje | Como administrador logístico, quiero actualizar el estado operativo de cada viaje, para informar a clientes y responsables sobre el avance real de la entrega. | 5 |
+| 5 | US033 | Detalle de viaje | Como cliente final, quiero consultar el detalle completo de un viaje, para validar ruta, estado, tiempos y comportamiento de temperatura. | 3 |
+| 6 | US032 | Lista de viajes registrados | Como empresa, quiero revisar una lista consolidada de viajes con datos clave, para facilitar seguimiento, control y priorización operativa. | 3 |
+| 7 | US026 | Reprogramación de viajes | Como administrador logístico, quiero reprogramar viajes pendientes ante contingencias, para ajustar fechas y horarios sin perder historial de cambios. | 5 |
+| 8 | US027 | Código de viaje para cliente | Como cliente final, quiero recibir un código único de seguimiento, para consultar el estado del pedido de forma rápida y autónoma. | 5 |
+| 9 | US036 | Filtrado de viajes por fecha | Como empresa, quiero filtrar viajes por rangos de fecha, para analizar periodos específicos y medir desempeño operativo. | 3 |
+| 10 | US037 | Descarga de reporte de viajes | Como cliente final, quiero descargar un reporte PDF del viaje con indicadores y gráficos, para compartir evidencia o archivarla. | 5 |
+| 11 | US034 | Gráficos de tiempo y temperatura | Como cliente final, quiero visualizar gráficos de evolución térmica durante el viaje, para comprobar cumplimiento de parámetros de conservación. | 5 |
+| 12 | US035 | Gráficos de incidencias por mes | Como empresa, quiero ver incidencias mensuales en formato gráfico, para identificar tendencias y tomar decisiones de mejora continua. | 5 |
+| 13 | US016 | Registro de dispositivos IoT | Como administrador logístico, quiero registrar dispositivos IoT con identificación única y metadatos técnicos, para integrarlos correctamente a la flota. | 5 |
+| 14 | US018 | Asignar dispositivo a vehículo de carga | Como administrador logístico, quiero asignar cada dispositivo a un vehículo específico, para garantizar trazabilidad de origen de cada lectura. | 3 |
+| 15 | US022 | Ver estado de dispositivo por vehículo | Como administrador logístico, quiero visualizar el estado de conectividad de dispositivos por unidad, para detectar desconexiones y actuar rápidamente. | 3 |
+| 16 | US030 | Alertas de conexión IoT | Como empresa, quiero recibir alertas cuando un dispositivo deje de transmitir por un umbral definido, para minimizar periodos sin visibilidad. | 5 |
+| 17 | US021 | Ver dispositivos IoT | Como administrador logístico, quiero consultar el inventario de dispositivos con su estado y asignación, para administrar la infraestructura IoT con control. | 3 |
+| 18 | US017 | Eliminar dispositivo IoT | Como administrador logístico, quiero retirar dispositivos inactivos o defectuosos manteniendo el histórico, para depurar el inventario sin perder trazabilidad. | 3 |
+| 19 | US023 | Ver estado de dispositivo | Como usuario del dispositivo, quiero conocer su estado operativo (activo, desconectado, batería baja, inactivo), para validar su funcionamiento de forma inmediata. | 3 |
+| 20 | US013 | Registro de vehículos de carga | Como administrador logístico, quiero registrar vehículos con datos técnicos y capacidad, para mantener un inventario confiable de flota. | 5 |
+| 21 | US014 | Actualización de datos de vehículos de carga | Como administrador logístico, quiero actualizar información de vehículos bajo validaciones, para mantener datos consistentes y vigentes. | 3 |
+| 22 | US015 | Eliminación de vehículos de carga | Como administrador logístico, quiero dar de baja vehículos sin uso o fuera de servicio, para mantener un inventario limpio sin eliminar historial relevante. | 3 |
+| 23 | US020 | Ver vehículos de carga | Como administrador logístico, quiero visualizar la lista de vehículos con sus atributos principales, para facilitar control, búsqueda y asignación. | 3 |
+| 24 | US019 | Cambiar dispositivo de vehículo | Como administrador logístico, quiero reasignar un dispositivo entre vehículos, para soportar rotaciones por mantenimiento o contingencia operativa. | 3 |
+| 25 | US031 | Roles y permisos de acceso | Como empresa, quiero administrar roles y permisos por tipo de usuario, para proteger operaciones sensibles y controlar acceso por perfil. | 8 |
+| 26 | US038 | Cancelar suscripción | Como cliente final, quiero cancelar mi suscripción cuando lo requiera, para detener renovaciones automáticas y cobros futuros. | 2 |
+| 27 | US039 | Visualizar información de suscripción | Como cliente final, quiero consultar plan, estado y fecha de vencimiento, para gestionar mi continuidad en el servicio de manera informada. | 2 |
+| 28 | US040 | Historial de pagos | Como cliente final, quiero revisar mi historial de pagos con detalle, para validar montos, fechas y transacciones procesadas. | 3 |
+| 29 | US041 | Notificación de renovación próxima | Como cliente final, quiero recibir avisos anticipados de renovación, para decidir si mantengo o cancelo mi suscripción antes del cobro. | 3 |
+| 30 | US001 | Navegación en landing page | Como visitante, quiero navegar con fluidez entre secciones de la landing, para comprender rápidamente el servicio y su propuesta de valor. | 3 |
+| 31 | US002 | Sección portada | Como visitante, quiero visualizar una portada clara y persuasiva, para entender de inmediato el propósito de la plataforma. | 3 |
+| 32 | US003 | Sección de funcionalidades | Como visitante, quiero conocer las funcionalidades principales en una sección dedicada, para evaluar la utilidad del producto. | 3 |
+| 33 | US004 | Sección de beneficios | Como visitante, quiero revisar beneficios concretos del servicio, para identificar valor diferencial frente a alternativas. | 2 |
+| 34 | US005 | Sección de testimonios | Como visitante, quiero leer testimonios de clientes reales, para fortalecer mi confianza antes de registrarme. | 2 |
+| 35 | US006 | Sección de contáctanos | Como visitante, quiero completar un formulario de contacto simple y validado, para solicitar información comercial o soporte inicial. | 3 |
+| 36 | US007 | Call to Action a la aplicación web | Como visitante, quiero disponer de un acceso directo a la aplicación web, para registrarme o iniciar sesión en pocos pasos. | 3 |
+| 37 | US008 | Call to Action de descarga de App Móvil | Como visitante, quiero acceder a botones de descarga según sistema operativo, para instalar la app móvil sin confusión. | 3 |
+| 38 | US009 | Registro de usuario | Como usuario, quiero crear una cuenta con validaciones de seguridad, para acceder a funcionalidades personalizadas y proteger mis datos. | 3 |
+| 39 | US010 | Inicio de sesión | Como usuario registrado, quiero iniciar sesión de forma segura y rápida, para acceder a mi cuenta y operaciones habilitadas. | 3 |
+| 40 | US011 | Cerrar sesión | Como usuario autenticado, quiero cerrar sesión explícitamente, para evitar accesos no autorizados en dispositivos compartidos. | 2 |
+| 41 | US012 | Recuperar contraseña | Como usuario, quiero restablecer mi contraseña mediante un flujo seguro, para recuperar acceso sin comprometer mi cuenta. | 3 |
+| 42 | TS001 | API de autenticación | Como developer, quiero implementar endpoints de login, logout, refresh y validación, para soportar autenticación robusta y control de sesión. | 5 |
+| 43 | TS002 | Servicio de autenticación con JWT | Como developer, quiero usar JWT para emitir y validar tokens de acceso, para proteger recursos y estandarizar seguridad entre cliente y backend. | 8 |
+| 44 | TS003 | API de vehículos de carga | Como developer, quiero exponer endpoints para crear, actualizar y consultar vehículos, para soportar el módulo de gestión de flota. | 8 |
+| 45 | TS004 | API de dispositivos IoT | Como developer, quiero implementar endpoints para ciclo de vida de dispositivos IoT, para registrar, consultar y mantener su estado operativo. | 8 |
+| 46 | TS005 | API de viajes | Como developer, quiero implementar endpoints REST para gestión de viajes, para crear, consultar y validar reglas operativas del monitoreo logístico. | 8 |
+
 # Capítulo IV: Solution Software Design
 ## 4.1. Strategic-Level Domain-Driven Design
 ### 4.1.1. Design-Level EventStorming
