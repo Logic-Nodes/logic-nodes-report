@@ -289,7 +289,66 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
 #### 4.2.2.2. Interface Layer
 #### 4.2.2.3. Application Layer
 #### 4.2.2.4. Infrastructure Layer
+
 #### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
+## Diagrama de componentes – Backend – Subscriptions and Billing
+
+![Component diagrams](img/Component_diagram_backend.png)
+
+El backend correspondiente al bounded context de Suscripciones y Pagos se estructura en cuatro capas principales:
+
+- **Interface Layer**: contiene los controladores REST encargados de atender solicitudes relacionadas con suscripciones, pagos, planes y compañías. Actúa como punto de acceso para usuarios y sistemas externos que consumen la API.
+- **Application Layer**: gestiona la ejecución de los casos de uso mediante Command Services, Query Services y Event Handlers. En esta capa se coordinan las operaciones y se invocan las reglas de negocio necesarias.
+- **Domain Layer**: reúne la lógica central del negocio, incluyendo entidades, objetos de valor, servicios de dominio y fábricas. Define las reglas que gobiernan el ciclo de vida de las suscripciones y los pagos.
+- **Infrastructure Layer**: proporciona implementaciones concretas de repositorios y conectores hacia bases de datos y servicios externos. Se encarga de la persistencia y la integración técnica.
+
+Las integraciones externas consideradas son:
+
+- Postgres, utilizado para la persistencia transaccional de datos como suscripciones, pagos y compañías.
+- Stripe, empleado para la gestión y procesamiento de pagos.
+- Firebase Cloud Messaging (FCM), utilizado para el envío de notificaciones push.
+- Google Maps, usado para consultas de rutas y estimaciones de tiempo (ETA).
+
+---
+
+## Diagrama de componentes – Application Web – Subscriptions and Billing
+
+![Component diagrams](img/Component_diagram_applicationweb.png)
+
+La aplicación web interactúa con el bounded context **Subscriptions & Billing** exclusivamente mediante APIs:
+
+- _Subscriptions API_: utilizada para ejecutar acciones como crear o cancelar suscripciones.
+- _Query API_: destinada a la consulta de información como planes o facturas.
+
+En el cliente, la aplicación se organiza en tres componentes principales:
+
+- **UI (interfaz de usuario)**: incluye las vistas relacionadas con suscripciones, pagos y facturación.
+- **Estado de la aplicación**: administra la sesión del usuario, el almacenamiento en caché de consultas y la autenticación.
+- **Servicios de datos**: implementa el cliente HTTP encargado de consumir las APIs, añadir el token de seguridad y manejar reintentos o errores.
+
+La lógica de negocio no reside en el frontend; su función se limita a presentar información y enviar las acciones del usuario al backend. Las validaciones, reglas y persistencia se gestionan completamente en el servidor.
+
+---
+
+## Diagrama de componentes – Mobile Application – Subscriptions and Billing
+
+![Component diagrams](img/Component_diagram_mobile.png)
+
+La aplicación móvil de **Subscriptions & Billing** sigue una arquitectura similar a la versión web, ya que también se comunica con el backend mediante:
+
+- _Subscriptions API_
+- _Query API_
+
+Como diferencia principal, incorpora una base de datos local (SQLite), lo que permite operar en modo offline: la aplicación puede almacenar datos localmente y continuar funcionando sin conexión, sincronizando la información cuando se restablece el acceso a internet.
+
+Su estructura incluye:
+
+- Pantallas orientadas a suscripciones y facturación.
+- Un estado de aplicación que controla la sesión y el caché.
+- Un cliente de API que gestiona las solicitudes al backend incorporando el token de autenticación.
+
+Al igual que en la versión web, toda la lógica de negocio se mantiene en el backend; el cliente únicamente se encarga de la visualización de datos y del envío de las acciones realizadas por el usuario.
+
 #### 4.2.2.6. Bounded Context Software Architecture Code Level Diagrams
 #### 4.2.2.6.1. Bounded Context Domain Layer Class Diagrams
 #### 4.2.2.6.2. Bounded Context Database Design Diagram
