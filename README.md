@@ -449,6 +449,7 @@ Si pudieras diseñar la plataforma ideal para tu trabajo, ¿qué funciones serí
 #### ENTREVISTA 1
 
 Entrevistado: Elmer Alcántara (58 años)
+
 Cargo: Gerente de Operaciones en empresa de transporte refrigerado.
 
 <img src="img/elmer-entrevista.png">
@@ -461,6 +462,7 @@ https://upcedupe-my.sharepoint.com/:v:/g/personal/u202216698_upc_edu_pe/IQCab9CO
 #### ENTREVISTA 1
 
 Entrevistada: Angélica Cruz (54 años)
+
 Cargo: Dueña y administradora de tienda minorista de productos perecederos.
 
 <img src="img/angelica-entrevista.png">
