@@ -443,7 +443,50 @@ Si pudieras diseñar la plataforma ideal para tu trabajo, ¿qué funciones serí
 ¿Qué beneficios esperas obtener de un sistema de monitoreo basado en IoT para tus compras de productos sensibles a la temperatura? ¿Qué preocupaciones o dudas tienes al respecto?
 
 ### 2.2.2. Registro de entrevistas
+
+### SEGMENTO EMPRESA (GESTORES DE TRANSPORTE)
+
+#### ENTREVISTA 1
+
+Entrevistado: Elmer Alcántara (58 años)
+Cargo: Gerente de Operaciones en empresa de transporte refrigerado.
+
+<img src="img/elmer-entrevista.png">
+
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u202216698_upc_edu_pe/IQCab9COVFqDRZj4fEqtB9h5AfwV7nuQDBlWWBDq9TOKXSU?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=sJeec7
+
+
+### SEGMENTO CLIENTES FINALES
+
+#### ENTREVISTA 1
+
+Entrevistada: Angélica Cruz (54 años)
+Cargo: Dueña y administradora de tienda minorista de productos perecederos.
+
+<img src="img/angelica-entrevista.png">
+
+
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u202216698_upc_edu_pe/IQAiZh8wMly5SbTbqBcDgSRqAQdUbRp4lYrVhYckLbH6_Q0?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=KXhZ7q
+
+
 ### 2.2.3. Análisis de entrevistas
+
+### SEGMENTO EMPRESA (GESTORES DE TRANSPORTE)
+
+#### ENTREVISTA 1
+
+Entrevistado: Elmer Alcántara, 58 años, Gerente de Operaciones.
+
+Desde la perspectiva de la gestión operativa, Elmer Alcántara describe un entorno de trabajo dominado por métodos tradicionales y fragmentados que limitan la capacidad de respuesta de la empresa. La dependencia de bitácoras físicas en papel y de la comunicación verbal con los conductores genera "puntos ciegos" durante el trayecto, lo que provoca que los problemas de temperatura suelan detectarse de forma reactiva, usualmente cuando el cliente ya está rechazando la carga. Esta falta de monitoreo integrado no solo eleva los costos operativos por el envío de unidades de emergencia, sino que también desgasta la relación con el cliente al no contar con evidencia objetiva en caso de disputas. Elmer identifica como una carga administrativa pesada la elaboración de reportes de cumplimiento, ya que consolidar datos de fuentes desintegradas es un proceso lento y tedioso. Su necesidad principal se centra en la centralización y la automatización: requiere un dashboard intuitivo que monitoree múltiples parámetros (temperatura, humedad y vibración) y que genere reportes automáticos. Finalmente, su decisión de adoptar una nueva tecnología está condicionada por la facilidad de uso ("conectar y usar") y un modelo de pago por suscripción mensual que no exija una inversión inicial elevada, facilitando así la digitalización de su equipo de trabajo.
+
+### SEGMENTO CLIENTES FINALES
+
+#### ENTREVISTA 1
+
+Entrevistada: Angélica Cruz, 54 años, dueña de tienda minorista.
+
+El análisis de la entrevista revela que Angélica Cruz enfrenta una vulnerabilidad crítica debido a la falta de herramientas objetivas para validar la calidad de sus suministros. Actualmente, su proceso de recepción depende enteramente de una inspección sensorial (vista y tacto) de los empaques, lo que resulta insuficiente para detectar rupturas sutiles en la cadena de frío que afectan la vida útil del producto. Esta carencia se traduce en una confianza "moderada" hacia sus proveedores, alimentada por la entrega de reportes que ella califica como genéricos o incompletos. Para Angélica, el impacto de una mala gestión logística no es solo operativo, sino económico, ya que ha sufrido la pérdida directa de ventas y ha encontrado serias dificultades para sustentar reclamos ante sus proveedores al no poseer pruebas verificables. Por ello, su plataforma ideal debe eliminar la incertidumbre mediante visibilidad transparente en tiempo real y alertas que le permitan anticiparse a la llegada de mercadería dañada. Valora la simplicidad extrema en la interfaz, buscando evitar procesos técnicos complejos o capacitaciones largas, y espera que el sistema IoT le brinde la seguridad necesaria para aceptar o rechazar pedidos basándose en datos reales.
+
 ## 2.3. Needfinding
 ### 2.3.1. User Personas
 
