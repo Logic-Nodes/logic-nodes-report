@@ -270,7 +270,7 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
 #### 4.1.1.3. Bounded Context Canvases
 ### 4.1.2. Context Mapping
 
-En esta etapa se definió el **Context Map** de CargaSafe a partir de los ocho *bounded contexts* previamente identificados. El objetivo principal fue modelar las **relaciones estructurales** entre ellos utilizando patrones de *Domain-Driven Design* como *Customer/Supplier*, *Conformist* y *Anti-Corruption Layer (ACL)*.
+En esta etapa se definió el **Context Map** de LogicaNodes a partir de los ocho *bounded contexts* previamente identificados. El objetivo principal fue modelar las **relaciones estructurales** entre ellos utilizando patrones de *Domain-Driven Design* como *Customer/Supplier*, *Conformist* y *Anti-Corruption Layer (ACL)*.
 
 ### Resultado
 
@@ -293,7 +293,7 @@ Este mapeo proporciona una visión global del sistema, evidenciando cómo los di
 
 #### 4.1.3.1. Software Architecture System Landscape Diagram
 
-El **System Landscape Diagram** ofrece una visión general del **ecosistema empresarial** en el que opera CargaSafe. No se limita a un único sistema, sino que incluye los actores y plataformas relevantes, tanto internos como externos, involucrados en la operación logística.
+El **System Landscape Diagram** ofrece una visión general del **ecosistema empresarial** en el que opera LogicNodes. No se limita a un único sistema, sino que incluye los actores y plataformas relevantes, tanto internos como externos, involucrados en la operación logística.
 
 ### Propósito
 
@@ -301,7 +301,7 @@ Este diagrama tiene como finalidad:
 
 1. Delimitar el alcance organizacional y la interacción entre sistemas.
 2. Identificar a las **personas, sistemas internos, servicios SaaS y proveedores externos** involucrados.
-3. Mostrar cómo **CargaSafe (SaaS)** se integra dentro de este entorno.
+3. Mostrar cómo **LogicNodes (SaaS)** se integra dentro de este entorno.
 
 ![Software Architecture – System Landscape Diagram](img/System_Landscape_Diagram.png)
 
@@ -309,7 +309,7 @@ Este diagrama tiene como finalidad:
 
 - **Actores**: Company Operator, Driver, End Customer  
 - **Sistemas internos**: Logistics Planning, Power BI Data  
-- **Servicios externos**: CargaSafe (SaaS), Stripe, Google Maps, Notification Services, IoT Devices  
+- **Servicios externos**: LogicNodes (SaaS), Stripe, Google Maps, Notification Services, IoT Devices  
 - **Agrupaciones**:
   - Logistics company  
   - Field / Devices  
@@ -318,18 +318,18 @@ Este diagrama tiene como finalidad:
 
 ### Relaciones principales
 
-- Logistics Planning → CargaSafe: envío de planes y asignaciones  
-- IoT Devices → CargaSafe: transmisión de telemetría (temperatura, humedad, vibración, inclinación, GPS, batería)  
-- CargaSafe → Google Maps: consulta de rutas y tiempos estimados  
-- CargaSafe → Notification Services: envío de alertas  
-- CargaSafe → Stripe: procesamiento de pagos  
-- CargaSafe → Power BI Data: exportación de datos consolidados  
-- Company Operator / Driver ↔ CargaSafe: interacción operativa  
-- End Customer ← CargaSafe: acceso a estado y reportes  
+- Logistics Planning → LogicNodes: envío de planes y asignaciones  
+- IoT Devices → LogicNodes: transmisión de telemetría (temperatura, humedad, vibración, inclinación, GPS, batería)  
+- LogicNodes → Google Maps: consulta de rutas y tiempos estimados  
+- LogicNodes → Notification Services: envío de alertas  
+- LogicNodes → Stripe: procesamiento de pagos  
+- LogicNodes → Power BI Data: exportación de datos consolidados  
+- Company Operator / Driver ↔ LogicNodes: interacción operativa  
+- End Customer ← LogicNodes: acceso a estado y reportes  
 
 ### Resultado
 
-El diagrama posiciona a CargaSafe como el punto central de integración entre operaciones logísticas, dispositivos IoT y servicios externos, además de alimentar plataformas analíticas.
+El diagrama posiciona a LogicNodes como el punto central de integración entre operaciones logísticas, dispositivos IoT y servicios externos, además de alimentar plataformas analíticas.
 
 ---
 
@@ -339,7 +339,7 @@ El **Context Diagram** presenta una vista de alto nivel del sistema y sus intera
 
 ![Software Architecture – Context Level Diagram](img/Context_Level_Diagram.png)
 
-CargaSafe (SaaS) se ubica en el centro como el sistema encargado del monitoreo, la trazabilidad y la generación de alertas.
+LogicNodes se ubica en el centro como el sistema encargado del monitoreo, la trazabilidad y la generación de alertas.
 
 ### Actores principales
 
@@ -359,7 +359,7 @@ Este diagrama permite identificar responsabilidades y flujos de interacción ent
 
 #### 4.1.3.2. Software Architecture Container Level Diagrams
 
-En esta sección se detalla la estructura interna de **CargaSafe (SaaS)**, mostrando sus contenedores, tecnologías y comunicación.
+En esta sección se detalla la estructura interna de **LogicNodes**, mostrando sus contenedores, tecnologías y comunicación.
 
 ![Software Architecture – Container Level Diagram](img/Container_Level_Diagram.png)
 
@@ -392,7 +392,7 @@ Este nivel refleja una arquitectura modular que soporta operación tanto en lín
 
 #### 4.1.3.3. Software Architecture Deployment Diagrams
 
-El **Deployment Diagram** describe cómo se implementa CargaSafe en un entorno productivo, incluyendo infraestructura y comunicación entre componentes.
+El **Deployment Diagram** describe cómo se implementa LogicNodes en un entorno productivo, incluyendo infraestructura y comunicación entre componentes.
 
 ![Software Architecture – Deployment Diagram](img/Deployment_Diagram.png)
 
