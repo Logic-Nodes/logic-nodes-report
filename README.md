@@ -269,11 +269,168 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
 #### 4.1.1.2. Domain Message Flows Modeling
 #### 4.1.1.3. Bounded Context Canvases
 ### 4.1.2. Context Mapping
+
+En esta etapa se definió el **Context Map** de CargaSafe a partir de los ocho *bounded contexts* previamente identificados. El objetivo principal fue modelar las **relaciones estructurales** entre ellos utilizando patrones de *Domain-Driven Design* como *Customer/Supplier*, *Conformist* y *Anti-Corruption Layer (ACL)*.
+
+### Resultado
+
+El mapa construido permitió:
+
+1. **Entender las dependencias entre contextos**, identificando qué módulos exponen información y cuáles la consumen.
+2. **Diferenciar los contextos según su rol**, distinguiendo los núcleos del negocio (Trip Management, Monitoring, Alerts), los de soporte (Fleet, Profiles, Analytics) y los genéricos (IAM, Billing).
+3. **Clasificar los tipos de relación**:
+   - Predominio de *Customer/Supplier* en flujos operativos (Billing → IAM, Trip → Monitoring, Monitoring → Alerts).
+   - Uso de *Conformist* en el consumo de datos por Analytics.
+   - Aplicación de *Anti-Corruption Layer* en la interacción entre Analytics y Profiles.
+
+Este mapeo proporciona una visión global del sistema, evidenciando cómo los distintos contextos se articulan para soportar las capacidades del negocio.
+
+![EventStorming – Context Mapping](img/Context_Mapping.png)
+
+---
+
 ### 4.1.3. Software Architecture
+
 #### 4.1.3.1. Software Architecture System Landscape Diagram
+
+El **System Landscape Diagram** ofrece una visión general del **ecosistema empresarial** en el que opera CargaSafe. No se limita a un único sistema, sino que incluye los actores y plataformas relevantes, tanto internos como externos, involucrados en la operación logística.
+
+### Propósito
+
+Este diagrama tiene como finalidad:
+
+1. Delimitar el alcance organizacional y la interacción entre sistemas.
+2. Identificar a las **personas, sistemas internos, servicios SaaS y proveedores externos** involucrados.
+3. Mostrar cómo **CargaSafe (SaaS)** se integra dentro de este entorno.
+
+![Software Architecture – System Landscape Diagram](img/System_Landscape_Diagram.png)
+
+### Elementos incluidos
+
+- **Actores**: Company Operator, Driver, End Customer  
+- **Sistemas internos**: Logistics Planning, Power BI Data  
+- **Servicios externos**: CargaSafe (SaaS), Stripe, Google Maps, Notification Services, IoT Devices  
+- **Agrupaciones**:
+  - Logistics company  
+  - Field / Devices  
+  - Customers and Regulators  
+  - SaaS and Vendors  
+
+### Relaciones principales
+
+- Logistics Planning → CargaSafe: envío de planes y asignaciones  
+- IoT Devices → CargaSafe: transmisión de telemetría (temperatura, humedad, vibración, inclinación, GPS, batería)  
+- CargaSafe → Google Maps: consulta de rutas y tiempos estimados  
+- CargaSafe → Notification Services: envío de alertas  
+- CargaSafe → Stripe: procesamiento de pagos  
+- CargaSafe → Power BI Data: exportación de datos consolidados  
+- Company Operator / Driver ↔ CargaSafe: interacción operativa  
+- End Customer ← CargaSafe: acceso a estado y reportes  
+
+### Resultado
+
+El diagrama posiciona a CargaSafe como el punto central de integración entre operaciones logísticas, dispositivos IoT y servicios externos, además de alimentar plataformas analíticas.
+
+---
+
 #### 4.1.3.2. Software Architecture Context Level Diagrams
+
+El **Context Diagram** presenta una vista de alto nivel del sistema y sus interacciones con usuarios y servicios externos.
+
+![Software Architecture – Context Level Diagram](img/Context_Level_Diagram.png)
+
+CargaSafe (SaaS) se ubica en el centro como el sistema encargado del monitoreo, la trazabilidad y la generación de alertas.
+
+### Actores principales
+
+- **Company Operator**: gestiona viajes, flota y reportes  
+- **Driver**: ejecuta viajes y reporta información  
+- **End Customer**: consulta estados y reportes  
+
+### Sistemas externos
+
+- Google Maps: rutas, geocodificación y ETA  
+- Firebase Cloud Messaging: notificaciones push  
+- Stripe: pagos y facturación  
+
+Este diagrama permite identificar responsabilidades y flujos de interacción entre actores y servicios.
+
+---
+
 #### 4.1.3.2. Software Architecture Container Level Diagrams
+
+En esta sección se detalla la estructura interna de **CargaSafe (SaaS)**, mostrando sus contenedores, tecnologías y comunicación.
+
+![Software Architecture – Container Level Diagram](img/Container_Level_Diagram.png)
+
+### Contenedores principales
+
+- **Landing Page**: sitio público orientado a marketing  
+- **Web Frontend**: interfaz para operadores  
+- **Single Web**: vista pública para clientes sin autenticación  
+- **Mobile App**: aplicación para conductores con enfoque offline-first y almacenamiento en SQLite  
+- **Backend API**: núcleo de la lógica de negocio  
+- **PostgreSQL**: base de datos principal  
+- **Edge Application (Python)**: procesamiento local y sincronización  
+- **Embedded Application (C++)**: captura de datos en dispositivos limitados  
+
+### Interacción con usuarios
+
+- Company Operator → Web Frontend  
+- Driver → Mobile App  
+- End Customer → Single Web / Mobile App  
+
+### Integraciones externas
+
+- Google Maps  
+- Stripe  
+- Firebase Cloud Messaging (FCM)  
+
+Este nivel refleja una arquitectura modular que soporta operación tanto en línea como sin conectividad.
+
+---
+
 #### 4.1.3.3. Software Architecture Deployment Diagrams
+
+El **Deployment Diagram** describe cómo se implementa CargaSafe en un entorno productivo, incluyendo infraestructura y comunicación entre componentes.
+
+![Software Architecture – Deployment Diagram](img/Deployment_Diagram.png)
+
+### Clientes
+
+- Acceso web mediante CDNs (CloudFlare / AWS CloudFront)  
+- Aplicación móvil Flutter con base de datos SQLite local  
+- Comunicación vía HTTPS hacia un Load Balancer  
+
+### Backend
+
+- API desplegada en un clúster de Kubernetes con múltiples instancias  
+- Gestión centralizada de lógica de negocio y procesamiento en tiempo real  
+
+### Base de datos
+
+- PostgreSQL gestionado (AWS RDS / Google Cloud SQL)  
+- Instancia principal y réplicas de lectura  
+- Persistencia local en SQLite para operación offline  
+
+### Integraciones externas
+
+- Google Maps: rutas y geolocalización  
+- Stripe: pagos  
+- Firebase Cloud Messaging: notificaciones push  
+
+### Resultado
+
+La arquitectura de despliegue refleja un enfoque *cloud-native* con:
+
+- Separación de responsabilidades  
+- Soporte offline en dispositivos móviles  
+- Orquestación mediante Kubernetes  
+- Distribución eficiente mediante CDNs  
+- Base de datos escalable con replicación  
+- Notificaciones en tiempo real  
+
+Este diseño permite escalabilidad, resiliencia y continuidad operativa, incluso en escenarios con conectividad limitada.
 ## 4.2. Tactical-Level Domain-Driven Design
 ### 4.2.1. Bounded Context: Identity and Access Management
 #### 4.2.1.1. Domain Layer
