@@ -349,6 +349,28 @@ Este análisis facilita comprender cómo los eventos se propagan entre contextos
 
 #### 4.1.1.3. Bounded Context Canvases
 
+En esta sección se desarrollaron los Bounded Context Canvas de LogicNodes para los ocho contextos definidos en el sistema. El propósito es delimitar claramente las responsabilidades de cada contexto, establecer su lenguaje ubicuo y documentar las decisiones clave del negocio, así como detallar los mecanismos de interacción mediante Queries, Commands y Events.
+
+Cada canvas incluye: descripción del contexto, clasificación estratégica (core, supporting o generic), rol dentro del dominio (draft, execution, analysis o gateway), comunicaciones de entrada y salida, lenguaje ubicuo, decisiones de negocio y colaboradores.
+
+Esta especificación permite definir de forma explícita la propiedad de los datos, disminuir ambigüedades y sentar las bases para los contratos de integración que serán implementados a través de APIs y sistemas de mensajería.
+
+![EventStorming – Bounded Context Canvases](img/Canvases_iam.png)
+
+![EventStorming – Bounded Context Canvases](img/Canvases_profiles.png)
+
+![EventStorming – Bounded Context Canvases](img/Canvases_subscriptions.png)
+
+![EventStorming – Bounded Context Canvases](img/Canvases_alerts.png)
+
+![EventStorming – Bounded Context Canvases](img/Canvases_fleet.png)
+
+![EventStorming – Bounded Context Canvases](img/Canvases_tripManagement.png)
+
+![EventStorming – Bounded Context Canvases](img/Canvases_realtimeMonitoring.png)
+
+![EventStorming – Bounded Context Canvases](img/Canvases_analytics.png)
+
 ### 4.1.2. Context Mapping
 
 En esta etapa se definió el **Context Map** de OmniTrack a partir de los ocho *bounded contexts* previamente identificados. El objetivo principal fue modelar las **relaciones estructurales** entre ellos utilizando patrones de *Domain-Driven Design* como *Customer/Supplier*, *Conformist* y *Anti-Corruption Layer (ACL)*.
