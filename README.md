@@ -542,11 +542,119 @@ _Events_
 ##### 4.2.1.6.2. Bounded Context Database Design Diagram
 
 ![AccessControl – Database Design](img/AccessControl-ERD.png)
-### 4.2.2. Bounded Context: Subscriptions and Billing
-#### 4.2.2.1. Domain Layer
-#### 4.2.2.2. Interface Layer
-#### 4.2.2.3. Application Layer
-#### 4.2.2.4. Infrastructure Layer
+
+### 4.2.2. Bounded Context: _Subscriptions and Billing_
+
+### 4.2.2.1. Domain Layer
+
+#### Entities
+
+**Subscription**
+
+- **Propósito**: Controlar el estado y evolución de la suscripción de una empresa dentro de LogicNodes.
+- **Atributos clave**: subscriptionId, companyId, plan, billingCycle, status (ACTIVE, CANCELED), startedAt, expiresAt.
+- **Comportamientos**: activate(), changePlan(newPlan), renew(), cancel().
+
+**Payment**
+
+- **Propósito**: Registrar las transacciones económicas vinculadas a una suscripción.
+- **Atributos clave**: paymentId, subscriptionId, amount, status (PENDING, SUCCEEDED, FAILED), date.
+- **Comportamientos**: markSucceeded(), markFailed().
+
+**Company**
+
+- **Propósito**: Representar a la organización cliente que utiliza la plataforma.
+- **Atributos clave**: companyId, name, vehicleCount.
+- **Comportamientos**: canFitPlan(plan).
+
+---
+
+#### Value Objects
+
+- **Plan**: Define características del servicio (code, vehicleLimit, price).
+- **BillingCycle**: Representa el periodo de facturación (type, startDate, endDate).
+- **GracePeriod**: Intervalo de tolerancia tras la expiración (days).
+
+---
+
+#### Domain Services
+
+- **BillingService**: Responsable del cálculo de montos, renovaciones y lógica de facturación.
+- **PaymentPolicy**: Define reglas para activar o cancelar suscripciones en función del estado de pago.
+
+---
+
+#### Factory
+
+- **SubscriptionFactory**: Encargada de instanciar suscripciones válidas con configuración inicial consistente.
+
+---
+
+#### Commands
+
+- **CreateSubscriptionCommand**: Inicia una nueva suscripción.
+- **ChangePlanCommand**: Modifica el plan asociado.
+- **CancelSubscriptionCommand**: Finaliza la suscripción.
+- **RenewSubscriptionCommand**: Extiende el periodo vigente.
+- **RecordPaymentCommand**: Registra una transacción de pago.
+
+---
+
+#### Queries
+
+- **GetSubscriptionByIdQuery**: Obtiene una suscripción específica.
+- **GetActiveSubscriptionByCompanyQuery**: Recupera la suscripción activa de una empresa.
+- **ListPaymentsBySubscriptionQuery**: Lista los pagos asociados a una suscripción.
+
+---
+
+#### Events
+
+- **SubscriptionCreated**: Indica la creación de una suscripción.
+- **PlanChanged**: Notifica un cambio de plan.
+- **SubscriptionRenewed**: Señala una renovación exitosa.
+- **SubscriptionCanceled**: Representa la cancelación de la suscripción.
+- **PaymentSucceeded / PaymentFailed**: Resultado de una operación de pago.
+
+---
+
+### 4.2.2.2. Interface Layer
+
+#### Controllers
+
+- **SubscriptionController**: Gestiona operaciones sobre suscripciones (crear, renovar, cambiar plan, cancelar).
+- **PaymentController**: Maneja el registro y consulta de pagos.
+- **PlanController**: Expone los planes disponibles.
+- **CompanyAccessController**: Permite verificar el estado de acceso de una empresa.
+
+---
+
+### 4.2.2.3. Application Layer
+
+#### Command Services
+
+- **SubscriptionCommandService**: Orquesta la ejecución de comandos relacionados con suscripciones.
+- **PaymentCommandService**: Gestiona el registro de pagos y su impacto en el estado de la suscripción.
+
+#### Query Services
+
+- **SubscriptionQueryService**: Provee consultas por id, estado o empresa.
+- **PaymentQueryService**: Permite consultar pagos por distintos criterios.
+
+#### Event Handlers
+
+- **SubscriptionEventHandler**: Procesa eventos del ciclo de vida de suscripciones.
+- **PaymentEventHandler**: Gestiona reacciones ante resultados de pagos.
+
+---
+
+### 4.2.2.4. Infrastructure Layer
+
+#### Repositories (Interfaces)
+
+- **ISubscriptionRepository**: Persistencia de datos de suscripciones.
+- **IPaymentRepository**: Persistencia de transacciones de pago.
+- **ICompanyRepository**: Acceso a información de compañías.
 
 #### 4.2.2.5. Bounded Context Software Architecture Component Level Diagrams
 ## Diagrama de componentes – Backend – Subscriptions and Billing
