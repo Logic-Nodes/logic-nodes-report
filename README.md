@@ -265,9 +265,90 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
 # Capítulo IV: Solution Software Design
 ## 4.1. Strategic-Level Domain-Driven Design
 ### 4.1.1. Design-Level EventStorming
-#### 4.1.1.1 Candidate Context Discovery
+
+## 4.1.1.1 Candidate Context Discovery
+
+En esta fase se realizó una sesión de EventStorming con una duración aproximada de 90 minutos, cuyo objetivo fue identificar los *bounded contexts* del sistema **LogicNodes**. Durante la dinámica se aplicaron enfoques como *start-with-value*, *start-with-simple* y *look-for-pivotal-events*, lo que permitió organizar eventos, comandos y entidades en función de su relevancia dentro del dominio.
+
+A partir de este análisis se definieron ocho contextos principales:
+
+- **Identity and Access Management**: gestión de autenticación, usuarios y permisos.
+- **Profiles and Preferences Management**: administración de perfiles y configuraciones personalizadas.
+- **Fleet Management**: control de vehículos y dispositivos asociados.
+- **Trip Execution**: planificación e inicio de viajes.
+- **Real-Time Monitoring**: supervisión continua de condiciones operativas.
+- **Alerts and Resolution**: detección y gestión de alertas.
+- **Visualization and Analytics**: generación de reportes e indicadores.
+- **Subscriptions and Payments**: manejo de suscripciones y procesamiento de pagos.
+
+![EventStorming – Candidate Context Discovery](img/Candidate_Context_Discovery_Image.png)
+
+### Leyenda del EventStorming
+
+- 🟧 **Event**: hecho relevante ocurrido en el dominio (ej. viaje iniciado, alerta generada).
+- 🟦 **Command**: acción que provoca un cambio en el sistema (ej. registrar viaje).
+- 🟪 **Policy**: regla que define comportamientos ante ciertas condiciones.
+- 🟨 **Aggregate**: entidad central que encapsula lógica y datos.
+- 🟩 **UI**: interfaces donde el usuario interactúa con el sistema.
+- ⚪ **Actor**: roles que participan en el sistema (operador, conductor).
+- ⬛ **Sistema externo**: servicios de terceros integrados.
+
+Este enfoque permitió estructurar el dominio de **LogicNodes**, facilitando la identificación de responsabilidades y límites entre los distintos contextos.
+
+---
+
 #### 4.1.1.2. Domain Message Flows Modeling
+
+En esta etapa se construyeron los **flujos de mensajes de dominio** con el propósito de representar cómo interactúan los contextos identificados previamente para cubrir los principales escenarios del negocio en **LogicNodes**.
+
+Se utilizó la técnica de **Domain Storytelling**, que permite describir las interacciones mediante narrativas simples, mostrando cómo un evento en un contexto genera acciones o reacciones en otros. Esto facilita entender el flujo de información y la colaboración entre módulos.
+
+### Historias de dominio
+
+1. **Identidad y perfiles**
+
+   - Cuando un _usuario completa su registro_ en **Identity and Access Management**, se emite un evento que es consumido por **Profiles and Preferences Management**, donde se crea su perfil inicial.
+   - Si el usuario _modifica sus preferencias_, estos cambios se almacenan y pueden ser utilizados por **Alerts and Resolution** para personalizar notificaciones.
+
+2. **Acceso y suscripciones**
+
+   - Al confirmarse un _pago exitoso_ en **Subscriptions and Payments**, se envía un evento a **Identity and Access Management**, habilitando el acceso del usuario.
+   - En caso de _fallo en el pago_, se notifica al mismo contexto para restringir el acceso hasta regularizar la suscripción.
+
+3. **Flota y ejecución de viajes**
+
+   - Cuando se _registra un vehículo o dispositivo_ en **Fleet Management**, este recurso queda disponible para su uso en **Trip Execution**.
+   - Al _iniciar un viaje_, se genera un evento que activa el seguimiento en **Real-Time Monitoring**.
+
+4. **Monitoreo y alertas**
+
+   - **Real-Time Monitoring** procesa continuamente datos de sensores. Si detecta valores fuera de los parámetros establecidos, genera un evento.
+   - Dicho evento es consumido por **Alerts and Resolution**, donde se crea la alerta y se notifica al usuario según sus preferencias.
+
+5. **Analítica y reportes**
+
+   - Cada _evento relacionado con alertas_ alimenta a **Visualization and Analytics**, actualizando métricas e indicadores.
+   - Cuando se _genera un reporte_, este puede adaptarse en función de la configuración del usuario almacenada en **Profiles and Preferences Management**.
+
+![EventStorming – Domain Message Flows Modeling](img/Domain_Message_Flows_Modeling.png)
+
+### Resultados
+
+El modelado de flujos permitió evidenciar la interacción coordinada entre los ocho contextos de **LogicNodes**:
+
+- Identity and Access Management  
+- Profiles and Preferences Management  
+- Fleet Management  
+- Trip Execution  
+- Real-Time Monitoring  
+- Alerts and Resolution  
+- Visualization and Analytics  
+- Subscriptions and Payments  
+
+Este análisis facilita comprender cómo los eventos se propagan entre contextos, asegurando coherencia, trazabilidad y correcta comunicación entre los distintos componentes del sistema.
+
 #### 4.1.1.3. Bounded Context Canvases
+
 ### 4.1.2. Context Mapping
 
 En esta etapa se definió el **Context Map** de OmniTrack a partir de los ocho *bounded contexts* previamente identificados. El objetivo principal fue modelar las **relaciones estructurales** entre ellos utilizando patrones de *Domain-Driven Design* como *Customer/Supplier*, *Conformist* y *Anti-Corruption Layer (ACL)*.
