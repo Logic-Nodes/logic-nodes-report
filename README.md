@@ -1268,4 +1268,100 @@ _Entidades Principales_
 
 **Contract (Entity)**
 
-- **Propósito**: Formaliza el acuerdo comercial entre el merchant y OmniTra
+- **Propósito**: Formaliza el acuerdo comercial entre el merchant y OmniTrack, incluyendo el plan contratado y vigencia.
+- **Atributos principales**: `contractId`, `merchantId`, `planId`, `startDate`, `endDate`, `status` (ACTIVE, EXPIRED, TERMINATED), `terms`.
+- **Métodos principales**: creación mediante `CreateContractCommand`; `terminate(reason)`, `renew(newEndDate)`.
+
+_Commands_
+
+- `CreateMerchantCommand`
+- `UpdateMerchantCommand`
+- `SuspendMerchantCommand`
+- `AddLocationCommand`
+- `UpdateLocationCommand`
+- `CreateContractCommand`
+- `TerminateContractCommand`
+
+_Queries_
+
+- `GetMerchantByIdQuery`
+- `GetAllMerchantsQuery`
+- `GetLocationsByMerchantQuery`
+- `GetContractsByMerchantQuery`
+- `GetActiveContractQuery`
+
+_Events_
+
+- `MerchantCreatedEvent`
+- `ContractCreatedEvent`
+- `ContractTerminatedEvent`
+
+#### 4.2.9.2. Interface Layer
+**MerchantController**
+
+- `POST /api/v1/merchants` — Registra un nuevo merchant en la plataforma.
+- `GET /api/v1/merchants` — Lista todos los merchants con filtros por estado.
+- `GET /api/v1/merchants/{merchantId}` — Obtiene el perfil completo de un merchant.
+- `PUT /api/v1/merchants/{merchantId}` — Actualiza los datos de contacto de un merchant.
+- `PATCH /api/v1/merchants/{merchantId}/suspend` — Suspende la cuenta de un merchant.
+
+**LocationController**
+
+- `POST /api/v1/merchants/{merchantId}/locations` — Añade una sede al merchant.
+- `GET /api/v1/merchants/{merchantId}/locations` — Lista las sedes de un merchant.
+- `PUT /api/v1/locations/{locationId}` — Actualiza los datos de una sede.
+
+**ContractController**
+
+- `POST /api/v1/contracts` — Crea un contrato entre un merchant y OmniTrack.
+- `GET /api/v1/merchants/{merchantId}/contracts` — Lista los contratos de un merchant.
+- `PATCH /api/v1/contracts/{contractId}/terminate` — Termina un contrato activo.
+
+#### 4.2.9.3. Application Layer
+**Command Services**
+
+- **MerchantCommandService**: registra y actualiza merchants; gestiona suspensión y activación; valida unicidad de `taxId`; publica `MerchantCreatedEvent`.
+- **LocationCommandService**: añade y actualiza sedes de merchants; gestiona la sede primaria.
+- **ContractCommandService**: crea y termina contratos; valida que el plan referenciado exista; publica `ContractCreatedEvent` y `ContractTerminatedEvent`.
+
+**Query Services**
+
+- **MerchantQueryService**: recupera merchants por ID o estado; lista todos con paginación.
+- **LocationQueryService**: lista las sedes de un merchant; recupera por ID.
+- **ContractQueryService**: recupera contratos por merchant; obtiene el contrato activo vigente.
+
+#### 4.2.9.4. Infrastructure Layer
+**Repositories**
+
+- **MerchantRepository**: persistencia de merchants (`findByTaxId`, `findByStatus`, `existsByTaxId`).
+- **LocationRepository**: gestión de sedes (`findByMerchantId`, `findPrimaryByMerchantId`).
+- **ContractRepository**: almacenamiento de contratos (`findByMerchantId`, `findActiveByMerchantId`).
+
+**Persistence & Configuration**
+
+- **Base de datos**: PostgreSQL — almacena perfiles de merchants, sedes y contratos.
+- **Integración externa**: adaptador de pasarela de pagos (preparado para integración con Stripe) para procesamiento de pagos asociados a contratos.
+- **Variables de entorno**: `DB_URL`, `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`.
+
+#### PartnerHub – Component Level Diagrams
+
+##### Backend
+
+![PartnerHub – Backend](img/PartnerHub-Backend.png)
+
+##### Mobile Application
+
+![PartnerHub – Mobile Application](img/PartnerHub-MobileApp.png)
+
+##### Web Application
+
+![PartnerHub – Web Application](img/PartnerHub-WebApp.png)
+
+#### 4.2.9.6. Bounded Context Software Architecture Code Level Diagrams
+##### 4.2.9.6.1. Bounded Context Domain Layer Class Diagrams
+
+![PartnerHub – Class Diagram](img/PartnerHub-ClassDiagram.png)
+
+##### 4.2.9.6.2. Bounded Context Database Design Diagram
+
+![PartnerHub – Database Design](img/PartnerHub-ERD.png)
