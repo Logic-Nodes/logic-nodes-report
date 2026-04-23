@@ -369,7 +369,7 @@ Esta especificación permite definir de forma explícita la propiedad de los dat
 
 ![EventStorming – Bounded Context Canvases](img/Canvases_realtimeMonitoring.png)
 
-![EventStorming – Bounded Context Canvases](img/Canvases_analytics.png)
+![EventStorming – Bounded Context Canvases](img/Canvases_analytics1.png)
 
 ### 4.1.2. Context Mapping
 
