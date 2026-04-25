@@ -518,6 +518,36 @@ Then el backend responde con 409 Conflict
 And devuelve mensaje indicando conflicto de viaje activo. | E4 |
 
 ## 3.2. Impact Mapping
+
+El Impact Mapping de OmniTrack permite conectar los objetivos de negocio con las funcionalidades concretas del sistema, a través de los actores clave y los comportamientos que se busca generar en cada segmento objetivo.
+
+### Impact Map 1 — Segmento: Empresas Clientes (Gestores de Flota)
+
+**Objetivo (Goal):** Incrementar en un 30% la tasa de cumplimiento de cadena de frío de la flota, reduciendo incidentes reactivos y reportes manuales en los primeros 6 meses de uso de OmniTrack.
+
+| Actor | Impacto esperado en su comportamiento | Entregable que lo genera |
+|-------|--------------------------------------|--------------------------|
+| **Gestor de Flota** | Deja de depender de llamadas a conductores para conocer el estado de la carga | Dashboard de monitoreo en tiempo real con temperatura por vehículo (US028) |
+| **Gestor de Flota** | Reacciona proactivamente ante excursiones de temperatura antes de que dañen la carga | Sistema de alertas automáticas por incumplimiento de temperatura (US029) |
+| **Gestor de Flota** | Elimina la elaboración manual de reportes de cumplimiento consolidando datos de múltiples fuentes | Descarga de reporte PDF por viaje con gráficos de temperatura (US037) |
+| **Gestor de Flota** | Gestiona múltiples rutas activas sin perder visibilidad de ningún vehículo | Lista de viajes con filtros y estados en tiempo real (US032, US036) |
+| **Administrador Logístico** | Planifica viajes desde la plataforma en vez de hacerlo por medios externos | Módulo de creación y reprogramación de viajes (US024, US026) |
+| **Administrador Logístico** | Mantiene inventario de dispositivos IoT sincronizado con la flota | Registro, asignación y estado de dispositivos IoT por vehículo (US016, US018, US022) |
+| **Conductor** | Recibe instrucciones claras ante incidencias sin llamadas al centro de control | Notificaciones de alerta con indicación de acción correctiva (US029, US030) |
+
+### Impact Map 2 — Segmento: Clientes Finales (Receptores de Carga Sensible)
+
+**Objetivo (Goal):** Reducir en un 40% los reclamos sin sustento por productos recibidos en mal estado, dotando al cliente final de visibilidad objetiva y evidencia descargable sobre las condiciones de transporte.
+
+| Actor | Impacto esperado en su comportamiento | Entregable que lo genera |
+|-------|--------------------------------------|--------------------------|
+| **Cliente Final** | Deja de basar la validación de calidad solo en inspección visual al momento de recibir | Visualización del estado del pedido en tiempo real durante el trayecto (US033) |
+| **Cliente Final** | Anticipa problemas antes de la recepción en lugar de descubrirlos al abrir el embalaje | Alertas de incidencia de temperatura durante el transporte (US029) |
+| **Cliente Final** | Sustenta reclamos con evidencia objetiva en lugar de depender de promesas verbales | Reporte PDF automático de cumplimiento de cadena de frío descargable (US037) |
+| **Cliente Final** | Consulta el historial de condiciones de entregas anteriores para evaluar a sus proveedores | Gráficos de tiempo y temperatura por viaje accesibles desde su cuenta (US034, US035) |
+| **Cliente Final** | Recibe un código de seguimiento único para monitorear su pedido de forma autónoma | Generación automática de código de viaje para el cliente (US027) |
+| **Cliente Final** | Gestiona su suscripción y visualiza sus pagos sin depender de atención al cliente | Portal de suscripción y historial de pagos (US038, US039, US040) |
+
 ## 3.3. Product Backlog
 
 | # Orden | User Story ID | Título | Descripción | Story Points |
