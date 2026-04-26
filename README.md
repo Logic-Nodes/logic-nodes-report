@@ -85,6 +85,8 @@ En esta seccion se registra la colaboración de todo el equipo durante el desarr
 | :--- | :--- |
 | **logic-nodes-report** | [https://github.com/Logic-Nodes/logic-nodes-report](https://github.com/Logic-Nodes/logic-nodes-report) |
 
+<img src="img/commits_av1.png">
+
 # Contenido
 
 _Tabla de contenidos_
