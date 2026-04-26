@@ -2521,3 +2521,11 @@ _Events_
 ##### 4.2.9.6.2. Bounded Context Database Design Diagram
 
 ![PartnerHub – Database Design](img/PartnerHub-ERD.png)
+
+
+# Conclusiones 
+
+### AV1:
+
+La entrega del AV1 del proyecto OmniTrack ha permitido completar exitosamente los Capítulos I al IV del informe. Se ha definido el perfil de la startup y del producto, analizado en profundidad la problemática y los segmentos objetivo, realizado un completo proceso de elicitación de requerimientos (análisis competitivo, entrevistas, Needfinding y EventStorming), especificado los requerimientos mediante User Stories, Impact Mapping y Product Backlog, y desarrollado un diseño arquitectónico detallado utilizando Domain-Driven Design a nivel estratégico y táctico.
+Este avance consolida una base sólida tanto en el entendimiento del dominio del negocio como en el diseño técnico de la solución, preparando al equipo para avanzar hacia la implementación de los bounded contexts identificados. El trabajo realizado refleja un enfoque estructurado, colaborativo y alineado con las mejores prácticas de ingeniería de software e IoT.
