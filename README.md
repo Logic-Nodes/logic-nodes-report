@@ -1129,6 +1129,10 @@ El Impact Mapping de OmniTrack permite conectar los objetivos de negocio con las
 
 **Objetivo (Goal):** Incrementar en un 30% la tasa de cumplimiento de cadena de frío de la flota, reduciendo incidentes reactivos y reportes manuales en los primeros 6 meses de uso de OmniTrack.
 
+<img src="img/impact-map-1.png" alt="Impact Map 1 — Empresas Clientes (Gestores de Flota) elaborado en UXPressia">
+
+_Impact Map elaborado en UXPressia: <https://uxpressia.com/w/xqke2/i/8X3Ce>_
+
 | Actor | Impacto esperado en su comportamiento | Entregable que lo genera |
 |-------|--------------------------------------|--------------------------|
 | **Gestor de Flota** | Deja de depender de llamadas a conductores para conocer el estado de la carga | Dashboard de monitoreo en tiempo real con temperatura por vehículo (US028) |
@@ -1142,6 +1146,10 @@ El Impact Mapping de OmniTrack permite conectar los objetivos de negocio con las
 ### Impact Map 2 — Segmento: Clientes Finales (Receptores de Carga Sensible)
 
 **Objetivo (Goal):** Reducir en un 40% los reclamos sin sustento por productos recibidos en mal estado, dotando al cliente final de visibilidad objetiva y evidencia descargable sobre las condiciones de transporte.
+
+<img src="img/impact-map-2.png" alt="Impact Map 2 — Clientes Finales (Receptores de Carga Sensible) elaborado en UXPressia">
+
+_Impact Map elaborado en UXPressia: <https://uxpressia.com/w/xqke2/i/XJQSG>_
 
 | Actor | Impacto esperado en su comportamiento | Entregable que lo genera |
 |-------|--------------------------------------|--------------------------|
