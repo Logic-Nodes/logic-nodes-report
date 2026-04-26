@@ -2529,3 +2529,43 @@ _Events_
 
 La entrega del AV1 del proyecto OmniTrack ha permitido completar exitosamente los Capítulos I al IV del informe. Se ha definido el perfil de la startup y del producto, analizado en profundidad la problemática y los segmentos objetivo, realizado un completo proceso de elicitación de requerimientos (análisis competitivo, entrevistas, Needfinding y EventStorming), especificado los requerimientos mediante User Stories, Impact Mapping y Product Backlog, y desarrollado un diseño arquitectónico detallado utilizando Domain-Driven Design a nivel estratégico y táctico.
 Este avance consolida una base sólida tanto en el entendimiento del dominio del negocio como en el diseño técnico de la solución, preparando al equipo para avanzar hacia la implementación de los bounded contexts identificados. El trabajo realizado refleja un enfoque estructurado, colaborativo y alineado con las mejores prácticas de ingeniería de software e IoT.
+
+# Bibliografía
+
+Gothelf, J. (2013). Lean UX: Applying lean principles to improve user experience (Sampler, Chapter 3). O'Reilly Media. https://www.scribd.com/document/655516553/Leanux-Sampler
+
+IBM Design Thinking. (s.f.). As-is scenario map: Build a better understanding of your users’ current experience. IBM. https://www.ibm.com/design/thinking/page/toolkit/activity/as-is-scenario-map
+
+IBM Design Thinking. (s.f.). To-be scenario map: Draft a vision of your user’s future experience to show how your ideas address their current needs. IBM. https://www.ibm.com/design/thinking/page/toolkit/activity/to-be-scenario-map
+
+IBM Design Thinking. (s.f.). Empathy map: Build empathy for your users through a conversation informed by your team’s observations. IBM. https://www.ibm.com/design/thinking/page/toolkit/activity/empathy-map
+
+Mendel, J. (s.f.). Seriously, what’s your (startup’s) problem? Medium. https://medium.com/@jakemendel/seriously-whats-your-startup-s-problem-b3a884c54ab4
+
+Nielsen Norman Group. (s.f.). Empathy mapping: The first step in design thinking. https://www.nngroup.com/articles/empathy-mapping/
+
+Progressa Lean. (2021, 13 de mayo). 5W+2H - Técnica de análisis de problemas. https://www.progressalean.com/5w2h-tecnica-de-analisis-de-problemas/
+
+The Markdown Guide. (s.f.). The Markdown Guide. https://www.markdownguide.org/
+
+UXPressia. (s.f.). How to build a customer empathy map (example + template). https://uxpressia.com/blog/empathy-map-free-template
+
+UXPressia. (s.f.). User vs. buyer persona: Differences and free template. https://uxpressia.com/blog/user-persona-vs-buyer-persona-difference
+
+UXPressia. (s.f.). How to create an impact map in 7 easy steps: A complete guide + examples. https://uxpressia.com/blog/build-impact-map-4-easy-steps
+
+Fowler, M. (2006, 31 de octubre). Ubiquitous language. MartinFowler.com. https://martinfowler.com/bliki/UbiquitousLanguage.html
+
+Open Practice Library. (s.f.). Ubiquitous language: Unambiguously define the term and concepts of a business domain. https://openpracticelibrary.com/practice/ubiquitous-language/
+
+Structurizr. (s.f.). Embedding diagrams. https://docs.structurizr.com/cloud/embed
+
+Tamim, N. (s.f.). How to use PlantUML with Markdown [Gist]. GitHub. https://gist.github.com/noamtamim/f11982b28602bd7e604c233fbe9d910f
+
+Cohn, M. (s.f.). User stories articles. Mountain Goat Software. https://www.mountaingoatsoftware.com/blog/tag/user-stories
+
+DZone. (s.f.). Acceptance criteria in Scrum: Explanation, examples, and template. https://dzone.com/articles/acceptance-criteria-in-software-explanation-exampl
+
+Dittrich, J. (s.f.). A beginner’s guide to finding user needs. https://jdittrich.github.io/userNeedResearchBook/
+
+Figma. (s.f.). Figma Learn. https://help.figma.com/hc/en-us/categories/23557013073047-Courses-tutorials-projects
