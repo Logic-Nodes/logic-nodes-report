@@ -1123,15 +1123,15 @@ And devuelve mensaje indicando conflicto de viaje activo. | E4 |
 
 ## 3.2. Impact Mapping
 
-El Impact Mapping de OmniTrack permite conectar los objetivos de negocio con las funcionalidades concretas del sistema, a través de los actores clave y los comportamientos que se busca generar en cada segmento objetivo.
+El Impact Mapping de OmniTrack permite conectar los objetivos de negocio con las funcionalidades concretas del sistema, a través de los actores clave y los comportamientos que se busca generar en cada segmento objetivo. El siguiente Impact Map consolidado cubre los dos Business Goals del producto y enlaza cada uno con su persona, impactos esperados, entregables y user stories del Product Backlog.
 
-### Impact Map 1 — Segmento: Empresas Clientes (Gestores de Flota)
+<img src="img/impact-map.png" alt="Impact Map OmniTrack — Empresas Clientes y Clientes Finales elaborado en UXPressia">
+
+_Impact Map elaborado en UXPressia: <https://uxpressia.com/w/xqke2/i/FLRSa>_
+
+### Business Goal 1 — Segmento: Empresas Clientes (Gestores de Flota)
 
 **Objetivo (Goal):** Incrementar en un 30% la tasa de cumplimiento de cadena de frío de la flota, reduciendo incidentes reactivos y reportes manuales en los primeros 6 meses de uso de OmniTrack.
-
-<img src="img/impact-map-1.png" alt="Impact Map 1 — Empresas Clientes (Gestores de Flota) elaborado en UXPressia">
-
-_Impact Map elaborado en UXPressia: <https://uxpressia.com/w/xqke2/i/8X3Ce>_
 
 | Actor | Impacto esperado en su comportamiento | Entregable que lo genera |
 |-------|--------------------------------------|--------------------------|
@@ -1143,13 +1143,9 @@ _Impact Map elaborado en UXPressia: <https://uxpressia.com/w/xqke2/i/8X3Ce>_
 | **Administrador Logístico** | Mantiene inventario de dispositivos IoT sincronizado con la flota | Registro, asignación y estado de dispositivos IoT por vehículo (US016, US018, US022) |
 | **Conductor** | Recibe instrucciones claras ante incidencias sin llamadas al centro de control | Notificaciones de alerta con indicación de acción correctiva (US029, US030) |
 
-### Impact Map 2 — Segmento: Clientes Finales (Receptores de Carga Sensible)
+### Business Goal 2 — Segmento: Clientes Finales (Receptores de Carga Sensible)
 
 **Objetivo (Goal):** Reducir en un 40% los reclamos sin sustento por productos recibidos en mal estado, dotando al cliente final de visibilidad objetiva y evidencia descargable sobre las condiciones de transporte.
-
-<img src="img/impact-map-2.png" alt="Impact Map 2 — Clientes Finales (Receptores de Carga Sensible) elaborado en UXPressia">
-
-_Impact Map elaborado en UXPressia: <https://uxpressia.com/w/xqke2/i/XJQSG>_
 
 | Actor | Impacto esperado en su comportamiento | Entregable que lo genera |
 |-------|--------------------------------------|--------------------------|
