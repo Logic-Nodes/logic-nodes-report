@@ -72,10 +72,10 @@
 
 | Versión | Fecha | Autor | Descripción de modificación |
 | :--- | :--- | :--- | :--- |
-|  1.0    |              |              |                    |
-|  1.0.1  |              |               |                   |
-|  1.0.2  |              |              |                    |
-|  1.0.3    |              |              |                    |
+|  1.0    |  09/04/2026  |  Rodrigo Alcántara  |      Creación del informe     |
+|  1.0.1  |  15/04/2026  |    Rodrigo Alcántara   |  Elaboración del Capítulo I y II        |
+|  1.0.2  |  21/04/2026  | Paulo Quincho y Alejandro Oroncoy    |     Elaboración del Capítulo III           |
+|  1.0.3    |   25/04/2026    |  Adrian Valerio y Luiggi Antonio      |    Elaboración del Capítulo IV   |
 
 # Project Report Collaboration Insights
 
