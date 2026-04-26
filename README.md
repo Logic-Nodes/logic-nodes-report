@@ -1219,26 +1219,16 @@ En esta fase se realizó una sesión de EventStorming con una duración aproxima
 
 A partir de este análisis se definieron ocho contextos principales:
 
-- **Identity and Access Management**: gestión de autenticación, usuarios y permisos.
-- **Profiles and Preferences Management**: administración de perfiles y configuraciones personalizadas.
-- **Fleet Management**: control de vehículos y dispositivos asociados.
-- **Trip Execution**: planificación e inicio de viajes.
-- **Real-Time Monitoring**: supervisión continua de condiciones operativas.
-- **Alerts and Resolution**: detección y gestión de alertas.
-- **Visualization and Analytics**: generación de reportes e indicadores.
-- **Subscriptions and Payments**: manejo de suscripciones y procesamiento de pagos.
+- **FleetManagement**: gestión de vehículos, conductores y recursos operativos.
+- **TrackingOperations**: ejecución y seguimiento de operaciones en curso.
+- **RouteControl**: planificación y optimización de rutas.
+- **AlertMonitoring**: detección de condiciones anómalas en tiempo real.
+- **EventWatch**: procesamiento y distribución de eventos del sistema.
+- **ReportingAnalytics**: generación de métricas, reportes e indicadores.
+- **UserPreferences**: gestión de configuraciones y preferencias del usuario.
+- **IntegrationHub**: integración con sistemas externos (pagos, servicios de terceros, partners).
 
 ![EventStorming – Candidate Context Discovery](img/Candidate_Context_Discovery_Image.png)
-
-### Leyenda del EventStorming
-
-- 🟧 **Event**: hecho relevante ocurrido en el dominio (ej. viaje iniciado, alerta generada).
-- 🟦 **Command**: acción que provoca un cambio en el sistema (ej. registrar viaje).
-- 🟪 **Policy**: regla que define comportamientos ante ciertas condiciones.
-- 🟨 **Aggregate**: entidad central que encapsula lógica y datos.
-- 🟩 **UI**: interfaces donde el usuario interactúa con el sistema.
-- ⚪ **Actor**: roles que participan en el sistema (operador, conductor).
-- ⬛ **Sistema externo**: servicios de terceros integrados.
 
 Este enfoque permitió estructurar el dominio de **LogicNodes**, facilitando la identificación de responsabilidades y límites entre los distintos contextos.
 
@@ -1252,30 +1242,35 @@ Se utilizó la técnica de **Domain Storytelling**, que permite describir las in
 
 ### Historias de dominio
 
-1. **Identidad y perfiles**
+1. **Gestión de flota y operaciones**
 
-   - Cuando un _usuario completa su registro_ en **Identity and Access Management**, se emite un evento que es consumido por **Profiles and Preferences Management**, donde se crea su perfil inicial.
-   - Si el usuario _modifica sus preferencias_, estos cambios se almacenan y pueden ser utilizados por **Alerts and Resolution** para personalizar notificaciones.
+   - Cuando un _vehículo es registrado_ en **FleetManagement**, queda disponible para su uso en **TrackingOperations**.
+   - Al _iniciar una operación_, **TrackingOperations** genera un evento que puede ser utilizado por **RouteControl** para ajustar rutas dinámicamente.
 
-2. **Acceso y suscripciones**
+2. **Control de rutas y monitoreo**
 
-   - Al confirmarse un _pago exitoso_ en **Subscriptions and Payments**, se envía un evento a **Identity and Access Management**, habilitando el acceso del usuario.
-   - En caso de _fallo en el pago_, se notifica al mismo contexto para restringir el acceso hasta regularizar la suscripción.
+   - **RouteControl** define y actualiza rutas en función de condiciones operativas.
+   - Durante la ejecución, **TrackingOperations** envía datos que son procesados por **AlertMonitoring** para detectar desviaciones o anomalías.
 
-3. **Flota y ejecución de viajes**
+3. **Monitoreo y eventos**
 
-   - Cuando se _registra un vehículo o dispositivo_ en **Fleet Management**, este recurso queda disponible para su uso en **Trip Execution**.
-   - Al _iniciar un viaje_, se genera un evento que activa el seguimiento en **Real-Time Monitoring**.
+   - **AlertMonitoring** analiza eventos en tiempo real; si detecta una condición fuera de lo esperado, genera una alerta.
+   - Estas alertas son publicadas y gestionadas a través de **EventWatch**, que distribuye los eventos a otros contextos interesados.
 
-4. **Monitoreo y alertas**
+4. **Preferencias y notificaciones**
 
-   - **Real-Time Monitoring** procesa continuamente datos de sensores. Si detecta valores fuera de los parámetros establecidos, genera un evento.
-   - Dicho evento es consumido por **Alerts and Resolution**, donde se crea la alerta y se notifica al usuario según sus preferencias.
+   - Cuando un usuario _configura sus preferencias_ en **UserPreferences**, estas son utilizadas por **AlertMonitoring** para personalizar notificaciones.
+   - Los eventos relevantes también pueden ser filtrados o priorizados según dichas configuraciones.
 
 5. **Analítica y reportes**
 
-   - Cada _evento relacionado con alertas_ alimenta a **Visualization and Analytics**, actualizando métricas e indicadores.
-   - Cuando se _genera un reporte_, este puede adaptarse en función de la configuración del usuario almacenada en **Profiles and Preferences Management**.
+   - Los eventos generados por **EventWatch** alimentan a **ReportingAnalytics**, donde se construyen métricas e indicadores.
+   - Los reportes generados pueden adaptarse en función de configuraciones provenientes de **UserPreferences**.
+
+6. **Integraciones externas**
+
+   - **IntegrationHub** recibe eventos del sistema (por ejemplo, estado de operaciones o alertas críticas) y los comunica a servicios externos.
+   - Asimismo, eventos provenientes de sistemas externos son transformados e introducidos al dominio a través de este contexto.
 
 ![EventStorming – Domain Message Flows Modeling](img/Domain_Message_Flows_Modeling.png)
 
@@ -1283,14 +1278,14 @@ Se utilizó la técnica de **Domain Storytelling**, que permite describir las in
 
 El modelado de flujos permitió evidenciar la interacción coordinada entre los ocho contextos de **LogicNodes**:
 
-- Identity and Access Management  
-- Profiles and Preferences Management  
-- Fleet Management  
-- Trip Execution  
-- Real-Time Monitoring  
-- Alerts and Resolution  
-- Visualization and Analytics  
-- Subscriptions and Payments  
+- FleetManagement  
+- TrackingOperations  
+- RouteControl  
+- AlertMonitoring  
+- EventWatch  
+- ReportingAnalytics  
+- UserPreferences  
+- IntegrationHub  
 
 Este análisis facilita comprender cómo los eventos se propagan entre contextos, asegurando coherencia, trazabilidad y correcta comunicación entre los distintos componentes del sistema.
 
@@ -1298,42 +1293,38 @@ Este análisis facilita comprender cómo los eventos se propagan entre contextos
 
 En esta sección se desarrollaron los Bounded Context Canvas de LogicNodes para los ocho contextos definidos en el sistema. El propósito es delimitar claramente las responsabilidades de cada contexto, establecer su lenguaje ubicuo y documentar las decisiones clave del negocio, así como detallar los mecanismos de interacción mediante Queries, Commands y Events.
 
-Cada canvas incluye: descripción del contexto, clasificación estratégica (core, supporting o generic), rol dentro del dominio (draft, execution, analysis o gateway), comunicaciones de entrada y salida, lenguaje ubicuo, decisiones de negocio y colaboradores.
+Cada canvas incluye: descripción del contexto, comunicaciones de entrada y salida, lenguaje ubicuo, decisiones de negocio.
 
 Esta especificación permite definir de forma explícita la propiedad de los datos, disminuir ambigüedades y sentar las bases para los contratos de integración que serán implementados a través de APIs y sistemas de mensajería.
 
-![EventStorming – Bounded Context Canvases](img/Canvases_iam.png)
-
-![EventStorming – Bounded Context Canvases](img/Canvases_profiles.png)
-
-![EventStorming – Bounded Context Canvases](img/Canvases_subscriptions.png)
-
-![EventStorming – Bounded Context Canvases](img/Canvases_alerts.png)
-
-![EventStorming – Bounded Context Canvases](img/Canvases_fleet.png)
-
-![EventStorming – Bounded Context Canvases](img/Canvases_tripManagement.png)
-
-![EventStorming – Bounded Context Canvases](img/Canvases_realtimeMonitoring.png)
-
-![EventStorming – Bounded Context Canvases](img/Canvases_analytics1.png)
+![EventStorming – Bounded Context Canvases](img/bc.png)
 
 ### 4.1.2. Context Mapping
 
-En esta etapa se definió el **Context Map** de OmniTrack a partir de los ocho *bounded contexts* previamente identificados. El objetivo principal fue modelar las **relaciones estructurales** entre ellos utilizando patrones de *Domain-Driven Design* como *Customer/Supplier*, *Conformist* y *Anti-Corruption Layer (ACL)*.
+En esta etapa se definió el **Context Map** de OmniTrack a partir de los ocho *bounded contexts* identificados: **FleetManagement, TrackingOperations, AlertMonitoring, EventWatch, RouteControl, ReportingAnalytics, UserPreferences e IntegrationHub**. El objetivo fue modelar las **relaciones estructurales** entre estos contextos utilizando patrones de *Domain-Driven Design* como *Customer/Supplier*, *Conformist* y *Anti-Corruption Layer (ACL)*.
 
 ### Resultado
 
 El mapa construido permitió:
 
-1. **Entender las dependencias entre contextos**, identificando qué módulos exponen información y cuáles la consumen.
-2. **Diferenciar los contextos según su rol**, distinguiendo los núcleos del negocio (RouteControl, LiveTracking, EventWatch), los de soporte (AssetRegistry, UserSettings, InsightsDash) y los genéricos (AccessControl, Billing).
-3. **Clasificar los tipos de relación**:
-   - Predominio de *Customer/Supplier* en flujos operativos (Billing → IAM, Trip → Monitoring, Monitoring → Alerts).
-   - Uso de *Conformist* en el consumo de datos por Analytics.
-   - Aplicación de *Anti-Corruption Layer* en la interacción entre Analytics y Profiles.
+1. **Entender las dependencias entre contextos**, identificando claramente qué módulos actúan como proveedores de información y cuáles como consumidores dentro del flujo operativo y analítico.
 
-Este mapeo proporciona una visión global del sistema, evidenciando cómo los distintos contextos se articulan para soportar las capacidades del negocio.
+2. **Diferenciar los contextos según su rol dentro del sistema**:
+   - **Core domains**: *TrackingOperations, RouteControl, AlertMonitoring* (núcleo operativo del negocio).
+   - **Supporting domains**: *FleetManagement, EventWatch, ReportingAnalytics, UserPreferences*.
+   - **Generic domain**: *IntegrationHub* (integración con sistemas externos como pagos o partners).
+
+3. **Clasificar los tipos de relación**:
+   - Predominio de **Customer/Supplier** en los flujos principales:
+     - *FleetManagement → TrackingOperations*
+     - *TrackingOperations → AlertMonitoring*
+     - *AlertMonitoring → EventWatch*
+   - Uso de **Conformist** en:
+     - *ReportingAnalytics*, que consume información sin influir en los modelos aguas arriba.
+   - Aplicación de **ACL (Anti-Corruption Layer)** en:
+     - *IntegrationHub*, para aislar el dominio interno de dependencias externas (por ejemplo, sistemas de pago o partners).
+
+Este *context map* proporciona una visión global coherente del sistema, mostrando cómo los distintos *bounded contexts* colaboran para soportar las capacidades clave de OmniTrack, manteniendo desacoplamiento, claridad de responsabilidades y control sobre las dependencias.
 
 ![EventStorming – Context Mapping](img/Context_Mapping.png)
 
