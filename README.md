@@ -85,6 +85,8 @@ En esta seccion se registra la colaboración de todo el equipo durante el desarr
 | :--- | :--- |
 | **logic-nodes-report** | [https://github.com/Logic-Nodes/logic-nodes-report](https://github.com/Logic-Nodes/logic-nodes-report) |
 
+<img src="img/commits_av1.png">
+
 # Contenido
 
 _Tabla de contenidos_
@@ -228,8 +230,8 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 | :--- | :--- | :--- |
-| **Trabaja en equipo para proporcionar liderazgo en forma conjunta** | **Alcantara Cruz, Rodrigo Alonso** <br> **AV1:** Lideré la elaboración estructural del informe AV1, incluyendo la creación de la carátula, registro de versiones, sección de colaboración del equipo y tabla de contenido. Redacté completamente el Capítulo I y el Capítulo II del informe, realicé una entrevista para cada segmento objetivo (gestores de flota y clientes finales), elaboré el análisis de entrevistas, las conclusiones correspondientes y los anexos. Coordiné la integración de las contribuciones del equipo para entregar un documento coherente y de calidad. <br> **TB1:** [Acción] <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Quincho Gamarra, Paulo Percy** <br> **AV1:** Lideré de manera colaborativa la construcción de las user stories y el product backlog, guiando al equipo en la identificación de requerimientos, definición de prioridades y organización del trabajo. Fomenté la participación de todos los integrantes, facilitando la toma de decisiones conjunta y asegurando que el backlog final estuviera alineado con los objetivos del proyecto. <br> **TB1:** [Acción] <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Valerio Garcia, Adrian Emanuel** <br> **AV1:** Elaboré diagramas de arquitectura del sistema definiendo componentes, relaciones e interacciones clave, y participé en la identificación de bounded contexts para delimitar correctamente los dominios del negocio. Esto permitió establecer una estructura clara y modular de la solución, facilitando la comprensión del sistema, la separación de responsabilidades y la alineación entre los requerimientos funcionales y el diseño arquitectónico. <br> **TB1:** [Acción] <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Antonio Loayza, Luiggi Jeremy Jouvenel** <br> **AV1:** [Acción] <br> **TB1:** [Acción] <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Oroncoy Almeyda, Alejandro Daniel** <br> **AV1:** Elaboró el Impact Mapping del Capítulo III para ambos segmentos objetivo (gestores de flota y clientes finales), identificando actores, impactos esperados y entregables alineados a los objetivos de negocio de OmniTrack. <br> **TB1:** [Acción] <br> **AV2:** [Acción] <br> **TB2:** [Acción] | [pending...] |
-| **Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos.** | **Alcantara Cruz, Rodrigo Alonso** <br> **AV1:** Fomenté un entorno colaborativo e inclusivo durante el desarrollo del informe AV1 al coordinar las actividades del equipo, distribuir responsabilidades según las fortalezas de cada integrante y mantener una comunicación constante para resolver dudas y alinear esfuerzos. Establecí metas claras para cada sección del documento, planifiqué las tareas principales (estructuración, redacción de capítulos, entrevistas y análisis), asigné plazos realistas y realicé el seguimiento necesario para garantizar que todos los entregables se completaran a tiempo y con la calidad requerida. Como resultado, logramos entregar un informe AV1 completo, coherente y bien estructurado dentro del plazo establecido. <br> **TB1:** [Acción] <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Quincho Gamarra, Paulo Percy** <br> **AV1:** Facilité un entorno colaborativo e inclusivo dentro del equipo, promoviendo la participación activa en la elaboración de user stories y el product backlog. Coordiné la definición de metas, la planificación y priorización de tareas, y la organización del trabajo, contribuyendo al cumplimiento de los objetivos del proyecto de manera efectiva. <br> **TB1:** [Acción] <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Valerio Garcia, Adrian Emanuel** <br> **AV1:** Contribuí a la creación de un entorno colaborativo e inclusivo participando activamente en la coordinación del equipo y promoviendo una comunicación clara entre los integrantes. Apoyé en la definición de metas y en la planificación de tareas, ayudando a organizar el trabajo de manera estructurada y asegurando el cumplimiento de los objetivos establecidos dentro de los plazos definidos. <br> **TB1:** [Acción] <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Antonio Loayza, Luiggi Jeremy Jouvenel** <br> **AV1:** [Acción] <br> **TB1:** [Acción] <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Oroncoy Almeyda, Alejandro Daniel** <br> **AV1:** Contribuyó a la especificación de requerimientos del proyecto colaborando en la definición del Impact Mapping, estableciendo vínculos claros entre los objetivos del negocio, los comportamientos esperados de los usuarios y las funcionalidades del sistema OmniTrack. <br> **TB1:** [Acción] <br> **AV2:** [Acción] <br> **TB2:** [Acción] | [pending...] |
+| **Trabaja en equipo para proporcionar liderazgo en forma conjunta** | **Alcantara Cruz, Rodrigo Alonso** <br> **AV1:** Lideré la elaboración estructural del informe AV1, incluyendo la creación de la carátula, registro de versiones, sección de colaboración del equipo y tabla de contenido. Redacté completamente el Capítulo I y el Capítulo II del informe, realicé una entrevista para cada segmento objetivo (gestores de flota y clientes finales), elaboré el análisis de entrevistas, las conclusiones correspondientes y los anexos. Coordiné la integración de las contribuciones del equipo para entregar un documento coherente y de calidad. <br> **TB1:** [Acción] <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Quincho Gamarra, Paulo Percy** <br> **AV1:** Lideré de manera colaborativa la construcción de las user stories y el product backlog, guiando al equipo en la identificación de requerimientos, definición de prioridades y organización del trabajo. Fomenté la participación de todos los integrantes, facilitando la toma de decisiones conjunta y asegurando que el backlog final estuviera alineado con los objetivos del proyecto. <br> **TB1:** [Acción] <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Valerio Garcia, Adrian Emanuel** <br> **AV1:** Elaboré diagramas de arquitectura del sistema definiendo componentes, relaciones e interacciones clave, y participé en la identificación de bounded contexts para delimitar correctamente los dominios del negocio. Esto permitió establecer una estructura clara y modular de la solución, facilitando la comprensión del sistema, la separación de responsabilidades y la alineación entre los requerimientos funcionales y el diseño arquitectónico. <br> **TB1:** [Acción] <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Antonio Loayza, Luiggi Jeremy Jouvenel** <br> **AV1:** Lideré el diseño arquitectónico completo del Capítulo IV, asumiendo la responsabilidad de definir y documentar los 8 bounded contexts del sistema OmniTrack bajo los principios de Domain-Driven Design. Elaboré el Context Mapping estratégico, los diagramas C4 a nivel de componentes para cada contexto (Backend, Mobile y WebApp), los diagramas de clases del domain layer y los diagramas de base de datos (ERD) para los 8 bounded contexts. Adicionalmente, desarrollé el Container Level Diagram y el Deployment Diagram de la plataforma, consolidando una visión arquitectónica completa y coherente que sirvió como base para la implementación del equipo. <br> **TB1:** [Acción] <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Oroncoy Almeyda, Alejandro Daniel** <br> **AV1:** Elaboró el Impact Mapping del Capítulo III para ambos segmentos objetivo (gestores de flota y clientes finales), identificando actores, impactos esperados y entregables alineados a los objetivos de negocio de OmniTrack. <br> **TB1:** [Acción] <br> **AV2:** [Acción] <br> **TB2:** [Acción] | AV1: Durante el AV1, el equipo demostró liderazgo conjunto al dividir responsabilidades clave: desde la organización estructural y redacción de los Capítulos I y II (Rodrigo Alcántara), la construcción de user stories y product backlog (Paulo Quincho), el diseño de diagramas de arquitectura (Adrian Valerio), el liderazgo completo del Capítulo IV con DDD (Luiggi Loayza), hasta la elaboración del Impact Mapping (Alejandro Oroncoy). Esta colaboración liderada por distintos miembros aseguró la integración exitosa de todos los entregables. |
+| **Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos.** | **Alcantara Cruz, Rodrigo Alonso** <br> **AV1:** Fomenté un entorno colaborativo e inclusivo durante el desarrollo del informe AV1 al coordinar las actividades del equipo, distribuir responsabilidades según las fortalezas de cada integrante y mantener una comunicación constante para resolver dudas y alinear esfuerzos. Establecí metas claras para cada sección del documento, planifiqué las tareas principales (estructuración, redacción de capítulos, entrevistas y análisis), asigné plazos realistas y realicé el seguimiento necesario para garantizar que todos los entregables se completaran a tiempo y con la calidad requerida. Como resultado, logramos entregar un informe AV1 completo, coherente y bien estructurado dentro del plazo establecido. <br> **TB1:** [Acción] <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Quincho Gamarra, Paulo Percy** <br> **AV1:** Facilité un entorno colaborativo e inclusivo dentro del equipo, promoviendo la participación activa en la elaboración de user stories y el product backlog. Coordiné la definición de metas, la planificación y priorización de tareas, y la organización del trabajo, contribuyendo al cumplimiento de los objetivos del proyecto de manera efectiva. <br> **TB1:** [Acción] <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Valerio Garcia, Adrian Emanuel** <br> **AV1:** Contribuí a la creación de un entorno colaborativo e inclusivo participando activamente en la coordinación del equipo y promoviendo una comunicación clara entre los integrantes. Apoyé en la definición de metas y en la planificación de tareas, ayudando a organizar el trabajo de manera estructurada y asegurando el cumplimiento de los objetivos establecidos dentro de los plazos definidos. <br> **TB1:** [Acción] <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Antonio Loayza, Luiggi Jeremy Jouvenel** <br> **AV1:** Contribuí a la creación de un entorno colaborativo e inclusivo coordinando con el equipo la definición de la arquitectura del sistema, asegurando que las decisiones de diseño fueran comprendidas y validadas por todos los integrantes. Establecí metas claras para la entrega del Capítulo IV, planifiqué la elaboración progresiva de los artefactos arquitectónicos (diagramas C4, clases y ERD por cada bounded context) y cumplí con los objetivos dentro de los plazos establecidos, entregando 40 diagramas que documentan de forma completa e integrada la arquitectura de OmniTrack. <br> **TB1:** [Acción] <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Oroncoy Almeyda, Alejandro Daniel** <br> **AV1:** Contribuyó a la especificación de requerimientos del proyecto colaborando en la definición del Impact Mapping, estableciendo vínculos claros entre los objetivos del negocio, los comportamientos esperados de los usuarios y las funcionalidades del sistema OmniTrack. <br> **TB1:** [Acción] <br> **AV2:** [Acción] <br> **TB2:** [Acción] | AV1: A lo largo del AV1, el equipo LogicNodes creó un ambiente colaborativo e inclusivo mediante la coordinación constante, la definición clara de metas y la planificación estructurada de tareas. La distribución de responsabilidades según las fortalezas individuales y el seguimiento continuo permitieron cumplir exitosamente con todos los objetivos del avance, integrando de forma efectiva las contribuciones de cada miembro en un documento final de calidad. |
 
 # Capítulo I: Introducción
 ## 1.1. Startup Profile
@@ -262,7 +264,7 @@ El producto permite monitorear variables críticas como la ubicación exacta, el
 
 | Foto | Información General |
 | :---: | :--- |
-| <img src="pending..." width="250" alt="Foto de Perfil"> | **Nombre y Apellidos:** <br> [pending...] <br><br> **Código:** <br> [pending...] <br><br> **Carrera:** <br> Ingeniería de Software <br><br> **Información:** <br> [pending...] |
+| <img src="img/JeremyProfile.png" width="250" alt="Foto de Perfil"> | **Nombre y Apellidos:** <br> Luiggi Jeremy Antonio Loayza <br><br> **Código:** <br> U202011431 <br><br> **Carrera:** <br> Ingeniería de Software <br><br> **Información:** <br> Soy un estudiante de Ingeniería de Software me destaco por mi participación activa y proactiva en proyectos. Mi enfoque colaborativo me permite asignar tareas de manera eficiente y motivar a mis compañeros, mientras que mis habilidades técnicas en herramientas como Figma, Adobe XD, React, Angular, HTML y CSS respaldan mi capacidad para materializar ideas. Busco constantemente oportunidades de crecimiento y aprendizaje, y estoy comprometido con impulsar la innovación y el éxito en cualquier entorno de desarrollo de software. |
 
 
 | Foto | Información General |
@@ -1217,26 +1219,16 @@ En esta fase se realizó una sesión de EventStorming con una duración aproxima
 
 A partir de este análisis se definieron ocho contextos principales:
 
-- **Identity and Access Management**: gestión de autenticación, usuarios y permisos.
-- **Profiles and Preferences Management**: administración de perfiles y configuraciones personalizadas.
-- **Fleet Management**: control de vehículos y dispositivos asociados.
-- **Trip Execution**: planificación e inicio de viajes.
-- **Real-Time Monitoring**: supervisión continua de condiciones operativas.
-- **Alerts and Resolution**: detección y gestión de alertas.
-- **Visualization and Analytics**: generación de reportes e indicadores.
-- **Subscriptions and Payments**: manejo de suscripciones y procesamiento de pagos.
+- **IdentityAccess**: gestión de autenticación, autorización y control de acceso.
+- **AlertMonitoring**: detección de condiciones anómalas y gestión del ciclo de vida de alertas.
+- **TrackingOperations**: ejecución y seguimiento en tiempo real de activos y operaciones.
+- **FleetManagement**: gestión de vehículos, conductores y recursos operativos.
+- **DeviceManagement**: administración de dispositivos, sensores y su configuración.
+- **UserPreferences**: gestión de configuraciones y preferencias del usuario.
+- **ReportingAnalytics**: generación de métricas, reportes e indicadores.
+- **IntegrationHub**: integración con sistemas externos (pagos, partners, servicios de terceros).
 
 ![EventStorming – Candidate Context Discovery](img/Candidate_Context_Discovery_Image.png)
-
-### Leyenda del EventStorming
-
-- 🟧 **Event**: hecho relevante ocurrido en el dominio (ej. viaje iniciado, alerta generada).
-- 🟦 **Command**: acción que provoca un cambio en el sistema (ej. registrar viaje).
-- 🟪 **Policy**: regla que define comportamientos ante ciertas condiciones.
-- 🟨 **Aggregate**: entidad central que encapsula lógica y datos.
-- 🟩 **UI**: interfaces donde el usuario interactúa con el sistema.
-- ⚪ **Actor**: roles que participan en el sistema (operador, conductor).
-- ⬛ **Sistema externo**: servicios de terceros integrados.
 
 Este enfoque permitió estructurar el dominio de **LogicNodes**, facilitando la identificación de responsabilidades y límites entre los distintos contextos.
 
@@ -1246,34 +1238,39 @@ Este enfoque permitió estructurar el dominio de **LogicNodes**, facilitando la 
 
 En esta etapa se construyeron los **flujos de mensajes de dominio** con el propósito de representar cómo interactúan los contextos identificados previamente para cubrir los principales escenarios del negocio en **LogicNodes**.
 
-Se utilizó la técnica de **Domain Storytelling**, que permite describir las interacciones mediante narrativas simples, mostrando cómo un evento en un contexto genera acciones o reacciones en otros. Esto facilita entender el flujo de información y la colaboración entre módulos.
+Se utilizó la técnica de **Domain Storytelling**, que permite describir las interacciones mediante narrativas simples, mostrando cómo un evento en un contexto genera acciones o reacciones en otros.
 
 ### Historias de dominio
 
-1. **Identidad y perfiles**
+1. **Identidad y acceso**
 
-   - Cuando un _usuario completa su registro_ en **Identity and Access Management**, se emite un evento que es consumido por **Profiles and Preferences Management**, donde se crea su perfil inicial.
-   - Si el usuario _modifica sus preferencias_, estos cambios se almacenan y pueden ser utilizados por **Alerts and Resolution** para personalizar notificaciones.
+   - Cuando un _usuario se registra_ en **IdentityAccess**, se habilita su acceso al sistema.
+   - Eventos relacionados a autenticación pueden ser utilizados por otros contextos para validar acciones o permisos.
 
-2. **Acceso y suscripciones**
+2. **Gestión de flota y dispositivos**
 
-   - Al confirmarse un _pago exitoso_ en **Subscriptions and Payments**, se envía un evento a **Identity and Access Management**, habilitando el acceso del usuario.
-   - En caso de _fallo en el pago_, se notifica al mismo contexto para restringir el acceso hasta regularizar la suscripción.
+   - Cuando un _vehículo o dispositivo es registrado_ en **FleetManagement** o **DeviceManagement**, queda disponible para su uso en **TrackingOperations**.
+   - Cambios en el estado del dispositivo (conectividad, firmware) impactan directamente en la capacidad de monitoreo.
 
-3. **Flota y ejecución de viajes**
+3. **Ejecución y monitoreo**
 
-   - Cuando se _registra un vehículo o dispositivo_ en **Fleet Management**, este recurso queda disponible para su uso en **Trip Execution**.
-   - Al _iniciar un viaje_, se genera un evento que activa el seguimiento en **Real-Time Monitoring**.
+   - **TrackingOperations** gestiona la ejecución de operaciones y envía datos en tiempo real.
+   - Estos datos son consumidos por **AlertMonitoring** para detectar anomalías o condiciones fuera de lo esperado.
 
-4. **Monitoreo y alertas**
+4. **Alertas y notificaciones**
 
-   - **Real-Time Monitoring** procesa continuamente datos de sensores. Si detecta valores fuera de los parámetros establecidos, genera un evento.
-   - Dicho evento es consumido por **Alerts and Resolution**, donde se crea la alerta y se notifica al usuario según sus preferencias.
+   - **AlertMonitoring** genera alertas cuando se cumplen ciertas reglas.
+   - Las notificaciones se personalizan utilizando configuraciones definidas en **UserPreferences**.
 
 5. **Analítica y reportes**
 
-   - Cada _evento relacionado con alertas_ alimenta a **Visualization and Analytics**, actualizando métricas e indicadores.
-   - Cuando se _genera un reporte_, este puede adaptarse en función de la configuración del usuario almacenada en **Profiles and Preferences Management**.
+   - Los eventos generados por **TrackingOperations** y **AlertMonitoring** alimentan a **ReportingAnalytics**.
+   - Se generan reportes e indicadores para la toma de decisiones.
+
+6. **Integraciones externas**
+
+   - **IntegrationHub** actúa como punto de entrada y salida hacia sistemas externos.
+   - Recibe eventos del dominio y los transforma para terceros, así como introduce eventos externos al sistema interno.
 
 ![EventStorming – Domain Message Flows Modeling](img/Domain_Message_Flows_Modeling.png)
 
@@ -1281,57 +1278,65 @@ Se utilizó la técnica de **Domain Storytelling**, que permite describir las in
 
 El modelado de flujos permitió evidenciar la interacción coordinada entre los ocho contextos de **LogicNodes**:
 
-- Identity and Access Management  
-- Profiles and Preferences Management  
-- Fleet Management  
-- Trip Execution  
-- Real-Time Monitoring  
-- Alerts and Resolution  
-- Visualization and Analytics  
-- Subscriptions and Payments  
+- IdentityAccess  
+- AlertMonitoring  
+- TrackingOperations  
+- FleetManagement  
+- DeviceManagement  
+- UserPreferences  
+- ReportingAnalytics  
+- IntegrationHub  
 
 Este análisis facilita comprender cómo los eventos se propagan entre contextos, asegurando coherencia, trazabilidad y correcta comunicación entre los distintos componentes del sistema.
 
+---
+
 #### 4.1.1.3. Bounded Context Canvases
 
-En esta sección se desarrollaron los Bounded Context Canvas de LogicNodes para los ocho contextos definidos en el sistema. El propósito es delimitar claramente las responsabilidades de cada contexto, establecer su lenguaje ubicuo y documentar las decisiones clave del negocio, así como detallar los mecanismos de interacción mediante Queries, Commands y Events.
+En esta sección se desarrollaron los **Bounded Context Canvas** para los ocho contextos definidos en el sistema. El propósito es delimitar claramente las responsabilidades de cada contexto, establecer su lenguaje ubicuo y documentar las decisiones clave del negocio, así como detallar los mecanismos de interacción mediante *Commands*, *Events* y *Queries*.
 
-Cada canvas incluye: descripción del contexto, clasificación estratégica (core, supporting o generic), rol dentro del dominio (draft, execution, analysis o gateway), comunicaciones de entrada y salida, lenguaje ubicuo, decisiones de negocio y colaboradores.
+Cada canvas incluye:
+- Descripción del contexto  
+- Comunicaciones de entrada (*Inbound*)  
+- Comunicaciones de salida (*Outbound*)  
+- Lenguaje ubicuo  
+- Decisiones de negocio  
 
-Esta especificación permite definir de forma explícita la propiedad de los datos, disminuir ambigüedades y sentar las bases para los contratos de integración que serán implementados a través de APIs y sistemas de mensajería.
+Esta especificación permite definir de forma explícita la propiedad de los datos, reducir ambigüedades y sentar las bases para los contratos de integración que serán implementados mediante APIs y mensajería.
 
-![EventStorming – Bounded Context Canvases](img/Canvases_iam.png)
+![EventStorming – Bounded Context Canvases](img/bc.png)
 
-![EventStorming – Bounded Context Canvases](img/Canvases_profiles.png)
-
-![EventStorming – Bounded Context Canvases](img/Canvases_subscriptions.png)
-
-![EventStorming – Bounded Context Canvases](img/Canvases_alerts.png)
-
-![EventStorming – Bounded Context Canvases](img/Canvases_fleet.png)
-
-![EventStorming – Bounded Context Canvases](img/Canvases_tripManagement.png)
-
-![EventStorming – Bounded Context Canvases](img/Canvases_realtimeMonitoring.png)
-
-![EventStorming – Bounded Context Canvases](img/Canvases_analytics1.png)
+---
 
 ### 4.1.2. Context Mapping
 
-En esta etapa se definió el **Context Map** de OmniTrack a partir de los ocho *bounded contexts* previamente identificados. El objetivo principal fue modelar las **relaciones estructurales** entre ellos utilizando patrones de *Domain-Driven Design* como *Customer/Supplier*, *Conformist* y *Anti-Corruption Layer (ACL)*.
+En esta etapa se definió el **Context Map** de LogicNodes a partir de los ocho *bounded contexts* identificados:  
+**IdentityAccess, AlertMonitoring, TrackingOperations, FleetManagement, DeviceManagement, UserPreferences, ReportingAnalytics e IntegrationHub**.
+
+El objetivo fue modelar las **relaciones estructurales** entre estos contextos utilizando patrones de *Domain-Driven Design* como *Customer/Supplier*, *Conformist* y *Anti-Corruption Layer (ACL)*.
 
 ### Resultado
 
 El mapa construido permitió:
 
-1. **Entender las dependencias entre contextos**, identificando qué módulos exponen información y cuáles la consumen.
-2. **Diferenciar los contextos según su rol**, distinguiendo los núcleos del negocio (RouteControl, LiveTracking, EventWatch), los de soporte (AssetRegistry, UserSettings, InsightsDash) y los genéricos (AccessControl, Billing).
-3. **Clasificar los tipos de relación**:
-   - Predominio de *Customer/Supplier* en flujos operativos (Billing → IAM, Trip → Monitoring, Monitoring → Alerts).
-   - Uso de *Conformist* en el consumo de datos por Analytics.
-   - Aplicación de *Anti-Corruption Layer* en la interacción entre Analytics y Profiles.
+1. **Entender las dependencias entre contextos**, identificando qué módulos proveen información y cuáles la consumen.
 
-Este mapeo proporciona una visión global del sistema, evidenciando cómo los distintos contextos se articulan para soportar las capacidades del negocio.
+2. **Diferenciar los contextos según su rol dentro del sistema**:
+   - **Core domains**: *TrackingOperations, AlertMonitoring*  
+   - **Supporting domains**: *FleetManagement, DeviceManagement, ReportingAnalytics, UserPreferences*  
+   - **Generic domains**: *IdentityAccess, IntegrationHub*
+
+3. **Clasificar los tipos de relación**:
+   - Predominio de **Customer/Supplier** en flujos operativos:
+     - *FleetManagement → TrackingOperations*  
+     - *DeviceManagement → TrackingOperations*  
+     - *TrackingOperations → AlertMonitoring*
+   - Uso de **Conformist** en:
+     - *ReportingAnalytics*, que consume eventos sin influir en el modelo upstream.
+   - Aplicación de **ACL (Anti-Corruption Layer)** en:
+     - *IntegrationHub*, para aislar el dominio interno de sistemas externos.
+
+Este *context map* proporciona una visión global coherente del sistema, mostrando cómo los distintos *bounded contexts* colaboran para soportar las capacidades clave de **LogicNodes**, manteniendo desacoplamiento, claridad de responsabilidades y control sobre las dependencias.
 
 ![EventStorming – Context Mapping](img/Context_Mapping.png)
 
