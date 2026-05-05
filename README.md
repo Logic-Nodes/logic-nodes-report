@@ -2580,6 +2580,75 @@ _Events_
 
 ### 5.1.1. General Style Guidelines.
 
+El diseño visual de OmniTrack se basa en un sistema de estilos moderno, coherente y accesible que busca transmitir confianza, profesionalismo y facilidad de uso. La identidad visual prioriza la claridad, la jerarquía de información y una experiencia óptima tanto en modo claro como en modo oscuro.
+1. Paleta de Colores
+Brand Colors (Modo Claro)
+
+Primary: #2563eb (Azul principal)
+Secondary: #1e40af (Azul oscuro)
+Accent: #3b82f6 (Azul brillante)
+
+Brand Colors (Modo Oscuro)
+
+Primary: #3b82f6
+Secondary: #60a5fa
+Accent: #93c5fd
+
+Neutral Colors (Modo Claro)
+
+Text Dark: #1f2937
+Text Light: #6b7280
+Background Light: #f3f4f6
+Background White: #ffffff
+
+Neutral Colors (Modo Oscuro)
+
+Text Light: #f9fafb
+Text Muted: #9ca3af
+Background Dark: #111827
+Surface (Tarjetas): #1f2937
+
+2. Tipografía
+
+Familia tipográfica principal: Inter (Google Fonts)
+Altura de línea base: 1.6 (160%)
+Pesos utilizados: 300 (Light), 400 (Regular), 600 (SemiBold), 700 (Bold)
+
+Jerarquía tipográfica (Desktop):
+
+Heading 1 (Títulos principales): 4.5rem (72px) – Weight 700
+Heading 2 (Títulos de sección): 2.5rem (40px) – Weight 700
+Heading 3 (Títulos de tarjetas): 1.25rem – 2rem (20px – 32px) – Weight 600/700
+Subtítulos: Uppercase + letter-spacing 1px – Weight 600
+Body Text: 1rem – 1.5rem (16px – 24px) – Weight 400
+
+3. Botones
+Botón Sólido (.btn-solid)
+
+Fondo: Primary Color (#2563eb)
+Texto: Blanco (#ffffff)
+Borde: 2px solid Primary
+Radio de borde: 12px
+Hover: cambia a Secondary Color (#1e40af)
+
+Botón Outline (.btn-outline)
+
+Fondo: Transparente
+Texto: Primary Color (#2563eb)
+Borde: 2px solid Primary
+Radio de borde: 12px
+Hover: fondo Primary + texto blanco
+
+Nota: En la sección Hero de la landing page (navbar transparente), los botones outline usan texto y borde blanco, cambiando a fondo blanco y texto oscuro al hacer hover.
+4. Estilos Generales de Componentes
+
+Tarjetas (Cards): Fondo blanco (o gris oscuro en modo dark), border-radius de 12px y sombra sutil (0 4px 6px rgba(0, 0, 0, 0.05)). Efecto hover: translateY(-10px).
+Imágenes de beneficios: Border-radius 12px, object-fit: cover y sombra más pronunciada para destacar.
+Transiciones: Todas las interacciones (colores, fondos, transformaciones) utilizan una transición suave de 0.3s para una experiencia fluida y moderna.
+
+El lenguaje visual de OmniTrack combina un estilo profesional y tecnológico con una interfaz limpia, intuitiva y amigable. Se prioriza la usabilidad, el contraste adecuado para accesibilidad y una experiencia consistente en todos los dispositivos.
+
+
 ### 5.1.2. Web, Mobile and IoT Style Guidelines.
 
 ## 5.2. Information Architecture.
@@ -2589,6 +2658,22 @@ _Events_
 ### 5.2.2. Labeling Systems.
 
 ### 5.2.3. SEO Tags and Meta Tags
+
+En esta sección se documenta las SEO Tags y los Meta Tags del Landing Page y la Aplicación Web.
+
+#### Landing Page
+
+| Tag | Ejemplo (inline) |
+| :--- | :--- |
+| **Title** | `<title>OmniTrack \| Intelligent Tracking for Seamless Logistics</title>` |
+| **Description** | `<meta name="description" content="Real-time telemetry, intelligent alerts, and complete fleet visibility with OmniTrack.">` |
+| **Keywords** | `<meta name="keywords" content="fleet monitoring, cold chain, IoT telemetry, logistics alerts, geofencing, temperature monitoring, OmniTrack, LogicNodes">` |
+| **Author** | `<meta name="author" content="LogicNodes Team">` |
+| **OG Title** | `<meta property="og:title" content="OmniTrack - Intelligent tracking for seamless logistics">` |
+| **OG Description** | `<meta property="og:description" content="Monitor your fleet in real-time with intelligent alerts, IoT telemetry and advanced reports.">` |
+| **Twitter Card** | `<meta name="twitter:card" content="summary_large_image">` |
+| **Favicon** | `<link rel="icon" href="/logo.png" type="image/png">` |
+
 
 ### 5.2.4. Searching Systems.
 
