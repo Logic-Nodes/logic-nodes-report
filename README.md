@@ -2683,7 +2683,33 @@ En esta sección se documenta las SEO Tags y los Meta Tags del Landing Page y la
 
 ### 5.3.1. Landing Page Wireframe.
 
+A continuación de presenta los Wireframes del landing page:
+
+<img src="img/landing-wireframe-1.png">
+
+<img src="img/landing-wireframe-2.png">
+
+<img src="img/landing-wireframe-3.png">
+
+<img src="img/landing-wireframe-4.png">
+
+Enlace figma : https://www.figma.com/design/VHWSJ79RyPRX2PZY6EtMCR/Untitled?node-id=0-1&t=SVrnGR2jZsNYEwHu-1
+
 ### 5.3.2. Landing Page Mock-up.
+
+A continuación se presenta los Mock-up del Landing Page:
+
+<img src="img/landing-mockup-1.png">
+
+<img src="img/landing-mockup-2.png">
+
+<img src="img/landing-mockup-3.png">
+
+<img src="img/landing-mockup-4.png">
+
+<img src="img/landing-mockup-5.png">
+
+Enlace figma : https://www.figma.com/design/VHWSJ79RyPRX2PZY6EtMCR/Untitled?node-id=0-1&t=SVrnGR2jZsNYEwHu-1
 
 ## 5.4. Applications UX/UI Design.
 
