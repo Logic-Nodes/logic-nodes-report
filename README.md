@@ -2715,9 +2715,51 @@ Enlace figma : https://www.figma.com/design/VHWSJ79RyPRX2PZY6EtMCR/Untitled?node
 
 ### 5.4.1. Applications Wireframes.
 
+<img src="img/wireframe-mobile-1.png">
+
+<img src="img/wireframe-mobile-2.png">
+
+<img src="img/wireframe-mobile-3.png">
+
+<img src="img/wireframe-mobile-4.png">
+
+<img src="img/wireframe-mobile-5.png">
+
+<img src="img/wireframe-mobile-6.png">
+
+<img src="img/wireframe-mobile-7.png">
+
+<img src="img/wireframe-mobile-8.png">
+
+<img src="img/wireframe-mobile-9.png">
+
+<img src="img/wireframe-mobile-10.png">
+
 ### 5.4.2. Applications Wireflow Diagrams.
 
 ### 5.4.2. Applications Mock-ups.
+
+<img src="img/mockup-mobile-1.png">
+
+<img src="img/mockup-mobile-2.png">
+
+<img src="img/mockup-mobile-3.png">
+
+<img src="img/mockup-mobile-4.png">
+
+<img src="img/mockup-mobile-5.png">
+
+<img src="img/mockup-mobile-6.png">
+
+<img src="img/mockup-mobile-7.png">
+
+<img src="img/mockup-mobile-8.png">
+
+<img src="img/mockup-mobile-9.png">
+
+<img src="img/mockup-mobile-10.png">
+
+<img src="img/mockup-mobile-11.png">
 
 ### 5.4.3. Applications User Flow Diagrams.
 
