@@ -2663,7 +2663,7 @@ En esta sección se documenta las SEO Tags y los Meta Tags del Landing Page y la
 
 #### Landing Page
 
-| Tag | Ejemplo (inline) |
+| Tag | Meta Tags |
 | :--- | :--- |
 | **Title** | `<title>OmniTrack \| Intelligent Tracking for Seamless Logistics</title>` |
 | **Description** | `<meta name="description" content="Real-time telemetry, intelligent alerts, and complete fleet visibility with OmniTrack.">` |
@@ -2673,6 +2673,18 @@ En esta sección se documenta las SEO Tags y los Meta Tags del Landing Page y la
 | **OG Description** | `<meta property="og:description" content="Monitor your fleet in real-time with intelligent alerts, IoT telemetry and advanced reports.">` |
 | **Twitter Card** | `<meta name="twitter:card" content="summary_large_image">` |
 | **Favicon** | `<link rel="icon" href="/logo.png" type="image/png">` |
+
+#### Aplicación Web
+
+| Tag | Meta Tags |
+|---|---|
+| Title | `<title>OmniTrack</title>` |
+| Viewport | `<meta name="viewport" content="width=device-width, initial-scale=1">` |
+| Charset | `<meta charset="utf-8">` |
+| Theme Color | `<meta name="theme-color" content="#2E7D32">` |
+| Favicon (SVG) | `<link rel="icon" type="image/svg+xml" href="assets/omnitrack-favicon.svg">` |
+| Favicon (ICO) | `<link rel="icon" type="image/x-icon" href="omnitrack-favicon.ico">` |
+| Apple Touch Icon | `<link rel="apple-touch-icon" href="assets/omnitrack-favicon.svg">` |
 
 
 ### 5.2.4. Searching Systems.
