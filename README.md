@@ -2655,7 +2655,83 @@ El lenguaje visual de OmniTrack combina un estilo profesional y tecnológico con
 
 ### 5.2.1. Organization Systems.
 
+
+OmniTrack organiza su información según el tipo de contenido, la tarea del usuario y la audiencia. Se combinan tres sistemas visuales con cuatro esquemas de categorización para garantizar claridad en todos los módulos.
+
+### Sistemas visuales
+
+**Jerárquica**
+- **Dónde:** Dashboard, Fleet → Vehicles/Devices y lista de Alerts.
+- **Criterio:** la información crítica y reciente aparece primero; los metadatos de soporte quedan en segundo plano.
+- **Patrones:** niveles de encabezado consistentes (H1/H2/H3), KPI cards, badges de severidad y ordenamiento por criticidad por defecto.
+
+**Secuencial**
+- **Dónde:** vinculación dispositivo↔vehículo, creación de Trip y Onboarding.
+- **Patrones:** MatStepper (Angular) / SlideOver con pasos (React), validación por paso, un único CTA principal por pantalla y resumen de confirmación al final.
+
+**Matricial**
+- **Dónde:** Operaciones (Estado×Severidad), Analítica (Vehículo×Regla) y Reportes (Tiempo×KPI).
+- **Patrones:** tablas filtrables con chips persistentes, badges de estado e indicadores tipo heatmap.
+
+### Esquemas de categorización
+
+- **Alfabético:** Vehicles ordenados por Plate (A–Z); Devices por Serial (A–Z); Rules por nombre. La criticidad tiene prioridad cuando hay incidentes activos.
+- **Cronológico:** Alerts ordenadas por timestamp descendente; Trips agrupados en Upcoming / In Progress / Completed; Telemetría como series de tiempo.
+- **Por tópicos:** secciones de documentación y ajustes agrupadas por área (Setup, Fleet, Trips, Monitoring, Alerts, Billing).
+- **Por audiencia:** contenido, visibilidad y CTAs se adaptan según el rol activo: Fleet Manager, Dispatcher, Driver o Customer.
+
+### Matriz de referencia
+
+| Módulo | Organización visual | Categorización |
+|---|---|---|
+| Dashboard | Jerárquica | Por audiencia + por tópicos |
+| Fleet → Vehicles | Jerárquica + Matricial (Status×Severity) | Alfabético (Plate) + por estado |
+| Fleet → Devices | Jerárquica + Matricial | Alfabético (Serial) + disponibilidad |
+| Trips | Secuencial (creación) + Jerárquica (lista) | Cronológico |
+| Alerts | Jerárquica | Cronológico + severidad |
+| Monitoring / Telemetry | Matricial (Tiempo×KPI) | Cronológico |
+| Settings / Rules | Jerárquica | Por tópicos (+ A–Z en listados) |
+| Billing / Subscriptions | Secuencial + Jerárquica | Por audiencia (admin) + cronológico |
+
+---
+
 ### 5.2.2. Labeling Systems.
+
+OmniTrack aplica criterios de rotulado consistentes en ambos frontends para mantener la interfaz clara, predecible y accesible para todos los roles.
+
+### Convenciones de nombres y UI
+
+- **Entidades principales:** `Vehicle`, `Device`, `Trip`, `Alert`, `Rule`, `Customer`, `User`.
+- **Campos clave por vista de lista:**
+  - **Vehicles:** `Plate`, `Type`, `Capabilities`, `Status` (`Available` / `Busy` / `Out of Service`).
+  - **Devices:** `Serial`, `Model`, `Health`, `Attached To`, `Status`.
+  - **Alerts:** `Severity` (`Critical` / `Major` / `Minor`), `Rule`, `Vehicle`, `Timestamp`, `State` (`Open` / `Acknowledged` / `Resolved`).
+- **Acciones principales (CTA):** `Add Vehicle`, `Edit`, `Delete`, `Attach Device`, `Set Available`, `Set Out of Service`, `Acknowledge`, `Export`.
+- **Filtros comunes:** `Status`, `Severity`, `Type`, `Date Range`, `Assigned` / `Unassigned`.
+- **Mensajes de retroalimentación:** `No vehicles found`, `No alerts in the selected range`, `Vehicle created successfully`, `Failed to attach device`.
+
+### Asociaciones de etiquetas
+
+| Etiqueta / CTA | ¿Qué representa? | Asociación mental del usuario |
+|---|---|---|
+| Contact | Acceso a información de contacto (Landing Page) | "Aquí encuentro email, teléfono o redes" |
+| Attach Device | Vincula un dispositivo a un vehículo | "Asociar un Serial con una Plate" |
+| Acknowledge | Marca una alerta como atendida y registra al responsable | "Alguien tomó acción; el estado cambiará" |
+| Export | Descarga la vista filtrada actual | "Obtener un CSV o Excel de lo que veo" |
+
+### Accesibilidad
+
+- Los botones interactivos incluyen `aria-label` descriptivo (ej. `"Acknowledge alert #123"`).
+- Las imágenes decorativas usan `alt=""` y `aria-hidden="true"`.
+- Las notificaciones en la app se anuncian con `aria-live="polite"`.
+
+### Estilo de escritura
+
+- Todas las etiquetas están en inglés.
+- Title Case para títulos y CTAs; Sentence case para descripciones y mensajes.
+- Las unidades siempre son explícitas (`°C`, `km/h`).
+- Los chips de severidad combinan color y texto; nunca se usa el color como único indicador.
+
 
 ### 5.2.3. SEO Tags and Meta Tags
 
