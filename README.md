@@ -2920,6 +2920,29 @@ Enlace figma : https://www.figma.com/design/VHWSJ79RyPRX2PZY6EtMCR/Untitled?node
 
 ### 5.4.2. Applications Mock-ups.
 
+### APP WEB
+
+<img src="img/app-web-1.png">
+
+<img src="img/app-web-2.png">
+
+<img src="img/app-web-3.png">
+
+<img src="img/app-web-4.png">
+
+<img src="img/app-web-5.png">
+
+<img src="img/app-web-6.png">
+
+<img src="img/app-web-7.png">
+
+<img src="img/app-web-8.png">
+
+<img src="img/app-web-9.png">
+
+
+### MOBILE
+
 <img src="img/mockup-mobile-1.png">
 
 <img src="img/mockup-mobile-2.png">
