@@ -2944,6 +2944,23 @@ Enlace figma : https://www.figma.com/design/VHWSJ79RyPRX2PZY6EtMCR/Untitled?node
 
 ### 5.4.3. Applications User Flow Diagrams.
 
+Registro de los usuarios e Inicio de Sesión:
+
+User Goal: Como usuario, quiero registrarme en la aplicación web, para acceder a mi cuenta y funcionalidades personalizadas.
+Descripción: El usuario se encuentra en la pantalla de inicio de sesión y no tiene una cuenta registrada, debe dar click en "Sign up here". Deberá llenar los datos completos y podrá iniciar sesión en su cuenta registrada.
+
+<img src="img/user-goal-1.png">
+
+User Goal: Como usaurio, quiero cambiar mi subscripción de professional a enterprise.
+Descripción: El usuario se encuentra en la pantalla de cambio de subscripción y elije el plan acorde a sus necesidades.
+
+<img src="img/user-goal-2.png">
+
+User Goal: Como usuario, quiero ver las alertas del estado de mi pedido para estar al tanto de los posibles problemas que puedan ocurrir en el transporte.
+Descripción: El usuario se encuentra en la pantalla de alertas donde podrá visualizar el estado del producto/pedido.
+
+<img src="img/user-goal-3.png">
+
 ## 5.5. Applications Prototyping.
 
 ## 5.6. IoT Device Design.
