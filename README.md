@@ -2765,7 +2765,100 @@ En esta sección se documenta las SEO Tags y los Meta Tags del Landing Page y la
 
 ### 5.2.4. Searching Systems.
 
+OmniTrack incorpora mecanismos de búsqueda en distintos niveles para que los usuarios localicen información de forma rápida y precisa, sin depender de navegación manual entre módulos.
+
+### Patrones de búsqueda
+
+**Búsqueda global (header)**
+Disponible desde cualquier pantalla de la aplicación. Permite buscar por `Plate`, `Serial`, `Trip ID` y nombre de `Rule`, con sugerencias en tiempo real (typeahead) y acceso al historial de búsquedas recientes.
+
+**Búsqueda local (por módulo)**
+Cada módulo con tabla (Vehicles, Devices, Trips, Alerts) cuenta con una caja de búsqueda incremental sobre la lista activa. Los resultados se actualizan conforme el usuario escribe, sin necesidad de confirmar.
+
+**Filtros (facetas)**
+Disponibles de forma persistente en la parte superior de cada tabla. Los filtros aplicables según el módulo son: `Status`, `Severity`, `Type`, `Assigned / Unassigned` y `Date Range`. Una vez aplicados, se muestran como chips activos que pueden eliminarse individualmente.
+
+**Ordenamiento**
+Por defecto, las listas se ordenan por criticidad o por fecha descendente. El usuario puede cambiar el criterio a: alfabético (A–Z), `Health`, o `Last Seen`, según el módulo.
+
+### Operadores mínimos soportados
+
+| Operador | Ejemplo | Descripción |
+|---|---|---|
+| Texto exacto | `"ABC-123"` | Coincidencia estricta del término |
+| Prefijo por propiedad | `plate:ABC`, `serial:SN-` | Búsqueda acotada a un campo específico |
+| Rango de fechas | `date:2025-10-01..2025-10-09` | Filtra por intervalo temporal |
+
+### Rendimiento y experiencia de usuario
+
+- Se aplica un **debounce de ~300 ms** para evitar llamadas innecesarias al servidor mientras el usuario escribe.
+- Durante la carga de resultados se muestra un **indicador de actividad** (spinner o skeleton).
+- Si no hay resultados, se presenta un **estado vacío explicativo** con sugerencias de acción (ej. `No vehicles found. Try adjusting your filters.`).
+- La paginación incluye contador de resultados visibles vs. totales.
+- Los filtros permanecen visibles al hacer scroll (sticky).
+- Toda la funcionalidad de búsqueda es accesible por teclado, con `aria-live="polite"` para anunciar cambios en los resultados a lectores de pantalla.
+
+### Métricas de éxito
+
+- Tiempo hasta el primer resultado local: **< 500 ms**.
+- Tasa de éxito en primera búsqueda: **> 85%** (validado en sesiones de prueba moderadas).
+
+---
+
+
 ### 5.2.5. Navigation Systems.
+
+OmniTrack implementa una estructura de navegación en tres niveles que guía al usuario de forma clara tanto en la Landing Page como en la aplicación web, adaptándose al rol activo y al dispositivo utilizado.
+
+### Estructura de navegación
+
+**Global (sidebar / navbar)**
+Accesible desde cualquier pantalla autenticada. Los módulos principales son: `Dashboard`, `Fleet` (con submenú: `Vehicles`, `Devices`), `Trips`, `Alerts`, `Monitoring`, `Settings` y `Billing`. La visibilidad de cada sección depende del rol del usuario (Fleet Manager, Dispatcher, Driver, Customer).
+
+**Local (tabs por estado)**
+Dentro de cada módulo, el contenido se organiza por pestañas según estado. Por ejemplo, en `Trips`: `Upcoming / In Progress / Completed`; en `Alerts`: `Open / Acknowledged / Resolved`.
+
+**Contextual (acciones en fila y detalle)**
+Cada fila de tabla y vista de detalle expone las acciones disponibles según contexto: `Edit`, `Attach Device`, `Acknowledge`, `Export`. Las acciones irreversibles requieren confirmación explícita antes de ejecutarse.
+
+**Breadcrumbs (opcional)**
+En vistas de detalle se muestra la ruta de navegación para facilitar el retorno: ej. `Fleet / Vehicles / ABC-123`.
+
+### Comportamientos responsivos
+
+**Móvil**
+- El menú principal se colapsa en un **menú hamburguesa**.
+- Las tablas se transforman en **cards apiladas** con los CTAs principales visibles sin necesidad de scroll horizontal.
+
+**Desktop**
+- El sidebar permanece fijo y visible en todo momento.
+- Las tablas incluyen ordenamiento por columna y paginador en la parte inferior.
+
+**Landing Page**
+- Navbar fija con scroll suave entre secciones (`#features`, `#plans`, `#contact`).
+- En móvil, la navbar también colapsa en menú hamburguesa.
+
+### Flujos guiados (secuencial)
+
+Los procesos que requieren múltiples pasos (crear un `Trip`, vincular un `Device` a un vehículo) se implementan como **steppers** con validación por paso. El usuario no puede avanzar si el paso actual tiene errores, y se muestra un resumen de confirmación antes de ejecutar la acción final.
+
+### Guardas de navegación
+
+- **`canActivate`**: protege rutas que requieren autenticación o un rol específico. El usuario no autenticado es redirigido al login.
+- **`canDeactivate`**: alerta al usuario si intenta salir de un formulario con cambios sin guardar, evitando pérdida accidental de datos.
+
+### Estado de la UI
+
+- Los filtros activos y la posición de scroll se conservan al volver desde una vista de detalle.
+- Los estados vacíos incluyen siempre un CTA orientado a la siguiente acción posible (ej. `Add your first vehicle`).
+- Cualquier ruta no encontrada redirige a una página `Not Found` con enlace de retorno al Dashboard.
+
+### Criterios de aceptación
+
+- Navegar desde el `Dashboard` hasta el detalle de un vehículo en **≤ 2 clics**.
+- Completar el flujo de creación de un `Trip` en **≤ 60 segundos** (usuario con experiencia previa).
+- Ninguna ruta produce un error `404` visible; toda URL inválida muestra la pantalla `Not Found` con navegación de retorno.
+
 
 ## 5.3. Landing Page UI Design.
 
