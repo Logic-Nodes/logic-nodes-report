@@ -2617,8 +2617,31 @@ _Events_
 # Capítulo VI: Product Implementation, Validation & Deployment
 
 ## 6.1. Software Configuration Management.
+El objetivo de esta sección es asegurar que todos los miembros usen las mismas herramientas, convenciones y procesos para:
 
+- Desarrollar código
+- Hacer pruebas
+- Desplegar versiones
+- Documentar el software
+  
 ### 6.1.1. Software Development Environment Configuration.
+
+| **Categoría**               | **Herramienta / Producto** | **Propósito en el proyecto**                                                                                                                                                    | **Tipo**          | **Ruta / Enlace de referencia** |
+| --------------------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ------------------------------- |
+| **Project Management**      | **Discord**                | Plataforma de comunicación interna del equipo para coordinar reuniones, compartir pantalla y mantener interacción constante mediante chat, imágenes y videollamadas.            | SaaS / Escritorio | https://discord.com/ |
+| **Project Management**      | **WhatsApp**               | Canal de comunicación rápida entre los integrantes del equipo para asegurar coordinación continua y comunicación inmediata.                                                   | SaaS              | https://web.whatsapp.com/ |
+| **Requirements Management** | **UXPressia**              | Herramienta para modelar User Personas, Customer Journey Maps, Empathy Maps e Impact Maps, facilitando la documentación visual y colaborativa de requisitos.                   | SaaS              | https://uxpressia.com/ |
+| **Requirements Management** | **Miro**                   | Plataforma colaborativa para diagramación y mapeo de procesos que permite representar flujos, escenarios y segmentación de usuarios de forma visual e interactiva.              | SaaS              | https://miro.com/ |
+| **UX/UI Design**            | **Figma**                  | Herramienta de diseño y prototipado de interfaces que permite trabajo colaborativo en tiempo real y asegura consistencia visual en la interfaz del proyecto.                   | SaaS              | https://www.figma.com/ |
+| **Source Code Management**  | **Git & GitHub**           | Git gestiona el control de versiones y ramas, mientras GitHub permite alojar el repositorio y facilitar la colaboración en el desarrollo del código.                          | SaaS / Local      | https://github.com/ |
+| **Backend Development**     | **Spring Boot (Java)**     | Framework backend para construir APIs REST escalables, con integración a bases de datos y otros servicios del sistema.                                                        | Local             | https://spring.io/projects/spring-boot |
+| **Frontend Development**    | **Visual Studio Code**     | Editor de código utilizado para el desarrollo frontend con soporte para múltiples frameworks e integración con Git.                                                          | Local             | https://code.visualstudio.com/ |
+| **Backend Development**     | **IntelliJ IDEA**          | IDE especializado en desarrollo backend con Spring Boot, que incluye herramientas de depuración, testing y gestión de dependencias.                                           | Local             | https://www.jetbrains.com/idea/ |
+| **Mobile Development**      | **Android Studio**         | Entorno oficial para desarrollo de aplicaciones Android, permitiendo diseño, compilación, ejecución y depuración de apps nativas.                                             | Local             | https://developer.android.com/studio |
+| **Software Testing**        | **Postman**                | Herramienta para pruebas de APIs REST que permite validar endpoints, automatizar pruebas e integrarse con pipelines de CI/CD.                                                 | SaaS / Local      | https://www.postman.com/ |
+| **Software Deployment**     | **Firebase Hosting**       | Servicio de hosting para aplicaciones web con despliegue rápido, HTTPS automático y distribución mediante CDN global.                                                         | SaaS              | https://firebase.google.com/docs/hosting |
+| **Software Deployment**     | **Microsoft Azure**        | Plataforma cloud para despliegue de aplicaciones, APIs y bases de datos, con soporte de escalabilidad, monitoreo y seguridad.                                                 | SaaS              | https://azure.microsoft.com/ |
+| **Software Documentation**  | **Markdown**               | Lenguaje de marcado ligero utilizado para la documentación técnica del proyecto como README, manuales y guías de instalación.                                                 | Local             | https://www.markdownguide.org/ |
 
 ### 6.1.2. Source Code Management.
 
