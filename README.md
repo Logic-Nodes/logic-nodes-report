@@ -2967,6 +2967,18 @@ La gestión del sprint se realizó utilizando Jira para la organización de tare
 
 #### 6.2.1.5. Testing Suite Evidence for Sprint Review.
 
+Durante este sprint no se implementaron pruebas automatizadas completas debido a que el alcance principal estuvo enfocado en finalizar la primera versión funcional de la plataforma para la entrega académica.
+
+Las validaciones realizadas fueron principalmente:
+
+- Verificación manual de flujos.
+- Validación visual de componentes frontend.
+- Pruebas de integración entre frontend y backend.
+- Validación de endpoints principales.
+- Navegación y consumo de APIs.
+
+El equipo planea incorporar pruebas automatizadas unitarias e integration tests durante los siguientes sprints conforme se continúe ampliando la plataforma OmniTrack.
+
 #### 6.2.1.6. Execution Evidence for Sprint Review.
 
 #### 6.2.1.7. Services Documentation Evidence for Sprint Review.
