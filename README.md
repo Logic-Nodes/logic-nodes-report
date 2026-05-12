@@ -2915,6 +2915,33 @@ Este sprint estuvo enfocado en completar los entregables solicitados para la pri
 
 #### 6.2.1.2. Aspect Leaders and Collaborators.
 
+Para el Sprint 1 se organizaron los principales aspectos funcionales y técnicos del sistema OmniTrack considerando tanto el desarrollo frontend como backend de la solución.
+
+Los aspectos considerados fueron:
+
+1. **Landing Page**: Presentación del producto y propuesta de valor.
+2. **Frontend Application**: Implementación visual y navegación de módulos.
+3. **Backend Services**: Desarrollo de APIs y lógica backend.
+4. **DDD Architecture**: Organización de bounded contexts y arquitectura.
+5. **Documentation**: Elaboración del informe académico y diagramas.
+
+A continuación, se presenta la matriz LACX (Leadership and Collaboration Matrix):
+
+| Team Member | Landing Page | Frontend | Backend | DDD Architecture | Documentation |
+|---|---|---|---|---|---|
+| Rodrigo Alonso Alcantara Cruz | L | L | C | L | L |
+| Paulo Percy Quincho Gamarra | C | C | L | C | C |
+| Adrian Emanuel Valerio Garcia | C | C | C | C | L |
+| Luiggi Jeremy Jouvenel Antonio Loayza | C | C | C | L | L |
+| Alejandro Daniel Oroncoy Almeyda | C | C | C | C | L |
+
+### Leyenda
+
+- **L (Leader):** Responsable principal del aspecto.
+- **C (Collaborator):** Participa activamente apoyando en el desarrollo o documentación.
+
+---
+
 #### 6.2.1.3. Sprint Backlog 1.
 
 #### 6.2.1.4. Development Evidence for Sprint Review.
