@@ -2709,6 +2709,173 @@ A continuación se detallarán las ramas creadas y las convenciones que se aplic
 
 ### 6.1.3. Source Code Style Guide & Conventions.
 
+Se detallan las convenciones de codificación y nomenclatura que el equipo adoptará para los lenguajes, frameworks y herramientas utilizadas en la solución **CargaSafe**.  
+Todas las convenciones se aplicarán en idioma inglés con el objetivo de mantener consistencia, legibilidad y estandarización en el código desarrollado por todos los integrantes del equipo.
+
+---
+
+# **HTML**
+
+https://google.github.io/styleguide/htmlcssguide.html
+
+## Convenciones
+
+- Utilizar minúsculas para etiquetas, atributos y valores.
+- Mantener una estructura jerárquica clara mediante etiquetas correctamente anidadas.
+- Aplicar indentación uniforme de 2 espacios por nivel.
+- Los atributos deben escribirse entre comillas dobles (`"`).
+- Emplear nombres descriptivos y semánticos en clases e identificadores.
+- Evitar estilos en línea, priorizando archivos CSS externos o clases reutilizables.
+
+## Ejemplo
+
+```html
+<section class="device-list">
+  <h2 class="section-title">Example</h2>
+</section>
+```
+
+---
+
+# **CSS**
+
+https://google.github.io/styleguide/htmlcssguide.html
+
+## Convenciones
+
+- Utilizar nomenclatura Kebab-case para clases e identificadores (`.button-primary`, `.nav-bar`).
+- Agrupar propiedades relacionadas y mantener un orden consistente.
+- Evitar niveles excesivos de anidación en selectores.
+- Aplicar indentación de 2 espacios.
+- Finalizar cada bloque con una línea en blanco para mejorar la legibilidad.
+
+## Ejemplo
+
+```css
+.example-list {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+}
+```
+
+---
+
+# **JavaScript**
+
+https://google.github.io/styleguide/jsguide.html
+
+## Convenciones
+
+- Utilizar camelCase para variables y funciones.
+- Utilizar PascalCase para clases y componentes.
+- Declarar constantes globales en UPPER_CASE.
+- Priorizar el uso de `const` y `let` sobre `var`.
+- Evitar funciones anidadas innecesarias y callbacks excesivos.
+- Utilizar arrow functions y template literals cuando sea apropiado.
+- Mantener una sola clase o módulo principal por archivo.
+
+## Ejemplo
+
+```js
+const API_URL = 'https://api.cargasafe.com'
+
+class Example {
+  constructor(exampleId) {
+    this.exampleId = exampleId
+  }
+
+  getStatus() {
+    return `${this.exampleId} is active`
+  }
+}
+```
+
+---
+
+# **Java**
+
+https://google.github.io/styleguide/javaguide.html
+
+## Convenciones
+
+- Utilizar PascalCase para clases e interfaces.
+- Utilizar camelCase para métodos y variables.
+- Nombrar los paquetes en minúsculas y separados por puntos (`com.cargasafe.backend`).
+- Aplicar indentación de 4 espacios.
+- Limitar las líneas a un máximo de 120 caracteres.
+- Emplear nombres descriptivos evitando abreviaciones innecesarias.
+- Cada clase pública debe ubicarse en un archivo independiente con el mismo nombre de la clase.
+
+## Ejemplo
+
+```java
+package com.cargasafe.backend.services;
+
+public class ExampleService {
+    private int alertCount;
+
+    public void sendAlert(String message) {
+        System.out.println("Alert: " + message);
+    }
+}
+```
+
+---
+
+# **Dart**
+
+https://dart.dev/effective-dart/style
+
+## Convenciones
+
+- Utilizar camelCase para variables y funciones.
+- Utilizar PascalCase para clases, enums y typedefs.
+- Declarar constantes en UPPER_CASE.
+- Mantener un widget o clase principal por archivo.
+- Preferir interpolación de strings (`Hello $name`) sobre concatenación.
+- Utilizar `final` y `const` siempre que sea posible para promover la inmutabilidad.
+
+## Ejemplo
+
+```dart
+class ExampleCard extends StatelessWidget {
+  final String exampleName;
+
+  const ExampleCard({required this.exampleName, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text('Example: $exampleName');
+  }
+}
+```
+
+---
+
+# **Gherkin**
+
+https://cucumber.io/docs/gherkin/reference/
+
+## Convenciones
+
+- Utilizar mayúscula inicial en las palabras clave (`Feature`, `Scenario`, `Given`, `When`, `Then`).
+- Redactar escenarios utilizando lenguaje claro y comprensible.
+- Mantener una única característica (`Feature`) por archivo.
+- Conservar consistencia en la redacción de los pasos.
+- Incorporar etiquetas (`@tag`) para clasificar y organizar escenarios.
+
+## Ejemplo
+
+```gherkin
+Feature: User Login
+
+  Scenario: Successful login with valid credentials
+    Given the user is on the login page
+    When the user enters valid credentials
+    Then the dashboard is displayed
+```
+
 ### 6.1.4. Software Deployment Configuration.
 
 ## 6.2. Landing Page, Services & Applications Implementation.
