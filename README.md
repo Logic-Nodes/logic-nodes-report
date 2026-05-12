@@ -3006,6 +3006,19 @@ Descripción: El usuario se encuentra en la pantalla de alertas donde podrá vis
 
 ## 5.6. IoT Device Design.
 
+Para el diseño del prototipo tenemos lo siguiente:
+
+ESP32 DevKit V1: Es el microcontrolador central que gestiona las conexiones y el procesamiento de datos.
+
+DHT22: Un sensor digital para medir la temperatura y la humedad relativa.
+
+Potenciómetro: El componente azul con la perilla gris. En este circuito, funciona para simular movimientos del vehiculo, choques y frenos bruscos, donde tambien enviará señales analógicas al ESP32.
+
+LED Rojo: Un diodo emisor de luz estándar que actúa como indicador visual.
+
+
+<img src="img/iot-design.png">
+
 # Capítulo VI: Product Implementation, Validation & Deployment
 
 ## 6.1. Software Configuration Management.
