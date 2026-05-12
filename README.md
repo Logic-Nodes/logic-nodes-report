@@ -2645,6 +2645,68 @@ El objetivo de esta sección es asegurar que todos los miembros usen las mismas 
 
 ### 6.1.2. Source Code Management.
 
+El equipo utiliza Git como sistema de control de versiones distribuido y GitHub como plataforma de alojamiento remoto de repositorios. Esta configuración permite la colaboración en equipo, el seguimiento de cambios y la integración con flujos de CI/CD.
+
+**Repositorio de los productos:**
+
+- Repositorio del Landing Page: [Click aquí]()
+- Repositorio del Frontend Web Applications: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-webapp)
+- Repositorio del Backend: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-server)
+
+Se implementa el flujo de trabajo GitFlow. Este modelo organiza el desarrollo en ramas con funciones específicas para mantener la estabilidad de la rama principal **`main`** y facilitar el desarrollo paralelo de nuevas características.
+
+- **`main`**: contiene el código estable y listo para producción.
+- **`develop`**: integra las nuevas funcionalidades desarrolladas y sirve como base para las versiones futuras.
+- **`feature`**: se utiliza para desarrollar nuevas funcionalidades. Cada funcionalidad tiene su propia rama basada en **`develop`** y se fusiona nuevamente en **`develop`** al completarse.
+- **`release`**: se crea a partir de **`develop`** cuando se prepara una versión para producción. Permite realizar pruebas y ajustes menores antes del lanzamiento.
+- **`hotfix`**: se crea desde **`main`** para corregir errores críticos detectados en producción. Una vez solucionado, se fusiona en **`main`** y **`develop`**.
+
+**Convenciones de nombres de ramas:**
+
+- Feature branches: **`feature/nombre`** -> Ejemplo: **`feature/trip-management`**
+- Release branches: **`release/vX.Y.Z`** -> Ejemplo: **`release/v0.0.1`**
+- Hotfix branches: **`hotfix/vX.Y.Z`** -> Ejemplo: **`hotfix/v1.0.1`**
+
+Se adopta el esquema **Semantinc Versioning 2.0.0** para identificar las versiones de los productos digitales.
+Formato: **`MAJOR.MINOR.PATCH`**
+
+- MAJOR: cambios incompatibles.
+- MINOR: nuevas funcionalidades compatibles.
+- PATCH: correción de errores o mejoras menores.
+
+Ejemplo: **`v1.0.0`**.**`v1.1.0`**.**`v1.1.1`**
+
+Se utiliza el estándar Conventional Commits para mantener una trazabilidad clara del historial de cambios.
+Formato: **`<tipo>(<alcance>): <descripción>`**
+Ejemplos:
+
+- **`feat(alert-and-resolutions)`**: add alert and resolutions page
+- **`fix(trip-managment)`**: update trip info
+- **`docs(chap-6)`**: add software configuration management
+
+Tipos principales:
+
+- **`feat`**: nueva funcionalidad.
+- **`fix`**: corrección de error.
+- **`docs`**: documentación.
+- **`style`**: formato o estilos (sin cambio funcional).
+- **`refactor`**: reestructuración del código.
+- **`test`**: adición o mejora de pruebas.
+- **`chore`**: tareas de mantenimiento o configuración.
+
+Toda nueva funcionalidad o correción debe ser revisada mediante Pull Request (PR). Al aprobarse, la rama se fusiona (**`merge`**) en **`develop`** o **`main`** según el caso.
+
+A continuación se detallarán las ramas creadas y las convenciones que se aplicarán:
+
+| Tipo de Rama           | Nombre                                                                                                                                                                | Propósito                                                            | Rama en la que se crea | Rama en la que se fusiona         |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ---------------------- | --------------------------------- |
+| **Main branch**        | `main`                                                                                                                                                                | Código estable listo para producción                                 | —                      | —                                 |
+| **Development branch** | `develop`                                                                                                                                                             | Integrar todas las nuevas funcionalidades antes de lanzar            | Creada desde `main`    | Recibe merges de `feature/*`      |
+| **Feature branches**   | `feature/IAM`, `feature/alerts-and-resolutions`, `feature/fleet-management`, `feature/subscriptions`, `feature/visualization-and-analytics`,`feature/trip-management` | Contienen el desarrollo de nuevas funcionalidades específicas        | Desde `develop`        | Se fusionan en `develop`          |
+| **Release branches**   | `release/v1.0.0`, `release/v1.1.0`                                                                                                                                    | Preparar una versión candidata con ajustes menores y pruebas finales | Desde `develop`        | Se fusionan en `main` y `develop` |
+| **Hotfix branches**    | `hotfix/v1.0.1`, `hotfix/v1.1.1`                                                                                                                                      | Corregir errores críticos que aparecen en producción                 | Desde `main`           | Se fusionan en `main` y `develop` |
+
+
 ### 6.1.3. Source Code Style Guide & Conventions.
 
 ### 6.1.4. Software Deployment Configuration.
