@@ -2944,6 +2944,25 @@ A continuación, se presenta la matriz LACX (Leadership and Collaboration Matrix
 
 #### 6.2.1.3. Sprint Backlog 1.
 
+Durante este sprint se desarrollaron las funcionalidades principales asociadas a la Landing Page, frontend y backend del sistema OmniTrack.
+
+La gestión del sprint se realizó utilizando Jira para la organización de tareas, seguimiento de avances y coordinación de entregables.
+
+| User Story Id | User Story Title | Task Id | Task Title | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---|---|
+| US01 | Landing Page principal | T01 | Implementar Hero Section responsive | 3 | Rodrigo Alcantara | Done |
+| US02 | Navegación del sistema | T02 | Implementar navbar responsive | 2 | Rodrigo Alcantara | Done |
+| US03 | Gestión de usuarios | T03 | Implementar autenticación backend | 5 | Paulo Quincho | Done |
+| US04 | Gestión de usuarios | T04 | Implementar endpoints de login | 4 | Paulo Quincho | Done |
+| US05 | Gestión de activos IoT | T05 | Crear endpoints de dispositivos IoT | 5 | Paulo Quincho | Done |
+| US06 | Dashboard analítico | T06 | Implementar gráficos frontend | 4 | Rodrigo Alcantara | Done |
+| US07 | Gestión de rutas | T07 | Crear módulo de viajes | 4 | Paulo Quincho | Done |
+| US08 | Arquitectura DDD | T08 | Organizar bounded contexts | 3 | Luiggi Loayza | Done |
+| US09 | Documentación técnica | T09 | Elaborar diagramas arquitectónicos | 3 | Adrian Valerio | Done |
+| US10 | Documentación académica | T10 | Redacción y consolidación del informe | 4 | Alejandro Oroncoy | Done |
+
+---
+
 #### 6.2.1.4. Development Evidence for Sprint Review.
 
 #### 6.2.1.5. Testing Suite Evidence for Sprint Review.
