@@ -2883,6 +2883,35 @@ Feature: User Login
 ### 6.2.1. Sprint 1
 
 #### 6.2.1.1. Sprint Planning 1.
+En esta sección se describen los principales acuerdos y objetivos definidos durante el Sprint Planning correspondiente al Sprint 1 del proyecto OmniTrack desarrollado por la startup LogicNodes.
+
+Este sprint estuvo enfocado en completar los entregables solicitados para la primera entrega académica del proyecto, incluyendo el desarrollo de la Landing Page, la implementación inicial de la aplicación frontend y el backend funcional de la plataforma. Asimismo, se consolidó la arquitectura basada en Domain-Driven Design (DDD) y la organización de bounded contexts identificados durante las sesiones de EventStorming.
+
+| Sprint # | |
+|---|---|
+| Sprint 1 | |
+
+### Sprint Planning Background
+
+| Campo | Descripción |
+|---|---|
+| Date | 2026-05-08 |
+| Time | 08:30 PM |
+| Location | Reunión virtual mediante Discord |
+| Prepared By | Rodrigo Alonso Alcantara Cruz |
+| Attendees (to planning meeting) | Rodrigo Alonso Alcantara Cruz / Paulo Percy Quincho Gamarra / Adrian Emanuel Valerio Garcia / Luiggi Jeremy Jouvenel Antonio Loayza / Alejandro Daniel Oroncoy Almeyda |
+| Sprint 1 Review Summary | Al tratarse del primer sprint del proyecto OmniTrack, no existió un sprint previo para revisión. Durante esta etapa se logró completar la Landing Page, el frontend principal de la plataforma y la implementación inicial del backend necesario para soportar las funcionalidades core del sistema. |
+| Sprint 1 Retrospective Summary | El equipo logró organizar correctamente la arquitectura inicial del sistema utilizando principios de Domain-Driven Design y bounded contexts. Rodrigo Alcantara lideró la coordinación general del proyecto y Paulo Quincho concentró gran parte del desarrollo backend. Los demás integrantes apoyaron principalmente en documentación, modelado y organización del informe académico. |
+
+### Sprint Goal & User Stories
+
+| Campo | Descripción |
+|---|---|
+| Sprint 1 Goal | Nuestro enfoque estuvo en desarrollar una primera versión funcional de OmniTrack mediante la implementación de una Landing Page moderna, una aplicación frontend navegable y un backend inicial capaz de soportar las funcionalidades principales del sistema relacionadas al monitoreo logístico IoT.<br><br>Creemos que esto permite validar técnicamente la arquitectura propuesta, demostrar el flujo completo de la plataforma y establecer una base sólida para futuras integraciones con dispositivos IoT y servicios analíticos.<br><br>Esto se confirmó cuando el equipo logró desplegar correctamente la Landing Page, el frontend y el backend funcionales para la entrega académica, permitiendo navegar por los módulos principales del sistema y consumir datos desde servicios backend implementados por el equipo. |
+| Sprint 1 Velocity | 48 Story Points |
+| Sum of Story Points | 45 Story Points |
+
+---
 
 #### 6.2.1.2. Aspect Leaders and Collaborators.
 
