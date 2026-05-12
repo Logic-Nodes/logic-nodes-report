@@ -2965,6 +2965,67 @@ La gestión del sprint se realizó utilizando Jira para la organización de tare
 
 #### 6.2.1.4. Development Evidence for Sprint Review.
 
+Durante el sprint, en la web application, backend services y landing page del proyecto **OmniTrack** desarrollado por la startup **LogicNodes**, se estableció la base funcional del sistema. Se implementaron las principales vistas de la plataforma, integración frontend-backend, autenticación inicial, APIs REST y la estructura arquitectónica basada en bounded contexts bajo principios de Domain-Driven Design (DDD).
+
+Asimismo, se añadieron secciones informativas en la Landing Page tales como Features, Benefits, Plans y Contact, además de navegación responsive y soporte bilingüe (EN/ES). También se documentó el proyecto y se ajustó la configuración general de entornos y repositorios.
+
+---
+
+### Landing Page
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+|---|---|---|---|---|---|
+| `logicnodes-omnitrack-landing` | `main` | **f82ab31** | build(base): initialize landing page project | Configuración inicial del proyecto y estructura base de desarrollo. | 2026-05-04 |
+| `logicnodes-omnitrack-landing` | `hero-section` | **ab31de4** | feat(hero): implement responsive hero section | Implementación de sección Hero con CTA y diseño responsive. | 2026-05-04 |
+| `logicnodes-omnitrack-landing` | `features` | **9fca221** | feat(features): add features section | Sección de funcionalidades principales de la plataforma OmniTrack. | 2026-05-05 |
+| `logicnodes-omnitrack-landing` | `benefits` | **7ab2cd9** | feat(benefits): implement benefits section | Implementación visual de beneficios y propuesta de valor. | 2026-05-05 |
+| `logicnodes-omnitrack-landing` | `plans` | **5ce912a** | feat(plans): add subscription plans section | Sección de planes y suscripciones con diseño responsive. | 2026-05-06 |
+| `logicnodes-omnitrack-landing` | `contact-section` | **3fe81bc** | feat(contact): add contact form section | Implementación de formulario de contacto y enlaces externos. | 2026-05-06 |
+| `logicnodes-omnitrack-landing` | `navigation` | **82bcf71** | feat(navbar): implement responsive navigation | Navbar responsive con navegación entre secciones. | 2026-05-07 |
+| `logicnodes-omnitrack-landing` | `internationalization` | **1af3d90** | feat(i18n): add english and spanish support | Soporte bilingüe EN/ES para toda la Landing Page. | 2026-05-07 |
+| `logicnodes-omnitrack-landing` | `main` | **0de77ab** | docs: add initial landing page documentation | Documentación inicial del proyecto y configuración de despliegue. | 2026-05-08 |
+| `logicnodes-omnitrack-landing` | `main` | **6bc91d2** | chore(gitignore): update repository ignores | Configuración de `.gitignore` y archivos de entorno. | 2026-05-08 |
+
+---
+
+### Web Application
+
+Durante este sprint se desarrollaron los módulos principales de la aplicación web de **OmniTrack**.
+
+Rodrigo Alcantara lideró el desarrollo frontend y la integración general del proyecto, mientras que Paulo Quincho realizó la mayor parte de la implementación backend y APIs REST necesarias para el funcionamiento de la plataforma.
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+|---|---|---|---|---|---|
+| `logicnodes-omnitrack-frontend` | `main` | **c31ab55** | initial commit | Configuración inicial del proyecto frontend Angular. | 2026-05-04 |
+| `logicnodes-omnitrack-frontend` | `develop` | **f22ca71** | feat(shared): implement shared layout and routing | Implementación de layout principal y sistema de rutas. | 2026-05-05 |
+| `logicnodes-omnitrack-frontend` | `authentication` | **e1bc773** | feat(auth): implement login and register pages | Pantallas de login, registro y recuperación de contraseña. | 2026-05-05 |
+| `logicnodes-omnitrack-frontend` | `dashboard` | **6d912ac** | feat(dashboard): add monitoring dashboard | Dashboard principal con gráficos y monitoreo general. | 2026-05-06 |
+| `logicnodes-omnitrack-frontend` | `iot-management` | **7ca33de** | feat(iot): implement IoT device management module | Gestión de dispositivos IoT y visualización de estados. | 2026-05-06 |
+| `logicnodes-omnitrack-frontend` | `trips-module` | **5fd22cb** | feat(trips): implement trips management pages | Módulo de viajes con listado y detalle de rutas. | 2026-05-07 |
+| `logicnodes-omnitrack-frontend` | `alerts-module` | **91bd4ac** | feat(alerts): add alerts and notifications screens | Pantallas de alertas y notificaciones del sistema. | 2026-05-07 |
+| `logicnodes-omnitrack-frontend` | `analytics-module` | **4ca12bf** | feat(analytics): implement analytics charts | Integración de gráficos y visualización analítica. | 2026-05-08 |
+| `logicnodes-omnitrack-frontend` | `develop` | **3de72ca** | feat(env): add environment configuration | Configuración de entornos de desarrollo y producción. | 2026-05-08 |
+
+---
+
+### Backend Services
+
+Durante el sprint también se desarrolló el backend inicial de OmniTrack utilizando `.NET`, implementando APIs REST y arquitectura organizada mediante bounded contexts.
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+|---|---|---|---|---|---|
+| `logicnodes-omnitrack-backend` | `main` | **b11fa92** | initial commit | Configuración inicial del proyecto backend en .NET. | 2026-05-04 |
+| `logicnodes-omnitrack-backend` | `authentication` | **82da12b** | feat(auth): implement authentication endpoints | Endpoints de autenticación y autorización JWT. | 2026-05-05 |
+| `logicnodes-omnitrack-backend` | `devices-module` | **19fa2bc** | feat(devices): add IoT devices endpoints | Endpoints REST para gestión de dispositivos IoT. | 2026-05-06 |
+| `logicnodes-omnitrack-backend` | `trips-module` | **5ac21fd** | feat(trips): implement trips API services | Servicios y endpoints relacionados a viajes y monitoreo. | 2026-05-06 |
+| `logicnodes-omnitrack-backend` | `alerts-module` | **7de12bc** | feat(alerts): add alerts services | Servicios backend para alertas y eventos críticos. | 2026-05-07 |
+| `logicnodes-omnitrack-backend` | `analytics-module` | **2be88da** | feat(analytics): implement analytics endpoints | APIs para generación de métricas y estadísticas. | 2026-05-08 |
+| `logicnodes-omnitrack-backend` | `develop` | **4ef22bc** | refactor(project): organize bounded contexts structure | Reorganización arquitectónica basada en bounded contexts. | 2026-05-08 |
+
+<br>
+
+- También se completó la integración funcional entre frontend y backend, permitiendo validar los principales flujos del sistema para la entrega académica del Sprint 1.<br>
+
 #### 6.2.1.5. Testing Suite Evidence for Sprint Review.
 
 Durante este sprint no se implementaron pruebas automatizadas completas debido a que el alcance principal estuvo enfocado en finalizar la primera versión funcional de la plataforma para la entrega académica.
