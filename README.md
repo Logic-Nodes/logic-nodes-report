@@ -2916,6 +2916,24 @@ Enlace figma : https://www.figma.com/design/VHWSJ79RyPRX2PZY6EtMCR/Untitled?node
 
 <img src="img/wireframe-mobile-10.png">
 
+<img src="img/app-web-wireframe-1.png">
+
+<img src="img/app-web-wireframe-2.png">
+
+<img src="img/app-web-wireframe-3.png">
+
+<img src="img/app-web-wireframe-4.png">
+
+<img src="img/app-web-wireframe-5.png">
+
+<img src="img/app-web-wireframe-6.png">
+
+<img src="img/app-web-wireframe-7.png">
+
+<img src="img/app-web-wireframe-8.png">
+
+<img src="img/app-web-wireframe-9.png">
+
 ### 5.4.2. Applications Wireflow Diagrams.
 
 ### 5.4.2. Applications Mock-ups.
