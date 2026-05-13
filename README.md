@@ -3052,6 +3052,15 @@ El equipo planea incorporar pruebas automatizadas unitarias e integration tests 
 
 ### 6.3.1. Diseño de Entrevistas.
 
+¿Cuál es su nombre?
+
+¿Recibió sus credenciales por correo para la prueba de la primera versión de la aplicación?
+
+¿Cuáles son sus opiniones?
+
+¿Tuvo dificultades con el diseño de la aplicación web?
+
+
 ### 6.3.2. Registro de Entrevistas.
 
 Segmento Empresas:
