@@ -2580,39 +2580,465 @@ _Events_
 
 ### 5.1.1. General Style Guidelines.
 
+El diseño visual de OmniTrack se basa en un sistema de estilos moderno, coherente y accesible que busca transmitir confianza, profesionalismo y facilidad de uso. La identidad visual prioriza la claridad, la jerarquía de información y una experiencia óptima tanto en modo claro como en modo oscuro.
+1. Paleta de Colores
+Brand Colors (Modo Claro)
+
+Primary: #2563eb (Azul principal)
+Secondary: #1e40af (Azul oscuro)
+Accent: #3b82f6 (Azul brillante)
+
+Brand Colors (Modo Oscuro)
+
+Primary: #3b82f6
+Secondary: #60a5fa
+Accent: #93c5fd
+
+Neutral Colors (Modo Claro)
+
+Text Dark: #1f2937
+Text Light: #6b7280
+Background Light: #f3f4f6
+Background White: #ffffff
+
+Neutral Colors (Modo Oscuro)
+
+Text Light: #f9fafb
+Text Muted: #9ca3af
+Background Dark: #111827
+Surface (Tarjetas): #1f2937
+
+2. Tipografía
+
+Familia tipográfica principal: Inter (Google Fonts)
+Altura de línea base: 1.6 (160%)
+Pesos utilizados: 300 (Light), 400 (Regular), 600 (SemiBold), 700 (Bold)
+
+Jerarquía tipográfica (Desktop):
+
+Heading 1 (Títulos principales): 4.5rem (72px) – Weight 700
+Heading 2 (Títulos de sección): 2.5rem (40px) – Weight 700
+Heading 3 (Títulos de tarjetas): 1.25rem – 2rem (20px – 32px) – Weight 600/700
+Subtítulos: Uppercase + letter-spacing 1px – Weight 600
+Body Text: 1rem – 1.5rem (16px – 24px) – Weight 400
+
+3. Botones
+Botón Sólido (.btn-solid)
+
+Fondo: Primary Color (#2563eb)
+Texto: Blanco (#ffffff)
+Borde: 2px solid Primary
+Radio de borde: 12px
+Hover: cambia a Secondary Color (#1e40af)
+
+Botón Outline (.btn-outline)
+
+Fondo: Transparente
+Texto: Primary Color (#2563eb)
+Borde: 2px solid Primary
+Radio de borde: 12px
+Hover: fondo Primary + texto blanco
+
+<img src="img/paleta-de-colores.png">
+
+
+4. Estilos Generales de Componentes
+
+Tarjetas (Cards): Fondo blanco (o gris oscuro en modo dark), border-radius de 12px y sombra sutil (0 4px 6px rgba(0, 0, 0, 0.05)). Efecto hover: translateY(-10px).
+Imágenes de beneficios: Border-radius 12px, object-fit: cover y sombra más pronunciada para destacar.
+Transiciones: Todas las interacciones (colores, fondos, transformaciones) utilizan una transición suave de 0.3s para una experiencia fluida y moderna.
+
+El lenguaje visual de OmniTrack combina un estilo profesional y tecnológico con una interfaz limpia, intuitiva y amigable. Se prioriza la usabilidad, el contraste adecuado para accesibilidad y una experiencia consistente en todos los dispositivos.
+
+
 ### 5.1.2. Web, Mobile and IoT Style Guidelines.
 
 ## 5.2. Information Architecture.
 
 ### 5.2.1. Organization Systems.
 
+
+OmniTrack organiza su información según el tipo de contenido, la tarea del usuario y la audiencia. Se combinan tres sistemas visuales con cuatro esquemas de categorización para garantizar claridad en todos los módulos.
+
+### Sistemas visuales
+
+**Jerárquica**
+- **Dónde:** Dashboard, Fleet → Vehicles/Devices y lista de Alerts.
+- **Criterio:** la información crítica y reciente aparece primero; los metadatos de soporte quedan en segundo plano.
+- **Patrones:** niveles de encabezado consistentes (H1/H2/H3), KPI cards, badges de severidad y ordenamiento por criticidad por defecto.
+
+**Secuencial**
+- **Dónde:** vinculación dispositivo↔vehículo, creación de Trip y Onboarding.
+- **Patrones:** MatStepper (Angular) / SlideOver con pasos (React), validación por paso, un único CTA principal por pantalla y resumen de confirmación al final.
+
+**Matricial**
+- **Dónde:** Operaciones (Estado×Severidad), Analítica (Vehículo×Regla) y Reportes (Tiempo×KPI).
+- **Patrones:** tablas filtrables con chips persistentes, badges de estado e indicadores tipo heatmap.
+
+### Esquemas de categorización
+
+- **Alfabético:** Vehicles ordenados por Plate (A–Z); Devices por Serial (A–Z); Rules por nombre. La criticidad tiene prioridad cuando hay incidentes activos.
+- **Cronológico:** Alerts ordenadas por timestamp descendente; Trips agrupados en Upcoming / In Progress / Completed; Telemetría como series de tiempo.
+- **Por tópicos:** secciones de documentación y ajustes agrupadas por área (Setup, Fleet, Trips, Monitoring, Alerts, Billing).
+- **Por audiencia:** contenido, visibilidad y CTAs se adaptan según el rol activo: Fleet Manager, Dispatcher, Driver o Customer.
+
+### Matriz de referencia
+
+| Módulo | Organización visual | Categorización |
+|---|---|---|
+| Dashboard | Jerárquica | Por audiencia + por tópicos |
+| Fleet → Vehicles | Jerárquica + Matricial (Status×Severity) | Alfabético (Plate) + por estado |
+| Fleet → Devices | Jerárquica + Matricial | Alfabético (Serial) + disponibilidad |
+| Trips | Secuencial (creación) + Jerárquica (lista) | Cronológico |
+| Alerts | Jerárquica | Cronológico + severidad |
+| Monitoring / Telemetry | Matricial (Tiempo×KPI) | Cronológico |
+| Settings / Rules | Jerárquica | Por tópicos (+ A–Z en listados) |
+| Billing / Subscriptions | Secuencial + Jerárquica | Por audiencia (admin) + cronológico |
+
+---
+
 ### 5.2.2. Labeling Systems.
+
+OmniTrack aplica criterios de rotulado consistentes en ambos frontends para mantener la interfaz clara, predecible y accesible para todos los roles.
+
+### Convenciones de nombres y UI
+
+- **Entidades principales:** `Vehicle`, `Device`, `Trip`, `Alert`, `Rule`, `Customer`, `User`.
+- **Campos clave por vista de lista:**
+  - **Vehicles:** `Plate`, `Type`, `Capabilities`, `Status` (`Available` / `Busy` / `Out of Service`).
+  - **Devices:** `Serial`, `Model`, `Health`, `Attached To`, `Status`.
+  - **Alerts:** `Severity` (`Critical` / `Major` / `Minor`), `Rule`, `Vehicle`, `Timestamp`, `State` (`Open` / `Acknowledged` / `Resolved`).
+- **Acciones principales (CTA):** `Add Vehicle`, `Edit`, `Delete`, `Attach Device`, `Set Available`, `Set Out of Service`, `Acknowledge`, `Export`.
+- **Filtros comunes:** `Status`, `Severity`, `Type`, `Date Range`, `Assigned` / `Unassigned`.
+- **Mensajes de retroalimentación:** `No vehicles found`, `No alerts in the selected range`, `Vehicle created successfully`, `Failed to attach device`.
+
+### Asociaciones de etiquetas
+
+| Etiqueta / CTA | ¿Qué representa? | Asociación mental del usuario |
+|---|---|---|
+| Contact | Acceso a información de contacto (Landing Page) | "Aquí encuentro email, teléfono o redes" |
+| Attach Device | Vincula un dispositivo a un vehículo | "Asociar un Serial con una Plate" |
+| Acknowledge | Marca una alerta como atendida y registra al responsable | "Alguien tomó acción; el estado cambiará" |
+| Export | Descarga la vista filtrada actual | "Obtener un CSV o Excel de lo que veo" |
+
+### Accesibilidad
+
+- Los botones interactivos incluyen `aria-label` descriptivo (ej. `"Acknowledge alert #123"`).
+- Las imágenes decorativas usan `alt=""` y `aria-hidden="true"`.
+- Las notificaciones en la app se anuncian con `aria-live="polite"`.
+
+### Estilo de escritura
+
+- Todas las etiquetas están en inglés.
+- Title Case para títulos y CTAs; Sentence case para descripciones y mensajes.
+- Las unidades siempre son explícitas (`°C`, `km/h`).
+- Los chips de severidad combinan color y texto; nunca se usa el color como único indicador.
+
 
 ### 5.2.3. SEO Tags and Meta Tags
 
+En esta sección se documenta las SEO Tags y los Meta Tags del Landing Page y la Aplicación Web.
+
+#### Landing Page
+
+| Tag | Meta Tags |
+| :--- | :--- |
+| **Title** | `<title>OmniTrack \| Intelligent Tracking for Seamless Logistics</title>` |
+| **Description** | `<meta name="description" content="Real-time telemetry, intelligent alerts, and complete fleet visibility with OmniTrack.">` |
+| **Keywords** | `<meta name="keywords" content="fleet monitoring, cold chain, IoT telemetry, logistics alerts, geofencing, temperature monitoring, OmniTrack, LogicNodes">` |
+| **Author** | `<meta name="author" content="LogicNodes Team">` |
+| **OG Title** | `<meta property="og:title" content="OmniTrack - Intelligent tracking for seamless logistics">` |
+| **OG Description** | `<meta property="og:description" content="Monitor your fleet in real-time with intelligent alerts, IoT telemetry and advanced reports.">` |
+| **Twitter Card** | `<meta name="twitter:card" content="summary_large_image">` |
+| **Favicon** | `<link rel="icon" href="/logo.png" type="image/png">` |
+
+#### Aplicación Web
+
+| Tag | Meta Tags |
+|---|---|
+| Title | `<title>OmniTrack</title>` |
+| Viewport | `<meta name="viewport" content="width=device-width, initial-scale=1">` |
+| Charset | `<meta charset="utf-8">` |
+| Theme Color | `<meta name="theme-color" content="#2E7D32">` |
+| Favicon (SVG) | `<link rel="icon" type="image/svg+xml" href="assets/omnitrack-favicon.svg">` |
+| Favicon (ICO) | `<link rel="icon" type="image/x-icon" href="omnitrack-favicon.ico">` |
+| Apple Touch Icon | `<link rel="apple-touch-icon" href="assets/omnitrack-favicon.svg">` |
+
+
 ### 5.2.4. Searching Systems.
 
+OmniTrack incorpora mecanismos de búsqueda en distintos niveles para que los usuarios localicen información de forma rápida y precisa, sin depender de navegación manual entre módulos.
+
+### Patrones de búsqueda
+
+**Búsqueda global (header)**
+Disponible desde cualquier pantalla de la aplicación. Permite buscar por `Plate`, `Serial`, `Trip ID` y nombre de `Rule`, con sugerencias en tiempo real (typeahead) y acceso al historial de búsquedas recientes.
+
+**Búsqueda local (por módulo)**
+Cada módulo con tabla (Vehicles, Devices, Trips, Alerts) cuenta con una caja de búsqueda incremental sobre la lista activa. Los resultados se actualizan conforme el usuario escribe, sin necesidad de confirmar.
+
+**Filtros (facetas)**
+Disponibles de forma persistente en la parte superior de cada tabla. Los filtros aplicables según el módulo son: `Status`, `Severity`, `Type`, `Assigned / Unassigned` y `Date Range`. Una vez aplicados, se muestran como chips activos que pueden eliminarse individualmente.
+
+**Ordenamiento**
+Por defecto, las listas se ordenan por criticidad o por fecha descendente. El usuario puede cambiar el criterio a: alfabético (A–Z), `Health`, o `Last Seen`, según el módulo.
+
+### Operadores mínimos soportados
+
+| Operador | Ejemplo | Descripción |
+|---|---|---|
+| Texto exacto | `"ABC-123"` | Coincidencia estricta del término |
+| Prefijo por propiedad | `plate:ABC`, `serial:SN-` | Búsqueda acotada a un campo específico |
+| Rango de fechas | `date:2025-10-01..2025-10-09` | Filtra por intervalo temporal |
+
+### Rendimiento y experiencia de usuario
+
+- Se aplica un **debounce de ~300 ms** para evitar llamadas innecesarias al servidor mientras el usuario escribe.
+- Durante la carga de resultados se muestra un **indicador de actividad** (spinner o skeleton).
+- Si no hay resultados, se presenta un **estado vacío explicativo** con sugerencias de acción (ej. `No vehicles found. Try adjusting your filters.`).
+- La paginación incluye contador de resultados visibles vs. totales.
+- Los filtros permanecen visibles al hacer scroll (sticky).
+- Toda la funcionalidad de búsqueda es accesible por teclado, con `aria-live="polite"` para anunciar cambios en los resultados a lectores de pantalla.
+
+### Métricas de éxito
+
+- Tiempo hasta el primer resultado local: **< 500 ms**.
+- Tasa de éxito en primera búsqueda: **> 85%** (validado en sesiones de prueba moderadas).
+
+---
+
+
 ### 5.2.5. Navigation Systems.
+
+OmniTrack implementa una estructura de navegación en tres niveles que guía al usuario de forma clara tanto en la Landing Page como en la aplicación web, adaptándose al rol activo y al dispositivo utilizado.
+
+### Estructura de navegación
+
+**Global (sidebar / navbar)**
+Accesible desde cualquier pantalla autenticada. Los módulos principales son: `Dashboard`, `Fleet` (con submenú: `Vehicles`, `Devices`), `Trips`, `Alerts`, `Monitoring`, `Settings` y `Billing`. La visibilidad de cada sección depende del rol del usuario (Fleet Manager, Dispatcher, Driver, Customer).
+
+**Local (tabs por estado)**
+Dentro de cada módulo, el contenido se organiza por pestañas según estado. Por ejemplo, en `Trips`: `Upcoming / In Progress / Completed`; en `Alerts`: `Open / Acknowledged / Resolved`.
+
+**Contextual (acciones en fila y detalle)**
+Cada fila de tabla y vista de detalle expone las acciones disponibles según contexto: `Edit`, `Attach Device`, `Acknowledge`, `Export`. Las acciones irreversibles requieren confirmación explícita antes de ejecutarse.
+
+**Breadcrumbs (opcional)**
+En vistas de detalle se muestra la ruta de navegación para facilitar el retorno: ej. `Fleet / Vehicles / ABC-123`.
+
+### Comportamientos responsivos
+
+**Móvil**
+- El menú principal se colapsa en un **menú hamburguesa**.
+- Las tablas se transforman en **cards apiladas** con los CTAs principales visibles sin necesidad de scroll horizontal.
+
+**Desktop**
+- El sidebar permanece fijo y visible en todo momento.
+- Las tablas incluyen ordenamiento por columna y paginador en la parte inferior.
+
+**Landing Page**
+- Navbar fija con scroll suave entre secciones (`#features`, `#plans`, `#contact`).
+- En móvil, la navbar también colapsa en menú hamburguesa.
+
+### Flujos guiados (secuencial)
+
+Los procesos que requieren múltiples pasos (crear un `Trip`, vincular un `Device` a un vehículo) se implementan como **steppers** con validación por paso. El usuario no puede avanzar si el paso actual tiene errores, y se muestra un resumen de confirmación antes de ejecutar la acción final.
+
+### Guardas de navegación
+
+- **`canActivate`**: protege rutas que requieren autenticación o un rol específico. El usuario no autenticado es redirigido al login.
+- **`canDeactivate`**: alerta al usuario si intenta salir de un formulario con cambios sin guardar, evitando pérdida accidental de datos.
+
+### Estado de la UI
+
+- Los filtros activos y la posición de scroll se conservan al volver desde una vista de detalle.
+- Los estados vacíos incluyen siempre un CTA orientado a la siguiente acción posible (ej. `Add your first vehicle`).
+- Cualquier ruta no encontrada redirige a una página `Not Found` con enlace de retorno al Dashboard.
+
+### Criterios de aceptación
+
+- Navegar desde el `Dashboard` hasta el detalle de un vehículo en **≤ 2 clics**.
+- Completar el flujo de creación de un `Trip` en **≤ 60 segundos** (usuario con experiencia previa).
+- Ninguna ruta produce un error `404` visible; toda URL inválida muestra la pantalla `Not Found` con navegación de retorno.
+
 
 ## 5.3. Landing Page UI Design.
 
 ### 5.3.1. Landing Page Wireframe.
 
+A continuación de presenta los Wireframes del landing page:
+
+<img src="img/landing-wireframe-1.png">
+
+<img src="img/landing-wireframe-2.png">
+
+<img src="img/landing-wireframe-3.png">
+
+<img src="img/landing-wireframe-4.png">
+
+Enlace figma : https://www.figma.com/design/VHWSJ79RyPRX2PZY6EtMCR/Untitled?node-id=0-1&t=SVrnGR2jZsNYEwHu-1
+
 ### 5.3.2. Landing Page Mock-up.
+
+A continuación se presenta los Mock-up del Landing Page:
+
+<img src="img/landing-mockup-1.png">
+
+<img src="img/landing-mockup-2.png">
+
+<img src="img/landing-mockup-3.png">
+
+<img src="img/landing-mockup-4.png">
+
+<img src="img/landing-mockup-5.png">
+
+Enlace figma : https://www.figma.com/design/VHWSJ79RyPRX2PZY6EtMCR/Untitled?node-id=0-1&t=SVrnGR2jZsNYEwHu-1
 
 ## 5.4. Applications UX/UI Design.
 
 ### 5.4.1. Applications Wireframes.
 
+<img src="img/wireframe-mobile-1.png">
+
+<img src="img/wireframe-mobile-2.png">
+
+<img src="img/wireframe-mobile-3.png">
+
+<img src="img/wireframe-mobile-4.png">
+
+<img src="img/wireframe-mobile-5.png">
+
+<img src="img/wireframe-mobile-6.png">
+
+<img src="img/wireframe-mobile-7.png">
+
+<img src="img/wireframe-mobile-8.png">
+
+<img src="img/wireframe-mobile-9.png">
+
+<img src="img/wireframe-mobile-10.png">
+
+<img src="img/app-web-wireframe-1.png">
+
+<img src="img/app-web-wireframe-2.png">
+
+<img src="img/app-web-wireframe-3.png">
+
+<img src="img/app-web-wireframe-4.png">
+
+<img src="img/app-web-wireframe-5.png">
+
+<img src="img/app-web-wireframe-6.png">
+
+<img src="img/app-web-wireframe-7.png">
+
+<img src="img/app-web-wireframe-8.png">
+
+<img src="img/app-web-wireframe-9.png">
+
 ### 5.4.2. Applications Wireflow Diagrams.
+
+<img src="img/wire-flow-1.png">
+
+<img src="img/wire-flow-2.png">
+
+<img src="img/wire-flow-3.png">
+
+<img src="img/wire-flow-4.png">
+
+<img src="img/wire-flow-5.png">
+
+<img src="img/wire-flow-6.png">
 
 ### 5.4.2. Applications Mock-ups.
 
+### APP WEB
+
+<img src="img/app-web-1.png">
+
+<img src="img/app-web-2.png">
+
+<img src="img/app-web-3.png">
+
+<img src="img/app-web-4.png">
+
+<img src="img/app-web-5.png">
+
+<img src="img/app-web-6.png">
+
+<img src="img/app-web-7.png">
+
+<img src="img/app-web-8.png">
+
+<img src="img/app-web-9.png">
+
+
+### MOBILE
+
+<img src="img/mockup-mobile-1.png">
+
+<img src="img/mockup-mobile-2.png">
+
+<img src="img/mockup-mobile-3.png">
+
+<img src="img/mockup-mobile-4.png">
+
+<img src="img/mockup-mobile-5.png">
+
+<img src="img/mockup-mobile-6.png">
+
+<img src="img/mockup-mobile-7.png">
+
+<img src="img/mockup-mobile-8.png">
+
+<img src="img/mockup-mobile-9.png">
+
+<img src="img/mockup-mobile-10.png">
+
+<img src="img/mockup-mobile-11.png">
+
 ### 5.4.3. Applications User Flow Diagrams.
+
+Registro de los usuarios e Inicio de Sesión:
+
+User Goal: Como usuario, quiero registrarme en la aplicación web, para acceder a mi cuenta y funcionalidades personalizadas.
+Descripción: El usuario se encuentra en la pantalla de inicio de sesión y no tiene una cuenta registrada, debe dar click en "Sign up here". Deberá llenar los datos completos y podrá iniciar sesión en su cuenta registrada.
+
+<img src="img/user-goal-1.png">
+
+User Goal: Como usaurio, quiero cambiar mi subscripción de professional a enterprise.
+Descripción: El usuario se encuentra en la pantalla de cambio de subscripción y elije el plan acorde a sus necesidades.
+
+<img src="img/user-goal-2.png">
+
+User Goal: Como usuario, quiero ver las alertas del estado de mi pedido para estar al tanto de los posibles problemas que puedan ocurrir en el transporte.
+Descripción: El usuario se encuentra en la pantalla de alertas donde podrá visualizar el estado del producto/pedido.
+
+<img src="img/user-goal-3.png">
 
 ## 5.5. Applications Prototyping.
 
+A continuación se comparte el enlace del video de Applications Prototyping
+
+<img src="img/prototyping-figma.png">
+
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u202216698_upc_edu_pe/IQCuPcoV2VQJSp5w9ckisi7TAZyxns3NLPZmxb2kO1Spn-I?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=EkgG5r
+
+
 ## 5.6. IoT Device Design.
+
+Para el diseño del prototipo tenemos lo siguiente:
+
+ESP32 DevKit V1: Es el microcontrolador central que gestiona las conexiones y el procesamiento de datos.
+
+DHT22: Un sensor digital para medir la temperatura y la humedad relativa.
+
+Potenciómetro: El componente azul con la perilla gris. En este circuito, funciona para simular movimientos del vehiculo, choques y frenos bruscos, donde tambien enviará señales analógicas al ESP32.
+
+LED Rojo: Un diodo emisor de luz estándar que actúa como indicador visual.
+
+
+<img src="img/iot-design.png">
 
 # Capítulo VI: Product Implementation, Validation & Deployment
 
