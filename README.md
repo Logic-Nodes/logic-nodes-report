@@ -87,6 +87,10 @@ En esta seccion se registra la colaboración de todo el equipo durante el desarr
 
 <img src="img/commits_av1.png">
 
+### TB1
+
+<img src="img/contributors-tb1-doc.png">
+
 # Contenido
 
 _Tabla de contenidos_
