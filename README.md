@@ -2649,7 +2649,7 @@ El equipo utiliza Git como sistema de control de versiones distribuido y GitHub 
 
 **Repositorio de los productos:**
 
-- Repositorio del Landing Page: [Click aquí]()
+- Repositorio del Landing Page: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-landing-page)
 - Repositorio del Frontend Web Applications: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-webapp)
 - Repositorio del Backend: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-server)
 
@@ -2709,7 +2709,7 @@ A continuación se detallarán las ramas creadas y las convenciones que se aplic
 
 ### 6.1.3. Source Code Style Guide & Conventions.
 
-Se detallan las convenciones de codificación y nomenclatura que el equipo adoptará para los lenguajes, frameworks y herramientas utilizadas en la solución **CargaSafe**.  
+Se detallan las convenciones de codificación y nomenclatura que el equipo adoptará para los lenguajes, frameworks y herramientas utilizadas en la solución **OmniTrack**.  
 Todas las convenciones se aplicarán en idioma inglés con el objetivo de mantener consistencia, legibilidad y estandarización en el código desarrollado por todos los integrantes del equipo.
 
 ---
@@ -2878,6 +2878,42 @@ Feature: User Login
 
 ### 6.1.4. Software Deployment Configuration.
 
+El equipo utiliza **Vercel** como plataforma principal de despliegue continuo para los productos frontend de OmniTrack. Vercel se integra directamente con los repositorios alojados en GitHub, ejecutando builds automáticos ante cada push en las ramas configuradas, eliminando la necesidad de intervención manual en el proceso de publicación.
+
+---
+
+**Landing Page**
+
+La Landing Page desarrollada con React + Vite se despliega en Vercel conectada al repositorio `logic-nodes-landing-page`. Cada cambio confirmado en la rama `main` desencadena un nuevo build y despliegue automático hacia producción.
+
+- Repositorio: [https://github.com/Logic-Nodes/logic-nodes-landing-page](https://github.com/Logic-Nodes/logic-nodes-landing-page)
+- URL en producción: [https://logic-nodes-landing-page.vercel.app](https://logic-nodes-landing-page.vercel.app)
+
+---
+
+**Web Application**
+
+La aplicación web frontend desarrollada en React + Vite se despliega en Vercel desde el repositorio `logic-nodes-webapp`. El archivo `vercel.json` configura el comportamiento del enrutamiento SPA, redirigiendo todas las rutas al `index.html` para que React Router gestione la navegación en el cliente.
+
+```json
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
+```
+
+- Repositorio: [https://github.com/Logic-Nodes/logic-nodes-webapp](https://github.com/Logic-Nodes/logic-nodes-webapp)
+- URL en producción: [https://logic-nodes-webapp.vercel.app](https://logic-nodes-webapp.vercel.app)
+
+---
+
+**Backend Services**
+
+El backend desarrollado en Node.js con Express se despliega en la nube utilizando **Microsoft Azure**. La base de datos PostgreSQL es provisionada mediante Azure Database for PostgreSQL (servicio gestionado). Las variables de entorno necesarias —cadena de conexión a la base de datos, JWT secret, configuración de CORS— se definen en el panel de configuración de la plataforma y se referencian mediante un archivo `.env` localmente (`.env.example` incluido en el repositorio para documentar las variables requeridas).
+
+- Repositorio: [https://github.com/Logic-Nodes/logic-nodes-server](https://github.com/Logic-Nodes/logic-nodes-server)
+
 ## 6.2. Landing Page, Services & Applications Implementation.
 
 ### 6.2.1. Sprint 1
@@ -3042,11 +3078,176 @@ El equipo planea incorporar pruebas automatizadas unitarias e integration tests 
 
 #### 6.2.1.6. Execution Evidence for Sprint Review.
 
+Durante este sprint se alcanzó la implementación funcional de los tres productos digitales de **OmniTrack**: la **Landing Page**, la **Aplicación Web** y los **Backend Services**, cumpliendo con los objetivos planteados en el alcance del sprint.
+
+La landing fue desarrollada con React y Vite, orientada a comunicar la propuesta de valor de OmniTrack, sus funcionalidades principales, planes de suscripción y un formulario de contacto con soporte bilingüe (EN/ES).
+
+La aplicación web fue construida con React 18, Tailwind CSS, Zustand para gestión de estado y Recharts para visualizaciones analíticas, integrándose con el backend real mediante Axios. El backend fue desarrollado en Node.js con Express, expone APIs REST organizadas por bounded contexts bajo arquitectura DDD y cuenta con documentación generada mediante Swagger UI.
+
+A continuación se muestran los principales resultados obtenidos:
+
+**Landing Page**
+
+_Vista inicial del encabezado principal y navegación_ <br>
+![Landing Page – Hero section](assets/ch6/omnitrack-landing-hero.png)
+<br>
+
+_Sección de características, planes y formulario de contacto_ <br>
+![Landing Page – Features y Plans](assets/ch6/omnitrack-landing-features.png)
+<br>
+
+Repositorio: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-landing-page)
+Enlace: [Click aquí](https://logic-nodes-landing-page.vercel.app)
+
+<br>
+
+**Web Application**
+
+_Dashboard principal con métricas de monitoreo IoT en tiempo real_ <br>
+![Web App – Dashboard](assets/ch6/omnitrack-webapp-dashboard.png)
+<br>
+
+_Módulo de gestión de dispositivos IoT con visualización de estados_ <br>
+![Web App – IoT Management](assets/ch6/omnitrack-webapp-iot.png)
+<br>
+
+_Módulo de alertas y notificaciones del sistema_ <br>
+![Web App – Alerts Module](assets/ch6/omnitrack-webapp-alerts.png)
+<br>
+
+Repositorio: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-webapp)
+Aplicación en línea: [Click aquí](https://logic-nodes-webapp.vercel.app)
+
+<br>
+
+**Backend Services**
+
+_Endpoints REST disponibles a través de Swagger UI_ <br>
+![Backend – Swagger UI](assets/ch6/omnitrack-backend-swagger.png)
+<br>
+
+Repositorio: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-server)
+
+<br>
+
+**Video de ejecución del Sprint:**
+[Click aquí para ver el video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202113324_upc_edu_pe/PLACEHOLDER)
+
+<br>
+
+**Conclusión:**
+
+- El resultado de este sprint permitió disponer de una versión navegable y funcional del producto completo, con la landing pública, la aplicación web conectada al backend real y los servicios REST documentados.
+- Esto consolida la base para el siguiente sprint, donde se incorporarán pruebas automatizadas, mejoras de rendimiento y validación con usuarios reales.
+
 #### 6.2.1.7. Services Documentation Evidence for Sprint Review.
+
+Durante este sprint se implementó documentación de los Web Services mediante **Swagger UI**, integrada directamente en el backend desarrollado en Node.js con Express, utilizando el paquete `swagger-ui-express`.
+
+La especificación cubre todos los endpoints REST de OmniTrack, organizados por bounded contexts de acuerdo con la arquitectura DDD adoptada, detallando métodos HTTP, parámetros, cuerpos de solicitud y respuestas esperadas.
+
+Los principales grupos de endpoints documentados son:
+
+| Bounded Context | Endpoints principales | Métodos HTTP |
+|---|---|---|
+| **IAM** | `/api/auth/login`, `/api/auth/register` | POST |
+| **Fleet Management** | `/api/fleet`, `/api/fleet/:id` | GET, POST, PUT, DELETE |
+| **Trip Management** | `/api/trips`, `/api/trips/:id` | GET, POST, PUT, DELETE |
+| **Monitoring** | `/api/monitoring`, `/api/monitoring/:deviceId` | GET, POST |
+| **Alerts** | `/api/alerts`, `/api/alerts/:id` | GET, POST, PATCH |
+| **Analytics** | `/api/analytics/metrics`, `/api/analytics/report` | GET |
+| **Merchant** | `/api/merchants`, `/api/merchants/:id` | GET, POST, PUT |
+| **Profile** | `/api/profile/:userId` | GET, PUT |
+
+<br>
+
+_Interfaz Swagger UI con los grupos de endpoints documentados por bounded context_ <br>
+![Backend – Swagger overview](assets/ch6/omnitrack-swagger-overview.png)
+<br>
+
+_Detalle de los endpoints del módulo IAM con métodos, parámetros y respuestas_ <br>
+![Backend – Swagger IAM](assets/ch6/omnitrack-swagger-iam.png)
+<br>
+
+Repositorio del backend: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-server)
+
+<br>
+
+**Conclusión:**
+
+- La documentación mediante Swagger UI permite a los consumidores del API —frontend y posibles integraciones externas— conocer la estructura, parámetros y respuestas de cada endpoint de forma clara y accesible sin necesidad de revisar el código fuente.
+- Para el siguiente sprint se planea ampliar la documentación con esquemas de request/response detallados y ejemplos de uso para cada módulo.
 
 #### 6.2.1.8. Software Deployment Evidence for Sprint Review.
 
+Durante este sprint se realizaron los despliegues de los tres productos digitales de **OmniTrack**: la **Landing Page**, la **Aplicación Web** y el **Backend**. El proceso incluyó la configuración de entornos de hosting, integración con servicios de despliegue continuo y verificación de accesibilidad pública de los productos.
+
+---
+
+**Despliegue de la Landing Page**
+
+La Landing Page fue desplegada en **Vercel** conectando directamente el repositorio `logic-nodes-landing-page` desde GitHub. Vercel detecta automáticamente el framework React + Vite y ejecuta el build correspondiente ante cada push en `main`, publicando la nueva versión de forma automática.
+
+_Panel de Vercel mostrando la compilación e implementación exitosa de la Landing Page_ <br>
+![Vercel – Landing Page deployment](assets/ch6/omnitrack-deploy-landing.png)
+<br>
+
+URL de la Landing Page: [Click aquí](https://logic-nodes-landing-page.vercel.app)
+
+---
+
+**Despliegue de la Web Application**
+
+La aplicación web fue desplegada en **Vercel** desde el repositorio `logic-nodes-webapp`. Se configuró el archivo `vercel.json` para el manejo correcto del enrutamiento SPA, y Vercel ejecuta automáticamente el build de Vite ante cada actualización de la rama principal.
+
+_Panel de Vercel mostrando la compilación e implementación exitosa de la Web Application_ <br>
+![Vercel – Web App deployment](assets/ch6/omnitrack-deploy-webapp.png)
+<br>
+
+_Historial de implementaciones y dominio activo del proyecto_ <br>
+![Vercel – Deployment history](assets/ch6/omnitrack-deploy-webapp-history.png)
+<br>
+
+URL de la aplicación: [Click aquí](https://logic-nodes-webapp.vercel.app)
+
+---
+
+**Despliegue del Backend**
+
+El backend en Node.js + Express fue desplegado en **Microsoft Azure**. La base de datos PostgreSQL fue configurada mediante Azure Database for PostgreSQL. Las variables de entorno (cadena de conexión, JWT secret, configuración de puertos) se gestionaron desde el panel de configuración de Azure.
+
+_Estado del servicio backend activo en Azure con el endpoint de salud respondiendo correctamente_ <br>
+![Azure – Backend deployment](assets/ch6/omnitrack-deploy-backend.png)
+<br>
+
+_Configuración de variables de entorno en la plataforma cloud_ <br>
+![Azure – Environment variables](assets/ch6/omnitrack-deploy-backend-env.png)
+<br>
+
+**Conclusión:**
+
+- Los tres productos fueron desplegados exitosamente en entornos de producción accesibles públicamente, permitiendo validar los principales flujos del sistema para la entrega académica del Sprint 1.
+- El uso de Vercel para el frontend y Azure para el backend establece una infraestructura escalable y preparada para las siguientes iteraciones del proyecto.
+
+---
+
 #### 6.2.1.9. Team Collaboration Insights during Sprint.
+
+Durante este sprint, el equipo de desarrollo trabajó de forma colaborativa en la implementación de las principales funcionalidades correspondientes al alcance definido: la Landing Page, la Aplicación Web y el Backend de OmniTrack. A lo largo del proceso se mantuvo comunicación constante a través de GitHub y los canales del equipo, asegurando una adecuada distribución de tareas y el cumplimiento de los objetivos propuestos.<br>
+
+Los analíticos de GitHub reflejan la participación activa de todos los integrantes, evidenciando commits frecuentes, revisiones de código y fusiones entre ramas, lo que demuestra un flujo de trabajo coordinado y una integración continua del proyecto. Asimismo, se promovió la retroalimentación mutua y la resolución conjunta de incidencias técnicas, fortaleciendo el liderazgo compartido y la cooperación dentro del equipo.<br>
+
+_Insights de colaboración – Landing Page_ <br>
+![GitHub Insights – Landing Page](assets/ch6/omnitrack-insights-landing.png)
+<br>
+
+_Insights de colaboración – Web Application_ <br>
+![GitHub Insights – Web Application](assets/ch6/omnitrack-insights-webapp.png)
+<br>
+
+_Insights de colaboración – Backend Services_ <br>
+![GitHub Insights – Backend](assets/ch6/omnitrack-insights-backend.png)
+<br>
 
 ## 6.3. Validation Interviews.
 
