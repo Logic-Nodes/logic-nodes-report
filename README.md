@@ -3208,14 +3208,28 @@ Los principales grupos de endpoints documentados son:
 
 <br>
 
-_Interfaz Swagger UI con los grupos de endpoints documentados por bounded context_ <br>
-![Backend – Swagger overview](assets/ch6/omnitrack-swagger-overview.png)
+_Vista principal de Swagger UI con la especificación OpenAPI 3.0 cargada (`LogicNodes API 1.0.0`) servida desde `/docs`_ <br>
+![Backend – Swagger overview](assets/ch6/omnitrack-backend-swagger.png)
 <br>
 
-_Detalle de los endpoints del módulo IAM con métodos, parámetros y respuestas_ <br>
-![Backend – Swagger IAM](assets/ch6/omnitrack-swagger-iam.png)
+_Detalle del módulo IAM con endpoint POST `/api/v1/authentication/sign-in` expandido mostrando parámetros, request body y `Try it out`_ <br>
+![Backend – Swagger IAM expanded](assets/ch6/omnitrack-swagger-iam.png)
 <br>
 
+_Endpoints de Origin Points, Delivery Orders y Alerts con métodos GET, POST, PUT, DELETE y PATCH agrupados por bounded context_ <br>
+![Backend – Swagger Trips, Delivery Orders y Alerts](assets/ch6/omnitrack-swagger-trips-alerts.png)
+<br>
+
+_Sección de Monitoring (sessions/pause/end/resume) y Telemetry con los endpoints REST para captura de datos IoT_ <br>
+![Backend – Swagger Monitoring y Telemetry](assets/ch6/omnitrack-swagger-monitoring.png)
+<br>
+
+_Sección de Schemas con los modelos de request/response (TokenPair, Trip, OriginPoint, DeliveryOrder, Alert, etc.) documentados como componentes OpenAPI_ <br>
+![Backend – Swagger Schemas](assets/ch6/omnitrack-swagger-schemas.png)
+<br>
+
+URL local de Swagger UI durante desarrollo: `http://localhost:3000/docs`
+Especificación OpenAPI cruda: `http://localhost:3000/swagger.json`
 Repositorio del backend: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-server)
 
 <br>
@@ -3290,6 +3304,10 @@ _Contributors – Landing Page (roiander: 3 commits, 2,107 adiciones)_ <br>
 
 _Contributors – Web Application (jantonio-tech: 4 commits, JeremyAntonio: 2 commits)_ <br>
 ![GitHub Insights – Web Application](assets/ch6/omnitrack-insights-webapp.png)
+<br>
+
+_Historial de commits del Backend Services (`devcociname` – Paulo Quincho: 13 commits, abril 2026) con la migración completa de Java a Node.js + Express + PostgreSQL_ <br>
+![GitHub Commits – Backend](assets/ch6/omnitrack-insights-backend.png)
 <br>
 
 ## 6.3. Validation Interviews.
