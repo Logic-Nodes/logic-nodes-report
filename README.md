@@ -3130,11 +3130,6 @@ Repositorio: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-server)
 
 <br>
 
-**Video de ejecución del Sprint:**
-[Click aquí para ver el video](https://upcedupe-my.sharepoint.com/:v:/g/personal/u202113324_upc_edu_pe/PLACEHOLDER)
-
-<br>
-
 **Conclusión:**
 
 - El resultado de este sprint permitió disponer de una versión navegable y funcional del producto completo, con la landing pública, la aplicación web conectada al backend real y los servicios REST documentados.
