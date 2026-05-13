@@ -3079,6 +3079,50 @@ https://upcedupe-my.sharepoint.com/:v:/g/personal/u202216698_upc_edu_pe/IQBojclZ
 
 ### 6.3.3. Evaluaciones según heurísticas.
 
+#### SITE o APP A EVALUAR:
+
+Logic-nodes-omnitrack-web-app
+
+#### TAREAS A EVALUAR:
+
+1. INICIAR SESIÓN
+
+2. VER LAS METRICAS DEL ESTADO DEL ENVIO DE PRODUCTOS (TEMPERATURA,ETC)
+
+3. MODIFICAR SUBSCRIPCIONES
+
+4. CAMBIAR DATOS DE PERFIL O VISUALIZARLOS
+
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+
+1.- Conexión entre landing page y aplicación web
+
+2.- Aplicación Móvil
+
+3.- Producto IOT físico
+
+
+#### ESCALA DE SEVERIDAD
+
+#### NIVEL 1: 
+
+PROBLEMA SUPERFICIAL: Errores en la compatibilidad con móviles (aplicación web)
+
+#### Descripción de Problemas
+
+Problema #1: Se presenta errores en la compatibilidad con móviles al usar la aplicación web
+
+#### Severidad: 1
+
+#### Problema:
+
+Al entrar desde un dispositivo móvil la aplicación web no es del todo responsive, en algunas secciones no se ve bien todas las opciones de la pagina, perjudicando la experiencia del usuario.
+
+#### Recomendación:
+
+Para que el usuario se sienta cómodo en cualquier dispositivo , deben optimizar la compatibilidad con móvil para la aplicación web. 
+
+
 ## 6.4. Video About-the-Product.
 
 
