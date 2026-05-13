@@ -3853,4 +3853,7 @@ Figma. (s.f.). Figma Learn. https://help.figma.com/hc/en-us/categories/235570130
 
 # Video About-the-Team.
 
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u202216698_upc_edu_pe/IQBK-8UO1d4TRqUEdAHO3Ik4AbvQaqT6yHsn1SJmzEgcIVg?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=MP8Qfv
+
+
 # Anexos
