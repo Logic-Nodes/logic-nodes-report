@@ -2639,7 +2639,9 @@ Borde: 2px solid Primary
 Radio de borde: 12px
 Hover: fondo Primary + texto blanco
 
-Nota: En la sección Hero de la landing page (navbar transparente), los botones outline usan texto y borde blanco, cambiando a fondo blanco y texto oscuro al hacer hover.
+<img src="img/paleta-de-colores.png">
+
+
 4. Estilos Generales de Componentes
 
 Tarjetas (Cards): Fondo blanco (o gris oscuro en modo dark), border-radius de 12px y sombra sutil (0 4px 6px rgba(0, 0, 0, 0.05)). Efecto hover: translateY(-10px).
