@@ -3811,6 +3811,14 @@ https://upcedupe-my.sharepoint.com/:v:/g/personal/u202216698_upc_edu_pe/IQBfT8Sg
 La entrega del AV1 del proyecto OmniTrack ha permitido completar exitosamente los Capítulos I al IV del informe. Se ha definido el perfil de la startup y del producto, analizado en profundidad la problemática y los segmentos objetivo, realizado un completo proceso de elicitación de requerimientos (análisis competitivo, entrevistas, Needfinding y EventStorming), especificado los requerimientos mediante User Stories, Impact Mapping y Product Backlog, y desarrollado un diseño arquitectónico detallado utilizando Domain-Driven Design a nivel estratégico y táctico.
 Este avance consolida una base sólida tanto en el entendimiento del dominio del negocio como en el diseño técnico de la solución, preparando al equipo para avanzar hacia la implementación de los bounded contexts identificados. El trabajo realizado refleja un enfoque estructurado, colaborativo y alineado con las mejores prácticas de ingeniería de software e IoT.
 
+### TB1:
+
+La entrega del TB1 del proyecto OmniTrack ha permitido completar exitosamente los Capítulos V y VI del informe. Se desarrolló por completo el diseño de la experiencia de usuario (Style Guidelines, Information Architecture, wireframes, mockups, user flows y prototipado), se implementó la Landing Page y la Aplicación Web, y se construyó un Backend funcional con Node.js + Express y PostgreSQL, incluyendo autenticación, gestión de flota, viajes, monitoreo y alertas.
+
+Se logró desplegar los tres productos principales en entornos productivos (Vercel y Azure), se documentó el Sprint 1 con evidencias de desarrollo, pruebas y despliegue, y se realizaron entrevistas de validación con usuarios reales.
+
+Este avance marca el paso exitoso de la fase de diseño a la implementación real del producto, consolidando una base técnica sólida y funcional que permite continuar con la integración IoT y el refinamiento de la solución. El trabajo refleja un enfoque estructurado, colaborativo y alineado con las mejores prácticas de ingeniería de software e IoT.
+
 # Bibliografía
 
 Gothelf, J. (2013). Lean UX: Applying lean principles to improve user experience (Sampler, Chapter 3). O'Reilly Media. https://www.scribd.com/document/655516553/Leanux-Sampler
