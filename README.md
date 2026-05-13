@@ -3326,6 +3326,9 @@ Para que el usuario se sienta cómodo en cualquier dispositivo , deben optimizar
 
 ## 6.4. Video About-the-Product.
 
+<img src="img/about-the-product.png">
+
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u202216698_upc_edu_pe/IQBfT8SggYmvQJRqrEyQQqMwARwEK3YpUkYDW9RlS6fdFLQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=bUwlgj
 
 
 # Conclusiones 
