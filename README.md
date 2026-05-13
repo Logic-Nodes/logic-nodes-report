@@ -76,6 +76,8 @@
 |  1.0.1  |  15/04/2026  |    Rodrigo Alcántara   |  Elaboración del Capítulo I y II        |
 |  1.0.2  |  21/04/2026  | Paulo Quincho y Alejandro Oroncoy    |     Elaboración del Capítulo III           |
 |  1.0.3    |   25/04/2026    |  Adrian Valerio y Luiggi Antonio      |    Elaboración del Capítulo IV   |
+|  1.0.4    |   02/05/2026    |  Rodrigo Alcántara y Luiggi Antonio      |    Elaboración del Capítulo V   |
+|  1.0.5    |   12/05/2026    |  Adrian Valerio y Alejandro Oroncoy      |    Elaboración del Capítulo VI   |
 
 # Project Report Collaboration Insights
 
