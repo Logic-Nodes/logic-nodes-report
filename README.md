@@ -3054,6 +3054,20 @@ El equipo planea incorporar pruebas automatizadas unitarias e integration tests 
 
 ### 6.3.2. Registro de Entrevistas.
 
+Segmento Empresas:
+
+<img src="img/interview-empresa-validation.png">
+
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u202216698_upc_edu_pe/IQCmdCmWAcQlSZcVB2Bzs7B1ASNVH3jgon-ZXeLVgrsJyMk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=IOjuVq
+
+
+Segmento Clientes finales:
+
+<img src="img/interview-cliente-validation.png">
+
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u202216698_upc_edu_pe/IQBojclZFDliR6m-hfB7I-ywAeBc1lrvVekAKsSMEcIQZZc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=d6JCCu
+
+
 ### 6.3.3. Evaluaciones según heurísticas.
 
 ## 6.4. Video About-the-Product.
