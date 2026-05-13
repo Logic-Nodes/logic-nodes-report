@@ -2634,13 +2634,18 @@ El objetivo de esta sección es asegurar que todos los miembros usen las mismas 
 | **Requirements Management** | **Miro**                   | Plataforma colaborativa para diagramación y mapeo de procesos que permite representar flujos, escenarios y segmentación de usuarios de forma visual e interactiva.              | SaaS              | https://miro.com/ |
 | **UX/UI Design**            | **Figma**                  | Herramienta de diseño y prototipado de interfaces que permite trabajo colaborativo en tiempo real y asegura consistencia visual en la interfaz del proyecto.                   | SaaS              | https://www.figma.com/ |
 | **Source Code Management**  | **Git & GitHub**           | Git gestiona el control de versiones y ramas, mientras GitHub permite alojar el repositorio y facilitar la colaboración en el desarrollo del código.                          | SaaS / Local      | https://github.com/ |
-| **Backend Development**     | **Spring Boot (Java)**     | Framework backend para construir APIs REST escalables, con integración a bases de datos y otros servicios del sistema.                                                        | Local             | https://spring.io/projects/spring-boot |
-| **Frontend Development**    | **Visual Studio Code**     | Editor de código utilizado para el desarrollo frontend con soporte para múltiples frameworks e integración con Git.                                                          | Local             | https://code.visualstudio.com/ |
-| **Backend Development**     | **IntelliJ IDEA**          | IDE especializado en desarrollo backend con Spring Boot, que incluye herramientas de depuración, testing y gestión de dependencias.                                           | Local             | https://www.jetbrains.com/idea/ |
-| **Mobile Development**      | **Android Studio**         | Entorno oficial para desarrollo de aplicaciones Android, permitiendo diseño, compilación, ejecución y depuración de apps nativas.                                             | Local             | https://developer.android.com/studio |
-| **Software Testing**        | **Postman**                | Herramienta para pruebas de APIs REST que permite validar endpoints, automatizar pruebas e integrarse con pipelines de CI/CD.                                                 | SaaS / Local      | https://www.postman.com/ |
-| **Software Deployment**     | **Firebase Hosting**       | Servicio de hosting para aplicaciones web con despliegue rápido, HTTPS automático y distribución mediante CDN global.                                                         | SaaS              | https://firebase.google.com/docs/hosting |
-| **Software Deployment**     | **Microsoft Azure**        | Plataforma cloud para despliegue de aplicaciones, APIs y bases de datos, con soporte de escalabilidad, monitoreo y seguridad.                                                 | SaaS              | https://azure.microsoft.com/ |
+| **Frontend Development**    | **React + Vite**           | Librería para construir interfaces de usuario en la Landing Page y Aplicación Web, con bundler Vite para builds rápidos y HMR durante desarrollo.                              | Local             | https://react.dev/ |
+| **Frontend Development**    | **Tailwind CSS**           | Framework de utilidades CSS para estilizar componentes de la Aplicación Web de forma consistente y responsiva.                                                                | Local             | https://tailwindcss.com/ |
+| **Frontend State**          | **Zustand**                | Librería ligera de gestión de estado en React para mantener sesión, datos de flota y alertas en la Aplicación Web.                                                            | Local             | https://github.com/pmndrs/zustand |
+| **Backend Development**     | **Node.js + Express**      | Runtime y framework para construir el servidor REST de OmniTrack, organizado bajo Clean Architecture por bounded contexts.                                                    | Local             | https://expressjs.com/ |
+| **Database**                | **PostgreSQL**             | Sistema gestor de base de datos relacional utilizado por el backend para persistencia de IAM, alerts, fleet, merchants, monitoring, profiles, trip y dashboard.               | Local / SaaS      | https://www.postgresql.org/ |
+| **Authentication**          | **JWT (jsonwebtoken)**     | Estándar para emitir y validar tokens de acceso y refresh tokens en los endpoints protegidos del backend.                                                                     | Local             | https://jwt.io/ |
+| **Code Editor**             | **Visual Studio Code**     | Editor de código utilizado por todo el equipo para frontend y backend, con extensiones para JavaScript, React y depuración de Node.js.                                        | Local             | https://code.visualstudio.com/ |
+| **Software Testing**        | **Jest + Supertest**       | Framework de pruebas para Node.js y librería para tests de contratos HTTP del backend, ubicados en `src/__tests__/http-contracts.test.js`.                                    | Local             | https://jestjs.io/ |
+| **Software Testing**        | **Postman**                | Herramienta para pruebas manuales de APIs REST que permite validar endpoints e inspeccionar respuestas durante el desarrollo.                                                 | SaaS / Local      | https://www.postman.com/ |
+| **API Documentation**       | **Swagger UI**             | Interfaz interactiva para visualizar la especificación OpenAPI del backend, accesible en `/docs` y `/swagger.json` (paquete `swagger-ui-express`).                            | Local             | https://swagger.io/tools/swagger-ui/ |
+| **Software Deployment**     | **Vercel**                 | Plataforma de hosting con despliegue continuo desde GitHub utilizada para publicar la Landing Page y la Aplicación Web en producción.                                          | SaaS              | https://vercel.com/ |
+| **Software Deployment**     | **Microsoft Azure**        | Plataforma cloud donde se despliega el Backend Services (Azure App Service) junto con su base de datos gestionada (Azure Database for PostgreSQL).                            | SaaS              | https://azure.microsoft.com/ |
 | **Software Documentation**  | **Markdown**               | Lenguaje de marcado ligero utilizado para la documentación técnica del proyecto como README, manuales y guías de instalación.                                                 | Local             | https://www.markdownguide.org/ |
 
 ### 6.1.2. Source Code Management.
@@ -2778,7 +2783,7 @@ https://google.github.io/styleguide/jsguide.html
 ## Ejemplo
 
 ```js
-const API_URL = 'https://api.cargasafe.com'
+const API_URL = 'https://api.omnitrack.app'
 
 class Example {
   constructor(exampleId) {
@@ -2793,62 +2798,66 @@ class Example {
 
 ---
 
-# **Java**
+# **Node.js + Express (Backend)**
 
-https://google.github.io/styleguide/javaguide.html
+https://github.com/goldbergyoni/nodebestpractices
 
 ## Convenciones
 
-- Utilizar PascalCase para clases e interfaces.
-- Utilizar camelCase para métodos y variables.
-- Nombrar los paquetes en minúsculas y separados por puntos (`com.cargasafe.backend`).
-- Aplicar indentación de 4 espacios.
-- Limitar las líneas a un máximo de 120 caracteres.
-- Emplear nombres descriptivos evitando abreviaciones innecesarias.
-- Cada clase pública debe ubicarse en un archivo independiente con el mismo nombre de la clase.
+- Utilizar ECMAScript Modules (`import`/`export`) en lugar de CommonJS.
+- Organizar el código por **bounded contexts** bajo `src/contexts/<context>/{application,interfaces/http,infrastructure}` siguiendo Clean Architecture.
+- Nombres de archivo en kebab-case (`alerts.routes.js`, `authentication-service.js`).
+- Manejar errores con un middleware central (`errorHandler`) y propagar con `next(error)`.
+- Exponer rutas REST bajo el prefijo `/api/v1/*`.
+- Cargar configuración con `dotenv` y validar variables de entorno al inicio.
+- Aplicar middlewares de seguridad (`helmet`, `cors`) y logging (`morgan`).
 
 ## Ejemplo
 
-```java
-package com.cargasafe.backend.services;
+```js
+import { Router } from "express";
+import { listAlerts, createAlert } from "../../application/alert-service.js";
 
-public class ExampleService {
-    private int alertCount;
+const router = Router();
 
-    public void sendAlert(String message) {
-        System.out.println("Alert: " + message);
-    }
-}
+router.get("/", async (req, res, next) => {
+  try {
+    const items = await listAlerts();
+    res.status(200).json({ items });
+  } catch (error) {
+    next(error);
+  }
+});
+
+export default router;
 ```
 
 ---
 
-# **Dart**
+# **SQL (PostgreSQL)**
 
-https://dart.dev/effective-dart/style
+https://www.sqlstyle.guide/
 
 ## Convenciones
 
-- Utilizar camelCase para variables y funciones.
-- Utilizar PascalCase para clases, enums y typedefs.
-- Declarar constantes en UPPER_CASE.
-- Mantener un widget o clase principal por archivo.
-- Preferir interpolación de strings (`Hello $name`) sobre concatenación.
-- Utilizar `final` y `const` siempre que sea posible para promover la inmutabilidad.
+- Palabras reservadas en MAYÚSCULAS (`SELECT`, `CREATE TABLE`, `REFERENCES`).
+- Nombres de tablas y columnas en `snake_case` y plural para tablas (`users`, `user_refresh_tokens`).
+- Claves primarias `BIGSERIAL PRIMARY KEY`.
+- Timestamps `created_at` y `updated_at` con `DEFAULT NOW()`.
+- Enums tipados (`CREATE TYPE ... AS ENUM (...)`) para valores controlados del dominio.
+- Foreign keys con `ON DELETE CASCADE` cuando la relación lo amerite.
 
 ## Ejemplo
 
-```dart
-class ExampleCard extends StatelessWidget {
-  final String exampleName;
-
-  const ExampleCard({required this.exampleName, super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Text('Example: $exampleName');
-  }
-}
+```sql
+CREATE TABLE IF NOT EXISTS alerts (
+  id BIGSERIAL PRIMARY KEY,
+  delivery_order_id BIGINT NOT NULL,
+  type alert_type_enum NOT NULL,
+  status alert_status_enum NOT NULL DEFAULT 'OPEN',
+  created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMP NOT NULL DEFAULT NOW()
+);
 ```
 
 ---
@@ -2910,7 +2919,22 @@ La aplicación web frontend desarrollada en React + Vite se despliega en Vercel 
 
 **Backend Services**
 
-El backend desarrollado en Node.js con Express se despliega en la nube utilizando **Microsoft Azure**. La base de datos PostgreSQL es provisionada mediante Azure Database for PostgreSQL (servicio gestionado). Las variables de entorno necesarias —cadena de conexión a la base de datos, JWT secret, configuración de CORS— se definen en el panel de configuración de la plataforma y se referencian mediante un archivo `.env` localmente (`.env.example` incluido en el repositorio para documentar las variables requeridas).
+El backend desarrollado en **Node.js + Express** con persistencia en **PostgreSQL** se despliega en **Microsoft Azure**. La aplicación se publica mediante Azure App Service para Node.js, mientras que la base de datos se provisiona con **Azure Database for PostgreSQL** (servicio gestionado). Las variables de entorno necesarias se configuran desde el panel de Application Settings de Azure y replican el formato del `.env.example` versionado en el repositorio:
+
+```env
+NODE_ENV=production
+PORT=3000
+DB_HOST=<azure-postgres-host>
+DB_PORT=5432
+DB_NAME=logicnodesdb
+DB_USER=<azure-admin-user>
+DB_PASSWORD=<azure-admin-password>
+JWT_SECRET=<jwt-secret>
+JWT_EXPIRES_IN=1h
+JWT_REFRESH_EXPIRES_IN=7d
+```
+
+El backend expone los endpoints REST bajo el prefijo `/api/v1/*` y publica la documentación interactiva de Swagger UI en la ruta `/docs`. La elección de Azure responde a la necesidad de contar con escalabilidad horizontal, monitoreo integrado y una base de datos PostgreSQL gestionada para mantener la disponibilidad del servicio en producción.
 
 - Repositorio: [https://github.com/Logic-Nodes/logic-nodes-server](https://github.com/Logic-Nodes/logic-nodes-server)
 
@@ -3046,17 +3070,23 @@ Rodrigo Alcantara lideró el desarrollo frontend y la integración general del p
 
 ### Backend Services
 
-Durante el sprint también se desarrolló el backend inicial de OmniTrack utilizando `.NET`, implementando APIs REST y arquitectura organizada mediante bounded contexts.
+Durante el sprint también se desarrolló el backend de OmniTrack utilizando **Node.js + Express** con persistencia en **PostgreSQL**, implementando APIs REST organizadas bajo Clean Architecture por bounded contexts y migrando los contratos previos del backend Java. Paulo Quincho lideró la implementación del servidor, exponiendo todos los endpoints bajo el prefijo `/api/v1/*`, configurando autenticación JWT (access + refresh tokens) y documentando la API mediante Swagger UI en `/docs`.
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
 |---|---|---|---|---|---|
-| `logicnodes-omnitrack-backend` | `main` | **b11fa92** | initial commit | Configuración inicial del proyecto backend en .NET. | 2026-05-04 |
-| `logicnodes-omnitrack-backend` | `authentication` | **82da12b** | feat(auth): implement authentication endpoints | Endpoints de autenticación y autorización JWT. | 2026-05-05 |
-| `logicnodes-omnitrack-backend` | `devices-module` | **19fa2bc** | feat(devices): add IoT devices endpoints | Endpoints REST para gestión de dispositivos IoT. | 2026-05-06 |
-| `logicnodes-omnitrack-backend` | `trips-module` | **5ac21fd** | feat(trips): implement trips API services | Servicios y endpoints relacionados a viajes y monitoreo. | 2026-05-06 |
-| `logicnodes-omnitrack-backend` | `alerts-module` | **7de12bc** | feat(alerts): add alerts services | Servicios backend para alertas y eventos críticos. | 2026-05-07 |
-| `logicnodes-omnitrack-backend` | `analytics-module` | **2be88da** | feat(analytics): implement analytics endpoints | APIs para generación de métricas y estadísticas. | 2026-05-08 |
-| `logicnodes-omnitrack-backend` | `develop` | **4ef22bc** | refactor(project): organize bounded contexts structure | Reorganización arquitectónica basada en bounded contexts. | 2026-05-08 |
+| `logic-nodes-server` | `main` | **d63cc79** | first commit | Configuración inicial del proyecto backend en Node.js + Express con estructura Clean Architecture. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **1a29544** | Feat: Creacion de la base de datos para conexion | Definición del schema PostgreSQL (`db/schema.sql`) con tablas, enums y relaciones del dominio. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **d2fc55b** | Feat: Configuracion para Conexion con la BD en Postgres | Configuración del pool de conexiones `pg` y variables de entorno (`.env.example`). | 2026-04-16 |
+| `logic-nodes-server` | `main` | **9e9e6c4** | Feat: Finalizacion de Modulo IAM para el consumo de endpoints | Endpoints de autenticación (sign-in, sign-up, refresh, logout) y emisión de JWT con bcryptjs. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **6daad6d** | Feat: Finalizacion de Modulo Profile para el consumo de endpoints | CRUD de perfiles de usuario con relación al bounded context IAM. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **b129ad1** | Feat: Finalizacion de Modulo Trip para el consumo de endpoints | Endpoints de viajes, delivery orders y origin points con cambios de estado del viaje. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **9f7f1b0** | Feat: Finalizacion de Modulo Monitoreo para el consumo de endpoints | Sesiones de monitoreo y telemetría asociadas a los viajes en curso. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **3bba7cd** | Feat: Finalizacion de Modulo Merchant para el consumo de endpoints | CRUD de merchants y gestión de empleados asociados. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **0f61ec9** | Feat: Finalizacion de Modulo Fleet para el consumo de endpoints | Endpoints para vehículos y dispositivos IoT con asignación entre ellos. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **b6c0150** | Feat: Finalizacion de Modulo Dashboard para el consumo de endpoints | Analytics agregados de viajes, alertas e incidentes por mes. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **b306e3d** | Feat: Finalizacion de Modulo Alertas para el consumo de endpoints | Endpoints de alertas, incidentes y notificaciones con cambios de estado. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **541a767** | Feat: Creacion de Test para pruebas unitarias | Tests de contratos HTTP con Jest + Supertest en `src/__tests__/http-contracts.test.js`. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **3240119** | Feat: Implementacion de Swagger para Documentacion | Documentación interactiva en `/docs` con `swagger-ui-express` y especificación OpenAPI. | 2026-04-16 |
 
 <br>
 
@@ -3064,17 +3094,31 @@ Durante el sprint también se desarrolló el backend inicial de OmniTrack utiliz
 
 #### 6.2.1.5. Testing Suite Evidence for Sprint Review.
 
-Durante este sprint no se implementaron pruebas automatizadas completas debido a que el alcance principal estuvo enfocado en finalizar la primera versión funcional de la plataforma para la entrega académica.
+Durante este sprint se incorporó una suite de pruebas automatizadas en el **Backend Services** utilizando **Jest** como framework de testing y **Supertest** para pruebas de contratos HTTP. La configuración se encuentra en `jest.config.js` y los tests están ubicados en `src/__tests__/`.
 
-Las validaciones realizadas fueron principalmente:
+**Pruebas automatizadas implementadas en el backend:**
 
-- Verificación manual de flujos.
-- Validación visual de componentes frontend.
-- Pruebas de integración entre frontend y backend.
-- Validación de endpoints principales.
-- Navegación y consumo de APIs.
+| Archivo | Tipo | Cobertura |
+|---|---|---|
+| `src/__tests__/http-contracts.test.js` | Tests de contratos HTTP (integración) | Validación de las rutas REST de los 17 bounded contexts: alerts, incidents, notifications, analytics, fleet (devices + vehicles), authentication, roles, users, employees, merchants, monitoring, telemetry, profiles, delivery orders, origin points y trips. |
 
-El equipo planea incorporar pruebas automatizadas unitarias e integration tests durante los siguientes sprints conforme se continúe ampliando la plataforma OmniTrack.
+La ejecución se realiza mediante:
+
+```bash
+npm test
+```
+
+El comando configurado en `package.json` ejecuta Jest con soporte para ECMAScript Modules (`--experimental-vm-modules`) y detección de handles abiertos (`--detectOpenHandles`).
+
+**Validaciones adicionales realizadas manualmente:**
+
+- Verificación visual de componentes frontend (React + Tailwind).
+- Pruebas de integración entre la Aplicación Web y el backend real mediante Axios.
+- Validación de endpoints REST principales con Postman y Swagger UI.
+- Pruebas de autenticación JWT (sign-in, refresh, logout).
+- Navegación end-to-end por los módulos Dashboard, Vehicles, Trips y Alerts.
+
+El equipo planea ampliar la suite de pruebas en los siguientes sprints incorporando tests unitarios por bounded context, tests del frontend con React Testing Library y un pipeline de CI en GitHub Actions que ejecute la suite automáticamente en cada Pull Request.
 
 #### 6.2.1.6. Execution Evidence for Sprint Review.
 
