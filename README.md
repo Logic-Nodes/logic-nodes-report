@@ -3228,8 +3228,6 @@ _Sección de Schemas con los modelos de request/response (TokenPair, Trip, Origi
 ![Backend – Swagger Schemas](assets/ch6/omnitrack-swagger-schemas.png)
 <br>
 
-URL local de Swagger UI durante desarrollo: `http://localhost:3000/docs`
-Especificación OpenAPI cruda: `http://localhost:3000/swagger.json`
 Repositorio del backend: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-server)
 
 <br>
@@ -3247,10 +3245,10 @@ Durante este sprint se realizaron los despliegues de los tres productos digitale
 
 **Despliegue de la Landing Page**
 
-La Landing Page fue desplegada en **Vercel** conectando directamente el repositorio `logic-nodes-landing-page` desde GitHub. Vercel detecta automáticamente el framework React + Vite y ejecuta el build correspondiente ante cada push en `main`, publicando la nueva versión de forma automática.
+La Landing Page fue desplegada en **Vercel** conectando directamente el repositorio `logic-nodes-landing-page` desde GitHub. Vercel detecta automáticamente el framework React + Vite y ejecuta el build correspondiente ante cada push en `main`, publicando la nueva versión de forma automática. GitHub registra cada despliegue en el entorno `Production` con el estado de la integración con Vercel.
 
-_Panel de Vercel mostrando la compilación e implementación exitosa de la Landing Page_ <br>
-![Vercel – Landing Page deployment](assets/ch6/omnitrack-deploy-landing.png)
+_Vista del entorno **Production** en GitHub Deployments mostrando los 2 despliegues exitosos del Landing Page (commit `fix-logo` activo y `init commit`) realizados por el bot de Vercel_ <br>
+![GitHub Deployments – Landing Page Production](assets/ch6/omnitrack-deploy-landing.png)
 <br>
 
 URL de la Landing Page: [Click aquí](https://logic-nodes-landing-page.vercel.app)
@@ -3261,12 +3259,8 @@ URL de la Landing Page: [Click aquí](https://logic-nodes-landing-page.vercel.ap
 
 La aplicación web fue desplegada en **Vercel** desde el repositorio `logic-nodes-webapp`. Se configuró el archivo `vercel.json` para el manejo correcto del enrutamiento SPA, y Vercel ejecuta automáticamente el build de Vite ante cada actualización de la rama principal.
 
-_Panel de Vercel mostrando la compilación e implementación exitosa de la Web Application_ <br>
-![Vercel – Web App deployment](assets/ch6/omnitrack-deploy-webapp.png)
-<br>
-
-_Historial de implementaciones y dominio activo del proyecto_ <br>
-![Vercel – Deployment history](assets/ch6/omnitrack-deploy-webapp-history.png)
+_Vista del entorno **Production** en GitHub Deployments con el historial de 6 despliegues del Web Application (3 exitosos: `Fix`, `Fix: select`, `fix: restore correct Vite tsconfig`; y 3 fallidos durante la migración del `tsconfig` que se resolvieron en el commit posterior)_ <br>
+![GitHub Deployments – Web App Production](assets/ch6/omnitrack-deploy-webapp.png)
 <br>
 
 URL de la aplicación: [Click aquí](https://logic-nodes-webapp.vercel.app)
@@ -3275,20 +3269,12 @@ URL de la aplicación: [Click aquí](https://logic-nodes-webapp.vercel.app)
 
 **Despliegue del Backend**
 
-El backend en Node.js + Express fue desplegado en **Microsoft Azure**. La base de datos PostgreSQL fue configurada mediante Azure Database for PostgreSQL. Las variables de entorno (cadena de conexión, JWT secret, configuración de puertos) se gestionaron desde el panel de configuración de Azure.
-
-_Estado del servicio backend activo en Azure con el endpoint de salud respondiendo correctamente_ <br>
-![Azure – Backend deployment](assets/ch6/omnitrack-deploy-backend.png)
-<br>
-
-_Configuración de variables de entorno en la plataforma cloud_ <br>
-![Azure – Environment variables](assets/ch6/omnitrack-deploy-backend-env.png)
-<br>
+El backend en Node.js + Express está planificado para desplegarse en **Microsoft Azure** durante el siguiente sprint. La aplicación se publicará mediante Azure App Service para Node.js y la base de datos será provisionada con **Azure Database for PostgreSQL** (servicio gestionado). Las variables de entorno (`DB_HOST`, `DB_NAME`, `JWT_SECRET`, etc.) se configurarán desde el panel de Application Settings de Azure replicando el `.env.example` versionado en el repositorio.
 
 **Conclusión:**
 
-- Los tres productos fueron desplegados exitosamente en entornos de producción accesibles públicamente, permitiendo validar los principales flujos del sistema para la entrega académica del Sprint 1.
-- El uso de Vercel para el frontend y Azure para el backend establece una infraestructura escalable y preparada para las siguientes iteraciones del proyecto.
+- Los productos frontend (Landing Page y Web Application) ya están desplegados en producción a través de Vercel y son accesibles públicamente, lo que permitió validar los principales flujos del sistema durante la entrega académica del Sprint 1.
+- El uso de Vercel para los productos frontend garantiza despliegue continuo desde GitHub, mientras que Azure será la plataforma destino del backend en la siguiente iteración para establecer una infraestructura escalable end-to-end.
 
 ---
 
