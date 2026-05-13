@@ -3004,6 +3004,13 @@ Descripción: El usuario se encuentra en la pantalla de alertas donde podrá vis
 
 ## 5.5. Applications Prototyping.
 
+A continuación se comparte el enlace del video de Applications Prototyping
+
+<img src="img/prototyping-figma.png">
+
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u202216698_upc_edu_pe/IQCuPcoV2VQJSp5w9ckisi7TAZyxns3NLPZmxb2kO1Spn-I?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=EkgG5r
+
+
 ## 5.6. IoT Device Design.
 
 Para el diseño del prototipo tenemos lo siguiente:
