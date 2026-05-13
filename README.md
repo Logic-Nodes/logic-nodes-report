@@ -2936,6 +2936,18 @@ Enlace figma : https://www.figma.com/design/VHWSJ79RyPRX2PZY6EtMCR/Untitled?node
 
 ### 5.4.2. Applications Wireflow Diagrams.
 
+<img src="img/wire-flow-1.png">
+
+<img src="img/wire-flow-2.png">
+
+<img src="img/wire-flow-3.png">
+
+<img src="img/wire-flow-4.png">
+
+<img src="img/wire-flow-5.png">
+
+<img src="img/wire-flow-6.png">
+
 ### 5.4.2. Applications Mock-ups.
 
 ### APP WEB
