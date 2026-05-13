@@ -3092,10 +3092,6 @@ _Vista inicial del encabezado principal y navegación_ <br>
 ![Landing Page – Hero section](assets/ch6/omnitrack-landing-hero.png)
 <br>
 
-_Sección de características, planes y formulario de contacto_ <br>
-![Landing Page – Features y Plans](assets/ch6/omnitrack-landing-features.png)
-<br>
-
 Repositorio: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-landing-page)
 Enlace: [Click aquí](https://logic-nodes-landing-page.vercel.app)
 
@@ -3107,11 +3103,15 @@ _Dashboard principal con métricas de monitoreo IoT en tiempo real_ <br>
 ![Web App – Dashboard](assets/ch6/omnitrack-webapp-dashboard.png)
 <br>
 
-_Módulo de gestión de dispositivos IoT con visualización de estados_ <br>
-![Web App – IoT Management](assets/ch6/omnitrack-webapp-iot.png)
+_Módulo de gestión de vehículos de la flota con estados y dispositivos IoT asignados_ <br>
+![Web App – Fleet Vehicles](assets/ch6/omnitrack-webapp-iot.png)
 <br>
 
-_Módulo de alertas y notificaciones del sistema_ <br>
+_Módulo de viajes activos con estado, conductor y puntos de origen/destino_ <br>
+![Web App – Trips Module](assets/ch6/omnitrack-webapp-trips.png)
+<br>
+
+_Módulo de alertas con tipo, severidad y estado de resolución_ <br>
 ![Web App – Alerts Module](assets/ch6/omnitrack-webapp-alerts.png)
 <br>
 
@@ -3150,14 +3150,22 @@ Los principales grupos de endpoints documentados son:
 
 | Bounded Context | Endpoints principales | Métodos HTTP |
 |---|---|---|
-| **IAM** | `/api/auth/login`, `/api/auth/register` | POST |
-| **Fleet Management** | `/api/fleet`, `/api/fleet/:id` | GET, POST, PUT, DELETE |
-| **Trip Management** | `/api/trips`, `/api/trips/:id` | GET, POST, PUT, DELETE |
-| **Monitoring** | `/api/monitoring`, `/api/monitoring/:deviceId` | GET, POST |
-| **Alerts** | `/api/alerts`, `/api/alerts/:id` | GET, POST, PATCH |
-| **Analytics** | `/api/analytics/metrics`, `/api/analytics/report` | GET |
-| **Merchant** | `/api/merchants`, `/api/merchants/:id` | GET, POST, PUT |
-| **Profile** | `/api/profile/:userId` | GET, PUT |
+| **IAM – Authentication** | `/api/v1/authentication/sign-in`, `/api/v1/authentication/sign-up`, `/api/v1/authentication/refresh`, `/api/v1/authentication/logout` | POST |
+| **IAM – Users & Roles** | `/api/v1/users`, `/api/v1/users/:userId`, `/api/v1/roles` | GET |
+| **Fleet – Vehicles** | `/api/v1/fleet/vehicles`, `/api/v1/fleet/vehicles/:id`, `/api/v1/fleet/vehicles/:id/assign-device/:imei` | GET, POST, PUT, DELETE, PATCH |
+| **Fleet – Devices** | `/api/v1/fleet/devices`, `/api/v1/fleet/devices/:id`, `/api/v1/fleet/devices/by-imei/:imei` | GET, POST, PUT, DELETE, PATCH |
+| **Trip Management** | `/api/v1/trips`, `/api/v1/trips/:tripId`, `/api/v1/trips/:tripId/start`, `/api/v1/trips/:tripId/complete` | GET, POST, DELETE |
+| **Delivery Orders** | `/api/v1/delivery-orders`, `/api/v1/delivery-orders/trip/:tripId`, `/api/v1/delivery-orders/:id/delivery` | GET, POST, PUT, DELETE |
+| **Origin Points** | `/api/v1/origin-points`, `/api/v1/origin-points/search` | GET, POST, PUT, DELETE |
+| **Monitoring – Sessions** | `/api/v1/monitoring/sessions`, `/api/v1/monitoring/sessions/:id/pause`, `/api/v1/monitoring/sessions/:id/end` | GET, POST, DELETE |
+| **Monitoring – Telemetry** | `/api/v1/telemetry`, `/api/v1/telemetry/session/:sessionId` | GET, POST, DELETE |
+| **Alerts** | `/api/v1/alerts`, `/api/v1/alerts/:alertId/acknowledgment`, `/api/v1/alerts/:alertId/closure` | GET, POST, PATCH |
+| **Incidents** | `/api/v1/incidents`, `/api/v1/incidents/alert/:alertId` | GET, POST, PATCH |
+| **Notifications** | `/api/v1/notifications`, `/api/v1/notifications/:id/send` | GET, POST |
+| **Analytics** | `/api/v1/analytics/trips`, `/api/v1/analytics/alerts`, `/api/v1/analytics/incidents-by-month` | GET |
+| **Merchants** | `/api/v1/merchants`, `/api/v1/merchants/:id`, `/api/v1/merchants/:id/employee` | GET, POST, PUT, DELETE |
+| **Employees** | `/api/v1/employees`, `/api/v1/employees/merchants/:merchantId` | GET, DELETE |
+| **Profiles** | `/api/v1/profiles`, `/api/v1/profiles/user/:userId` | GET, POST, PUT, DELETE |
 
 <br>
 
@@ -3237,16 +3245,12 @@ Durante este sprint, el equipo de desarrollo trabajó de forma colaborativa en l
 
 Los analíticos de GitHub reflejan la participación activa de todos los integrantes, evidenciando commits frecuentes, revisiones de código y fusiones entre ramas, lo que demuestra un flujo de trabajo coordinado y una integración continua del proyecto. Asimismo, se promovió la retroalimentación mutua y la resolución conjunta de incidencias técnicas, fortaleciendo el liderazgo compartido y la cooperación dentro del equipo.<br>
 
-_Insights de colaboración – Landing Page_ <br>
+_Contributors – Landing Page (roiander: 3 commits, 2,107 adiciones)_ <br>
 ![GitHub Insights – Landing Page](assets/ch6/omnitrack-insights-landing.png)
 <br>
 
-_Insights de colaboración – Web Application_ <br>
+_Contributors – Web Application (jantonio-tech: 4 commits, JeremyAntonio: 2 commits)_ <br>
 ![GitHub Insights – Web Application](assets/ch6/omnitrack-insights-webapp.png)
-<br>
-
-_Insights de colaboración – Backend Services_ <br>
-![GitHub Insights – Backend](assets/ch6/omnitrack-insights-backend.png)
 <br>
 
 ## 6.3. Validation Interviews.
