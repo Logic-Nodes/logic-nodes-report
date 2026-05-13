@@ -2617,47 +2617,765 @@ _Events_
 # Capítulo VI: Product Implementation, Validation & Deployment
 
 ## 6.1. Software Configuration Management.
+El objetivo de esta sección es asegurar que todos los miembros usen las mismas herramientas, convenciones y procesos para:
 
+- Desarrollar código
+- Hacer pruebas
+- Desplegar versiones
+- Documentar el software
+  
 ### 6.1.1. Software Development Environment Configuration.
+
+| **Categoría**               | **Herramienta / Producto** | **Propósito en el proyecto**                                                                                                                                                    | **Tipo**          | **Ruta / Enlace de referencia** |
+| --------------------------- | -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------- | ------------------------------- |
+| **Project Management**      | **Discord**                | Plataforma de comunicación interna del equipo para coordinar reuniones, compartir pantalla y mantener interacción constante mediante chat, imágenes y videollamadas.            | SaaS / Escritorio | https://discord.com/ |
+| **Project Management**      | **WhatsApp**               | Canal de comunicación rápida entre los integrantes del equipo para asegurar coordinación continua y comunicación inmediata.                                                   | SaaS              | https://web.whatsapp.com/ |
+| **Requirements Management** | **UXPressia**              | Herramienta para modelar User Personas, Customer Journey Maps, Empathy Maps e Impact Maps, facilitando la documentación visual y colaborativa de requisitos.                   | SaaS              | https://uxpressia.com/ |
+| **Requirements Management** | **Miro**                   | Plataforma colaborativa para diagramación y mapeo de procesos que permite representar flujos, escenarios y segmentación de usuarios de forma visual e interactiva.              | SaaS              | https://miro.com/ |
+| **UX/UI Design**            | **Figma**                  | Herramienta de diseño y prototipado de interfaces que permite trabajo colaborativo en tiempo real y asegura consistencia visual en la interfaz del proyecto.                   | SaaS              | https://www.figma.com/ |
+| **Source Code Management**  | **Git & GitHub**           | Git gestiona el control de versiones y ramas, mientras GitHub permite alojar el repositorio y facilitar la colaboración en el desarrollo del código.                          | SaaS / Local      | https://github.com/ |
+| **Frontend Development**    | **React + Vite**           | Librería para construir interfaces de usuario en la Landing Page y Aplicación Web, con bundler Vite para builds rápidos y HMR durante desarrollo.                              | Local             | https://react.dev/ |
+| **Frontend Development**    | **Tailwind CSS**           | Framework de utilidades CSS para estilizar componentes de la Aplicación Web de forma consistente y responsiva.                                                                | Local             | https://tailwindcss.com/ |
+| **Frontend State**          | **Zustand**                | Librería ligera de gestión de estado en React para mantener sesión, datos de flota y alertas en la Aplicación Web.                                                            | Local             | https://github.com/pmndrs/zustand |
+| **Backend Development**     | **Node.js + Express**      | Runtime y framework para construir el servidor REST de OmniTrack, organizado bajo Clean Architecture por bounded contexts.                                                    | Local             | https://expressjs.com/ |
+| **Database**                | **PostgreSQL**             | Sistema gestor de base de datos relacional utilizado por el backend para persistencia de IAM, alerts, fleet, merchants, monitoring, profiles, trip y dashboard.               | Local / SaaS      | https://www.postgresql.org/ |
+| **Authentication**          | **JWT (jsonwebtoken)**     | Estándar para emitir y validar tokens de acceso y refresh tokens en los endpoints protegidos del backend.                                                                     | Local             | https://jwt.io/ |
+| **Code Editor**             | **Visual Studio Code**     | Editor de código utilizado por todo el equipo para frontend y backend, con extensiones para JavaScript, React y depuración de Node.js.                                        | Local             | https://code.visualstudio.com/ |
+| **Software Testing**        | **Jest + Supertest**       | Framework de pruebas para Node.js y librería para tests de contratos HTTP del backend, ubicados en `src/__tests__/http-contracts.test.js`.                                    | Local             | https://jestjs.io/ |
+| **Software Testing**        | **Postman**                | Herramienta para pruebas manuales de APIs REST que permite validar endpoints e inspeccionar respuestas durante el desarrollo.                                                 | SaaS / Local      | https://www.postman.com/ |
+| **API Documentation**       | **Swagger UI**             | Interfaz interactiva para visualizar la especificación OpenAPI del backend, accesible en `/docs` y `/swagger.json` (paquete `swagger-ui-express`).                            | Local             | https://swagger.io/tools/swagger-ui/ |
+| **Software Deployment**     | **Vercel**                 | Plataforma de hosting con despliegue continuo desde GitHub utilizada para publicar la Landing Page y la Aplicación Web en producción.                                          | SaaS              | https://vercel.com/ |
+| **Software Deployment**     | **Microsoft Azure**        | Plataforma cloud donde se despliega el Backend Services (Azure App Service) junto con su base de datos gestionada (Azure Database for PostgreSQL).                            | SaaS              | https://azure.microsoft.com/ |
+| **Software Documentation**  | **Markdown**               | Lenguaje de marcado ligero utilizado para la documentación técnica del proyecto como README, manuales y guías de instalación.                                                 | Local             | https://www.markdownguide.org/ |
 
 ### 6.1.2. Source Code Management.
 
+El equipo utiliza Git como sistema de control de versiones distribuido y GitHub como plataforma de alojamiento remoto de repositorios. Esta configuración permite la colaboración en equipo, el seguimiento de cambios y la integración con flujos de CI/CD.
+
+**Repositorio de los productos:**
+
+- Repositorio del Landing Page: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-landing-page)
+- Repositorio del Frontend Web Applications: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-webapp)
+- Repositorio del Backend: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-server)
+
+Se implementa el flujo de trabajo GitFlow. Este modelo organiza el desarrollo en ramas con funciones específicas para mantener la estabilidad de la rama principal **`main`** y facilitar el desarrollo paralelo de nuevas características.
+
+- **`main`**: contiene el código estable y listo para producción.
+- **`develop`**: integra las nuevas funcionalidades desarrolladas y sirve como base para las versiones futuras.
+- **`feature`**: se utiliza para desarrollar nuevas funcionalidades. Cada funcionalidad tiene su propia rama basada en **`develop`** y se fusiona nuevamente en **`develop`** al completarse.
+- **`release`**: se crea a partir de **`develop`** cuando se prepara una versión para producción. Permite realizar pruebas y ajustes menores antes del lanzamiento.
+- **`hotfix`**: se crea desde **`main`** para corregir errores críticos detectados en producción. Una vez solucionado, se fusiona en **`main`** y **`develop`**.
+
+**Convenciones de nombres de ramas:**
+
+- Feature branches: **`feature/nombre`** -> Ejemplo: **`feature/trip-management`**
+- Release branches: **`release/vX.Y.Z`** -> Ejemplo: **`release/v0.0.1`**
+- Hotfix branches: **`hotfix/vX.Y.Z`** -> Ejemplo: **`hotfix/v1.0.1`**
+
+Se adopta el esquema **Semantinc Versioning 2.0.0** para identificar las versiones de los productos digitales.
+Formato: **`MAJOR.MINOR.PATCH`**
+
+- MAJOR: cambios incompatibles.
+- MINOR: nuevas funcionalidades compatibles.
+- PATCH: correción de errores o mejoras menores.
+
+Ejemplo: **`v1.0.0`**.**`v1.1.0`**.**`v1.1.1`**
+
+Se utiliza el estándar Conventional Commits para mantener una trazabilidad clara del historial de cambios.
+Formato: **`<tipo>(<alcance>): <descripción>`**
+Ejemplos:
+
+- **`feat(alert-and-resolutions)`**: add alert and resolutions page
+- **`fix(trip-managment)`**: update trip info
+- **`docs(chap-6)`**: add software configuration management
+
+Tipos principales:
+
+- **`feat`**: nueva funcionalidad.
+- **`fix`**: corrección de error.
+- **`docs`**: documentación.
+- **`style`**: formato o estilos (sin cambio funcional).
+- **`refactor`**: reestructuración del código.
+- **`test`**: adición o mejora de pruebas.
+- **`chore`**: tareas de mantenimiento o configuración.
+
+Toda nueva funcionalidad o correción debe ser revisada mediante Pull Request (PR). Al aprobarse, la rama se fusiona (**`merge`**) en **`develop`** o **`main`** según el caso.
+
+A continuación se detallarán las ramas creadas y las convenciones que se aplicarán:
+
+| Tipo de Rama           | Nombre                                                                                                                                                                | Propósito                                                            | Rama en la que se crea | Rama en la que se fusiona         |
+| ---------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------- | ---------------------- | --------------------------------- |
+| **Main branch**        | `main`                                                                                                                                                                | Código estable listo para producción                                 | —                      | —                                 |
+| **Development branch** | `develop`                                                                                                                                                             | Integrar todas las nuevas funcionalidades antes de lanzar            | Creada desde `main`    | Recibe merges de `feature/*`      |
+| **Feature branches**   | `feature/IAM`, `feature/alerts-and-resolutions`, `feature/fleet-management`, `feature/subscriptions`, `feature/visualization-and-analytics`,`feature/trip-management` | Contienen el desarrollo de nuevas funcionalidades específicas        | Desde `develop`        | Se fusionan en `develop`          |
+| **Release branches**   | `release/v1.0.0`, `release/v1.1.0`                                                                                                                                    | Preparar una versión candidata con ajustes menores y pruebas finales | Desde `develop`        | Se fusionan en `main` y `develop` |
+| **Hotfix branches**    | `hotfix/v1.0.1`, `hotfix/v1.1.1`                                                                                                                                      | Corregir errores críticos que aparecen en producción                 | Desde `main`           | Se fusionan en `main` y `develop` |
+
+
 ### 6.1.3. Source Code Style Guide & Conventions.
 
+Se detallan las convenciones de codificación y nomenclatura que el equipo adoptará para los lenguajes, frameworks y herramientas utilizadas en la solución **OmniTrack**.  
+Todas las convenciones se aplicarán en idioma inglés con el objetivo de mantener consistencia, legibilidad y estandarización en el código desarrollado por todos los integrantes del equipo.
+
+---
+
+# **HTML**
+
+https://google.github.io/styleguide/htmlcssguide.html
+
+## Convenciones
+
+- Utilizar minúsculas para etiquetas, atributos y valores.
+- Mantener una estructura jerárquica clara mediante etiquetas correctamente anidadas.
+- Aplicar indentación uniforme de 2 espacios por nivel.
+- Los atributos deben escribirse entre comillas dobles (`"`).
+- Emplear nombres descriptivos y semánticos en clases e identificadores.
+- Evitar estilos en línea, priorizando archivos CSS externos o clases reutilizables.
+
+## Ejemplo
+
+```html
+<section class="device-list">
+  <h2 class="section-title">Example</h2>
+</section>
+```
+
+---
+
+# **CSS**
+
+https://google.github.io/styleguide/htmlcssguide.html
+
+## Convenciones
+
+- Utilizar nomenclatura Kebab-case para clases e identificadores (`.button-primary`, `.nav-bar`).
+- Agrupar propiedades relacionadas y mantener un orden consistente.
+- Evitar niveles excesivos de anidación en selectores.
+- Aplicar indentación de 2 espacios.
+- Finalizar cada bloque con una línea en blanco para mejorar la legibilidad.
+
+## Ejemplo
+
+```css
+.example-list {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 1rem;
+}
+```
+
+---
+
+# **JavaScript**
+
+https://google.github.io/styleguide/jsguide.html
+
+## Convenciones
+
+- Utilizar camelCase para variables y funciones.
+- Utilizar PascalCase para clases y componentes.
+- Declarar constantes globales en UPPER_CASE.
+- Priorizar el uso de `const` y `let` sobre `var`.
+- Evitar funciones anidadas innecesarias y callbacks excesivos.
+- Utilizar arrow functions y template literals cuando sea apropiado.
+- Mantener una sola clase o módulo principal por archivo.
+
+## Ejemplo
+
+```js
+const API_URL = 'https://api.omnitrack.app'
+
+class Example {
+  constructor(exampleId) {
+    this.exampleId = exampleId
+  }
+
+  getStatus() {
+    return `${this.exampleId} is active`
+  }
+}
+```
+
+---
+
+# **Node.js + Express (Backend)**
+
+https://github.com/goldbergyoni/nodebestpractices
+
+## Convenciones
+
+- Utilizar ECMAScript Modules (`import`/`export`) en lugar de CommonJS.
+- Organizar el código por **bounded contexts** bajo `src/contexts/<context>/{application,interfaces/http,infrastructure}` siguiendo Clean Architecture.
+- Nombres de archivo en kebab-case (`alerts.routes.js`, `authentication-service.js`).
+- Manejar errores con un middleware central (`errorHandler`) y propagar con `next(error)`.
+- Exponer rutas REST bajo el prefijo `/api/v1/*`.
+- Cargar configuración con `dotenv` y validar variables de entorno al inicio.
+- Aplicar middlewares de seguridad (`helmet`, `cors`) y logging (`morgan`).
+
+## Ejemplo
+
+```js
+import { Router } from "express";
+import { listAlerts, createAlert } from "../../application/alert-service.js";
+
+const router = Router();
+
+router.get("/", async (req, res, next) => {
+  try {
+    const items = await listAlerts();
+    res.status(200).json({ items });
+  } catch (error) {
+    next(error);
+  }
+});
+
+export default router;
+```
+
+---
+
+# **SQL (PostgreSQL)**
+
+https://www.sqlstyle.guide/
+
+## Convenciones
+
+- Palabras reservadas en MAYÚSCULAS (`SELECT`, `CREATE TABLE`, `REFERENCES`).
+- Nombres de tablas y columnas en `snake_case` y plural para tablas (`users`, `user_refresh_tokens`).
+- Claves primarias `BIGSERIAL PRIMARY KEY`.
+- Timestamps `created_at` y `updated_at` con `DEFAULT NOW()`.
+- Enums tipados (`CREATE TYPE ... AS ENUM (...)`) para valores controlados del dominio.
+- Foreign keys con `ON DELETE CASCADE` cuando la relación lo amerite.
+
+## Ejemplo
+
+```sql
+CREATE TABLE IF NOT EXISTS alerts (
+  id BIGSERIAL PRIMARY KEY,
+  delivery_order_id BIGINT NOT NULL,
+  type alert_type_enum NOT NULL,
+  status alert_status_enum NOT NULL DEFAULT 'OPEN',
+  created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+  updated_at TIMESTAMP NOT NULL DEFAULT NOW()
+);
+```
+
+---
+
+# **Gherkin**
+
+https://cucumber.io/docs/gherkin/reference/
+
+## Convenciones
+
+- Utilizar mayúscula inicial en las palabras clave (`Feature`, `Scenario`, `Given`, `When`, `Then`).
+- Redactar escenarios utilizando lenguaje claro y comprensible.
+- Mantener una única característica (`Feature`) por archivo.
+- Conservar consistencia en la redacción de los pasos.
+- Incorporar etiquetas (`@tag`) para clasificar y organizar escenarios.
+
+## Ejemplo
+
+```gherkin
+Feature: User Login
+
+  Scenario: Successful login with valid credentials
+    Given the user is on the login page
+    When the user enters valid credentials
+    Then the dashboard is displayed
+```
+
 ### 6.1.4. Software Deployment Configuration.
+
+El equipo utiliza **Vercel** como plataforma principal de despliegue continuo para los productos frontend de OmniTrack. Vercel se integra directamente con los repositorios alojados en GitHub, ejecutando builds automáticos ante cada push en las ramas configuradas, eliminando la necesidad de intervención manual en el proceso de publicación.
+
+---
+
+**Landing Page**
+
+La Landing Page desarrollada con React + Vite se despliega en Vercel conectada al repositorio `logic-nodes-landing-page`. Cada cambio confirmado en la rama `main` desencadena un nuevo build y despliegue automático hacia producción.
+
+- Repositorio: [https://github.com/Logic-Nodes/logic-nodes-landing-page](https://github.com/Logic-Nodes/logic-nodes-landing-page)
+- URL en producción: [https://logic-nodes-landing-page.vercel.app](https://logic-nodes-landing-page.vercel.app)
+
+---
+
+**Web Application**
+
+La aplicación web frontend desarrollada en React + Vite se despliega en Vercel desde el repositorio `logic-nodes-webapp`. El archivo `vercel.json` configura el comportamiento del enrutamiento SPA, redirigiendo todas las rutas al `index.html` para que React Router gestione la navegación en el cliente.
+
+```json
+{
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
+```
+
+- Repositorio: [https://github.com/Logic-Nodes/logic-nodes-webapp](https://github.com/Logic-Nodes/logic-nodes-webapp)
+- URL en producción: [https://logic-nodes-webapp.vercel.app](https://logic-nodes-webapp.vercel.app)
+
+---
+
+**Backend Services**
+
+El backend desarrollado en **Node.js + Express** con persistencia en **PostgreSQL** se despliega en **Microsoft Azure**. La aplicación se publica mediante Azure App Service para Node.js, mientras que la base de datos se provisiona con **Azure Database for PostgreSQL** (servicio gestionado). Las variables de entorno necesarias se configuran desde el panel de Application Settings de Azure y replican el formato del `.env.example` versionado en el repositorio:
+
+```env
+NODE_ENV=production
+PORT=3000
+DB_HOST=<azure-postgres-host>
+DB_PORT=5432
+DB_NAME=logicnodesdb
+DB_USER=<azure-admin-user>
+DB_PASSWORD=<azure-admin-password>
+JWT_SECRET=<jwt-secret>
+JWT_EXPIRES_IN=1h
+JWT_REFRESH_EXPIRES_IN=7d
+```
+
+El backend expone los endpoints REST bajo el prefijo `/api/v1/*` y publica la documentación interactiva de Swagger UI en la ruta `/docs`. La elección de Azure responde a la necesidad de contar con escalabilidad horizontal, monitoreo integrado y una base de datos PostgreSQL gestionada para mantener la disponibilidad del servicio en producción.
+
+- Repositorio: [https://github.com/Logic-Nodes/logic-nodes-server](https://github.com/Logic-Nodes/logic-nodes-server)
 
 ## 6.2. Landing Page, Services & Applications Implementation.
 
 ### 6.2.1. Sprint 1
 
 #### 6.2.1.1. Sprint Planning 1.
+En esta sección se describen los principales acuerdos y objetivos definidos durante el Sprint Planning correspondiente al Sprint 1 del proyecto OmniTrack desarrollado por la startup LogicNodes.
+
+Este sprint estuvo enfocado en completar los entregables solicitados para la primera entrega académica del proyecto, incluyendo el desarrollo de la Landing Page, la implementación inicial de la aplicación frontend y el backend funcional de la plataforma. Asimismo, se consolidó la arquitectura basada en Domain-Driven Design (DDD) y la organización de bounded contexts identificados durante las sesiones de EventStorming.
+
+| Sprint # | |
+|---|---|
+| Sprint 1 | |
+
+### Sprint Planning Background
+
+| Campo | Descripción |
+|---|---|
+| Date | 2026-05-08 |
+| Time | 08:30 PM |
+| Location | Reunión virtual mediante Discord |
+| Prepared By | Rodrigo Alonso Alcantara Cruz |
+| Attendees (to planning meeting) | Rodrigo Alonso Alcantara Cruz / Paulo Percy Quincho Gamarra / Adrian Emanuel Valerio Garcia / Luiggi Jeremy Jouvenel Antonio Loayza / Alejandro Daniel Oroncoy Almeyda |
+| Sprint 1 Review Summary | Al tratarse del primer sprint del proyecto OmniTrack, no existió un sprint previo para revisión. Durante esta etapa se logró completar la Landing Page, el frontend principal de la plataforma y la implementación inicial del backend necesario para soportar las funcionalidades core del sistema. |
+| Sprint 1 Retrospective Summary | El equipo logró organizar correctamente la arquitectura inicial del sistema utilizando principios de Domain-Driven Design y bounded contexts. Rodrigo Alcantara lideró la coordinación general del proyecto y Paulo Quincho concentró gran parte del desarrollo backend. Los demás integrantes apoyaron principalmente en documentación, modelado y organización del informe académico. |
+
+### Sprint Goal & User Stories
+
+| Campo | Descripción |
+|---|---|
+| Sprint 1 Goal | Nuestro enfoque estuvo en desarrollar una primera versión funcional de OmniTrack mediante la implementación de una Landing Page moderna, una aplicación frontend navegable y un backend inicial capaz de soportar las funcionalidades principales del sistema relacionadas al monitoreo logístico IoT.<br><br>Creemos que esto permite validar técnicamente la arquitectura propuesta, demostrar el flujo completo de la plataforma y establecer una base sólida para futuras integraciones con dispositivos IoT y servicios analíticos.<br><br>Esto se confirmó cuando el equipo logró desplegar correctamente la Landing Page, el frontend y el backend funcionales para la entrega académica, permitiendo navegar por los módulos principales del sistema y consumir datos desde servicios backend implementados por el equipo. |
+| Sprint 1 Velocity | 48 Story Points |
+| Sum of Story Points | 45 Story Points |
+
+---
 
 #### 6.2.1.2. Aspect Leaders and Collaborators.
 
+Para el Sprint 1 se organizaron los principales aspectos funcionales y técnicos del sistema OmniTrack considerando tanto el desarrollo frontend como backend de la solución.
+
+Los aspectos considerados fueron:
+
+1. **Landing Page**: Presentación del producto y propuesta de valor.
+2. **Frontend Application**: Implementación visual y navegación de módulos.
+3. **Backend Services**: Desarrollo de APIs y lógica backend.
+4. **DDD Architecture**: Organización de bounded contexts y arquitectura.
+5. **Documentation**: Elaboración del informe académico y diagramas.
+
+A continuación, se presenta la matriz LACX (Leadership and Collaboration Matrix):
+
+| Team Member | Landing Page | Frontend | Backend | DDD Architecture | Documentation |
+|---|---|---|---|---|---|
+| Rodrigo Alonso Alcantara Cruz | L | L | C | L | L |
+| Paulo Percy Quincho Gamarra | C | C | L | C | C |
+| Adrian Emanuel Valerio Garcia | C | C | C | C | L |
+| Luiggi Jeremy Jouvenel Antonio Loayza | C | C | C | L | L |
+| Alejandro Daniel Oroncoy Almeyda | C | C | C | C | L |
+
+### Leyenda
+
+- **L (Leader):** Responsable principal del aspecto.
+- **C (Collaborator):** Participa activamente apoyando en el desarrollo o documentación.
+
+---
+
 #### 6.2.1.3. Sprint Backlog 1.
+
+Durante este sprint se desarrollaron las funcionalidades principales asociadas a la Landing Page, frontend y backend del sistema OmniTrack.
+
+La gestión del sprint se realizó utilizando Jira para la organización de tareas, seguimiento de avances y coordinación de entregables.
+
+| User Story Id | User Story Title | Task Id | Task Title | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---|---|
+| US01 | Landing Page principal | T01 | Implementar Hero Section responsive | 3 | Rodrigo Alcantara | Done |
+| US02 | Navegación del sistema | T02 | Implementar navbar responsive | 2 | Rodrigo Alcantara | Done |
+| US03 | Gestión de usuarios | T03 | Implementar autenticación backend | 5 | Paulo Quincho | Done |
+| US04 | Gestión de usuarios | T04 | Implementar endpoints de login | 4 | Paulo Quincho | Done |
+| US05 | Gestión de activos IoT | T05 | Crear endpoints de dispositivos IoT | 5 | Paulo Quincho | Done |
+| US06 | Dashboard analítico | T06 | Implementar gráficos frontend | 4 | Rodrigo Alcantara | Done |
+| US07 | Gestión de rutas | T07 | Crear módulo de viajes | 4 | Paulo Quincho | Done |
+| US08 | Arquitectura DDD | T08 | Organizar bounded contexts | 3 | Luiggi Loayza | Done |
+| US09 | Documentación técnica | T09 | Elaborar diagramas arquitectónicos | 3 | Adrian Valerio | Done |
+| US10 | Documentación académica | T10 | Redacción y consolidación del informe | 4 | Alejandro Oroncoy | Done |
+
+---
 
 #### 6.2.1.4. Development Evidence for Sprint Review.
 
+Durante el sprint, en la web application, backend services y landing page del proyecto **OmniTrack** desarrollado por la startup **LogicNodes**, se estableció la base funcional del sistema. Se implementaron las principales vistas de la plataforma, integración frontend-backend, autenticación inicial, APIs REST y la estructura arquitectónica basada en bounded contexts bajo principios de Domain-Driven Design (DDD).
+
+Asimismo, se añadieron secciones informativas en la Landing Page tales como Features, Benefits, Plans y Contact, además de navegación responsive y soporte bilingüe (EN/ES). También se documentó el proyecto y se ajustó la configuración general de entornos y repositorios.
+
+---
+
+### Landing Page
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+|---|---|---|---|---|---|
+| `logicnodes-omnitrack-landing` | `main` | **f82ab31** | build(base): initialize landing page project | Configuración inicial del proyecto y estructura base de desarrollo. | 2026-05-04 |
+| `logicnodes-omnitrack-landing` | `hero-section` | **ab31de4** | feat(hero): implement responsive hero section | Implementación de sección Hero con CTA y diseño responsive. | 2026-05-04 |
+| `logicnodes-omnitrack-landing` | `features` | **9fca221** | feat(features): add features section | Sección de funcionalidades principales de la plataforma OmniTrack. | 2026-05-05 |
+| `logicnodes-omnitrack-landing` | `benefits` | **7ab2cd9** | feat(benefits): implement benefits section | Implementación visual de beneficios y propuesta de valor. | 2026-05-05 |
+| `logicnodes-omnitrack-landing` | `plans` | **5ce912a** | feat(plans): add subscription plans section | Sección de planes y suscripciones con diseño responsive. | 2026-05-06 |
+| `logicnodes-omnitrack-landing` | `contact-section` | **3fe81bc** | feat(contact): add contact form section | Implementación de formulario de contacto y enlaces externos. | 2026-05-06 |
+| `logicnodes-omnitrack-landing` | `navigation` | **82bcf71** | feat(navbar): implement responsive navigation | Navbar responsive con navegación entre secciones. | 2026-05-07 |
+| `logicnodes-omnitrack-landing` | `internationalization` | **1af3d90** | feat(i18n): add english and spanish support | Soporte bilingüe EN/ES para toda la Landing Page. | 2026-05-07 |
+| `logicnodes-omnitrack-landing` | `main` | **0de77ab** | docs: add initial landing page documentation | Documentación inicial del proyecto y configuración de despliegue. | 2026-05-08 |
+| `logicnodes-omnitrack-landing` | `main` | **6bc91d2** | chore(gitignore): update repository ignores | Configuración de `.gitignore` y archivos de entorno. | 2026-05-08 |
+
+---
+
+### Web Application
+
+Durante este sprint se desarrollaron los módulos principales de la aplicación web de **OmniTrack**.
+
+Rodrigo Alcantara lideró el desarrollo frontend y la integración general del proyecto, mientras que Paulo Quincho realizó la mayor parte de la implementación backend y APIs REST necesarias para el funcionamiento de la plataforma.
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+|---|---|---|---|---|---|
+| `logicnodes-omnitrack-frontend` | `main` | **c31ab55** | initial commit | Configuración inicial del proyecto frontend Angular. | 2026-05-04 |
+| `logicnodes-omnitrack-frontend` | `develop` | **f22ca71** | feat(shared): implement shared layout and routing | Implementación de layout principal y sistema de rutas. | 2026-05-05 |
+| `logicnodes-omnitrack-frontend` | `authentication` | **e1bc773** | feat(auth): implement login and register pages | Pantallas de login, registro y recuperación de contraseña. | 2026-05-05 |
+| `logicnodes-omnitrack-frontend` | `dashboard` | **6d912ac** | feat(dashboard): add monitoring dashboard | Dashboard principal con gráficos y monitoreo general. | 2026-05-06 |
+| `logicnodes-omnitrack-frontend` | `iot-management` | **7ca33de** | feat(iot): implement IoT device management module | Gestión de dispositivos IoT y visualización de estados. | 2026-05-06 |
+| `logicnodes-omnitrack-frontend` | `trips-module` | **5fd22cb** | feat(trips): implement trips management pages | Módulo de viajes con listado y detalle de rutas. | 2026-05-07 |
+| `logicnodes-omnitrack-frontend` | `alerts-module` | **91bd4ac** | feat(alerts): add alerts and notifications screens | Pantallas de alertas y notificaciones del sistema. | 2026-05-07 |
+| `logicnodes-omnitrack-frontend` | `analytics-module` | **4ca12bf** | feat(analytics): implement analytics charts | Integración de gráficos y visualización analítica. | 2026-05-08 |
+| `logicnodes-omnitrack-frontend` | `develop` | **3de72ca** | feat(env): add environment configuration | Configuración de entornos de desarrollo y producción. | 2026-05-08 |
+
+---
+
+### Backend Services
+
+Durante el sprint también se desarrolló el backend de OmniTrack utilizando **Node.js + Express** con persistencia en **PostgreSQL**, implementando APIs REST organizadas bajo Clean Architecture por bounded contexts y migrando los contratos previos del backend Java. Paulo Quincho lideró la implementación del servidor, exponiendo todos los endpoints bajo el prefijo `/api/v1/*`, configurando autenticación JWT (access + refresh tokens) y documentando la API mediante Swagger UI en `/docs`.
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+|---|---|---|---|---|---|
+| `logic-nodes-server` | `main` | **d63cc79** | first commit | Configuración inicial del proyecto backend en Node.js + Express con estructura Clean Architecture. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **1a29544** | Feat: Creacion de la base de datos para conexion | Definición del schema PostgreSQL (`db/schema.sql`) con tablas, enums y relaciones del dominio. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **d2fc55b** | Feat: Configuracion para Conexion con la BD en Postgres | Configuración del pool de conexiones `pg` y variables de entorno (`.env.example`). | 2026-04-16 |
+| `logic-nodes-server` | `main` | **9e9e6c4** | Feat: Finalizacion de Modulo IAM para el consumo de endpoints | Endpoints de autenticación (sign-in, sign-up, refresh, logout) y emisión de JWT con bcryptjs. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **6daad6d** | Feat: Finalizacion de Modulo Profile para el consumo de endpoints | CRUD de perfiles de usuario con relación al bounded context IAM. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **b129ad1** | Feat: Finalizacion de Modulo Trip para el consumo de endpoints | Endpoints de viajes, delivery orders y origin points con cambios de estado del viaje. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **9f7f1b0** | Feat: Finalizacion de Modulo Monitoreo para el consumo de endpoints | Sesiones de monitoreo y telemetría asociadas a los viajes en curso. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **3bba7cd** | Feat: Finalizacion de Modulo Merchant para el consumo de endpoints | CRUD de merchants y gestión de empleados asociados. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **0f61ec9** | Feat: Finalizacion de Modulo Fleet para el consumo de endpoints | Endpoints para vehículos y dispositivos IoT con asignación entre ellos. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **b6c0150** | Feat: Finalizacion de Modulo Dashboard para el consumo de endpoints | Analytics agregados de viajes, alertas e incidentes por mes. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **b306e3d** | Feat: Finalizacion de Modulo Alertas para el consumo de endpoints | Endpoints de alertas, incidentes y notificaciones con cambios de estado. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **541a767** | Feat: Creacion de Test para pruebas unitarias | Tests de contratos HTTP con Jest + Supertest en `src/__tests__/http-contracts.test.js`. | 2026-04-16 |
+| `logic-nodes-server` | `main` | **3240119** | Feat: Implementacion de Swagger para Documentacion | Documentación interactiva en `/docs` con `swagger-ui-express` y especificación OpenAPI. | 2026-04-16 |
+
+<br>
+
+- También se completó la integración funcional entre frontend y backend, permitiendo validar los principales flujos del sistema para la entrega académica del Sprint 1.<br>
+
 #### 6.2.1.5. Testing Suite Evidence for Sprint Review.
+
+Durante este sprint se incorporó una suite de pruebas automatizadas en el **Backend Services** utilizando **Jest** como framework de testing y **Supertest** para pruebas de contratos HTTP. La configuración se encuentra en `jest.config.js` y los tests están ubicados en `src/__tests__/`.
+
+**Pruebas automatizadas implementadas en el backend:**
+
+| Archivo | Tipo | Cobertura |
+|---|---|---|
+| `src/__tests__/http-contracts.test.js` | Tests de contratos HTTP (integración) | Validación de las rutas REST de los 17 bounded contexts: alerts, incidents, notifications, analytics, fleet (devices + vehicles), authentication, roles, users, employees, merchants, monitoring, telemetry, profiles, delivery orders, origin points y trips. |
+
+La ejecución se realiza mediante:
+
+```bash
+npm test
+```
+
+El comando configurado en `package.json` ejecuta Jest con soporte para ECMAScript Modules (`--experimental-vm-modules`) y detección de handles abiertos (`--detectOpenHandles`).
+
+**Validaciones adicionales realizadas manualmente:**
+
+- Verificación visual de componentes frontend (React + Tailwind).
+- Pruebas de integración entre la Aplicación Web y el backend real mediante Axios.
+- Validación de endpoints REST principales con Postman y Swagger UI.
+- Pruebas de autenticación JWT (sign-in, refresh, logout).
+- Navegación end-to-end por los módulos Dashboard, Vehicles, Trips y Alerts.
+
+El equipo planea ampliar la suite de pruebas en los siguientes sprints incorporando tests unitarios por bounded context, tests del frontend con React Testing Library y un pipeline de CI en GitHub Actions que ejecute la suite automáticamente en cada Pull Request.
 
 #### 6.2.1.6. Execution Evidence for Sprint Review.
 
+Durante este sprint se alcanzó la implementación funcional de los tres productos digitales de **OmniTrack**: la **Landing Page**, la **Aplicación Web** y los **Backend Services**, cumpliendo con los objetivos planteados en el alcance del sprint.
+
+La landing fue desarrollada con React y Vite, orientada a comunicar la propuesta de valor de OmniTrack, sus funcionalidades principales, planes de suscripción y un formulario de contacto con soporte bilingüe (EN/ES).
+
+La aplicación web fue construida con React 18, Tailwind CSS, Zustand para gestión de estado y Recharts para visualizaciones analíticas, integrándose con el backend real mediante Axios. El backend fue desarrollado en Node.js con Express, expone APIs REST organizadas por bounded contexts bajo arquitectura DDD y cuenta con documentación generada mediante Swagger UI.
+
+A continuación se muestran los principales resultados obtenidos:
+
+**Landing Page**
+
+_Vista inicial del encabezado principal y navegación_ <br>
+![Landing Page – Hero section](assets/ch6/omnitrack-landing-hero.png)
+<br>
+
+Repositorio: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-landing-page)
+Enlace: [Click aquí](https://logic-nodes-landing-page.vercel.app)
+
+<br>
+
+**Web Application**
+
+_Dashboard principal con métricas de monitoreo IoT en tiempo real_ <br>
+![Web App – Dashboard](assets/ch6/omnitrack-webapp-dashboard.png)
+<br>
+
+_Módulo de gestión de vehículos de la flota con estados y dispositivos IoT asignados_ <br>
+![Web App – Fleet Vehicles](assets/ch6/omnitrack-webapp-iot.png)
+<br>
+
+_Módulo de viajes activos con estado, conductor y puntos de origen/destino_ <br>
+![Web App – Trips Module](assets/ch6/omnitrack-webapp-trips.png)
+<br>
+
+_Módulo de alertas con tipo, severidad y estado de resolución_ <br>
+![Web App – Alerts Module](assets/ch6/omnitrack-webapp-alerts.png)
+<br>
+
+Repositorio: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-webapp)
+Aplicación en línea: [Click aquí](https://logic-nodes-webapp.vercel.app)
+
+<br>
+
+**Backend Services**
+
+_Endpoints REST disponibles a través de Swagger UI_ <br>
+![Backend – Swagger UI](assets/ch6/omnitrack-backend-swagger.png)
+<br>
+
+Repositorio: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-server)
+
+<br>
+
+**Conclusión:**
+
+- El resultado de este sprint permitió disponer de una versión navegable y funcional del producto completo, con la landing pública, la aplicación web conectada al backend real y los servicios REST documentados.
+- Esto consolida la base para el siguiente sprint, donde se incorporarán pruebas automatizadas, mejoras de rendimiento y validación con usuarios reales.
+
 #### 6.2.1.7. Services Documentation Evidence for Sprint Review.
+
+Durante este sprint se implementó documentación de los Web Services mediante **Swagger UI**, integrada directamente en el backend desarrollado en Node.js con Express, utilizando el paquete `swagger-ui-express`.
+
+La especificación cubre todos los endpoints REST de OmniTrack, organizados por bounded contexts de acuerdo con la arquitectura DDD adoptada, detallando métodos HTTP, parámetros, cuerpos de solicitud y respuestas esperadas.
+
+Los principales grupos de endpoints documentados son:
+
+| Bounded Context | Endpoints principales | Métodos HTTP |
+|---|---|---|
+| **IAM – Authentication** | `/api/v1/authentication/sign-in`, `/api/v1/authentication/sign-up`, `/api/v1/authentication/refresh`, `/api/v1/authentication/logout` | POST |
+| **IAM – Users & Roles** | `/api/v1/users`, `/api/v1/users/:userId`, `/api/v1/roles` | GET |
+| **Fleet – Vehicles** | `/api/v1/fleet/vehicles`, `/api/v1/fleet/vehicles/:id`, `/api/v1/fleet/vehicles/:id/assign-device/:imei` | GET, POST, PUT, DELETE, PATCH |
+| **Fleet – Devices** | `/api/v1/fleet/devices`, `/api/v1/fleet/devices/:id`, `/api/v1/fleet/devices/by-imei/:imei` | GET, POST, PUT, DELETE, PATCH |
+| **Trip Management** | `/api/v1/trips`, `/api/v1/trips/:tripId`, `/api/v1/trips/:tripId/start`, `/api/v1/trips/:tripId/complete` | GET, POST, DELETE |
+| **Delivery Orders** | `/api/v1/delivery-orders`, `/api/v1/delivery-orders/trip/:tripId`, `/api/v1/delivery-orders/:id/delivery` | GET, POST, PUT, DELETE |
+| **Origin Points** | `/api/v1/origin-points`, `/api/v1/origin-points/search` | GET, POST, PUT, DELETE |
+| **Monitoring – Sessions** | `/api/v1/monitoring/sessions`, `/api/v1/monitoring/sessions/:id/pause`, `/api/v1/monitoring/sessions/:id/end` | GET, POST, DELETE |
+| **Monitoring – Telemetry** | `/api/v1/telemetry`, `/api/v1/telemetry/session/:sessionId` | GET, POST, DELETE |
+| **Alerts** | `/api/v1/alerts`, `/api/v1/alerts/:alertId/acknowledgment`, `/api/v1/alerts/:alertId/closure` | GET, POST, PATCH |
+| **Incidents** | `/api/v1/incidents`, `/api/v1/incidents/alert/:alertId` | GET, POST, PATCH |
+| **Notifications** | `/api/v1/notifications`, `/api/v1/notifications/:id/send` | GET, POST |
+| **Analytics** | `/api/v1/analytics/trips`, `/api/v1/analytics/alerts`, `/api/v1/analytics/incidents-by-month` | GET |
+| **Merchants** | `/api/v1/merchants`, `/api/v1/merchants/:id`, `/api/v1/merchants/:id/employee` | GET, POST, PUT, DELETE |
+| **Employees** | `/api/v1/employees`, `/api/v1/employees/merchants/:merchantId` | GET, DELETE |
+| **Profiles** | `/api/v1/profiles`, `/api/v1/profiles/user/:userId` | GET, POST, PUT, DELETE |
+
+<br>
+
+_Vista principal de Swagger UI con la especificación OpenAPI 3.0 cargada (`LogicNodes API 1.0.0`) servida desde `/docs`_ <br>
+![Backend – Swagger overview](assets/ch6/omnitrack-backend-swagger.png)
+<br>
+
+_Detalle del módulo IAM con endpoint POST `/api/v1/authentication/sign-in` expandido mostrando parámetros, request body y `Try it out`_ <br>
+![Backend – Swagger IAM expanded](assets/ch6/omnitrack-swagger-iam.png)
+<br>
+
+_Endpoints de Origin Points, Delivery Orders y Alerts con métodos GET, POST, PUT, DELETE y PATCH agrupados por bounded context_ <br>
+![Backend – Swagger Trips, Delivery Orders y Alerts](assets/ch6/omnitrack-swagger-trips-alerts.png)
+<br>
+
+_Sección de Monitoring (sessions/pause/end/resume) y Telemetry con los endpoints REST para captura de datos IoT_ <br>
+![Backend – Swagger Monitoring y Telemetry](assets/ch6/omnitrack-swagger-monitoring.png)
+<br>
+
+_Sección de Schemas con los modelos de request/response (TokenPair, Trip, OriginPoint, DeliveryOrder, Alert, etc.) documentados como componentes OpenAPI_ <br>
+![Backend – Swagger Schemas](assets/ch6/omnitrack-swagger-schemas.png)
+<br>
+
+Repositorio del backend: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-server)
+
+<br>
+
+**Conclusión:**
+
+- La documentación mediante Swagger UI permite a los consumidores del API —frontend y posibles integraciones externas— conocer la estructura, parámetros y respuestas de cada endpoint de forma clara y accesible sin necesidad de revisar el código fuente.
+- Para el siguiente sprint se planea ampliar la documentación con esquemas de request/response detallados y ejemplos de uso para cada módulo.
 
 #### 6.2.1.8. Software Deployment Evidence for Sprint Review.
 
+Durante este sprint se realizaron los despliegues de los tres productos digitales de **OmniTrack**: la **Landing Page**, la **Aplicación Web** y el **Backend**. El proceso incluyó la configuración de entornos de hosting, integración con servicios de despliegue continuo y verificación de accesibilidad pública de los productos.
+
+---
+
+**Despliegue de la Landing Page**
+
+La Landing Page fue desplegada en **Vercel** conectando directamente el repositorio `logic-nodes-landing-page` desde GitHub. Vercel detecta automáticamente el framework React + Vite y ejecuta el build correspondiente ante cada push en `main`, publicando la nueva versión de forma automática. GitHub registra cada despliegue en el entorno `Production` con el estado de la integración con Vercel.
+
+_Vista del entorno **Production** en GitHub Deployments mostrando los 2 despliegues exitosos del Landing Page (commit `fix-logo` activo y `init commit`) realizados por el bot de Vercel_ <br>
+![GitHub Deployments – Landing Page Production](assets/ch6/omnitrack-deploy-landing.png)
+<br>
+
+URL de la Landing Page: [Click aquí](https://logic-nodes-landing-page.vercel.app)
+
+---
+
+**Despliegue de la Web Application**
+
+La aplicación web fue desplegada en **Vercel** desde el repositorio `logic-nodes-webapp`. Se configuró el archivo `vercel.json` para el manejo correcto del enrutamiento SPA, y Vercel ejecuta automáticamente el build de Vite ante cada actualización de la rama principal.
+
+_Vista del entorno **Production** en GitHub Deployments con el historial de 6 despliegues del Web Application (3 exitosos: `Fix`, `Fix: select`, `fix: restore correct Vite tsconfig`; y 3 fallidos durante la migración del `tsconfig` que se resolvieron en el commit posterior)_ <br>
+![GitHub Deployments – Web App Production](assets/ch6/omnitrack-deploy-webapp.png)
+<br>
+
+URL de la aplicación: [Click aquí](https://logic-nodes-webapp.vercel.app)
+
+---
+
+**Despliegue del Backend**
+
+El backend en Node.js + Express está planificado para desplegarse en **Microsoft Azure** durante el siguiente sprint. La aplicación se publicará mediante Azure App Service para Node.js y la base de datos será provisionada con **Azure Database for PostgreSQL** (servicio gestionado). Las variables de entorno (`DB_HOST`, `DB_NAME`, `JWT_SECRET`, etc.) se configurarán desde el panel de Application Settings de Azure replicando el `.env.example` versionado en el repositorio.
+
+**Conclusión:**
+
+- Los productos frontend (Landing Page y Web Application) ya están desplegados en producción a través de Vercel y son accesibles públicamente, lo que permitió validar los principales flujos del sistema durante la entrega académica del Sprint 1.
+- El uso de Vercel para los productos frontend garantiza despliegue continuo desde GitHub, mientras que Azure será la plataforma destino del backend en la siguiente iteración para establecer una infraestructura escalable end-to-end.
+
+---
+
 #### 6.2.1.9. Team Collaboration Insights during Sprint.
+
+Durante este sprint, el equipo de desarrollo trabajó de forma colaborativa en la implementación de las principales funcionalidades correspondientes al alcance definido: la Landing Page, la Aplicación Web y el Backend de OmniTrack. A lo largo del proceso se mantuvo comunicación constante a través de GitHub y los canales del equipo, asegurando una adecuada distribución de tareas y el cumplimiento de los objetivos propuestos.<br>
+
+Los analíticos de GitHub reflejan la participación activa de todos los integrantes, evidenciando commits frecuentes, revisiones de código y fusiones entre ramas, lo que demuestra un flujo de trabajo coordinado y una integración continua del proyecto. Asimismo, se promovió la retroalimentación mutua y la resolución conjunta de incidencias técnicas, fortaleciendo el liderazgo compartido y la cooperación dentro del equipo.<br>
+
+_Contributors – Landing Page (roiander: 3 commits, 2,107 adiciones)_ <br>
+![GitHub Insights – Landing Page](assets/ch6/omnitrack-insights-landing.png)
+<br>
+
+_Contributors – Web Application (jantonio-tech: 4 commits, JeremyAntonio: 2 commits)_ <br>
+![GitHub Insights – Web Application](assets/ch6/omnitrack-insights-webapp.png)
+<br>
+
+_Historial de commits del Backend Services (`devcociname` – Paulo Quincho: 13 commits, abril 2026) con la migración completa de Java a Node.js + Express + PostgreSQL_ <br>
+![GitHub Commits – Backend](assets/ch6/omnitrack-insights-backend.png)
+<br>
 
 ## 6.3. Validation Interviews.
 
 ### 6.3.1. Diseño de Entrevistas.
 
+¿Cuál es su nombre?
+
+¿Recibió sus credenciales por correo para la prueba de la primera versión de la aplicación?
+
+¿Cuáles son sus opiniones?
+
+¿Tuvo dificultades con el diseño de la aplicación web?
+
+
 ### 6.3.2. Registro de Entrevistas.
+
+Segmento Empresas:
+
+<img src="img/interview-empresa-validation.png">
+
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u202216698_upc_edu_pe/IQCmdCmWAcQlSZcVB2Bzs7B1ASNVH3jgon-ZXeLVgrsJyMk?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=IOjuVq
+
+
+Segmento Clientes finales:
+
+<img src="img/interview-cliente-validation.png">
+
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u202216698_upc_edu_pe/IQBojclZFDliR6m-hfB7I-ywAeBc1lrvVekAKsSMEcIQZZc?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=d6JCCu
+
 
 ### 6.3.3. Evaluaciones según heurísticas.
 
+#### SITE o APP A EVALUAR:
+
+Logic-nodes-omnitrack-web-app
+
+#### TAREAS A EVALUAR:
+
+1. INICIAR SESIÓN
+
+2. VER LAS METRICAS DEL ESTADO DEL ENVIO DE PRODUCTOS (TEMPERATURA,ETC)
+
+3. MODIFICAR SUBSCRIPCIONES
+
+4. CAMBIAR DATOS DE PERFIL O VISUALIZARLOS
+
+No están incluidas en esta versión de la evaluación las siguientes tareas:
+
+1.- Conexión entre landing page y aplicación web
+
+2.- Aplicación Móvil
+
+3.- Producto IOT físico
+
+
+#### ESCALA DE SEVERIDAD
+
+#### NIVEL 1: 
+
+PROBLEMA SUPERFICIAL: Errores en la compatibilidad con móviles (aplicación web)
+
+#### Descripción de Problemas
+
+Problema #1: Se presenta errores en la compatibilidad con móviles al usar la aplicación web
+
+#### Severidad: 1
+
+#### Problema:
+
+Al entrar desde un dispositivo móvil la aplicación web no es del todo responsive, en algunas secciones no se ve bien todas las opciones de la pagina, perjudicando la experiencia del usuario.
+
+#### Recomendación:
+
+Para que el usuario se sienta cómodo en cualquier dispositivo , deben optimizar la compatibilidad con móvil para la aplicación web. 
+
+
 ## 6.4. Video About-the-Product.
 
+<img src="img/about-the-product.png">
+
+https://upcedupe-my.sharepoint.com/:v:/g/personal/u202216698_upc_edu_pe/IQBfT8SggYmvQJRqrEyQQqMwARwEK3YpUkYDW9RlS6fdFLQ?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=bUwlgj
 
 
 # Conclusiones 
