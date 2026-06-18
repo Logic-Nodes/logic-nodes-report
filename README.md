@@ -3836,6 +3836,18 @@ La gestión del sprint se realizó utilizando Jira para la organización de tare
 
 #### 6.2.2.6. Execution Evidence for Sprint Review.
 
+<img src="img/mobile-app-done-1.jpeg">
+
+<img src="img/mobile-app-done-2.jpeg">
+
+<img src="img/mobile-app-done-3.jpeg">
+
+<img src="img/mobile-app-done-4.jpeg">
+
+<img src="img/mobile-app-done-5.jpeg">
+
+<img src="img/mobile-app-done-6.jpeg">
+
 #### 6.2.2.7. Services Documentation Evidence for Sprint Review.
 
 #### 6.2.2.8. Software Deployment Evidence for Sprint Review.
