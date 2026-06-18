@@ -3890,6 +3890,17 @@ Repositorio: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-server)
 
 A continuacion se muestra la evidencia del deploy 
 
+
+
+**Conclusión:**
+
+- El resultado de este sprint permitió disponer de una versión navegable y funcional del producto completo, con la landing pública, la aplicación web conectada al backend real y los servicios REST documentados.
+- Esto consolida la base para el siguiente sprint, donde se incorporarán pruebas automatizadas, mejoras de rendimiento y validación con usuarios reales.
+
+#### 6.2.2.7. Services Documentation Evidence for Sprint Review.
+
+#### 6.2.2.8. Software Deployment Evidence for Sprint Review.
+
 <img src="img/bd-1.jpeg">
 
 <img src="img/bd-2.jpeg">
@@ -3902,14 +3913,15 @@ A continuacion se muestra la evidencia del deploy
 
 <img src="img/bd-6.jpeg">
 
-**Conclusión:**
+<img src="img/mobile-app-done-1.jpeg">
 
-- El resultado de este sprint permitió disponer de una versión navegable y funcional del producto completo, con la landing pública, la aplicación web conectada al backend real y los servicios REST documentados.
-- Esto consolida la base para el siguiente sprint, donde se incorporarán pruebas automatizadas, mejoras de rendimiento y validación con usuarios reales.
+<img src="img/mobile-app-done-2.jpeg">
 
-#### 6.2.2.7. Services Documentation Evidence for Sprint Review.
+<img src="img/mobile-app-done-3.jpeg">
 
-#### 6.2.2.8. Software Deployment Evidence for Sprint Review.
+<img src="img/mobile-app-done-4.jpeg">
+
+<img src="img/mobile-app-done-5.jpeg">
 
 <img src="img/mobile-app-done-6.jpeg">
 
