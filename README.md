@@ -3836,21 +3836,82 @@ La gestión del sprint se realizó utilizando Jira para la organización de tare
 
 #### 6.2.2.6. Execution Evidence for Sprint Review.
 
-<img src="img/mobile-app-done-1.jpeg">
+Durante este sprint se alcanzó la implementación funcional de los tres productos digitales de **OmniTrack**: la **Landing Page**, la **Aplicación Web** y los **Backend Services**, cumpliendo con los objetivos planteados en el alcance del sprint.
 
-<img src="img/mobile-app-done-2.jpeg">
+La landing fue desarrollada con React y Vite, orientada a comunicar la propuesta de valor de OmniTrack, sus funcionalidades principales, planes de suscripción y un formulario de contacto con soporte bilingüe (EN/ES).
 
-<img src="img/mobile-app-done-3.jpeg">
+La aplicación web fue construida con React 18, Tailwind CSS, Zustand para gestión de estado y Recharts para visualizaciones analíticas, integrándose con el backend real mediante Axios. El backend fue desarrollado en Node.js con Express, expone APIs REST organizadas por bounded contexts bajo arquitectura DDD y cuenta con documentación generada mediante Swagger UI.
 
-<img src="img/mobile-app-done-4.jpeg">
+A continuación se muestran los principales resultados obtenidos:
 
-<img src="img/mobile-app-done-5.jpeg">
+**Landing Page**
 
-<img src="img/mobile-app-done-6.jpeg">
+_Vista inicial del encabezado principal y navegación_ <br>
+![Landing Page – Hero section](assets/ch6/omnitrack-landing-hero.png)
+<br>
+
+Repositorio: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-landing-page)
+Enlace: [Click aquí](https://logic-nodes-landing-page.vercel.app)
+
+<br>
+
+**Web Application**
+
+_Dashboard principal con métricas de monitoreo IoT en tiempo real_ <br>
+![Web App – Dashboard](assets/ch6/omnitrack-webapp-dashboard.png)
+<br>
+
+_Módulo de gestión de vehículos de la flota con estados y dispositivos IoT asignados_ <br>
+![Web App – Fleet Vehicles](assets/ch6/omnitrack-webapp-iot.png)
+<br>
+
+_Módulo de viajes activos con estado, conductor y puntos de origen/destino_ <br>
+![Web App – Trips Module](assets/ch6/omnitrack-webapp-trips.png)
+<br>
+
+_Módulo de alertas con tipo, severidad y estado de resolución_ <br>
+![Web App – Alerts Module](assets/ch6/omnitrack-webapp-alerts.png)
+<br>
+
+Repositorio: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-webapp)
+Aplicación en línea: [Click aquí](https://logic-nodes-webapp.vercel.app)
+
+<br>
+
+**Backend Services**
+
+_Endpoints REST disponibles a través de Swagger UI_ <br>
+![Backend – Swagger UI](assets/ch6/omnitrack-backend-swagger.png)
+<br>
+
+Repositorio: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-server)
+
+<br>
+
+A continuacion se muestra la evidencia del deploy 
+
+<img src="img/bd-1.jpeg">
+
+<img src="img/bd-2.jpeg">
+
+<img src="img/bd-3.jpeg">
+
+<img src="img/bd-4.jpeg">
+
+<img src="img/bd-5.jpeg">
+
+<img src="img/bd-6.jpeg">
+
+**Conclusión:**
+
+- El resultado de este sprint permitió disponer de una versión navegable y funcional del producto completo, con la landing pública, la aplicación web conectada al backend real y los servicios REST documentados.
+- Esto consolida la base para el siguiente sprint, donde se incorporarán pruebas automatizadas, mejoras de rendimiento y validación con usuarios reales.
 
 #### 6.2.2.7. Services Documentation Evidence for Sprint Review.
 
 #### 6.2.2.8. Software Deployment Evidence for Sprint Review.
+
+<img src="img/mobile-app-done-6.jpeg">
 
 #### 6.2.2.9. Team Collaboration Insights during Sprint.
 
