@@ -1,4 +1,4 @@
-﻿<div style="text-align: center">
+<div style="text-align: center">
   <p align="center">
     <br />
     <img
@@ -256,6 +256,10 @@ _Tabla de contenidos_
       - [6.2.1.7. Services Documentation Evidence for Sprint Review]
       - [6.2.1.8. Software Deployment Evidence for Sprint Review]
       - [6.2.1.9. Team Collaboration Insights during Sprint]
+    - [6.2.2. Sprint 2]
+      - [6.2.2.1. Sprint Planning 2]
+      - [6.2.2.2. Aspect Leaders and Collaborators]
+      - [6.2.2.3. Sprint Backlog 2]
   - [6.3. Validation Interviews]
     - [6.3.1. Diseño de Entrevistas]
     - [6.3.2. Registro de Entrevistas]
@@ -3295,6 +3299,98 @@ _Contributors – Web Application (jantonio-tech: 4 commits, JeremyAntonio: 2 co
 _Historial de commits del Backend Services (`devcociname` – Paulo Quincho: 13 commits, abril 2026) con la migración completa de Java a Node.js + Express + PostgreSQL_ <br>
 ![GitHub Commits – Backend](assets/ch6/omnitrack-insights-backend.png)
 <br>
+
+### 6.2.2. Sprint 2
+
+#### 6.2.2.1. Sprint Planning 2.
+
+En esta sección se describen los principales acuerdos y objetivos definidos durante el Sprint Planning correspondiente al Sprint 2 del proyecto OmniTrack desarrollado por la startup LogicNodes.
+
+Este sprint estuvo enfocado en completar todas las Historias de Usuario pendientes del Product Backlog, incluyendo el desarrollo del módulo de suscripciones (E7), la implementación del sistema de roles y permisos (US031), la finalización de funcionalidades de gestión de viajes (US026, US027) y la generación de reportes PDF descargables (US037). Asimismo, se consolidó la integración total entre frontend y backend para garantizar un sistema funcional end-to-end.
+
+| Sprint # | |
+|---|---|
+| Sprint 2 | |
+
+### Sprint Planning Background
+
+| Campo | Descripción |
+|---|---|
+| Date | 2026-06-13 |
+| Time | 11:00 PM |
+| Location | Reunión virtual mediante Discord |
+| Prepared By | Luiggi Jeremy Jouvenel Antonio Loayza |
+| Attendees (to planning meeting) | Rodrigo Alonso Alcantara Cruz / Paulo Percy Quincho Gamarra / Adrian Emanuel Valerio Garcia / Luiggi Jeremy Jouvenel Antonio Loayza / Alejandro Daniel Oroncoy Almeyda |
+| Sprint 2 Review Summary | Durante el Sprint 1 se completó exitosamente la Landing Page, la aplicación web frontend con sus módulos principales (autenticación, gestión de flota, dispositivos IoT, viajes y dashboard analítico) y el Backend Services con todos los bounded contexts implementados bajo Node.js + Express + PostgreSQL. Se validó la integración frontend-backend y se desplegaron ambos servicios correctamente en producción. |
+| Sprint 2 Retrospective Summary | El equipo identificó que quedaron pendientes el módulo completo de suscripciones (E7: US038–US041), el sistema de roles y permisos diferenciados por perfil (US031), la funcionalidad de reprogramación de viajes con validaciones de estado (US026), la generación de código de seguimiento para clientes (US027) y la descarga de reportes PDF por viaje (US037). Se acordó priorizar estas funcionalidades en el Sprint 2 para cerrar el Product Backlog completo. |
+
+### Sprint Goal & User Stories
+
+| Campo | Descripción |
+|---|---|
+| Sprint 2 Goal | Nuestro enfoque estuvo en completar todas las Historias de Usuario pendientes del Product Backlog de OmniTrack, priorizando el módulo de suscripciones, el control de acceso por roles y las funcionalidades de viajes y reportes que quedaron fuera del alcance del Sprint 1.<br><br>Creemos que esto permite entregar una plataforma completamente funcional en todos sus módulos, cerrando la brecha entre lo implementado y lo especificado en el backlog, y demostrando la cobertura total de los requerimientos del sistema.<br><br>Esto se confirmó cuando el equipo logró implementar y desplegar los módulos de suscripciones, roles y permisos, generación de reportes PDF y el sistema de código de seguimiento por viaje, completando así el 100% de las Historias de Usuario definidas en el Product Backlog. |
+| Sprint 2 Velocity | 34 Story Points |
+| Sum of Story Points | 33 Story Points |
+
+---
+
+#### 6.2.2.2. Aspect Leaders and Collaborators.
+
+Para el Sprint 2 se organizaron los aspectos funcionales y técnicos necesarios para completar todas las Historias de Usuario pendientes del sistema OmniTrack.
+
+Los aspectos considerados fueron:
+
+1. **Subscriptions Module**: Implementación del módulo completo de suscripciones (US038–US041).
+2. **Roles & Permissions**: Sistema de control de acceso diferenciado por perfil de usuario (US031).
+3. **Trip Completions**: Funcionalidades pendientes de gestión de viajes (US026, US027).
+4. **Reports & Export**: Generación y descarga de reportes PDF (US037).
+5. **Documentation**: Elaboración de secciones del informe académico correspondientes al Sprint 2.
+
+A continuación, se presenta la matriz LACX (Leadership and Collaboration Matrix):
+
+| Team Member | Subscriptions Module | Roles & Permissions | Trip Completions | Reports & Export | Documentation |
+|---|---|---|---|---|---|
+| Rodrigo Alonso Alcantara Cruz | L | C | C | L | C |
+| Paulo Percy Quincho Gamarra | L | L | L | C | C |
+| Adrian Emanuel Valerio Garcia | C | C | C | C | L |
+| Luiggi Jeremy Jouvenel Antonio Loayza | C | C | C | C | L |
+| Alejandro Daniel Oroncoy Almeyda | C | C | C | C | L |
+
+### Leyenda
+
+- **L (Leader):** Responsable principal del aspecto.
+- **C (Collaborator):** Participa activamente apoyando en el desarrollo o documentación.
+
+---
+
+#### 6.2.2.3. Sprint Backlog 2.
+
+Durante este sprint se desarrollaron todas las Historias de Usuario pendientes del Product Backlog, completando la cobertura funcional total del sistema OmniTrack.
+
+La gestión del sprint se realizó utilizando Jira para la organización de tareas, seguimiento de avances y coordinación de entregables.
+
+| User Story Id | User Story Title | Task Id | Task Title | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---|---|
+| US031 | Roles y permisos de acceso | T11 | Implementar sistema de roles backend (admin, cliente, operador) | 5 | Paulo Quincho | Done |
+| US031 | Roles y permisos de acceso | T12 | Implementar guardias de acceso por rol en frontend | 3 | Rodrigo Alcantara | Done |
+| US026 | Reprogramación de viajes | T13 | Implementar endpoint de reprogramación con validaciones de estado | 3 | Paulo Quincho | Done |
+| US026 | Reprogramación de viajes | T14 | Implementar vista de reprogramación en módulo de viajes | 2 | Rodrigo Alcantara | Done |
+| US027 | Código de viaje para cliente | T15 | Implementar generación y envío de código único de seguimiento | 3 | Paulo Quincho | Done |
+| US027 | Código de viaje para cliente | T16 | Implementar vista de consulta por código en la app | 2 | Rodrigo Alcantara | Done |
+| US037 | Descarga de reporte de viajes | T17 | Implementar generación de reporte PDF con gráficos de temperatura | 5 | Rodrigo Alcantara | Done |
+| US038 | Cancelar suscripción | T18 | Implementar endpoint de cancelación de suscripción | 2 | Paulo Quincho | Done |
+| US038 | Cancelar suscripción | T19 | Implementar vista de cancelación con confirmación en frontend | 2 | Rodrigo Alcantara | Done |
+| US039 | Visualizar información de suscripción | T20 | Implementar vista de plan, estado y fecha de vencimiento | 2 | Rodrigo Alcantara | Done |
+| US040 | Historial de pagos | T21 | Implementar endpoint de historial de transacciones | 3 | Paulo Quincho | Done |
+| US040 | Historial de pagos | T22 | Implementar vista de historial de pagos con detalle | 2 | Rodrigo Alcantara | Done |
+| US041 | Notificación de renovación próxima | T23 | Implementar lógica de notificación anticipada de renovación | 3 | Paulo Quincho | Done |
+| US041 | Notificación de renovación próxima | T24 | Integrar notificaciones de renovación en panel de suscripción | 2 | Rodrigo Alcantara | Done |
+| - | Documentación Sprint 2 | T25 | Elaborar secciones 6.2.2.1–6.2.2.3 del informe académico | 3 | Luiggi Loayza | Done |
+| - | Revisión arquitectónica | T26 | Ajustar diagramas DDD para nuevos módulos de suscripción y roles | 2 | Luiggi Loayza | Done |
+| - | Testing Suite Sprint 2 | T27 | Elaborar y ejecutar pruebas unitarias para nuevos endpoints | 3 | Adrian Valerio | Done |
+| - | Evidencia de despliegue | T28 | Documentar despliegue y evidencia de ejecución del Sprint 2 | 2 | Alejandro Oroncoy | Done |
+
+---
 
 ## 6.3. Validation Interviews.
 
