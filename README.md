@@ -3835,7 +3835,62 @@ La gestión del sprint se realizó utilizando Jira para la organización de tare
 
 #### 6.2.2.4. Development Evidence for Sprint Review.
 
+Durante el Sprint 2, el proyecto **OmniTrack** evolucionó en dos frentes simultáneos: la **Aplicación Web** fue adaptada para consumir los endpoints reales del backend en producción, y se desarrolló desde cero la **Aplicación Móvil** en Flutter/Dart, cubriendo los flujos de autenticación, el workspace principal y los módulos de alertas, billing y recuperación de contraseña.
+
+Luiggi Jeremy Jouvenel Antonio Loayza lideró la adaptación del frontend web a los puntos finales reales del backend. Adrian Emanuel Valerio Garcia y Alejandro Daniel Oroncoy Almeyda co-lideraron el desarrollo completo de la aplicación móvil.
+
+---
+
+### Web Application
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+|---|---|---|---|---|---|
+| `logic-nodes-webapp` | `main` | **5ecd3a3** | feat (add): Adaptar el frontend a los puntos finales reales del backend. | Integración del frontend con los endpoints reales del backend desplegado en producción, reemplazando el uso de la fake API. | 2026-06-18 |
+
+---
+
+### Mobile Application
+
+Durante este sprint se desarrolló la **Aplicación Móvil** de OmniTrack utilizando **Flutter** (Dart), implementando la arquitectura por features con controllers, repositorios y entidades separados. Adrian Valerio construyó la estructura inicial del proyecto, el flujo de autenticación y la pantalla principal del workspace con conexión al backend real. Alejandro Oroncoy implementó el centro de alertas, el módulo de billing y suscripciones, y el flujo de recuperación de contraseña, consolidando la integración completa mediante un Pull Request.
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+|---|---|---|---|---|---|
+| `logic-nodes-mobile` | `main` | **36fbf86** | inital commit | Configuración inicial del proyecto Flutter y estructura base del repositorio. | 2026-06-05 |
+| `logic-nodes-mobile` | `main` | **c376e25** | feat: add omnitrack mobile auth flow | Implementación del flujo de autenticación móvil: pantallas de login, registro y recuperación de contraseña. | 2026-06-09 |
+| `logic-nodes-mobile` | `main` | **5e46be8** | feat: connect mobile auth flow to backend | Conexión del flujo de autenticación con el backend real mediante HTTP, reemplazando el datasource simulado. | 2026-06-09 |
+| `logic-nodes-mobile` | `main` | **27ee4dd** | feat: redesign mobile home workspace | Rediseño de la pantalla principal del workspace con nuevas tarjetas de métricas y navegación. | 2026-06-09 |
+| `logic-nodes-mobile` | `main` | **ac4e63b** | feat: connect home workspace to backend | Integración del home workspace con los endpoints reales de viajes, vehículos, dispositivos y sesiones de monitoreo. | 2026-06-09 |
+| `logic-nodes-mobile` | `feat/billing-recovery-alerts-ux` | **1a6eb7b** | feat(mobile): alerts center, billing y recovery real + fixes de UX | Implementación del centro de alertas con filtros y resolución, módulo de billing y suscripciones con historial de pagos, flujo real de recuperación de contraseña y correcciones generales de UX. | 2026-06-17 |
+| `logic-nodes-mobile` | `main` | **15ebfea** | Merge pull request #1 from Logic-Nodes/feat/billing-recovery-alerts-ux | Merge del branch `feat/billing-recovery-alerts-ux` hacia `main`, consolidando los módulos de alertas, billing y recuperación. | 2026-06-18 |
+
+---
+
 #### 6.2.2.5. Testing Suite Evidence for Sprint Review.
+
+Durante este sprint se incorporó una suite de pruebas automatizadas en la **Aplicación Móvil** utilizando **Flutter Test** como framework de testing, cubriendo pruebas de widgets y pruebas unitarias de controllers. Los tests se encuentran en el directorio `test/` del repositorio `logic-nodes-mobile`.
+
+**Pruebas automatizadas implementadas en la aplicación móvil:**
+
+| Archivo | Tipo | Cobertura |
+|---|---|---|
+| `test/widget_test.dart` | Widget test (integración de rutas) | Verifica que la aplicación renderiza correctamente el flujo de login: pantalla de bienvenida con texto `WELCOME`, botón `Sign In` e indicador de conexión con el backend (`Backend connection`). |
+| `test/new_screens_test.dart` | Widget test + Unit tests | **SubscriptionScreen widget test:** verifica que la pantalla renderiza el snapshot del backend con el plan `PROFESSIONAL`, el botón `Add card` y la opción `Upgrade your plan`. <br><br> **BillingController unit test:** valida la carga del snapshot de billing (plan, pagos, planes disponibles), el cambio de plan a `ENTERPRISE` y la cancelación de suscripción. <br><br> **AlertsController unit test:** valida la carga de alertas, los contadores por estado (`open`, `acknowledged`, `resolved`), el filtrado por estado, la búsqueda por tipo (`humidity`) y la resolución de alertas. |
+
+La ejecución se realiza mediante:
+
+```bash
+flutter test
+```
+
+**Validaciones adicionales realizadas manualmente:**
+
+- Verificación visual del flujo de autenticación en dispositivo físico y emulador Android.
+- Pruebas de integración del home workspace contra el backend desplegado en producción.
+- Validación del módulo de alertas: carga, filtros por estado y resolución de alertas reales.
+- Verificación del módulo de billing: visualización de plan activo, historial de pagos, cambio de plan y cancelación de suscripción.
+- Pruebas del flujo de recuperación de contraseña contra los endpoints reales del backend.
+- Validación de la adaptación del frontend web (`logic-nodes-webapp`) a los endpoints reales, verificando el correcto consumo de los servicios en producción.
+
 
 #### 6.2.2.6. Execution Evidence for Sprint Review.
 
