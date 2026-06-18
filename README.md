@@ -3899,6 +3899,57 @@ A continuacion se muestra la evidencia del deploy
 
 #### 6.2.2.7. Services Documentation Evidence for Sprint Review.
 
+Durante este sprint 2 se implementó documentación de los Web Services mediante **Swagger UI**, integrada directamente en el backend desarrollado en Node.js con Express, utilizando el paquete `swagger-ui-express`.
+
+La especificación cubre todos los endpoints REST de OmniTrack, organizados por bounded contexts de acuerdo con la arquitectura DDD adoptada, detallando métodos HTTP, parámetros, cuerpos de solicitud y respuestas esperadas.
+
+Los principales grupos de endpoints documentados son:
+
+| Bounded Context | Endpoints principales | Métodos HTTP |
+|---|---|---|
+| **IAM – Authentication** | `/api/v1/authentication/sign-in`, `/api/v1/authentication/sign-up`, `/api/v1/authentication/refresh`, `/api/v1/authentication/logout` | POST |
+| **IAM – Users & Roles** | `/api/v1/users`, `/api/v1/users/:userId`, `/api/v1/roles` | GET |
+| **Fleet – Vehicles** | `/api/v1/fleet/vehicles`, `/api/v1/fleet/vehicles/:id`, `/api/v1/fleet/vehicles/:id/assign-device/:imei` | GET, POST, PUT, DELETE, PATCH |
+| **Fleet – Devices** | `/api/v1/fleet/devices`, `/api/v1/fleet/devices/:id`, `/api/v1/fleet/devices/by-imei/:imei` | GET, POST, PUT, DELETE, PATCH |
+| **Trip Management** | `/api/v1/trips`, `/api/v1/trips/:tripId`, `/api/v1/trips/:tripId/start`, `/api/v1/trips/:tripId/complete` | GET, POST, DELETE |
+| **Delivery Orders** | `/api/v1/delivery-orders`, `/api/v1/delivery-orders/trip/:tripId`, `/api/v1/delivery-orders/:id/delivery` | GET, POST, PUT, DELETE |
+| **Origin Points** | `/api/v1/origin-points`, `/api/v1/origin-points/search` | GET, POST, PUT, DELETE |
+| **Monitoring – Sessions** | `/api/v1/monitoring/sessions`, `/api/v1/monitoring/sessions/:id/pause`, `/api/v1/monitoring/sessions/:id/end` | GET, POST, DELETE |
+| **Monitoring – Telemetry** | `/api/v1/telemetry`, `/api/v1/telemetry/session/:sessionId` | GET, POST, DELETE |
+| **Alerts** | `/api/v1/alerts`, `/api/v1/alerts/:alertId/acknowledgment`, `/api/v1/alerts/:alertId/closure` | GET, POST, PATCH |
+| **Incidents** | `/api/v1/incidents`, `/api/v1/incidents/alert/:alertId` | GET, POST, PATCH |
+| **Notifications** | `/api/v1/notifications`, `/api/v1/notifications/:id/send` | GET, POST |
+| **Analytics** | `/api/v1/analytics/trips`, `/api/v1/analytics/alerts`, `/api/v1/analytics/incidents-by-month` | GET |
+| **Merchants** | `/api/v1/merchants`, `/api/v1/merchants/:id`, `/api/v1/merchants/:id/employee` | GET, POST, PUT, DELETE |
+| **Employees** | `/api/v1/employees`, `/api/v1/employees/merchants/:merchantId` | GET, DELETE |
+| **Profiles** | `/api/v1/profiles`, `/api/v1/profiles/user/:userId` | GET, POST, PUT, DELETE |
+
+<br>
+
+_Vista principal de Swagger UI con la especificación OpenAPI 3.0 cargada (`LogicNodes API 1.0.0`) servida desde `/docs`_ <br>
+![Backend – Swagger overview](assets/ch6/omnitrack-backend-swagger.png)
+<br>
+
+_Detalle del módulo IAM con endpoint POST `/api/v1/authentication/sign-in` expandido mostrando parámetros, request body y `Try it out`_ <br>
+![Backend – Swagger IAM expanded](assets/ch6/omnitrack-swagger-iam.png)
+<br>
+
+_Endpoints de Origin Points, Delivery Orders y Alerts con métodos GET, POST, PUT, DELETE y PATCH agrupados por bounded context_ <br>
+![Backend – Swagger Trips, Delivery Orders y Alerts](assets/ch6/omnitrack-swagger-trips-alerts.png)
+<br>
+
+_Sección de Monitoring (sessions/pause/end/resume) y Telemetry con los endpoints REST para captura de datos IoT_ <br>
+![Backend – Swagger Monitoring y Telemetry](assets/ch6/omnitrack-swagger-monitoring.png)
+<br>
+
+_Sección de Schemas con los modelos de request/response (TokenPair, Trip, OriginPoint, DeliveryOrder, Alert, etc.) documentados como componentes OpenAPI_ <br>
+![Backend – Swagger Schemas](assets/ch6/omnitrack-swagger-schemas.png)
+<br>
+
+Repositorio del backend: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-server)
+
+<br>
+
 #### 6.2.2.8. Software Deployment Evidence for Sprint Review.
 
 <img src="img/bd-1.jpeg">
