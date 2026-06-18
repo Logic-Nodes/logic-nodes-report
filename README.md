@@ -4080,6 +4080,12 @@ Se logró desplegar los tres productos principales en entornos productivos (Verc
 
 Este avance marca el paso exitoso de la fase de diseño a la implementación real del producto, consolidando una base técnica sólida y funcional que permite continuar con la integración IoT y el refinamiento de la solución. El trabajo refleja un enfoque estructurado, colaborativo y alineado con las mejores prácticas de ingeniería de software e IoT.
 
+### AV2:
+
+A lo largo del ciclo académico, el equipo LogicNodes ha consolidado de manera sobresaliente las competencias exigidas por el Student Outcome 5 de ABET, evolucionando desde la concepción estratégica del producto OmniTrack hasta el despliegue de una solución tecnológica robusta, escalable y multiplataforma. El éxito del proyecto radicó en un modelo de liderazgo compartido y adaptativo, donde cada integrante asumió la dirección de frentes críticos de acuerdo con sus fortalezas técnicas y de gestión: desde el diseño arquitectónico inicial bajo principios de Domain-Driven Design y la dirección editorial del proyecto, hasta el coliderazgo en el desarrollo del Backend, la aplicación Web y el ecosistema Móvil.  
+
+Este esquema de trabajo se sostuvo sobre un entorno altamente colaborativo, inclusivo y orientado a resultados, donde el uso riguroso de metodologías ágiles facilitó una planificación transparente, la mitigación oportuna de bloqueos técnicos y el establecimiento de metas realistas. El compromiso unánime de los miembros se refleja directamente en los indicadores de rendimiento, habiendo alcanzado la máxima excelencia operativa con entregas completas, funcionales y estrictamente a tiempo en cada uno de los hitos evaluativos. En conclusión, la experiencia ha demostrado que el equipo posee la capacidad técnica y blanda para funcionar efectivamente en entornos de ingeniería complejos, autoorganizados y de alta exigencia profesional.
+
 # Bibliografía
 
 Gothelf, J. (2013). Lean UX: Applying lean principles to improve user experience (Sampler, Chapter 3). O'Reilly Media. https://www.scribd.com/document/655516553/Leanux-Sampler
