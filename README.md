@@ -3714,6 +3714,8 @@ URL de la aplicación: [Click aquí](https://logic-nodes-webapp.vercel.app)
 
 El backend en Node.js + Express está planificado para desplegarse en **Microsoft Azure** durante el siguiente sprint. La aplicación se publicará mediante Azure App Service para Node.js y la base de datos será provisionada con **Azure Database for PostgreSQL** (servicio gestionado). Las variables de entorno (`DB_HOST`, `DB_NAME`, `JWT_SECRET`, etc.) se configurarán desde el panel de Application Settings de Azure replicando el `.env.example` versionado en el repositorio.
 
+https://logic-nodes-server.onrender.com/docs/
+
 **Conclusión:**
 
 - Los productos frontend (Landing Page y Web Application) ya están desplegados en producción a través de Vercel y son accesibles públicamente, lo que permitió validar los principales flujos del sistema durante la entrega académica del Sprint 1.
