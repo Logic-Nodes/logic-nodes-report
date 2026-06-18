@@ -3927,6 +3927,10 @@ A continuacion se muestra la evidencia del deploy
 
 #### 6.2.2.9. Team Collaboration Insights during Sprint.
 
+<img src="img/doc-commits-sprint-2.png">
+
+<img src="img/app-mobile-commits-sprint-2.png">
+
 ## 6.3. Validation Interviews.
 
 ### 6.3.1. Diseño de Entrevistas.
