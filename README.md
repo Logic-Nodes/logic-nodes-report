@@ -61,7 +61,7 @@
       </table>
       <p style="text-align: center">
         <br />
-        <strong>Abril 2026</strong>
+        <strong>Junio 2026</strong>
       </p>
     </div>
 
