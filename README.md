@@ -61,7 +61,7 @@
       </table>
       <p style="text-align: center">
         <br />
-        <strong>Abril 2026</strong>
+        <strong>Junio 2026</strong>
       </p>
     </div>
 
@@ -78,6 +78,7 @@
 |  1.0.3    |   25/04/2026    |  Adrian Valerio y Luiggi Antonio      |    Elaboración del Capítulo IV   |
 |  1.0.4    |   02/05/2026    |  Rodrigo Alcántara y Luiggi Antonio      |    Elaboración del Capítulo V   |
 |  1.0.5    |   12/05/2026    |  Adrian Valerio y Alejandro Oroncoy      |    Elaboración del Capítulo VI   |
+|  1.0.6    |   10/06/2026    |  Rodrigo Alcántara, Paulo Quincho, Luiggi Antonio, Adrian Valerio, Alejandro Oroncoy      |    Elaboración del Sprint 2   |
 
 # Project Report Collaboration Insights
 
@@ -262,6 +263,16 @@ _Tabla de contenidos_
       - [6.2.1.7. Services Documentation Evidence for Sprint Review]
       - [6.2.1.8. Software Deployment Evidence for Sprint Review]
       - [6.2.1.9. Team Collaboration Insights during Sprint]
+    - [6.2.2. Sprint 2]
+      - [6.2.2.1. Sprint Planning 2]
+      - [6.2.2.2. Aspect Leaders and Collaborators]
+      - [6.2.2.3. Sprint Backlog 2]
+      - [6.2.2.4. Development Evidence for Sprint Review]
+      - [6.2.2.5. Testing Suite Evidence for Sprint Review]
+      - [6.2.2.6. Execution Evidence for Sprint Review]
+      - [6.2.2.7. Services Documentation Evidence for Sprint Review]
+      - [6.2.2.8. Software Deployment Evidence for Sprint Review]
+      - [6.2.2.9. Team Collaboration insights during Sprint]
   - [6.3. Validation Interviews]
     - [6.3.1. Diseño de Entrevistas]
     - [6.3.2. Registro de Entrevistas]
@@ -283,8 +294,8 @@ colaboración e inclusivo, establecen objetivos, planifican tareas y cumplen obj
 
 | Criterio específico | Acciones realizadas | Conclusiones |
 | :--- | :--- | :--- |
-| **Trabaja en equipo para proporcionar liderazgo en forma conjunta** | **Alcantara Cruz, Rodrigo Alonso** <br> **AV1:** Lideré la elaboración estructural del informe AV1, incluyendo la creación de la carátula, registro de versiones, sección de colaboración del equipo y tabla de contenido. Redacté completamente el Capítulo I y el Capítulo II del informe, realicé una entrevista para cada segmento objetivo (gestores de flota y clientes finales), elaboré el análisis de entrevistas, las conclusiones correspondientes y los anexos. Coordiné la integración de las contribuciones del equipo para entregar un documento coherente y de calidad. <br> **TB1:** Lideré la elaboración completa del Capítulo V (Solution UI/UX Design), el diseño y desarrollo de la Landing Page, y lideré el avance general del proyecto para la Aplicación Web. Coordiné la integración de todos los capítulos del informe TB1, asegurando coherencia visual y de contenido entre el Capítulo V y VI, y mantuve el seguimiento constante del equipo para cumplir con los plazos de entrega. <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Quincho Gamarra, Paulo Percy** <br> **AV1:** Lideré de manera colaborativa la construcción de las user stories y el product backlog, guiando al equipo en la identificación de requerimientos, definición de prioridades y organización del trabajo. Fomenté la participación de todos los integrantes, facilitando la toma de decisiones conjunta y asegurando que el backlog final estuviera alineado con los objetivos del proyecto. <br> **TB1:** Lideré el desarrollo completo del Backend Services (Node.js + Express + PostgreSQL), implementando la mayoría de los bounded contexts, la autenticación JWT, la integración con la base de datos y la documentación Swagger. Además, realicé correcciones generales y mejoras de consistencia en todo el documento del informe TB1. <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Valerio Garcia, Adrian Emanuel** <br> **AV1:** Elaboré diagramas de arquitectura del sistema definiendo componentes, relaciones e interacciones clave, y participé en la identificación de bounded contexts para delimitar correctamente los dominios del negocio. Esto permitió establecer una estructura clara y modular de la solución, facilitando la comprensión del sistema, la separación de responsabilidades y la alineación entre los requerimientos funcionales y el diseño arquitectónico. <br> **TB1:** Participé activamente en la elaboración del Capítulo VI, contribuyendo en la documentación de la implementación, evidencias de desarrollo, despliegue y testing del Sprint 1. Apoyé en la revisión técnica de los diagramas y en la coherencia entre la arquitectura definida y la implementación realizada. <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Antonio Loayza, Luiggi Jeremy Jouvenel** <br> **AV1:** Lideré el diseño arquitectónico completo del Capítulo IV, asumiendo la responsabilidad de definir y documentar los 8 bounded contexts del sistema OmniTrack bajo los principios de Domain-Driven Design. Elaboré el Context Mapping estratégico, los diagramas C4 a nivel de componentes para cada contexto (Backend, Mobile y WebApp), los diagramas de clases del domain layer y los diagramas de base de datos (ERD) para los 8 bounded contexts. Adicionalmente, desarrollé el Container Level Diagram y el Deployment Diagram de la plataforma, consolidando una visión arquitectónica completa y coherente que sirvió como base para la implementación del equipo. <br> **TB1:** Apoyé en la revisión y ajuste de los artefactos arquitectónicos del Capítulo IV para mantener la alineación con la implementación del backend y frontend realizada en este TB1. <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Oroncoy Almeyda, Alejandro Daniel** <br> **AV1:** Elaboró el Impact Mapping del Capítulo III para ambos segmentos objetivo (gestores de flota y clientes finales), identificando actores, impactos esperados y entregables alineados a los objetivos de negocio de OmniTrack. <br> **TB1:** Lideró junto con Adrian Valerio la elaboración del Capítulo VI (Product Implementation, Validation & Deployment), documentando la configuración del entorno de desarrollo, el Sprint 1 completo (planning, backlog, evidencias de desarrollo, testing, despliegue y colaboración), las entrevistas de validación y las evaluaciones heurísticas. <br> **AV2:** [Acción] <br> **TB2:** [Acción] | AV1: Durante el AV1, el equipo demostró liderazgo conjunto al dividir responsabilidades clave: desde la organización estructural y redacción de los Capítulos I y II (Rodrigo Alcántara), la construcción de user stories y product backlog (Paulo Quincho), el diseño de diagramas de arquitectura (Adrian Valerio), el liderazgo completo del Capítulo IV con DDD (Luiggi Loayza), hasta la elaboración del Impact Mapping (Alejandro Oroncoy). Esta colaboración liderada por distintos miembros aseguró la integración exitosa de todos los entregables. <br> **TB1:** el equipo LogicNodes demostró un claro liderazgo conjunto y complementario. Rodrigo Alcántara lideró la experiencia de usuario y el avance general del frontend y Landing Page, Paulo Quincho asumió el liderazgo técnico del backend, mientras que Adrian Valerio y Alejandro Oroncoy se enfocaron en la documentación exhaustiva de la implementación (Capítulo VI). Esta distribución efectiva de liderazgo técnico y documental permitió entregar un producto funcional (Landing Page + Aplicación Web + Backend) y un informe completo y coherente. |
-| **Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos.** | **Alcantara Cruz, Rodrigo Alonso** <br> **AV1:** Fomenté un entorno colaborativo e inclusivo durante el desarrollo del informe AV1 al coordinar las actividades del equipo, distribuir responsabilidades según las fortalezas de cada integrante y mantener una comunicación constante para resolver dudas y alinear esfuerzos. Establecí metas claras para cada sección del documento, planifiqué las tareas principales (estructuración, redacción de capítulos, entrevistas y análisis), asigné plazos realistas y realicé el seguimiento necesario para garantizar que todos los entregables se completaran a tiempo y con la calidad requerida. Como resultado, logramos entregar un informe AV1 completo, coherente y bien estructurado dentro del plazo establecido. <br> **TB1:** Continué liderando la planificación y coordinación general del equipo. Establecí metas claras para el Capítulo V y la implementación de la Landing Page y Aplicación Web, organicé reuniones de seguimiento, distribuí tareas según especialidades y realicé el seguimiento constante para integrar exitosamente todos los componentes (UI/UX, Backend y documentación) dentro del plazo establecido. <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Quincho Gamarra, Paulo Percy** <br> **AV1:** Facilité un entorno colaborativo e inclusivo dentro del equipo, promoviendo la participación activa en la elaboración de user stories y el product backlog. Coordiné la definición de metas, la planificación y priorización de tareas, y la organización del trabajo, contribuyendo al cumplimiento de los objetivos del proyecto de manera efectiva. <br> **TB1:** Promoví la colaboración técnica al mantener comunicación constante sobre el progreso del backend, apoyar en la integración con el frontend y realizar correcciones colaborativas en el documento. Contribuí a establecer metas técnicas realistas y a resolver bloqueos técnicos de forma conjunta. <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Valerio Garcia, Adrian Emanuel** <br> **AV1:** Contribuí a la creación de un entorno colaborativo e inclusivo participando activamente en la coordinación del equipo y promoviendo una comunicación clara entre los integrantes. Apoyé en la definición de metas y en la planificación de tareas, ayudando a organizar el trabajo de manera estructurada y asegurando el cumplimiento de los objetivos establecidos dentro de los plazos definidos. <br> **TB1:** Apoyé en la planificación y ejecución del Capítulo VI, colaborando estrechamente con Alejandro en la documentación de implementación y validación. Participé en revisiones cruzadas para asegurar la calidad y coherencia del informe. <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Antonio Loayza, Luiggi Jeremy Jouvenel** <br> **AV1:** Contribuí a la creación de un entorno colaborativo e inclusivo coordinando con el equipo la definición de la arquitectura del sistema, asegurando que las decisiones de diseño fueran comprendidas y validadas por todos los integrantes. Establecí metas claras para la entrega del Capítulo IV, planifiqué la elaboración progresiva de los artefactos arquitectónicos (diagramas C4, clases y ERD por cada bounded context) y cumplí con los objetivos dentro de los plazos establecidos, entregando 40 diagramas que documentan de forma completa e integrada la arquitectura de OmniTrack. <br> **TB1:** Apoyé en la validación técnica de la arquitectura implementada y en la revisión general del informe, contribuyendo a mantener un ambiente de colaboración y aprendizaje mutuo. <br> **AV2:** [Acción] <br> **TB2:** [Acción] <br><br> **Oroncoy Almeyda, Alejandro Daniel** <br> **AV1:** Contribuyó a la especificación de requerimientos del proyecto colaborando en la definición del Impact Mapping, estableciendo vínculos claros entre los objetivos del negocio, los comportamientos esperados de los usuarios y las funcionalidades del sistema OmniTrack. <br> **TB1:** Colaboró activamente en la planificación y redacción del Capítulo VI junto con Adrian, participando en la documentación de evidencias y validaciones. Apoyó en la integración final del documento y en el cumplimiento de los plazos. <br> **AV2:** [Acción] <br> **TB2:** [Acción] | AV1: A lo largo del AV1, el equipo LogicNodes creó un ambiente colaborativo e inclusivo mediante la coordinación constante, la definición clara de metas y la planificación estructurada de tareas. La distribución de responsabilidades según las fortalezas individuales y el seguimiento continuo permitieron cumplir exitosamente con todos los objetivos del avance, integrando de forma efectiva las contribuciones de cada miembro en un documento final de calidad. <br> **TB1:** el equipo LogicNodes demostró un claro liderazgo conjunto y complementario. Rodrigo Alcántara lideró la experiencia de usuario y el avance general del frontend y Landing Page, Paulo Quincho asumió el liderazgo técnico del backend, mientras que Adrian Valerio y Alejandro Oroncoy se enfocaron en la documentación exhaustiva de la implementación (Capítulo VI). Esta distribución efectiva de liderazgo técnico y documental permitió entregar un producto funcional (Landing Page + Aplicación Web + Backend) y un informe completo y coherente. |
+| **Trabaja en equipo para proporcionar liderazgo en forma conjunta** | **Alcantara Cruz, Rodrigo Alonso** <br> **AV1:** Lideré la elaboración estructural del informe AV1, incluyendo la creación de la carátula, registro de versiones, sección de colaboración del equipo y tabla de contenido. Redacté completamente el Capítulo I y el Capítulo II del informe, realicé una entrevista para cada segmento objetivo (gestores de flota y clientes finales), elaboré el análisis de entrevistas, las conclusiones correspondientes y los anexos. Coordiné la integración de las contribuciones del equipo para entregar un documento coherente y de calidad. <br> **TB1:** Lideré la elaboración completa del Capítulo V (Solution UI/UX Design), el diseño y desarrollo de la Landing Page, y lideré el avance general del proyecto para la Aplicación Web. Coordiné la integración de todos los capítulos del informe TB1, asegurando coherencia visual y de contenido entre el Capítulo V y VI, y mantuve el seguimiento constante del equipo para cumplir con los plazos de entrega. <br> **AV2:** Lideró la gestión de calidad y consolidación final del proyecto para el AV2, encargándose de la corrección integral del documento del informe, así como de la estructuración y elaboración de la presentación ejecutiva (PPT). Asimismo, coordinó y lideró la grabación de la sustentación en video, asegurando que se transmitieran con claridad los objetivos alcanzados en el Sprint 2 por todo el equipo. <br> **TB2:** [Acción] <br><br> **Quincho Gamarra, Paulo Percy** <br> **AV1:** Lideré de manera colaborativa la construcción de las user stories y el product backlog, guiando al equipo en la identificación de requerimientos, definición de prioridades y organización del trabajo. Fomenté la participación de todos los integrantes, facilitando la toma de decisiones conjunta y asegurando que el backlog final estuviera alineado con los objetivos del proyecto. <br> **TB1:** Lideré el desarrollo completo del Backend Services (Node.js + Express + PostgreSQL), implementando la mayoría de los bounded contexts, la autenticación JWT, la integración con la base de datos y la documentación Swagger. Además, realicé correcciones generales y mejoras de consistencia en todo el documento del informe TB1. <br> **AV2:** Asumió el liderazgo técnico en la evolución de la infraestructura del sistema, encargándose de la mejora del Backend y de la documentación técnica y metodológica correspondiente al Sprint 2 en el informe. Coordinó con el equipo de Frontend y Mobile para asegurar el correcto consumo y acoplamiento de los nuevos servicios desplegados. <br> **TB2:** [Acción] <br><br> **Valerio Garcia, Adrian Emanuel** <br> **AV1:** Elaboré diagramas de arquitectura del sistema definiendo componentes, relaciones e interacciones clave, y participé en la identificación de bounded contexts para delimitar correctamente los dominios del negocio. Esto permitió establecer una estructura clara y modular de la solución, facilitando la comprensión del sistema, la separación de responsabilidades y la alineación entre los requerimientos funcionales y el diseño arquitectónico. <br> **TB1:** Participé activamente en la elaboración del Capítulo VI, contribuyendo en la documentación de la implementación, evidencias de desarrollo, despliegue y testing del Sprint 1. Apoyé en la revisión técnica de los diagramas y en la coherencia entre la arquitectura definida y la implementación realizada. <br> **AV2:** Lideró, de forma conjunta con Alejandro Oroncoy, el frente de desarrollo móvil del proyecto. Se encargó del diseño, arquitectura y codificación de la aplicación móvil de OmniTrack, asegurando la usabilidad para los usuarios objetivos y manteniendo la sincronización técnica con el resto de la plataforma. <br> **TB2:** [Acción] <br><br> **Antonio Loayza, Luiggi Jeremy Jouvenel** <br> **AV1:** Lideré el diseño arquitectónico completo del Capítulo IV, asumiendo la responsabilidad de definir y documentar los 8 bounded contexts del sistema OmniTrack bajo los principios de Domain-Driven Design. Elaboré el Context Mapping estratégico, los diagramas C4 a nivel de componentes para cada contexto (Backend, Mobile y WebApp), los diagramas de clases del domain layer y los diagramas de base de datos (ERD) para los 8 bounded contexts. Adicionalmente, desarrollé el Container Level Diagram y el Deployment Diagram de la plataforma, consolidando una visión arquitectónica completa y coherente que sirvió como base para la implementación del equipo. <br> **TB1:** Apoyé en la revisión y ajuste de los artefactos arquitectónicos del Capítulo IV para mantener la alineación con la implementación del backend y frontend realizada en este TB1. <br> **AV2:** Lideró la evolución de la interfaz de usuario de la plataforma principal, enfocándose en la mejora de la aplicación web y en la implementación y redacción detallada del Sprint 2 dentro del documento del informe, garantizando la consistencia de las funcionalidades construidas. <br> **TB2:** [Acción] <br><br> **Oroncoy Almeyda, Alejandro Daniel** <br> **AV1:** Elaboró el Impact Mapping del Capítulo III para ambos segmentos objetivo (gestores de flota y clientes finales), identificando actores, impactos esperados y entregables alineados a los objetivos de negocio de OmniTrack. <br> **TB1:** Lideró junto con Adrian Valerio la elaboración del Capítulo VI (Product Implementation, Validation & Deployment), documentando la configuración del entorno de desarrollo, el Sprint 1 completo (planning, backlog, evidencias de desarrollo, testing, despliegue y colaboración), las entrevistas de validación y las evaluaciones heurísticas. <br> **AV2:** Co-lideró el desarrollo técnico del ecosistema móvil de OmniTrack junto a Adrian Valerio. Se responsabilizó de la construcción e implementación de los módulos nativos/híbridos de la aplicación móvil, cumpliendo con los estándares de diseño y conectividad del Sprint 2. <br> **TB2:** [Acción] | AV1: Durante el AV1, el equipo demostró liderazgo conjunto al dividir responsabilidades clave: desde la organización estructural y redacción de los Capítulos I y II (Rodrigo Alcántara), la construcción de user stories y product backlog (Paulo Quincho), el diseño de diagramas de arquitectura (Adrian Valerio), el liderazgo completo del Capítulo IV con DDD (Luiggi Loayza), hasta la elaboración del Impact Mapping (Alejandro Oroncoy). Esta colaboración liderada por distintos miembros aseguró la integración exitosa de todos los entregables. <br> **TB1:** el equipo LogicNodes demostró un claro liderazgo conjunto y complementario. Rodrigo Alcántara lideró la experiencia de usuario y el avance general del frontend y Landing Page, Paulo Quincho asumió el liderazgo técnico del backend, mientras que Adrian Valerio y Alejandro Oroncoy se enfocaron en la documentación exhaustiva de la implementación (Capítulo VI). Esta distribución efectiva de liderazgo técnico y documental permitió entregar un producto funcional (Landing Page + Aplicación Web + Backend) y un informe completo y coherente. <br>  AV2 Durante el AV2, el equipo LogicNodes consolidó un modelo de coliderazgo técnico y operativo altamente eficiente. Mientras Rodrigo Alcántara asumió la dirección editorial, control de calidad y producción audiovisual del proyecto, el liderazgo técnico se distribuyó equitativamente en tres frentes: Paulo Quincho potenciando el Backend, Luiggi Loayza optimizando la aplicación Web y la documentación metodológica, y la dupla de Adrian Valerio junto a Alejandro Oroncoy materializando de forma completa la aplicación móvil. Esta sinergia permitió alcanzar un hito multiplataforma totalmente integrado. |
+| **Crea un entorno colaborativo e inclusivo, establece metas, planifica tareas y cumple objetivos.** | **Alcantara Cruz, Rodrigo Alonso** <br> **AV1:** Fomenté un entorno colaborativo e inclusivo durante el desarrollo del informe AV1 al coordinar las actividades del equipo, distribuir responsabilidades según las fortalezas de cada integrante y mantener una comunicación constante para resolver dudas y alinear esfuerzos. Establecí metas claras para cada sección del documento, planifiqué las tareas principales (estructuración, redacción de capítulos, entrevistas y análisis), asigné plazos realistas y realicé el seguimiento necesario para garantizar que todos los entregables se completaran a tiempo y con la calidad requerida. Como resultado, logramos entregar un informe AV1 completo, coherente y bien estructurado dentro del plazo establecido. <br> **TB1:** Continué liderando la planificación y coordinación general del equipo. Establecí metas claras para el Capítulo V y la implementación de la Landing Page y Aplicación Web, organicé reuniones de seguimiento, distribuí tareas según especialidades y realicé el seguimiento constante para integrar exitosamente todos los componentes (UI/UX, Backend y documentación) dentro del plazo establecido. <br> **AV2:** Fomentó un espacio de trabajo colaborativo al planificar los plazos de entrega internos para las correcciones del informe y el desarrollo de software. Estableció los objetivos comunicacionales para la sustentación, organizó los tiempos de grabación de cada integrante y unificó el material de manera inclusiva, garantizando que el producto final reflejara equitativamente el esfuerzo del equipo para cumplir la meta a tiempo con nota máxima. <br> **TB2:** [Acción] <br><br> **Quincho Gamarra, Paulo Percy** <br> **AV1:** Facilité un entorno colaborativo e inclusivo dentro del equipo, promoviendo la participación activa en la elaboración de user stories y el product backlog. Coordiné la definición de metas, la planificación y priorización de tareas, y la organización del trabajo, contribuyendo al cumplimiento de los objetivos del proyecto de manera efectiva. <br> **TB1:** Promoví la colaboración técnica al mantener comunicación constante sobre el progreso del backend, apoyar en la integración con el frontend y realizar correcciones colaborativas en el documento. Contribuí a establecer metas técnicas realistas y a resolver bloqueos técnicos de forma conjunta. <br> **AV2:** Promovió la colaboración técnica interfuncional al facilitar la integración del nuevo Backend con los entornos Web y Móvil. Colaboró activamente en la planificación del Sprint 2, definiendo tareas alcanzables para mitigar bloqueos técnicos y cumpliendo rigurosamente con los tiempos establecidos en el documento compartido. <br> **TB2:** [Acción] <br><br> **Valerio Garcia, Adrian Emanuel** <br> **AV1:** Contribuí a la creación de un entorno colaborativo e inclusivo participando activamente en la coordinación del equipo y promoviendo una comunicación clara entre los integrantes. Apoyé en la definición de metas y en la planificación de tareas, ayudando a organizar el trabajo de manera estructurada y asegurando el cumplimiento de los objetivos establecidos dentro de los plazos definidos. <br> **TB1:** Apoyé en la planificación y ejecución del Capítulo VI, colaborando estrechamente con Alejandro en la documentación de implementación y validación. Participé en revisiones cruzadas para asegurar la calidad y coherencia del informe. <br> **AV2:** Fomentó un entorno inclusivo y de constante comunicación con Alejandro Oroncoy para sincronizar el avance de la aplicación móvil. Participó en las sesiones de planificación de tareas del equipo, alineando los objetivos de desarrollo móvil con las metas globales de la entrega y logrando un despliegue puntual. <br> **TB2:** [Acción] <br><br> **Antonio Loayza, Luiggi Jeremy Jouvenel** <br> **AV1:** Contribuí a la creación de un entorno colaborativo e inclusivo coordinando con el equipo la definición de la arquitectura del sistema, asegurando que las decisiones de diseño fueran comprendidas y validadas por todos los integrantes. Establecí metas claras para la entrega del Capítulo IV, planifiqué la elaboración progresiva de los artefactos arquitectónicos (diagramas C4, clases y ERD por cada bounded context) y cumplí con los objetivos dentro de los plazos establecidos, entregando 40 diagramas que documentan de forma completa e integrada la arquitectura de OmniTrack. <br> **TB1:** Apoyé en la validación técnica de la arquitectura implementada y en la revisión general del informe, contribuyendo a mantener un ambiente de colaboración y aprendizaje mutuo. <br> **AV2:** Colaboró estrechamente con el equipo para aterrizar el backlog del Sprint 2 en la aplicación web. Mantuvo un ambiente de soporte mutuo al documentar el proceso de desarrollo en el informe de manera transparente, asegurando que todos los miembros comprendieran los cambios aplicados en la plataforma web dentro del cronograma pactado. <br> **TB2:** [Acción] <br><br> **Oroncoy Almeyda, Alejandro Daniel** <br> **AV1:** Contribuyó a la especificación de requerimientos del proyecto colaborando en la definición del Impact Mapping, estableciendo vínculos claros entre los objetivos del negocio, los comportamientos esperados de los usuarios y las funcionalidades del sistema OmniTrack. <br> **TB1:** Colaboró activamente en la planificación y redacción del Capítulo VI junto con Adrian, participando en la documentación de evidencias y validaciones. Apoyó en la integración final del documento y en el cumplimiento de los plazos. <br> **AV2:** Contribuyó activamente al clima de colaboración del equipo mediante un flujo de trabajo coordinado con Adrian Valerio para el frente móvil. Planificó sus actividades de desarrollo basándose en las prioridades de negocio del Sprint 2 y cumplió con la entrega de sus artefactos de software en los tiempos previstos. <br> **TB2:** [Acción] | AV1: A lo largo del AV1, el equipo LogicNodes creó un ambiente colaborativo e inclusivo mediante la coordinación constante, la definición clara de metas y la planificación estructurada de tareas. La distribución de responsabilidades según las fortalezas individuales y el seguimiento continuo permitieron cumplir exitosamente con todos los objetivos del avance, integrando de forma efectiva las contribuciones de cada miembro en un documento final de calidad. <br> **TB1:** el equipo LogicNodes demostró un claro liderazgo conjunto y complementario. Rodrigo Alcántara lideró la experiencia de usuario y el avance general del frontend y Landing Page, Paulo Quincho asumió el liderazgo técnico del backend, mientras que Adrian Valerio y Alejandro Oroncoy se enfocaron en la documentación exhaustiva de la implementación (Capítulo VI). Esta distribución efectiva de liderazgo técnico y documental permitió entregar un producto funcional (Landing Page + Aplicación Web + Backend) y un informe completo y coherente. <br> AV2: El equipo LogicNodes demostró un excelente nivel de madurez y cumplimiento en este avance, alcanzando la máxima calificación de desempeño individual y grupal (20/20) con entregas 100% puntuales. Mediante una planificación rigurosa y un ambiente de comunicación abierta, se definieron metas claras que permitieron balancear las cargas de trabajo. El éxito en la unificación de los entregables tangibles (Mejora Web, Nuevo Backend, Aplicación Móvil, Informe Corregido y Video de Sustentación) evidencia un entorno altamente inclusivo, orientado estrictamente al cumplimiento eficaz de los objetivos de la startup. |
 
 # Capítulo I: Introducción
 ## 1.1. Startup Profile
@@ -3703,6 +3714,8 @@ URL de la aplicación: [Click aquí](https://logic-nodes-webapp.vercel.app)
 
 El backend en Node.js + Express está planificado para desplegarse en **Microsoft Azure** durante el siguiente sprint. La aplicación se publicará mediante Azure App Service para Node.js y la base de datos será provisionada con **Azure Database for PostgreSQL** (servicio gestionado). Las variables de entorno (`DB_HOST`, `DB_NAME`, `JWT_SECRET`, etc.) se configurarán desde el panel de Application Settings de Azure replicando el `.env.example` versionado en el repositorio.
 
+https://logic-nodes-server.onrender.com/docs/
+
 **Conclusión:**
 
 - Los productos frontend (Landing Page y Web Application) ya están desplegados en producción a través de Vercel y son accesibles públicamente, lo que permitió validar los principales flujos del sistema durante la entrega académica del Sprint 1.
@@ -3727,6 +3740,305 @@ _Contributors – Web Application (jantonio-tech: 4 commits, JeremyAntonio: 2 co
 _Historial de commits del Backend Services (`devcociname` – Paulo Quincho: 13 commits, abril 2026) con la migración completa de Java a Node.js + Express + PostgreSQL_ <br>
 ![GitHub Commits – Backend](assets/ch6/omnitrack-insights-backend.png)
 <br>
+
+### 6.2.2. Sprint 2
+
+#### 6.2.2.1. Sprint Planning 2.
+
+En esta sección se describen los principales acuerdos y objetivos definidos durante el Sprint Planning correspondiente al Sprint 2 del proyecto OmniTrack desarrollado por la startup LogicNodes.
+
+Este sprint estuvo enfocado en completar todas las Historias de Usuario pendientes del Product Backlog, incluyendo el desarrollo del módulo de suscripciones (E7), la implementación del sistema de roles y permisos (US031), la finalización de funcionalidades de gestión de viajes (US026, US027) y la generación de reportes PDF descargables (US037). Asimismo, se consolidó la integración total entre frontend y backend para garantizar un sistema funcional end-to-end.
+
+| Sprint # | |
+|---|---|
+| Sprint 2 | |
+
+### Sprint Planning Background
+
+| Campo | Descripción |
+|---|---|
+| Date | 2026-06-13 |
+| Time | 11:00 PM |
+| Location | Reunión virtual mediante Discord |
+| Prepared By | Luiggi Jeremy Jouvenel Antonio Loayza |
+| Attendees (to planning meeting) | Rodrigo Alonso Alcantara Cruz / Paulo Percy Quincho Gamarra / Adrian Emanuel Valerio Garcia / Luiggi Jeremy Jouvenel Antonio Loayza / Alejandro Daniel Oroncoy Almeyda |
+| Sprint 2 Review Summary | Durante el Sprint 1 se completó exitosamente la Landing Page, la aplicación web frontend con sus módulos principales (autenticación, gestión de flota, dispositivos IoT, viajes y dashboard analítico) y el Backend Services con todos los bounded contexts implementados bajo Node.js + Express + PostgreSQL. Se validó la integración frontend-backend y se desplegaron ambos servicios correctamente en producción. |
+| Sprint 2 Retrospective Summary | El equipo identificó que quedaron pendientes el módulo completo de suscripciones (E7: US038–US041), el sistema de roles y permisos diferenciados por perfil (US031), la funcionalidad de reprogramación de viajes con validaciones de estado (US026), la generación de código de seguimiento para clientes (US027) y la descarga de reportes PDF por viaje (US037). Se acordó priorizar estas funcionalidades en el Sprint 2 para cerrar el Product Backlog completo. |
+
+### Sprint Goal & User Stories
+
+| Campo | Descripción |
+|---|---|
+| Sprint 2 Goal | Nuestro enfoque estuvo en completar todas las Historias de Usuario pendientes del Product Backlog de OmniTrack, priorizando el módulo de suscripciones, el control de acceso por roles y las funcionalidades de viajes y reportes que quedaron fuera del alcance del Sprint 1.<br><br>Creemos que esto permite entregar una plataforma completamente funcional en todos sus módulos, cerrando la brecha entre lo implementado y lo especificado en el backlog, y demostrando la cobertura total de los requerimientos del sistema.<br><br>Esto se confirmó cuando el equipo logró implementar y desplegar los módulos de suscripciones, roles y permisos, generación de reportes PDF y el sistema de código de seguimiento por viaje, completando así el 100% de las Historias de Usuario definidas en el Product Backlog. |
+| Sprint 2 Velocity | 34 Story Points |
+| Sum of Story Points | 33 Story Points |
+
+---
+
+#### 6.2.2.2. Aspect Leaders and Collaborators.
+
+Para el Sprint 2 se organizaron los aspectos funcionales y técnicos necesarios para completar todas las Historias de Usuario pendientes del sistema OmniTrack.
+
+Los aspectos considerados fueron:
+
+1. **Subscriptions Module**: Implementación del módulo completo de suscripciones (US038–US041).
+2. **Roles & Permissions**: Sistema de control de acceso diferenciado por perfil de usuario (US031).
+3. **Trip Completions**: Funcionalidades pendientes de gestión de viajes (US026, US027).
+4. **Reports & Export**: Generación y descarga de reportes PDF (US037).
+5. **Documentation**: Elaboración de secciones del informe académico correspondientes al Sprint 2.
+
+A continuación, se presenta la matriz LACX (Leadership and Collaboration Matrix):
+
+| Team Member | Subscriptions Module | Roles & Permissions | Trip Completions | Reports & Export | Documentation |
+|---|---|---|---|---|---|
+| Rodrigo Alonso Alcantara Cruz | L | C | C | L | C |
+| Paulo Percy Quincho Gamarra | L | L | L | C | C |
+| Adrian Emanuel Valerio Garcia | C | C | C | C | L |
+| Luiggi Jeremy Jouvenel Antonio Loayza | C | C | C | C | L |
+| Alejandro Daniel Oroncoy Almeyda | C | C | C | C | L |
+
+### Leyenda
+
+- **L (Leader):** Responsable principal del aspecto.
+- **C (Collaborator):** Participa activamente apoyando en el desarrollo o documentación.
+
+---
+
+#### 6.2.2.3. Sprint Backlog 2.
+
+Durante este sprint se desarrollaron todas las Historias de Usuario pendientes del Product Backlog, completando la cobertura funcional total del sistema OmniTrack.
+
+La gestión del sprint se realizó utilizando Jira para la organización de tareas, seguimiento de avances y coordinación de entregables.
+
+| User Story Id | User Story Title | Task Id | Task Title | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---|---|
+| US031 | Roles y permisos de acceso | T11 | Implementar sistema de roles backend (admin, cliente, operador) | 5 | Paulo Quincho | Done |
+| US031 | Roles y permisos de acceso | T12 | Implementar guardias de acceso por rol en frontend | 3 | Rodrigo Alcantara | Done |
+| US026 | Reprogramación de viajes | T13 | Implementar endpoint de reprogramación con validaciones de estado | 3 | Paulo Quincho | Done |
+| US026 | Reprogramación de viajes | T14 | Implementar vista de reprogramación en módulo de viajes | 2 | Rodrigo Alcantara | Done |
+| US027 | Código de viaje para cliente | T15 | Implementar generación y envío de código único de seguimiento | 3 | Paulo Quincho | Done |
+| US027 | Código de viaje para cliente | T16 | Implementar vista de consulta por código en la app | 2 | Rodrigo Alcantara | Done |
+| US037 | Descarga de reporte de viajes | T17 | Implementar generación de reporte PDF con gráficos de temperatura | 5 | Rodrigo Alcantara | Done |
+| US038 | Cancelar suscripción | T18 | Implementar endpoint de cancelación de suscripción | 2 | Paulo Quincho | Done |
+| US038 | Cancelar suscripción | T19 | Implementar vista de cancelación con confirmación en frontend | 2 | Rodrigo Alcantara | Done |
+| US039 | Visualizar información de suscripción | T20 | Implementar vista de plan, estado y fecha de vencimiento | 2 | Rodrigo Alcantara | Done |
+| US040 | Historial de pagos | T21 | Implementar endpoint de historial de transacciones | 3 | Paulo Quincho | Done |
+| US040 | Historial de pagos | T22 | Implementar vista de historial de pagos con detalle | 2 | Rodrigo Alcantara | Done |
+| US041 | Notificación de renovación próxima | T23 | Implementar lógica de notificación anticipada de renovación | 3 | Paulo Quincho | Done |
+| US041 | Notificación de renovación próxima | T24 | Integrar notificaciones de renovación en panel de suscripción | 2 | Rodrigo Alcantara | Done |
+| - | Documentación Sprint 2 | T25 | Elaborar secciones 6.2.2.1–6.2.2.3 del informe académico | 3 | Luiggi Loayza | Done |
+| - | Revisión arquitectónica | T26 | Ajustar diagramas DDD para nuevos módulos de suscripción y roles | 2 | Luiggi Loayza | Done |
+| - | Testing Suite Sprint 2 | T27 | Elaborar y ejecutar pruebas unitarias para nuevos endpoints | 3 | Adrian Valerio | Done |
+| - | Evidencia de despliegue | T28 | Documentar despliegue y evidencia de ejecución del Sprint 2 | 2 | Alejandro Oroncoy | Done |
+
+---
+
+#### 6.2.2.4. Development Evidence for Sprint Review.
+
+Durante el Sprint 2, el proyecto **OmniTrack** evolucionó en dos frentes simultáneos: la **Aplicación Web** fue adaptada para consumir los endpoints reales del backend en producción, y se desarrolló desde cero la **Aplicación Móvil** en Flutter/Dart, cubriendo los flujos de autenticación, el workspace principal y los módulos de alertas, billing y recuperación de contraseña.
+
+Luiggi Jeremy Jouvenel Antonio Loayza lideró la adaptación del frontend web a los puntos finales reales del backend. Adrian Emanuel Valerio Garcia y Alejandro Daniel Oroncoy Almeyda co-lideraron el desarrollo completo de la aplicación móvil.
+
+---
+
+### Web Application
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+|---|---|---|---|---|---|
+| `logic-nodes-webapp` | `main` | **5ecd3a3** | feat (add): Adaptar el frontend a los puntos finales reales del backend. | Integración del frontend con los endpoints reales del backend desplegado en producción, reemplazando el uso de la fake API. | 2026-06-18 |
+
+---
+
+### Mobile Application
+
+Durante este sprint se desarrolló la **Aplicación Móvil** de OmniTrack utilizando **Flutter** (Dart), implementando la arquitectura por features con controllers, repositorios y entidades separados. Adrian Valerio construyó la estructura inicial del proyecto, el flujo de autenticación y la pantalla principal del workspace con conexión al backend real. Alejandro Oroncoy implementó el centro de alertas, el módulo de billing y suscripciones, y el flujo de recuperación de contraseña, consolidando la integración completa mediante un Pull Request.
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+|---|---|---|---|---|---|
+| `logic-nodes-mobile` | `main` | **36fbf86** | inital commit | Configuración inicial del proyecto Flutter y estructura base del repositorio. | 2026-06-05 |
+| `logic-nodes-mobile` | `main` | **c376e25** | feat: add omnitrack mobile auth flow | Implementación del flujo de autenticación móvil: pantallas de login, registro y recuperación de contraseña. | 2026-06-09 |
+| `logic-nodes-mobile` | `main` | **5e46be8** | feat: connect mobile auth flow to backend | Conexión del flujo de autenticación con el backend real mediante HTTP, reemplazando el datasource simulado. | 2026-06-09 |
+| `logic-nodes-mobile` | `main` | **27ee4dd** | feat: redesign mobile home workspace | Rediseño de la pantalla principal del workspace con nuevas tarjetas de métricas y navegación. | 2026-06-09 |
+| `logic-nodes-mobile` | `main` | **ac4e63b** | feat: connect home workspace to backend | Integración del home workspace con los endpoints reales de viajes, vehículos, dispositivos y sesiones de monitoreo. | 2026-06-09 |
+| `logic-nodes-mobile` | `feat/billing-recovery-alerts-ux` | **1a6eb7b** | feat(mobile): alerts center, billing y recovery real + fixes de UX | Implementación del centro de alertas con filtros y resolución, módulo de billing y suscripciones con historial de pagos, flujo real de recuperación de contraseña y correcciones generales de UX. | 2026-06-17 |
+| `logic-nodes-mobile` | `main` | **15ebfea** | Merge pull request #1 from Logic-Nodes/feat/billing-recovery-alerts-ux | Merge del branch `feat/billing-recovery-alerts-ux` hacia `main`, consolidando los módulos de alertas, billing y recuperación. | 2026-06-18 |
+
+---
+
+#### 6.2.2.5. Testing Suite Evidence for Sprint Review.
+
+Durante este sprint se incorporó una suite de pruebas automatizadas en la **Aplicación Móvil** utilizando **Flutter Test** como framework de testing, cubriendo pruebas de widgets y pruebas unitarias de controllers. Los tests se encuentran en el directorio `test/` del repositorio `logic-nodes-mobile`.
+
+**Pruebas automatizadas implementadas en la aplicación móvil:**
+
+| Archivo | Tipo | Cobertura |
+|---|---|---|
+| `test/widget_test.dart` | Widget test (integración de rutas) | Verifica que la aplicación renderiza correctamente el flujo de login: pantalla de bienvenida con texto `WELCOME`, botón `Sign In` e indicador de conexión con el backend (`Backend connection`). |
+| `test/new_screens_test.dart` | Widget test + Unit tests | **SubscriptionScreen widget test:** verifica que la pantalla renderiza el snapshot del backend con el plan `PROFESSIONAL`, el botón `Add card` y la opción `Upgrade your plan`. <br><br> **BillingController unit test:** valida la carga del snapshot de billing (plan, pagos, planes disponibles), el cambio de plan a `ENTERPRISE` y la cancelación de suscripción. <br><br> **AlertsController unit test:** valida la carga de alertas, los contadores por estado (`open`, `acknowledged`, `resolved`), el filtrado por estado, la búsqueda por tipo (`humidity`) y la resolución de alertas. |
+
+La ejecución se realiza mediante:
+
+```bash
+flutter test
+```
+
+**Validaciones adicionales realizadas manualmente:**
+
+- Verificación visual del flujo de autenticación en dispositivo físico y emulador Android.
+- Pruebas de integración del home workspace contra el backend desplegado en producción.
+- Validación del módulo de alertas: carga, filtros por estado y resolución de alertas reales.
+- Verificación del módulo de billing: visualización de plan activo, historial de pagos, cambio de plan y cancelación de suscripción.
+- Pruebas del flujo de recuperación de contraseña contra los endpoints reales del backend.
+- Validación de la adaptación del frontend web (`logic-nodes-webapp`) a los endpoints reales, verificando el correcto consumo de los servicios en producción.
+
+
+#### 6.2.2.6. Execution Evidence for Sprint Review.
+
+Durante este sprint se alcanzó la implementación funcional de los tres productos digitales de **OmniTrack**: la **Landing Page**, la **Aplicación Web** y los **Backend Services**, cumpliendo con los objetivos planteados en el alcance del sprint.
+
+La landing fue desarrollada con React y Vite, orientada a comunicar la propuesta de valor de OmniTrack, sus funcionalidades principales, planes de suscripción y un formulario de contacto con soporte bilingüe (EN/ES).
+
+La aplicación web fue construida con React 18, Tailwind CSS, Zustand para gestión de estado y Recharts para visualizaciones analíticas, integrándose con el backend real mediante Axios. El backend fue desarrollado en Node.js con Express, expone APIs REST organizadas por bounded contexts bajo arquitectura DDD y cuenta con documentación generada mediante Swagger UI.
+
+A continuación se muestran los principales resultados obtenidos:
+
+**Landing Page**
+
+_Vista inicial del encabezado principal y navegación_ <br>
+![Landing Page – Hero section](assets/ch6/omnitrack-landing-hero.png)
+<br>
+
+Repositorio: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-landing-page)
+Enlace: [Click aquí](https://logic-nodes-landing-page.vercel.app)
+
+<br>
+
+**Web Application**
+
+_Dashboard principal con métricas de monitoreo IoT en tiempo real_ <br>
+![Web App – Dashboard](assets/ch6/omnitrack-webapp-dashboard.png)
+<br>
+
+_Módulo de gestión de vehículos de la flota con estados y dispositivos IoT asignados_ <br>
+![Web App – Fleet Vehicles](assets/ch6/omnitrack-webapp-iot.png)
+<br>
+
+_Módulo de viajes activos con estado, conductor y puntos de origen/destino_ <br>
+![Web App – Trips Module](assets/ch6/omnitrack-webapp-trips.png)
+<br>
+
+_Módulo de alertas con tipo, severidad y estado de resolución_ <br>
+![Web App – Alerts Module](assets/ch6/omnitrack-webapp-alerts.png)
+<br>
+
+Repositorio: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-webapp)
+Aplicación en línea: [Click aquí](https://logic-nodes-webapp.vercel.app)
+
+<br>
+
+**Backend Services**
+
+_Endpoints REST disponibles a través de Swagger UI_ <br>
+![Backend – Swagger UI](assets/ch6/omnitrack-backend-swagger.png)
+<br>
+
+Repositorio: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-server)
+
+<br>
+
+A continuacion se muestra la evidencia del deploy 
+
+
+
+**Conclusión:**
+
+- El resultado de este sprint permitió disponer de una versión navegable y funcional del producto completo, con la landing pública, la aplicación web conectada al backend real y los servicios REST documentados.
+- Esto consolida la base para el siguiente sprint, donde se incorporarán pruebas automatizadas, mejoras de rendimiento y validación con usuarios reales.
+
+#### 6.2.2.7. Services Documentation Evidence for Sprint Review.
+
+Durante este sprint 2 se implementó documentación de los Web Services mediante **Swagger UI**, integrada directamente en el backend desarrollado en Node.js con Express, utilizando el paquete `swagger-ui-express`.
+
+La especificación cubre todos los endpoints REST de OmniTrack, organizados por bounded contexts de acuerdo con la arquitectura DDD adoptada, detallando métodos HTTP, parámetros, cuerpos de solicitud y respuestas esperadas.
+
+Los principales grupos de endpoints documentados son:
+
+| Bounded Context | Endpoints principales | Métodos HTTP |
+|---|---|---|
+| **IAM – Authentication** | `/api/v1/authentication/sign-in`, `/api/v1/authentication/sign-up`, `/api/v1/authentication/refresh`, `/api/v1/authentication/logout` | POST |
+| **IAM – Users & Roles** | `/api/v1/users`, `/api/v1/users/:userId`, `/api/v1/roles` | GET |
+| **Fleet – Vehicles** | `/api/v1/fleet/vehicles`, `/api/v1/fleet/vehicles/:id`, `/api/v1/fleet/vehicles/:id/assign-device/:imei` | GET, POST, PUT, DELETE, PATCH |
+| **Fleet – Devices** | `/api/v1/fleet/devices`, `/api/v1/fleet/devices/:id`, `/api/v1/fleet/devices/by-imei/:imei` | GET, POST, PUT, DELETE, PATCH |
+| **Trip Management** | `/api/v1/trips`, `/api/v1/trips/:tripId`, `/api/v1/trips/:tripId/start`, `/api/v1/trips/:tripId/complete` | GET, POST, DELETE |
+| **Delivery Orders** | `/api/v1/delivery-orders`, `/api/v1/delivery-orders/trip/:tripId`, `/api/v1/delivery-orders/:id/delivery` | GET, POST, PUT, DELETE |
+| **Origin Points** | `/api/v1/origin-points`, `/api/v1/origin-points/search` | GET, POST, PUT, DELETE |
+| **Monitoring – Sessions** | `/api/v1/monitoring/sessions`, `/api/v1/monitoring/sessions/:id/pause`, `/api/v1/monitoring/sessions/:id/end` | GET, POST, DELETE |
+| **Monitoring – Telemetry** | `/api/v1/telemetry`, `/api/v1/telemetry/session/:sessionId` | GET, POST, DELETE |
+| **Alerts** | `/api/v1/alerts`, `/api/v1/alerts/:alertId/acknowledgment`, `/api/v1/alerts/:alertId/closure` | GET, POST, PATCH |
+| **Incidents** | `/api/v1/incidents`, `/api/v1/incidents/alert/:alertId` | GET, POST, PATCH |
+| **Notifications** | `/api/v1/notifications`, `/api/v1/notifications/:id/send` | GET, POST |
+| **Analytics** | `/api/v1/analytics/trips`, `/api/v1/analytics/alerts`, `/api/v1/analytics/incidents-by-month` | GET |
+| **Merchants** | `/api/v1/merchants`, `/api/v1/merchants/:id`, `/api/v1/merchants/:id/employee` | GET, POST, PUT, DELETE |
+| **Employees** | `/api/v1/employees`, `/api/v1/employees/merchants/:merchantId` | GET, DELETE |
+| **Profiles** | `/api/v1/profiles`, `/api/v1/profiles/user/:userId` | GET, POST, PUT, DELETE |
+
+<br>
+
+_Vista principal de Swagger UI con la especificación OpenAPI 3.0 cargada (`LogicNodes API 1.0.0`) servida desde `/docs`_ <br>
+![Backend – Swagger overview](assets/ch6/omnitrack-backend-swagger.png)
+<br>
+
+_Detalle del módulo IAM con endpoint POST `/api/v1/authentication/sign-in` expandido mostrando parámetros, request body y `Try it out`_ <br>
+![Backend – Swagger IAM expanded](assets/ch6/omnitrack-swagger-iam.png)
+<br>
+
+_Endpoints de Origin Points, Delivery Orders y Alerts con métodos GET, POST, PUT, DELETE y PATCH agrupados por bounded context_ <br>
+![Backend – Swagger Trips, Delivery Orders y Alerts](assets/ch6/omnitrack-swagger-trips-alerts.png)
+<br>
+
+_Sección de Monitoring (sessions/pause/end/resume) y Telemetry con los endpoints REST para captura de datos IoT_ <br>
+![Backend – Swagger Monitoring y Telemetry](assets/ch6/omnitrack-swagger-monitoring.png)
+<br>
+
+_Sección de Schemas con los modelos de request/response (TokenPair, Trip, OriginPoint, DeliveryOrder, Alert, etc.) documentados como componentes OpenAPI_ <br>
+![Backend – Swagger Schemas](assets/ch6/omnitrack-swagger-schemas.png)
+<br>
+
+Repositorio del backend: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-server)
+
+<br>
+
+#### 6.2.2.8. Software Deployment Evidence for Sprint Review.
+
+<img src="img/bd-1.jpeg">
+
+<img src="img/bd-2.jpeg">
+
+<img src="img/bd-3.jpeg">
+
+<img src="img/bd-4.jpeg">
+
+<img src="img/bd-5.jpeg">
+
+<img src="img/bd-6.jpeg">
+
+<img src="img/mobile-app-done-1.jpeg">
+
+<img src="img/mobile-app-done-2.jpeg">
+
+<img src="img/mobile-app-done-3.jpeg">
+
+<img src="img/mobile-app-done-4.jpeg">
+
+<img src="img/mobile-app-done-5.jpeg">
+
+<img src="img/mobile-app-done-6.jpeg">
+
+#### 6.2.2.9. Team Collaboration Insights during Sprint.
+
+<img src="img/doc-commits-sprint-2.png">
+
+<img src="img/app-mobile-commits-sprint-2.png">
 
 ## 6.3. Validation Interviews.
 
@@ -3824,6 +4136,12 @@ La entrega del TB1 del proyecto OmniTrack ha permitido completar exitosamente lo
 Se logró desplegar los tres productos principales en entornos productivos (Vercel y Azure), se documentó el Sprint 1 con evidencias de desarrollo, pruebas y despliegue, y se realizaron entrevistas de validación con usuarios reales.
 
 Este avance marca el paso exitoso de la fase de diseño a la implementación real del producto, consolidando una base técnica sólida y funcional que permite continuar con la integración IoT y el refinamiento de la solución. El trabajo refleja un enfoque estructurado, colaborativo y alineado con las mejores prácticas de ingeniería de software e IoT.
+
+### AV2:
+
+A lo largo del ciclo académico, el equipo LogicNodes ha consolidado de manera sobresaliente las competencias exigidas por el Student Outcome 5 de ABET, evolucionando desde la concepción estratégica del producto OmniTrack hasta el despliegue de una solución tecnológica robusta, escalable y multiplataforma. El éxito del proyecto radicó en un modelo de liderazgo compartido y adaptativo, donde cada integrante asumió la dirección de frentes críticos de acuerdo con sus fortalezas técnicas y de gestión: desde el diseño arquitectónico inicial bajo principios de Domain-Driven Design y la dirección editorial del proyecto, hasta el coliderazgo en el desarrollo del Backend, la aplicación Web y el ecosistema Móvil.  
+
+Este esquema de trabajo se sostuvo sobre un entorno altamente colaborativo, inclusivo y orientado a resultados, donde el uso riguroso de metodologías ágiles facilitó una planificación transparente, la mitigación oportuna de bloqueos técnicos y el establecimiento de metas realistas. El compromiso unánime de los miembros se refleja directamente en los indicadores de rendimiento, habiendo alcanzado la máxima excelencia operativa con entregas completas, funcionales y estrictamente a tiempo en cada uno de los hitos evaluativos. En conclusión, la experiencia ha demostrado que el equipo posee la capacidad técnica y blanda para funcionar efectivamente en entornos de ingeniería complejos, autoorganizados y de alta exigencia profesional.
 
 # Bibliografía
 
