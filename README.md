@@ -4094,6 +4094,12 @@ Este sprint se centró en la integración completa con dispositivos IoT, la impl
 | Luiggi Jeremy Jouvenel Antonio Loayza | C | C | C | C | L |
 | Alejandro Daniel Oroncoy Almeyda | C | L | C | C | C |
 
+**Leyenda**  
+- **L (Leader):** Responsable principal del aspecto.  
+- **C (Collaborator):** Participa activamente apoyando en el desarrollo o documentación.
+
+---
+
 #### 6.2.3.3. Sprint Backlog 3
 
 #### 6.2.3.4. Development Evidence for Sprint Review
