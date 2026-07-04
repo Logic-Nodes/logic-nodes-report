@@ -273,6 +273,16 @@ _Tabla de contenidos_
       - [6.2.2.7. Services Documentation Evidence for Sprint Review]
       - [6.2.2.8. Software Deployment Evidence for Sprint Review]
       - [6.2.2.9. Team Collaboration insights during Sprint]
+    - [6.2.3. Sprint 3]
+      - [6.2.3.1. Sprint Planning 3]
+      - [6.2.3.2. Aspect Leaders and Collaborators]
+      - [6.2.3.3. Sprint Backlog 3]
+      - [6.2.3.4. Development Evidence for Sprint Review]
+      - [6.2.3.5. Testing Suite Evidence for Sprint Review]
+      - [6.2.3.6. Execution Evidence for Sprint Review]
+      - [6.2.3.7. Services Documentation Evidence for Sprint Review]
+      - [6.2.3.8. Software Deployment Evidence for Sprint Review]
+      - [6.2.3.9. Team Collaboration insights during Sprint]
   - [6.3. Validation Interviews]
     - [6.3.1. Diseño de Entrevistas]
     - [6.3.2. Registro de Entrevistas]
@@ -4039,6 +4049,65 @@ Repositorio del backend: [Click aquí](https://github.com/Logic-Nodes/logic-node
 <img src="img/doc-commits-sprint-2.png">
 
 <img src="img/app-mobile-commits-sprint-2.png">
+
+### 6.2.3. Sprint 3
+#### 6.2.3.1. Sprint Planning 3
+
+En esta sección se describen los principales acuerdos y objetivos definidos durante el Sprint Planning correspondiente al Sprint 3 del proyecto OmniTrack desarrollado por la startup LogicNodes.
+
+Este sprint se centró en la integración completa con dispositivos IoT, la implementación de alertas en tiempo real avanzadas, mejoras en el módulo de analíticas e insights, optimizaciones de rendimiento en la aplicación móvil y web, y la finalización de funcionalidades pendientes para cerrar el producto MVP.
+
+| Sprint # | |
+|---|---|
+| Sprint 3 | |
+
+### Sprint Planning Background
+
+| Campo | Descripción |
+|---|---|
+| Date | 2026-06-27 |
+| Time | 10:00 PM |
+| Location | Reunión virtual mediante Discord |
+| Prepared By | Rodrigo Alonso Alcántara Cruz |
+| Attendees (to planning meeting) | Rodrigo Alonso Alcántara Cruz / Paulo Percy Quincho Gamarra / Adrian Emanuel Valerio Garcia / Luiggi Jeremy Jouvenel Antonio Loayza / Alejandro Daniel Oroncoy Almeyda |
+| Sprint 2 Review Summary | Se completó exitosamente el módulo de suscripciones, roles y permisos, la aplicación móvil completa con integración al backend, y la versión fisica del IoT funcional. |
+| Sprint 2 Retrospective Summary | Se identificaron oportunidades de mejora en la integración IoT en tiempo real, notificaciones push, dashboards analíticos más profundos y optimización de rendimiento en dispositivos móviles. |
+
+### Sprint Goal & User Stories
+
+| Campo | Descripción |
+|---|---|
+| Sprint 3 Goal | Nuestro enfoque estuvo en implementar la integración real con dispositivos IoT, mejorar las alertas en tiempo real, enriquecer el módulo de Insights y Dashboards, y optimizar el rendimiento y experiencia de usuario en todas las plataformas.<br><br>Creemos que esto permitirá entregar un producto MVP completo, funcional y listo para pruebas de campo con dispositivos físicos IoT.<br><br>Esto se confirmó cuando logramos integrar telemetría en tiempo real desde dispositivos ESP32 simulados/físicos, implementar notificaciones push, mejorar los dashboards analíticos y optimizar el rendimiento general del sistema. |
+| Sprint 3 Velocity | 42 Story Points |
+| Sum of Story Points | 40 Story Points |
+
+---
+
+
+#### 6.2.3.2. Aspect Leaders and Collaborators
+
+| Team Member | IoT Integration & Telemetry | Real-time Alerts & Notifications | Insights & Analytics | Performance & Optimization | Documentation |
+|---|---|---|---|---|---|
+| Rodrigo Alonso Alcántara Cruz | L | C | L | C | L |
+| Paulo Percy Quincho Gamarra | L | L | C | L | C |
+| Adrian Emanuel Valerio Garcia | C | C | C | L | C |
+| Luiggi Jeremy Jouvenel Antonio Loayza | C | C | C | C | L |
+| Alejandro Daniel Oroncoy Almeyda | C | L | C | C | C |
+
+#### 6.2.3.3. Sprint Backlog 3
+
+#### 6.2.3.4. Development Evidence for Sprint Review
+
+#### 6.2.3.5. Testing Suite Evidence for Sprint Review
+
+#### 6.2.3.6. Execution Evidence for Sprint Review
+
+#### 6.2.3.7. Services Documentation Evidence for Sprint Review
+
+#### 6.2.3.8. Software Deployment Evidence for Sprint Review
+
+#### 6.2.3.9. Team Collaboration insights during Sprint
+
 
 ## 6.3. Validation Interviews.
 
