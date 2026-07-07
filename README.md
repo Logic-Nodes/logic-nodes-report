@@ -4102,6 +4102,44 @@ Este sprint se centró en la integración completa con dispositivos IoT, la impl
 
 #### 6.2.3.3. Sprint Backlog 3
 
+Durante este sprint se priorizó **finalizar la integración física del dispositivo IoT**, **completar la aplicación móvil** y **ajustar el backend** para soportar telemetría en tiempo real, alertas automáticas y un mejor rendimiento general del sistema, cerrando así los módulos que quedaron pendientes del Product Backlog tras el Sprint 2.
+ 
+La gestión del sprint se realizó utilizando Jira para la organización de tareas, seguimiento de avances y coordinación de entregables.
+ 
+| User Story Id | User Story Title | Task Id | Task Title | Estimation (Hours) | Assigned To | Status |
+|---|---|---|---|---|---|---|
+| US028 | Monitoreo de temperatura en tiempo real | T29 | Implementar transmisión de telemetría real desde el ESP32 (DHT22) vía MQTT/HTTPS | 6 | Rodrigo Alcantara | Done |
+| US029 | Alertas por incumplimiento de temperatura | T30 | Implementar lógica de alerta automática por umbral de temperatura | 4 | Paulo Quincho | Done |
+| US030 | Alertas de conexión IoT | T31 | Implementar alerta por pérdida de conexión de dispositivo tras umbral definido | 4 | Alejandro Oroncoy | Done |
+| US016 | Registro de dispositivos IoT | T32 | Finalizar endpoint de registro de dispositivos con validación de metadatos técnicos | 4 | Paulo Quincho | Done |
+| US017 | Eliminar dispositivo IoT | T33 | Implementar baja lógica de dispositivos manteniendo histórico | 3 | Paulo Quincho | Done |
+| US018 | Asignar dispositivo a vehículo de carga | T34 | Implementar endpoint de asignación dispositivo–vehículo | 3 | Paulo Quincho | Done |
+| US019 | Cambiar dispositivo de vehículo | T35 | Implementar reasignación de dispositivo entre vehículos | 2 | Paulo Quincho | Done |
+| US021 | Ver dispositivos IoT | T36 | Implementar vista de inventario de dispositivos IoT en frontend | 3 | Rodrigo Alcantara | Done |
+| US022 | Ver estado de dispositivo por vehículo | T37 | Implementar vista de estado de conectividad por unidad | 3 | Rodrigo Alcantara | Done |
+| US023 | Ver estado de dispositivo | T38 | Implementar indicador de estado operativo (batería, conexión) en el firmware ESP32/Wokwi | 4 | Rodrigo Alcantara | Done |
+| TS004 | API de dispositivos IoT | T39 | Completar y documentar en Swagger los endpoints del ciclo de vida de dispositivos IoT | 5 | Paulo Quincho | Done |
+| US032 | Lista de viajes registrados | T40 | Implementar vista de lista de viajes offline-first con SQLite en la app móvil | 4 | Adrian Valerio | Done |
+| US033 | Detalle de viaje | T41 | Implementar vista de detalle de viaje con sincronización offline en la app móvil | 4 | Adrian Valerio | Done |
+| US025 | Actualización de estados de viaje | T42 | Implementar actualización del estado de viaje desde la app móvil del conductor | 3 | Adrian Valerio | Done |
+| - | Notificaciones push (app móvil) | T43 | Integrar Firebase Cloud Messaging para notificaciones push en la app móvil | 5 | Alejandro Oroncoy | Done |
+| - | Optimización de rendimiento móvil | T44 | Optimizar la sincronización SQLite ↔ Backend en la app móvil | 4 | Adrian Valerio | Done |
+| TS001 | API de autenticación | T45 | Finalizar endpoints de refresh y validación de sesión | 3 | Paulo Quincho | Done |
+| TS002 | Servicio de autenticación con JWT | T46 | Ajustar expiración y rotación de tokens JWT | 3 | Paulo Quincho | Done |
+| TS003 | API de vehículos de carga | T47 | Completar y documentar en Swagger los endpoints CRUD de vehículos | 4 | Paulo Quincho | Done |
+| TS005 | API de viajes | T48 | Completar endpoints REST de viajes y reglas de validación operativa | 4 | Paulo Quincho | Done |
+| - | Optimización de backend | T49 | Optimizar queries de PostgreSQL para endpoints de alto tráfico (temperatura, alertas) | 5 | Adrian Valerio | Done |
+| US034 | Gráficos de tiempo y temperatura | T50 | Implementar gráfico de evolución térmica en el dashboard | 4 | Rodrigo Alcantara | Done |
+| US035 | Gráficos de incidencias por mes | T51 | Implementar gráfico de incidencias mensuales en el dashboard | 4 | Rodrigo Alcantara | Done |
+| US036 | Filtrado de viajes por fecha | T52 | Implementar filtro de viajes por rango de fechas | 2 | Rodrigo Alcantara | Done |
+| - | Documentación Sprint 3 | T53 | Elaborar secciones 6.2.3.1–6.2.3.3 del informe académico | 3 | Luiggi Loayza | Done |
+| - | Revisión arquitectónica | T54 | Actualizar diagramas C4 y Context Mapping con los ajustes del Sprint 3 | 3 | Luiggi Loayza | Done |
+| - | Documentación de API | T55 | Documentar en Swagger los nuevos endpoints de IoT y backend | 3 | Rodrigo Alcantara | Done |
+| - | Testing Suite Sprint 3 | T56 | Elaborar y ejecutar pruebas unitarias para endpoints de IoT, alertas y móvil | 4 | Adrian Valerio | Done |
+| - | Evidencia de despliegue | T57 | Documentar despliegue y evidencia de ejecución del Sprint 3 | 2 | Alejandro Oroncoy | Done |
+ 
+
+
 #### 6.2.3.4. Development Evidence for Sprint Review
 
 #### 6.2.3.5. Testing Suite Evidence for Sprint Review
