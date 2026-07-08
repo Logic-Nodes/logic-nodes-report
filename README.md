@@ -4144,22 +4144,63 @@ La gestión del sprint se realizó utilizando Jira para la organización de tare
 
 #### 6.2.3.4. Development Evidence for Sprint Review
 
-Durante el Sprint 3, el proyecto **OmniTrack** se centró en dos frentes: el **Backend Services**, donde se incorporó el bounded context de **IoT** (ingesta de telemetría y monitoreo de desconexión) y se cerraron las brechas pendientes de **Billing/Subscriptions** y **Trips** identificadas frente al informe TB1; y la **Aplicación Móvil**, donde se completó la integración con el backend en producción (fleet, trips, perfil), se tradujo la interfaz al español y se integraron notificaciones push.
+Durante el Sprint 3, el proyecto **OmniTrack** se centró en dos frentes: el **Backend Services** (IoT, billing, trips, push FCM) y la **Aplicación Móvil** (integración con producción, español, US026/US027, cliente FCM).
 
-Paulo Percy Quincho Gamarra lideró la implementación del backend (contexto IoT, jobs de desconexión/renovación, MQTT y push). Alejandro Daniel Oroncoy Almeyda lideró la integración final de la aplicación móvil con el backend real, la localización a español y el cliente de Firebase Cloud Messaging.
+Paulo Percy Quincho Gamarra lideró el bounded context **IoT** y la ingesta de telemetría. Alejandro Daniel Oroncoy Almeyda lideró el cierre de brechas del backend (billing, jobs, seed, deploy) y la integración final de la aplicación móvil.
 
 ---
 
 ### Backend Services
 
+> **Nota:** la tabla completa de commits del backend la documenta **@Alejandro Oroncoy**. A continuación se muestra la evidencia estructural del módulo **IoT** y del módulo **Push (FCM)** incorporados en `logic-nodes-server`.
+
+**Repositorio:** [logic-nodes-server](https://github.com/Logic-Nodes/logic-nodes-server)
+
+#### Carpeta `iot/` — firmware y documentación ESP32
+
+```
+logic-nodes-server/
+└── iot/
+    └── esp32/
+        ├── README.md              # Flujo HTTPS ingest, setup, pruebas con curl
+        ├── diagram.json           # Simulación Wokwi (DHT22 + potenciómetro + LED)
+        └── omnitrack_esp32.ino    # Sketch: POST /api/v1/iot/telemetry y heartbeat
+```
+
+El firmware envía telemetría (temperatura, humedad, vibración) autenticada por `x-device-imei` y `x-device-secret`. El backend persiste en `telemetry_data`, evalúa umbrales y genera alertas automáticas; el LED del ESP32 se enciende cuando la respuesta incluye alertas.
+
+#### Bounded context `src/contexts/iot/` — API y monitor de desconexión
+
+```
+logic-nodes-server/
+└── src/contexts/iot/
+    ├── application/
+    │   ├── ingestion-service.js       # Ingesta, sesión de monitoreo, umbrales → alertas
+    │   └── disconnection-monitor.js   # Worker: offline + alerta DISCONNECTION
+    └── interfaces/http/
+        └── iot.routes.js            # POST /api/v1/iot/telemetry, /api/v1/iot/heartbeat
+```
+
+#### Módulo Push (FCM) — notificaciones al móvil
+
+```
+logic-nodes-server/
+├── src/shared/infrastructure/push/
+│   ├── firebase-admin-client.js     # Inicializa Firebase Admin (env FIREBASE_SERVICE_ACCOUNT_JSON)
+│   └── push-sender.js               # Envía push a tokens registrados por userId
+└── src/contexts/notifications/
+    ├── application/device-token-service.js
+    └── interfaces/http/device-tokens.routes.js   # POST /api/v1/device-tokens
+```
+
+Flujo: la app móvil registra el token FCM → el backend lo guarda en `device_tokens` → jobs y alertas invocan `push-sender` para notificar renovación de suscripción, alertas IoT, etc. En Render se configura `FIREBASE_SERVICE_ACCOUNT_JSON` (proyecto Firebase `engelvo-elkers`).
+
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
 |---|---|---|---|---|---|
-| `logic-nodes-server` | `main` | **fd0cd45** | feat(iot): implement IoT telemetry ingestion and disconnection monitoring | Endpoint `/api/v1/iot/telemetry` y `/api/v1/iot/heartbeat` con autenticación por IMEI + secreto de dispositivo; monitoreo de desconexión con alertas automáticas por umbral y actualización del schema para tracking codes y horarios programados. | 2026-07-08 |
-| `logic-nodes-server` | `main` | **ab37620** | Merge branch 'main' of logic-nodes-server | Fusión de la rama principal tras integrar los avances de IoT del equipo. | 2026-07-08 |
-| `logic-nodes-server` | `feat/billing-contract` | **a169b49** | feat(backend): cerrar brechas TB1 — billing safe, trips PATCH/tracking, jobs y seed | Migración idempotente de billing (`001_billing_safe.sql`), seed de datos demo, contrato de analytics del dashboard, endpoint `PATCH /api/v1/trips/:tripId`, tracking público (`/api/v1/trips/public/:code`), jobs de desconexión y renovación, soporte opcional de MQTT, device tokens y endpoint de método de pago. | 2026-07-08 |
-| `logic-nodes-server` | `feat/billing-contract` | **7457133** | fix(backend): rebase sobre main e integrar gaps restantes | Rebase con los cambios de IoT (`trips PATCH/tracking`, monitor de desconexión); jobs de renovación y analíticas vía FCM; scripts `migrate:billing`, `seed:demo`, `test:e2e-local` y smoke E2E. | 2026-07-08 |
-| `logic-nodes-server` | `main` | **04db7cf** | docs: checklist operativo para deploy en Render | Documento `docs/DEPLOY-READY-CHECKLIST.md` con prerequisitos, variables de entorno, migraciones, smoke tests y troubleshooting para producción. | 2026-07-08 |
-| `logic-nodes-server` | `main` | **d5829c5** | Merge pull request #4 from Logic-Nodes/feat/billing-contract | Cierre de las brechas TB1 (billing, trips, jobs, seed) hacia `main`. | 2026-07-08 |
+| `logic-nodes-server` | `main` | **fd0cd45** | feat(iot): implement IoT telemetry ingestion and disconnection monitoring | Endpoints `/api/v1/iot/telemetry` y `/api/v1/iot/heartbeat`; monitor de desconexión; schema `tracking_code` y `scheduled_at`. | 2026-07-08 |
+| `logic-nodes-server` | `main` | **d5829c5** | Merge pull request #4 from Logic-Nodes/feat/billing-contract | Billing, device-tokens, push FCM (`firebase-admin`), jobs renovación, seed demo, analytics. | 2026-07-08 |
+
+_*(Tabla extendida de commits backend: completar por @Alejandro Oroncoy.)_
 
 ---
 
@@ -4281,6 +4322,8 @@ Durante este sprint se amplió la especificación **Swagger UI / OpenAPI 3.0** d
 | **Trip Management (extendido)** | `/api/v1/trips/:tripId` (PATCH), `/api/v1/trips/public/:code`, `/api/v1/trips/search`, `/api/v1/trips/merchant/:merchantId` | GET, POST, PATCH, DELETE |
 | **Notifications — Device Tokens** | `/api/v1/device-tokens` | POST |
 
+**Push (FCM):** el envío real usa `firebase-admin` (`push-sender.js`) con credencial `FIREBASE_SERVICE_ACCOUNT_JSON` en Render. El registro de tokens del móvil se documenta en el bounded context Notifications; pendiente añadir `device-tokens` al spec OpenAPI.
+
 La documentación conserva la organización por bounded contexts bajo arquitectura DDD ya establecida en sprints anteriores, detallando para cada endpoint nuevo los parámetros de autenticación de dispositivo (IMEI + secreto), el cuerpo de la solicitud y las respuestas esperadas.
 
 Repositorio del backend: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-server)
@@ -4299,6 +4342,14 @@ Durante este sprint se preparó y ejecutó el despliegue del **Backend Services*
 **Despliegue del Backend**
 
 El backend fue desplegado en **Render** a partir del repositorio `logic-nodes-server`. Para soportar este despliegue se incorporó el documento `docs/DEPLOY-READY-CHECKLIST.md`, que centraliza los prerequisitos, variables de entorno, pasos de migración, pruebas de humo (*smoke tests*) y guía de troubleshooting para producción. Se añadieron además los scripts `scripts/migrate-db.mjs`, `scripts/migrate-billing-only.mjs` (migración idempotente del módulo de billing) y `scripts/seed-demo.mjs` (carga de datos demo), ejecutados como parte del proceso de puesta en producción.
+
+**Push (FCM) en producción:** variable de entorno `FIREBASE_SERVICE_ACCOUNT_JSON` con la service account del proyecto Firebase `engelvo-elkers` (JSON minificado en una línea). Sin ella el API arranca pero no envía notificaciones push.
+
+**Post-deploy en Shell Render:**
+
+```bash
+npm run migrate:billing && npm run seed:demo
+```
 
 URL de la API y documentación Swagger: [Click aquí](https://logic-nodes-server.onrender.com/docs/)
 
