@@ -4148,6 +4148,10 @@ Durante el Sprint 3, el proyecto **OmniTrack** se centró en dos frentes: el **B
 
 Paulo Percy Quincho Gamarra lideró el bounded context **IoT** y la ingesta de telemetría. **Alejandro Daniel Oroncoy Almeyda** lideró el cierre de brechas del backend (billing, jobs, seed, push FCM, deploy en Render) y la integración final de la aplicación móvil.
 
+Configuracion para la conexion a los componentes IoT <br>
+![Backend - IoT](img/omnitrack-backend-iot.png)
+<br>
+
 ---
 
 ### Backend Services
@@ -4301,12 +4305,6 @@ _Módulo de alertas con tipo, severidad y estado de resolución_ <br>
 Repositorio: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-webapp)
 Aplicación en línea: [Click aquí](https://logic-nodes-webapp.vercel.app)
 
-IoT Backend implementation
-
-Configuracion para la conexion a los componentes IoT <br>
-![Backend - IoT](img/omnitrack-backend-iot.png)
-<br>
-
 <br>
 
 **Conclusión:**
@@ -4398,6 +4396,7 @@ La colaboración se evidencia en el uso de *pull requests* para consolidar el tr
 
 Asimismo, se mantuvo la práctica de documentar el trabajo técnico mediante commits descriptivos y checklists operativos (`docs/DEPLOY-READY-CHECKLIST.md`, `docs/BACKEND-GAP-RESOLUTION.md`), lo que facilitó el seguimiento del cierre de brechas frente al informe TB1 por parte del resto del equipo.
 
+![TEAM COLLAB SPRINT 3 - IoT](img/team-collab-sprint-3.png)
 
 ## 6.3. Validation Interviews.
 
