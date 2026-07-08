@@ -4144,15 +4144,150 @@ La gestión del sprint se realizó utilizando Jira para la organización de tare
 
 #### 6.2.3.4. Development Evidence for Sprint Review
 
+Durante el Sprint 3, el proyecto **OmniTrack** se centró en dos frentes: el **Backend Services**, donde se incorporó el bounded context de **IoT** (ingesta de telemetría y monitoreo de desconexión) y se cerraron las brechas pendientes de **Billing/Subscriptions** y **Trips** identificadas frente al informe TB1; y la **Aplicación Móvil**, donde se completó la integración con el backend en producción (fleet, trips, perfil), se tradujo la interfaz al español y se integraron notificaciones push.
+
+Paulo Percy Quincho Gamarra lideró la implementación del backend (contexto IoT, jobs de desconexión/renovación, MQTT y push). Alejandro Daniel Oroncoy Almeyda lideró la integración final de la aplicación móvil con el backend real, la localización a español y el cliente de Firebase Cloud Messaging.
+
+---
+
+### Backend Services
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+|---|---|---|---|---|---|
+| `logic-nodes-server` | `main` | **fd0cd45** | feat(iot): implement IoT telemetry ingestion and disconnection monitoring | Endpoint `/api/v1/iot/telemetry` y `/api/v1/iot/heartbeat` con autenticación por IMEI + secreto de dispositivo; monitoreo de desconexión con alertas automáticas por umbral y actualización del schema para tracking codes y horarios programados. | 2026-07-08 |
+| `logic-nodes-server` | `main` | **ab37620** | Merge branch 'main' of logic-nodes-server | Fusión de la rama principal tras integrar los avances de IoT del equipo. | 2026-07-08 |
+| `logic-nodes-server` | `feat/billing-contract` | **a169b49** | feat(backend): cerrar brechas TB1 — billing safe, trips PATCH/tracking, jobs y seed | Migración idempotente de billing (`001_billing_safe.sql`), seed de datos demo, contrato de analytics del dashboard, endpoint `PATCH /api/v1/trips/:tripId`, tracking público (`/api/v1/trips/public/:code`), jobs de desconexión y renovación, soporte opcional de MQTT, device tokens y endpoint de método de pago. | 2026-07-08 |
+| `logic-nodes-server` | `feat/billing-contract` | **7457133** | fix(backend): rebase sobre main e integrar gaps restantes | Rebase con los cambios de IoT (`trips PATCH/tracking`, monitor de desconexión); jobs de renovación y analíticas vía FCM; scripts `migrate:billing`, `seed:demo`, `test:e2e-local` y smoke E2E. | 2026-07-08 |
+| `logic-nodes-server` | `main` | **04db7cf** | docs: checklist operativo para deploy en Render | Documento `docs/DEPLOY-READY-CHECKLIST.md` con prerequisitos, variables de entorno, migraciones, smoke tests y troubleshooting para producción. | 2026-07-08 |
+| `logic-nodes-server` | `main` | **d5829c5** | Merge pull request #4 from Logic-Nodes/feat/billing-contract | Cierre de las brechas TB1 (billing, trips, jobs, seed) hacia `main`. | 2026-07-08 |
+
+---
+
+### Mobile Application
+
+| Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
+|---|---|---|---|---|---|
+| `logic-nodes-mobile` | `feat/billing-contract-internet` | **ebd5d77** | feat(mobile): integración completa con backend prod + módulos fleet/trips/profile | Conexión de la app al API de Render por defecto; módulos de flota, viajes, perfil y analíticas; persistencia offline con SQLite, sesión persistente y reporte de brechas vs. informe TB1. | 2026-07-06 |
+| `logic-nodes-mobile` | `feat/billing-contract-internet` | **e3f90d9** | feat(trips): US026/US027 seguimiento público, reprogramación y timeline | Pantallas de tracking público y reprogramación de viajes, widget de línea de tiempo (`status_labels.dart`) y alineación del repositorio al contrato real de viajes. | 2026-07-08 |
+| `logic-nodes-mobile` | `feat/billing-contract-internet` | **dfc2c62** | feat(mobile): UI en español, FCM cliente y actualización de brechas | Traducción de pantallas y mensajes al español; `push_notification_service` con wiring Android/iOS; actualización del reporte de integración con el estado de US026–US027. | 2026-07-08 |
+| `logic-nodes-mobile` | `feat/billing-contract-internet` | **391bd4d** | test(mobile): alinear pruebas con UI en español y tipo Humedad | Ajuste de la suite de tests para reflejar la interfaz localizada y el tipo de sensor "Humedad". | 2026-07-08 |
+| `logic-nodes-mobile` | `feat/billing-contract-internet` | **80f723c** | fix(mobile): traducir mensajes de error y estados de carga al español | Localización de mensajes de error y estados de carga pendientes. | 2026-07-08 |
+| `logic-nodes-mobile` | `main` | **a228e16** | Merge pull request #3 from Logic-Nodes/feat/billing-contract-internet | Integración con backend de producción, módulos fleet/trips/profile y reporte de brechas hacia `main`. | 2026-07-08 |
+
+---
+
 #### 6.2.3.5. Testing Suite Evidence for Sprint Review
+
+Durante este sprint se amplió la cobertura de pruebas tanto en el **Backend Services** como en la **Aplicación Móvil**, además de incorporar un script de *smoke test* end-to-end para validar el flujo completo antes de cada despliegue.
+
+**Backend Services (Jest + Supertest):**
+
+| Archivo / Script | Tipo | Cobertura |
+|---|---|---|
+| `src/__tests__/http-contracts.test.js` | Tests de contratos HTTP (integración, Jest + Supertest) | Suite existente desde Sprint 1, sin cambios este sprint: valida forma de respuesta y códigos de estado de IAM, Trips, Dashboard, Alerts, Fleet, Monitoring, Merchants y Profiles. **No cubre aún** los nuevos endpoints de IoT (`/api/v1/iot/*`) ni de Billing (`/api/v1/plans`, `/api/v1/subscription/*`, `/api/v1/payments/*`); queda como brecha para el siguiente sprint. |
+| `scripts/e2e-local-smoke.mjs` | Smoke test E2E (local, script Node) | Ejecuta un flujo completo contra una instancia local: sign-in, verify-token, perfil, fleet (vehicles/devices), trips (detalle y `PATCH` de US026), tracking público por código (US027), alerts, analytics (trips/alerts/incidents-by-month), **billing** (`GET /plans`, `GET /subscription/user-id/:id`, `GET /payments/user-id/:id`), registro de device token y sesión de monitoreo/telemetría existente. No ejerce directamente el nuevo endpoint `/api/v1/iot/telemetry` (ese flujo se valida manualmente, ver más abajo). |
+| `scripts/migrate-billing-only.mjs` / `scripts/seed-demo.mjs` | Scripts de validación de datos | Verifican que la migración idempotente de billing y el seed de datos demo se ejecuten sin errores antes de las pruebas de integración; el propio smoke test reporta fallas de "trips/analytics demo" si no se corrió `seed:demo` previamente. |
+
+Ejecución:
+
+```bash
+npm test
+npm run test:e2e-local
+```
+
+**Aplicación Móvil (Flutter Test):**
+
+| Archivo | Tipo | Cobertura |
+|---|---|---|
+| `test/widget_test.dart` | Widget test | Flujo de login y navegación inicial de la app, ahora validado con textos e interfaz en español. |
+| `test/new_screens_test.dart` | Widget test + Unit tests | Suite actualizada (**391bd4d**) para reflejar la localización a español y el renombre del tipo de sensor a "Humedad" en pantallas de suscripción, billing y alertas. |
+| `test/home_dashboard_codec_test.dart` | Unit test | Valida la decodificación del snapshot del home workspace (flota, viajes, dispositivos IoT) recibido desde el backend real. |
+| `test/features/auth/` | Directorio de tests por feature | Nueva carpeta creada en la reorganización de la suite de tests para alojar pruebas de autenticación por feature (contenido en evolución al cierre del sprint). |
+
+Ejecución:
+
+```bash
+flutter test
+```
+
+**Validaciones adicionales realizadas manualmente:**
+
+- Envío de telemetría simulada (temperatura, humedad, vibración) desde el firmware ESP32/Wokwi hacia `/api/v1/iot/telemetry` y verificación de alertas automáticas por umbral.
+- Prueba del monitor de desconexión: simulación de corte de transmisión y verificación de la alerta generada tras el intervalo configurado.
+- Validación manual del flujo de cancelación, cambio de plan y actualización de método de pago sobre `/api/v1/subscription/*`.
+- Pruebas de recepción de notificaciones push (FCM) en dispositivo físico y emulador Android.
+- Verificación end-to-end de la app móvil contra el backend de producción en Render (flota, viajes, perfil, analíticas).
 
 #### 6.2.3.6. Execution Evidence for Sprint Review
 
+Durante este sprint se completó la integración física y funcional del ecosistema IoT de **OmniTrack**, además de cerrar las brechas del backend y de la aplicación móvil identificadas en la revisión del Sprint 2.
+
+En el **Backend Services**, el nuevo bounded context `iot` expone dos endpoints principales: `POST /api/v1/iot/telemetry`, que recibe lecturas de temperatura, humedad y vibración autenticadas por IMEI y secreto de dispositivo (vía header `x-device-secret`), y `POST /api/v1/iot/heartbeat`, utilizado para mantener vivo el estado de conexión. Un `disconnection-monitor.js` revisa periódicamente la última señal recibida por dispositivo y genera alertas automáticas cuando se supera el umbral de inactividad configurado. Adicionalmente se implementaron dos jobs en segundo plano (`disconnect-alerts.job.js` y `renewal-notifications.job.js`) y soporte opcional de **MQTT** (`mqtt-subscriber.js`) como canal alternativo de ingesta.
+
+En paralelo, se cerraron las brechas del módulo de **Billing/Subscriptions**: gestión de planes, consulta y cancelación de suscripción, cambio de plan, historial de pagos y actualización de método de pago, todo montado bajo `/api/v1/plans`, `/api/v1/subscription/*` y `/api/v1/payments/*`. También se completó el módulo de **Trips** con reprogramación (`PATCH /api/v1/trips/:tripId`) y seguimiento público por código de viaje (`GET /api/v1/trips/public/:code`), y se añadió el registro de tokens de dispositivo para notificaciones push (`POST /api/v1/device-tokens`).
+
+En la **Aplicación Móvil**, se completó la conexión de los módulos de flota, viajes y perfil con el backend real desplegado en Render, con persistencia offline mediante SQLite y sesión persistente. Se implementaron las pantallas de seguimiento público y reprogramación de viajes (US026/US027) con un widget de línea de tiempo, se integró el cliente de Firebase Cloud Messaging para notificaciones push, y se tradujo la totalidad de la interfaz (pantallas, mensajes de error y estados de carga) al español.
+
+**Conclusión:**
+
+- Al cierre del Sprint 3, OmniTrack cuenta con telemetría IoT real ingresando al backend, alertas automáticas por temperatura y desconexión, el módulo de suscripciones completamente funcional, y una aplicación móvil localizada al español e integrada de punta a punta con el backend de producción.
+- Con esto se cierra el conjunto de brechas identificado frente al informe TB1, dejando el producto MVP funcional en sus tres frentes (Landing Page, Web Application, Mobile Application) sobre un Backend Services unificado.
+
 #### 6.2.3.7. Services Documentation Evidence for Sprint Review
+
+Durante este sprint se amplió la especificación **Swagger UI / OpenAPI 3.0** del backend (`src/shared/interfaces/http/swagger-spec.js`) para documentar los nuevos endpoints incorporados en los bounded contexts de **IoT**, **Billing** y las extensiones de **Trips** y **Notifications**.
+
+| Bounded Context | Endpoints principales | Métodos HTTP |
+|---|---|---|
+| **IoT — Telemetry** | `/api/v1/iot/telemetry` | POST |
+| **IoT — Heartbeat** | `/api/v1/iot/heartbeat` | POST |
+| **Billing — Plans** | `/api/v1/plans` | GET |
+| **Billing — Subscription** | `/api/v1/subscription/user-id/:userId`, `/api/v1/subscription/:id/plan`, `/api/v1/subscription/:id`, `/api/v1/subscription/:id/payment-method` | GET, PUT, DELETE, POST |
+| **Billing — Payments** | `/api/v1/payments/user-id/:userId` | GET |
+| **Trip Management (extendido)** | `/api/v1/trips/:tripId` (PATCH), `/api/v1/trips/public/:code`, `/api/v1/trips/search`, `/api/v1/trips/merchant/:merchantId` | GET, POST, PATCH, DELETE |
+| **Notifications — Device Tokens** | `/api/v1/device-tokens` | POST |
+
+La documentación conserva la organización por bounded contexts bajo arquitectura DDD ya establecida en sprints anteriores, detallando para cada endpoint nuevo los parámetros de autenticación de dispositivo (IMEI + secreto), el cuerpo de la solicitud y las respuestas esperadas.
+
+Repositorio del backend: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-server)
+
+**Conclusión:**
+
+- La documentación Swagger permite validar de forma autocontenida el contrato de los nuevos módulos de IoT y Billing, tanto para el consumo desde la aplicación móvil como para la integración futura de dispositivos físicos adicionales.
+- Queda pendiente documentar en Swagger ejemplos de payload reales de telemetría capturados desde el firmware ESP32 para facilitar pruebas de integración de hardware por parte de terceros.
 
 #### 6.2.3.8. Software Deployment Evidence for Sprint Review
 
+Durante este sprint se preparó y ejecutó el despliegue del **Backend Services** en **Render**, quedando accesible en producción junto con su documentación interactiva.
+
+---
+
+**Despliegue del Backend**
+
+El backend fue desplegado en **Render** a partir del repositorio `logic-nodes-server`. Para soportar este despliegue se incorporó el documento `docs/DEPLOY-READY-CHECKLIST.md`, que centraliza los prerequisitos, variables de entorno, pasos de migración, pruebas de humo (*smoke tests*) y guía de troubleshooting para producción. Se añadieron además los scripts `scripts/migrate-db.mjs`, `scripts/migrate-billing-only.mjs` (migración idempotente del módulo de billing) y `scripts/seed-demo.mjs` (carga de datos demo), ejecutados como parte del proceso de puesta en producción.
+
+URL de la API y documentación Swagger: [Click aquí](https://logic-nodes-server.onrender.com/docs/)
+
+---
+
+**Despliegue de la Aplicación Móvil**
+
+La aplicación móvil no cuenta con un canal de distribución público (Play Store / TestFlight) durante este sprint; la validación se realizó mediante builds de depuración (`flutter run`) instaladas en dispositivo físico y emulador Android, apuntando al backend de producción en Render. Se deja como pendiente para un futuro sprint la generación de un build firmado y su distribución mediante un canal de pruebas cerrado.
+
+---
+
+**Conclusión:**
+
+- El Backend Services quedó desplegado en Render con su documentación Swagger accesible públicamente, exponiendo los endpoints de IoT y Billing incorporados en este sprint.
+- La Aplicación Móvil quedó completamente integrada al backend de producción, aunque su distribución formal (build firmado) se mantiene como trabajo pendiente para el cierre del proyecto.
+
 #### 6.2.3.9. Team Collaboration insights during Sprint
+
+Durante este sprint, el trabajo se concentró principalmente en dos integrantes del equipo: Paulo Percy Quincho Gamarra, quien lideró la implementación del bounded context de IoT, los jobs en segundo plano y el cierre de brechas de Billing y Trips en el backend; y Alejandro Daniel Oroncoy Almeyda, quien lideró la integración final de la aplicación móvil con el backend de producción, la localización de la interfaz al español y la incorporación de notificaciones push mediante Firebase Cloud Messaging.
+
+La colaboración se evidencia en el uso de *pull requests* para consolidar el trabajo de rama hacia `main` en ambos repositorios (PR #4 `feat/billing-contract` en `logic-nodes-server` y PR #3 `feat/billing-contract-internet` en `logic-nodes-mobile`), con commits firmados y verificados en las fusiones principales, así como en la coordinación necesaria para hacer *rebase* del trabajo de billing sobre los cambios de IoT que se desarrollaban en paralelo sobre `main`.
+
+Asimismo, se mantuvo la práctica de documentar el trabajo técnico mediante commits descriptivos y checklists operativos (`docs/DEPLOY-READY-CHECKLIST.md`, `docs/BACKEND-GAP-RESOLUTION.md`), lo que facilitó el seguimiento del cierre de brechas frente al informe TB1 por parte del resto del equipo.
 
 
 ## 6.3. Validation Interviews.
