@@ -4195,7 +4195,7 @@ logic-nodes-server/
     └── interfaces/http/device-tokens.routes.js   # POST /api/v1/device-tokens
 ```
 
-Flujo: la app móvil registra el token FCM → el backend lo guarda en `device_tokens` → jobs y alertas invocan `push-sender` para notificar renovación de suscripción, alertas IoT, etc. En Render se configura `FIREBASE_SERVICE_ACCOUNT_JSON` (proyecto Firebase `engelvo-elkers`).
+Flujo: la app móvil registra el token FCM → el backend lo guarda en `device_tokens` → jobs y alertas invocan `push-sender` para notificar renovación de suscripción, alertas IoT, etc. En Render se configura `FIREBASE_SERVICE_ACCOUNT_JSON` (proyecto Firebase `logic-nodes-server`).
 
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
 |---|---|---|---|---|---|
@@ -4365,7 +4365,7 @@ Durante este sprint se preparó y ejecutó el despliegue del **Backend Services*
 
 El backend fue desplegado en **Render** a partir del repositorio `logic-nodes-server`. Para soportar este despliegue se incorporó el documento `docs/DEPLOY-READY-CHECKLIST.md`, que centraliza los prerequisitos, variables de entorno, pasos de migración, pruebas de humo (*smoke tests*) y guía de troubleshooting para producción. Se añadieron además los scripts `scripts/migrate-db.mjs`, `scripts/migrate-billing-only.mjs` (migración idempotente del módulo de billing) y `scripts/seed-demo.mjs` (carga de datos demo), ejecutados como parte del proceso de puesta en producción.
 
-**Push (FCM) en producción:** variable de entorno `FIREBASE_SERVICE_ACCOUNT_JSON` con la service account del proyecto Firebase `engelvo-elkers` (JSON minificado en una línea). Sin ella el API arranca pero no envía notificaciones push.
+**Push (FCM) en producción:** variable de entorno `FIREBASE_SERVICE_ACCOUNT_JSON` con la service account del proyecto Firebase `logic-nodes-server` (JSON minificado en una línea). Sin ella el API arranca pero no envía notificaciones push.
 
 **Post-deploy en Shell Render:**
 
