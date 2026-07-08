@@ -4378,6 +4378,7 @@ La colaboración se evidencia en el uso de *pull requests* para consolidar el tr
 
 Asimismo, se mantuvo la práctica de documentar el trabajo técnico mediante commits descriptivos y checklists operativos (`docs/DEPLOY-READY-CHECKLIST.md`, `docs/BACKEND-GAP-RESOLUTION.md`), lo que facilitó el seguimiento del cierre de brechas frente al informe TB1 por parte del resto del equipo.
 
+![TEAM COLLAB SPRINT 3 - IoT](img/team-collab-sprint-3.png)
 
 ## 6.3. Validation Interviews.
 
