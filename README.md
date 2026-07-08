@@ -79,6 +79,7 @@
 |  1.0.4    |   02/05/2026    |  Rodrigo Alcántara y Luiggi Antonio      |    Elaboración del Capítulo V   |
 |  1.0.5    |   12/05/2026    |  Adrian Valerio y Alejandro Oroncoy      |    Elaboración del Capítulo VI   |
 |  1.0.6    |   10/06/2026    |  Rodrigo Alcántara, Paulo Quincho, Luiggi Antonio, Adrian Valerio, Alejandro Oroncoy      |    Elaboración del Sprint 2   |
+|  1.0.7    |   07/07/2026    |  Rodrigo Alcántara, Paulo Quincho, Luiggi Antonio, Adrian Valerio, Alejandro Oroncoy      |    Elaboración del Sprint 3   |
 
 # Project Report Collaboration Insights
 
