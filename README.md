@@ -4228,6 +4228,40 @@ En paralelo, se cerraron las brechas del módulo de **Billing/Subscriptions**: g
 
 En la **Aplicación Móvil**, se completó la conexión de los módulos de flota, viajes y perfil con el backend real desplegado en Render, con persistencia offline mediante SQLite y sesión persistente. Se implementaron las pantallas de seguimiento público y reprogramación de viajes (US026/US027) con un widget de línea de tiempo, se integró el cliente de Firebase Cloud Messaging para notificaciones push, y se tradujo la totalidad de la interfaz (pantallas, mensajes de error y estados de carga) al español.
 
+**Landing Page**
+
+_Vista inicial del encabezado principal y navegación_ <br>
+![Landing Page – Hero section](assets/ch6/omnitrack-landing-hero.png)
+<br>
+
+Repositorio: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-landing-page)
+Enlace: [Click aquí](https://logic-nodes-landing-page.vercel.app)
+
+<br>
+
+**Web Application**
+
+_Dashboard principal con métricas de monitoreo IoT en tiempo real_ <br>
+![Web App – Dashboard](assets/ch6/omnitrack-webapp-dashboard.png)
+<br>
+
+_Módulo de gestión de vehículos de la flota con estados y dispositivos IoT asignados_ <br>
+![Web App – Fleet Vehicles](assets/ch6/omnitrack-webapp-iot.png)
+<br>
+
+_Módulo de viajes activos con estado, conductor y puntos de origen/destino_ <br>
+![Web App – Trips Module](assets/ch6/omnitrack-webapp-trips.png)
+<br>
+
+_Módulo de alertas con tipo, severidad y estado de resolución_ <br>
+![Web App – Alerts Module](assets/ch6/omnitrack-webapp-alerts.png)
+<br>
+
+Repositorio: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-webapp)
+Aplicación en línea: [Click aquí](https://logic-nodes-webapp.vercel.app)
+
+<br>
+
 **Conclusión:**
 
 - Al cierre del Sprint 3, OmniTrack cuenta con telemetría IoT real ingresando al backend, alertas automáticas por temperatura y desconexión, el módulo de suscripciones completamente funcional, y una aplicación móvil localizada al español e integrada de punta a punta con el backend de producción.
