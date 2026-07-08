@@ -4260,6 +4260,12 @@ _Módulo de alertas con tipo, severidad y estado de resolución_ <br>
 Repositorio: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-webapp)
 Aplicación en línea: [Click aquí](https://logic-nodes-webapp.vercel.app)
 
+IoT Backend implementation
+
+Configuracion para la conexion a los componentes IoT <br>
+![Backend - IoT](img/omnitrack-backend-iot.png)
+<br>
+
 <br>
 
 **Conclusión:**
