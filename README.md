@@ -4146,15 +4146,13 @@ La gestión del sprint se realizó utilizando Jira para la organización de tare
 
 Durante el Sprint 3, el proyecto **OmniTrack** se centró en dos frentes: el **Backend Services** (IoT, billing, trips, push FCM) y la **Aplicación Móvil** (integración con producción, español, US026/US027, cliente FCM).
 
-Paulo Percy Quincho Gamarra lideró el bounded context **IoT** y la ingesta de telemetría. Alejandro Daniel Oroncoy Almeyda lideró el cierre de brechas del backend (billing, jobs, seed, deploy) y la integración final de la aplicación móvil.
+Paulo Percy Quincho Gamarra lideró el bounded context **IoT** y la ingesta de telemetría. **Alejandro Daniel Oroncoy Almeyda** lideró el cierre de brechas del backend (billing, jobs, seed, push FCM, deploy en Render) y la integración final de la aplicación móvil.
 
 ---
 
 ### Backend Services
 
-> **Nota:** la tabla completa de commits del backend la documenta **@Alejandro Oroncoy**. A continuación se muestra la evidencia estructural del módulo **IoT** y del módulo **Push (FCM)** incorporados en `logic-nodes-server`.
-
-**Repositorio:** [logic-nodes-server](https://github.com/Logic-Nodes/logic-nodes-server)
+**Responsable:** Alejandro Daniel Oroncoy Almeyda · **Repositorio:** [logic-nodes-server](https://github.com/Logic-Nodes/logic-nodes-server)
 
 #### Carpeta `iot/` — firmware y documentación ESP32
 
@@ -4198,9 +4196,11 @@ Flujo: la app móvil registra el token FCM → el backend lo guarda en `device_t
 | Repository | Branch | Commit Id | Commit Message | Commit Message Body | Commited on (Date) |
 |---|---|---|---|---|---|
 | `logic-nodes-server` | `main` | **fd0cd45** | feat(iot): implement IoT telemetry ingestion and disconnection monitoring | Endpoints `/api/v1/iot/telemetry` y `/api/v1/iot/heartbeat`; monitor de desconexión; schema `tracking_code` y `scheduled_at`. | 2026-07-08 |
-| `logic-nodes-server` | `main` | **d5829c5** | Merge pull request #4 from Logic-Nodes/feat/billing-contract | Billing, device-tokens, push FCM (`firebase-admin`), jobs renovación, seed demo, analytics. | 2026-07-08 |
-
-_*(Tabla extendida de commits backend: completar por @Alejandro Oroncoy.)_
+| `logic-nodes-server` | `main` | **ab37620** | Merge branch 'main' of logic-nodes-server | Fusión de la rama principal tras integrar los avances de IoT del equipo. | 2026-07-08 |
+| `logic-nodes-server` | `feat/billing-contract` | **a169b49** | feat(backend): cerrar brechas TB1 — billing safe, trips PATCH/tracking, jobs y seed | Migración idempotente de billing (`001_billing_safe.sql`), seed demo, analytics dashboard, `PATCH /api/v1/trips/:tripId`, tracking público, jobs renovación, MQTT opcional, device tokens y payment-method. | 2026-07-08 |
+| `logic-nodes-server` | `feat/billing-contract` | **7457133** | fix(backend): rebase sobre main e integrar gaps restantes | Rebase con IoT de main; jobs renovación + FCM; scripts `migrate:billing`, `seed:demo`, `test:e2e-local`. | 2026-07-08 |
+| `logic-nodes-server` | `main` | **04db7cf** | docs: checklist operativo para deploy en Render | `docs/DEPLOY-READY-CHECKLIST.md` con env vars, migraciones y smoke tests. | 2026-07-08 |
+| `logic-nodes-server` | `main` | **d5829c5** | Merge pull request #4 from Logic-Nodes/feat/billing-contract | Cierre brechas TB1: billing, trips, jobs, seed, push FCM hacia `main`. | 2026-07-08 |
 
 ---
 
@@ -4333,6 +4333,24 @@ Durante este sprint se amplió la especificación **Swagger UI / OpenAPI 3.0** d
 La documentación conserva la organización por bounded contexts bajo arquitectura DDD ya establecida en sprints anteriores, detallando para cada endpoint nuevo los parámetros de autenticación de dispositivo (IMEI + secreto), el cuerpo de la solicitud y las respuestas esperadas.
 
 Repositorio del backend: [Click aquí](https://github.com/Logic-Nodes/logic-nodes-server)
+
+Documentación interactiva en producción: [Swagger UI](https://logic-nodes-server.onrender.com/docs/)
+
+_Vista general — LogicNodes API (OpenAPI 3.0)_ <br>
+![Swagger — Overview Sprint 3](assets/ch6/omnitrack-swagger-sprint3-overview.png)
+<br>
+
+_Bounded context IoT — ingesta de telemetría ESP32_ <br>
+![Swagger — IoT telemetry](assets/ch6/omnitrack-swagger-sprint3-iot.png)
+<br>
+
+_Bounded context Billing — planes y suscripción_ <br>
+![Swagger — Billing](assets/ch6/omnitrack-swagger-sprint3-billing.png)
+<br>
+
+_Bounded context Trips — PATCH y tracking público_ <br>
+![Swagger — Trips](assets/ch6/omnitrack-swagger-sprint3-trips.png)
+<br>
 
 **Conclusión:**
 
