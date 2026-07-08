@@ -16,7 +16,7 @@
     <br /><br />
     <strong>NRC:</strong> 6770 <br /><br />
     <strong>Profesor:</strong> Prudencio Vidal, Javier Antonio <br /><br />
-    <strong>Informe de TB1</strong>
+    <strong>Informe de TB2</strong>
   </p>
 
   <div style="width: 80%; margin: 0 auto; text-align: center">
