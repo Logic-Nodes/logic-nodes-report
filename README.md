@@ -4258,6 +4258,13 @@ A lo largo del ciclo académico, el equipo LogicNodes ha consolidado de manera s
 
 Este esquema de trabajo se sostuvo sobre un entorno altamente colaborativo, inclusivo y orientado a resultados, donde el uso riguroso de metodologías ágiles facilitó una planificación transparente, la mitigación oportuna de bloqueos técnicos y el establecimiento de metas realistas. El compromiso unánime de los miembros se refleja directamente en los indicadores de rendimiento, habiendo alcanzado la máxima excelencia operativa con entregas completas, funcionales y estrictamente a tiempo en cada uno de los hitos evaluativos. En conclusión, la experiencia ha demostrado que el equipo posee la capacidad técnica y blanda para funcionar efectivamente en entornos de ingeniería complejos, autoorganizados y de alta exigencia profesional.
 
+### TB2:
+
+El cierre de la TB2 marcó la consolidación definitiva de la startup LogicNodes y su producto OmniTrack, alcanzando la madurez operativa y técnica más alta de todo el ciclo de desarrollo. A través de un modelo de coliderazgo interfuncional altamente eficiente, el equipo logró balancear con éxito tres frentes críticos de ingeniería: la transición hacia el hardware mediante la implementación y despliegue del dispositivo IoT físico, la evolución multiplataforma con las mejoras continuas en la aplicación web y la aplicación móvil para el Sprint 3, y la gestión de calidad editorial que unificó el informe y el material audiovisual de sustentación.
+
+La obtención de una calificación perfecta unánime (20/20) y el cumplimiento del 100% de las tareas de manera puntual reafirman la efectividad del entorno colaborativo construido. La rigurosa planificación basada en hitos y la mitigación proactiva de bloqueos técnicos permitieron que los componentes de telemetría de hardware se acoplaran con total sincronía a los servicios de software existentes. En conclusión, el Sprint 3 culmina con éxito al entregar un ecosistema tecnológico multiplataforma e IoT completamente integrado, robusto y validado, alineado estrictamente con los objetivos estratégicos de negocio de la startup.
+
+
 # Bibliografía
 
 Gothelf, J. (2013). Lean UX: Applying lean principles to improve user experience (Sampler, Chapter 3). O'Reilly Media. https://www.scribd.com/document/655516553/Leanux-Sampler
